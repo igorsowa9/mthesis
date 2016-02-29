@@ -1,0 +1,18 @@
+clear all
+close all
+clc
+
+f = 50;
+t = 0:0.1:100;
+
+V1 = 10*sin(t);
+V3 = 3*sin(3t);
+V5 = 2*sin(5t);
+
+V=V1+V3+V5;
+
+figure(1)
+plot(t,V1);
+
+figure(2)
+plot(abs(fft(V1)));
