@@ -1,12 +1,12 @@
 Model {
-  Name			  "fin_3ph_2lvl"
+  Name			  "fin_3ph_2lvl_autofilter"
   Version		  7.5
   MdlSubVersion		  0
   GraphicalInterface {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.8"
+    ComputedModelVersion    "1.10"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "IS"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 29 12:42:12 2016"
+  LastModifiedDate	  "Mon Feb 29 14:41:47 2016"
   RTWModifiedTimeStamp	  378645748
-  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  ModelVersionFormat	  "1.%<AutoIncrement:10>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -588,84 +588,7 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      Demux
-      Outputs		      "4"
-      DisplayOption	      "none"
-      BusSelectionMode	      off
-    }
-    Block {
-      BlockType		      From
-      IconDisplay	      "Tag"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
-      IconDisplay	      "Tag"
-    }
-    Block {
-      BlockType		      Ground
-    }
-    Block {
-      BlockType		      Inport
-      Port		      "1"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      DataType		      "auto"
-      OutDataType	      "fixdt(1,16,0)"
-      OutScaling	      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      LatchByDelayingOutsideSignal off
-      LatchInputForFeedbackSignals off
-      Interpolate	      on
-    }
-    Block {
-      BlockType		      Mux
-      Inputs		      "4"
-      DisplayOption	      "none"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      NonVirtualBus	      off
-    }
-    Block {
-      BlockType		      Outport
-      Port		      "1"
-      UseBusObject	      off
-      BusObject		      "BusObject"
-      BusOutputAsStruct	      off
-      PortDimensions	      "-1"
-      VarSizeSig	      "Inherit"
-      SampleTime	      "-1"
-      OutMin		      "[]"
-      OutMax		      "[]"
-      DataType		      "auto"
-      OutDataType	      "fixdt(1,16,0)"
-      OutScaling	      "[]"
-      OutDataTypeStr	      "Inherit: auto"
-      LockScale		      off
-      SignalType	      "auto"
-      SamplingMode	      "auto"
-      SourceOfInitialOutputValue "Dialog"
-      OutputWhenDisabled      "held"
-      InitialOutput	      "[]"
-    }
-    Block {
       BlockType		      PMIOPort
-    }
-    Block {
-      BlockType		      "S-Function"
-      FunctionName	      "system"
-      SFunctionModules	      "''"
-      PortCounts	      "[]"
-      SFunctionDeploymentMode off
     }
     Block {
       BlockType		      Scope
@@ -703,12 +626,9 @@ Model {
       DataTypeOverride	      "UseLocalSettings"
       MinMaxOverflowLogging   "UseLocalSettings"
     }
-    Block {
-      BlockType		      Terminator
-    }
   }
   System {
-    Name		    "fin_3ph_2lvl"
+    Name		    "fin_3ph_2lvl_autofilter"
     Location		    [2, 70, 1364, 720]
     Open		    on
     ModelBrowserVisibility  off
@@ -723,7 +643,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    85
+    SIDHighWatermark	    88
     Block {
       BlockType		      Reference
       Name		      "3wind_trafo"
@@ -826,7 +746,7 @@ Model {
       Name		      "Ground2"
       SID		      40
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [314, 435, 336, 460]
+      Position		      [334, 385, 356, 410]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -848,27 +768,6 @@ Model {
       SID		      47
       Ports		      [0, 0, 0, 0, 0, 1]
       Position		      [1094, 410, 1116, 435]
-      BlockRotation	      270
-      BlockMirror	      on
-      ShowName		      off
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Elements/Ground"
-      SourceType	      "Ground"
-      PhysicalDomain	      "powersysdomain"
-      SubClassName	      "unknown"
-      LeftPortType	      "p1"
-      RightPortType	      "p1"
-      LConnTagsString	      "a"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Ground4"
-      SID		      52
-      Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [499, 425, 521, 450]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -990,84 +889,6 @@ Model {
       LConnTagsString	      "a"
     }
     Block {
-      BlockType		      Reference
-      Name		      "LCL filter1"
-      SID		      35
-      Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [230, 161, 315, 219]
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-      SourceType	      "Three-Phase Series RLC Branch"
-      PhysicalDomain	      "powersysdomain"
-      SubClassName	      "unknown"
-      LeftPortType	      "p1"
-      RightPortType	      "p1"
-      LConnTagsString	      "A|B|C"
-      RConnTagsString	      "A|B|C"
-      BranchType	      "L"
-      Resistance	      "1"
-      Inductance	      "3.41e-3"
-      Capacitance	      "1e-6"
-      Measurements	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "LCL filter2"
-      SID		      37
-      Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [385, 161, 470, 219]
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-      SourceType	      "Three-Phase Series RLC Branch"
-      PhysicalDomain	      "powersysdomain"
-      SubClassName	      "unknown"
-      LeftPortType	      "p1"
-      RightPortType	      "p1"
-      LConnTagsString	      "A|B|C"
-      RConnTagsString	      "A|B|C"
-      BranchType	      "L"
-      Resistance	      "1"
-      Inductance	      "1.82e-3"
-      Capacitance	      "1e-6"
-      Measurements	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "LCL filter3"
-      SID		      39
-      Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [313, 285, 377, 370]
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-      SourceType	      "Three-Phase Series RLC Branch"
-      PhysicalDomain	      "powersysdomain"
-      SubClassName	      "unknown"
-      LeftPortType	      "p1"
-      RightPortType	      "p1"
-      LConnTagsString	      "A|B|C"
-      RConnTagsString	      "A|B|C"
-      BranchType	      "C"
-      Resistance	      "1"
-      Inductance	      "1e-3"
-      Capacitance	      "5.24e-5"
-      Measurements	      "None"
-    }
-    Block {
       BlockType		      Scope
       Name		      "Scope1"
       SID		      26
@@ -1075,7 +896,7 @@ Model {
       Position		      [1240, 494, 1295, 606]
       BackgroundColor	      "green"
       Floating		      off
-      Location		      [1, 45, 1367, 739]
+      Location		      [688, 49, 1363, 735]
       Open		      off
       NumInputPorts	      "7"
       ZoomMode		      "xonly"
@@ -1867,6 +1688,36 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Three-Phase\nHarmonic Filter"
+      SID		      86
+      Ports		      [0, 0, 0, 0, 0, 3, 1]
+      Position		      [315, 245, 375, 325]
+      BlockRotation	      270
+      BlockMirror	      on
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nHarmonic Filter"
+      SourceType	      "Three-Phase Harmonic Filter"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "n"
+      FilterType	      "Double-tuned"
+      FilterConnection	      "Y (neutral)"
+      ParNom		      "[260e3 50]"
+      Qc		      "49e6"
+      Fr		      "[5*60]"
+      Frd		      "[11*50 13*50]"
+      Q			      "16"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Three-Phase\nParallel RLC Load"
       SID		      50
       Ports		      [0, 0, 0, 0, 0, 3]
@@ -1893,6 +1744,37 @@ Model {
       InductivePower	      "100"
       CapacitivePower	      "100"
       Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Three-Phase Source"
+      SID		      87
+      Ports		      [0, 0, 0, 0, 0, 0, 3]
+      Position		      [115, 311, 200, 369]
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Electrical\nSources/Three-Phase Source"
+      SourceType	      "Three-Phase Source"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Voltage		      "260e3"
+      PhaseAngle	      "0"
+      Frequency		      "50"
+      InternalConnection      "Yg"
+      SpecifyImpedance	      off
+      Resistance	      "0.8929"
+      Inductance	      "16.58e-3"
+      ShortCircuitLevel	      "100e6"
+      BaseVoltage	      "25e3"
+      XRratio		      "7"
     }
     Block {
       BlockType		      Reference
@@ -1935,7 +1817,7 @@ Model {
       SID		      32
       Tag		      "PoWeRsYsTeMmEaSuReMeNt"
       Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [203, 455, 227, 480]
+      Position		      [268, 455, 292, 480]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2194,617 +2076,60 @@ Model {
       Measurements	      "None"
     }
     Block {
-      BlockType		      SubSystem
+      BlockType		      Reference
       Name		      "powergui"
       SID		      10
       Ports		      []
       Position		      [365, 35, 511, 91]
       Priority		      "1"
-      AncestorBlock	      "powerlib/powergui"
-      LibraryVersion	      "*1.1899"
+      LibraryVersion	      "1.1899"
       UserDataPersistent      on
       UserData		      "DataTag0"
-      CopyFcn		      "powergui( 'Copy_Callback' , gcb , 0 , [ ] );"
-      DeleteFcn		      "powergui( 'Copy_Callback' , gcb , 1 , [ ] );         \npowergui( 'CloseButton_Callback' , gcb "
-      ", [ ] , [ ] );\n                                                     "
-      ModelCloseFcn	      "powergui( 'CloseButton_Callback' , gcb , [ ] , [ ] );"
-      PreSaveFcn	      "powergui( 'PreSaveFcn_Callback' , gcb , [ ] , [ ] ); \npowergui( 'CloseButton_Callback' , gcb "
-      ", [ ] , [ ] );"
-      InitFcn		      "powergui( 'InitFcn_Callback' , gcb , 0 , [ ] );"
-      StopFcn		      "powergui( 'StopFcn_Callback' , gcb , 0 , [ ] );"
-      NameChangeFcn	      "powergui( 'NameChangeFcn_Callback' , gcb , 0 , [ ] );"
-      OpenFcn		      "powergui(gcb,'Open')"
       FontName		      "Verdana"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
+      SourceBlock	      "powerlib/powergui"
+      SourceType	      "PSB option menu block"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
       FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      MaskType		      "PSB option menu block"
-      MaskDescription	      "Set simulation type, simulation parameters, and preferences\n"
-      MaskHelp		      "web(psbhelp)"
-      MaskPromptString	      "Simulation type:  |Sample time (s):|Phasor frequency (Hz):|Enable use of ideal switching"
-      " devices|Disable snubbers in switching devices|Disable On resistance in switching devices (Ron=0)|Disable Forwar"
-      "d voltage in switching devices (Vf=0)|Switch tolerance|Interpolate|Load flow frequency (Hz):|Display SimPowerSys"
-      "tems warnings and messages|Add a hook port to the powergui block|Display circuit differential equations|Display "
-      "internal function messages (debug mode feature)|Use TLC file when in Accelerator Simulation Mode and for RTW app"
-      "lications|Start simulation with initial electrical states from:    |Restore disabled links of SimPowerSystems bl"
-      "ocks:|Use non ideal current measurement blocks (1e-4Ohm internal resistance) |Frequency Range|Log impedance|log "
-      "Frequency|grid|Save Data To Workspace|Variable Name|Structure Name (PSBFFTSCOPE)|ZoomFFT (PSBFFTSCOPE)|Start Tim"
-      "e (PSBFFTSCOPE)|Cycles (PSBFFTSCOPE)|Display style (PSBFFTSCOPE)|Fundamental (PSBFFTSCOPE)|Frequency Axis (PSBFF"
-      "TSCOPE)|Max Frequency (PSBFFTSCOPE)|Frequency indice (STEADYSTATE)|RMS display (STEADYSTATE)|Display Results|Old"
-      " Ts setting (OBSOLETE)|Phasor simulation (OBSOLETE)"
-      MaskStyleString	      "popup(Continuous|Discrete|Phasor),edit,edit,checkbox,checkbox,checkbox,checkbox,edit,chec"
-      "kbox,edit,checkbox,checkbox,checkbox,checkbox,checkbox,popup(blocks|steady|zero),popup(yes|warning|no),checkbox,"
-      "edit,checkbox,checkbox,checkbox,checkbox,edit,edit,checkbox,edit,edit,edit,edit,checkbox,edit,edit,edit,checkbox"
-      ",edit,checkbox"
-      MaskTunableValueString  "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,"
-      "on,on,on,on,on,on,on,on"
-      MaskCallbackString      "powergui('SimulationType',[],[],gcb);|||powergui('SPID',[],[],gcb);||||||||powergui('Ho"
-      "okPort',[],[],gcb);|||||||||||||||||||||||||"
-      MaskEnableString	      "on,on,on,on,on,on,on,on,on,on,on,off,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,"
-      "on,on,on,on,on,on,on,on"
-      MaskVisibilityString    "on,off,off,on,off,off,off,off,off,off,on,off,off,off,on,on,on,off,off,off,off,off,off,o"
-      "ff,off,off,off,off,off,off,off,off,off,off,off,off,off"
-      MaskToolTipString	      "on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,on,"
-      "on,on,on,on,on,on,on,on"
-      MaskVariables	      "SimulationMode=@1;SampleTime=@2;frequency=@3;SPID=@4;DisableSnubberDevices=@5;DisableRonSwi"
-      "tches=@6;DisableVfSwitches=@7;SwTol=@8;Interpol=@9;frequencyindice=@10;echomessages=@11;HookPort=@12;DisplayEqua"
-      "tions=@13;FunctionMessages=@14;EnableUseOfTLC=&15;x0status=@16;RestoreLinks=&17;ResistiveCurrentMeasurement=&18;"
-      "Frange=@19;Ylog=@20;Xlog=@21;ShowGrid=@22;save=@23;variable=&24;structure=&25;ZoomFFT=@26;StartTime=@27;cycles=@"
-      "28;DisplayStyle=&29;fundamental=@30;FreqAxis=@31;MaxFrequency=@32;frequencyindicesteady=@33;RmsSteady=@34;displa"
-      "y=@35;Ts=@36;methode=@37;"
-      MaskInitialization      "message = powergui('MaskInitialization',gcb,SimulationMode,SampleTime);"
-      MaskDisplay	      "color('blue'),disp(message)"
-      MaskSelfModifiable      on
-      MaskIconFrame	      on
-      MaskIconOpaque	      on
-      MaskIconRotate	      "none"
-      MaskPortRotate	      "default"
-      MaskIconUnits	      "autoscale"
-      MaskValueString	      "Continuous|50e-6|60|off|off|off|off|0|off|0|off|off|off|off|off|blocks|warning|off||off|o"
-      "n|off|off|ZData|psb3phPWM1_str|off|0.02|1|1|50|on|500|1||off||off"
-      MaskTabNameString	      "Solver,Solver,Solver,Solver,Solver,Solver,Solver,Solver,Solver,Preferences,Preferences,"
-      "Preferences,Solver,Solver,Preferences,Preferences,Preferences,Preferences,Preferences,Preferences,Preferences,Pr"
-      "eferences,Preferences,Preferences,Preferences,Preferences,Preferences,Preferences,Preferences,Preferences,Prefer"
-      "ences,Preferences,Preferences,Preferences,Preferences,Solver,Solver"
-      System {
-	Name			"powergui"
-	Location		[137, 405, 682, 583]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	SIDHighWatermark	29
-	SIDPrevWatermark	2
-	Block {
-	  BlockType		  SubSystem
-	  Name			  "EquivalentModel1"
-	  SID			  3
-	  Ports			  []
-	  Position		  [15, 70, 143, 105]
-	  ShowName		  off
-	  FontName		  "Arial"
-	  MinAlgLoopOccurrences	  off
-	  PropExecContextOutsideSubsystem off
-	  RTWSystemCode		  "Auto"
-	  FunctionWithSeparateData off
-	  Opaque		  off
-	  RequestExecContextInheritance	off
-	  MaskHideContents	  off
-	  MaskInitialization	  "S  = GetDataForEquivalentModel('Continuous',gcbh);"
-	  MaskDisplay		  "color('blue')\ndisp('EQUIVALENT CIRCUIT\\nContinuous')"
-	  MaskIconFrame		  on
-	  MaskIconOpaque	  on
-	  MaskIconRotate	  "none"
-	  MaskPortRotate	  "default"
-	  MaskIconUnits		  "autoscale"
-	  System {
-	    Name		    "EquivalentModel1"
-	    Location		    [279, 434, 958, 675]
-	    Open		    off
-	    ModelBrowserVisibility  off
-	    ModelBrowserWidth	    200
-	    ScreenColor		    "white"
-	    PaperOrientation	    "landscape"
-	    PaperPositionMode	    "auto"
-	    PaperType		    "A4"
-	    PaperUnits		    "centimeters"
-	    TiledPaperMargins	    [1.270000, 1.270000, 1.270000, 1.270000]
-	    TiledPageScale	    1
-	    ShowPageBoundaries	    off
-	    ZoomFactor		    "100"
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Gates"
-	      SID		      4
-	      Ports		      [0, 1]
-	      Position		      [15, 112, 80, 138]
-	      FontName		      "Arial"
-	      FontSize		      14
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"Gates"
-		Location		[20, 127, 741, 886]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  From
-		  Name			  "From1"
-		  SID			  18
-		  Position		  [15, 21, 85, 49]
-		  GotoTag		  "tpe29bf5e5_1594_4c1a_a9a3_c34cfafe78c3"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Mux
-		  Name			  "Mux"
-		  SID			  5
-		  Ports			  [1, 1]
-		  Position		  [325, 270, 330, 610]
-		  ShowName		  off
-		  Inputs		  "1"
-		  DisplayOption		  "bar"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "gates"
-		  SID			  6
-		  Position		  [390, 433, 420, 447]
-		  IconDisplay		  "Port number"
-		  OutDataType		  "sfix(16)"
-		  OutScaling		  "2^0"
-		}
-		Line {
-		  SrcBlock		  "Mux"
-		  SrcPort		  1
-		  DstBlock		  "gates"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "From1"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Sources"
-	      SID		      7
-	      Ports		      [0, 1]
-	      Position		      [15, 52, 80, 78]
-	      FontName		      "Arial"
-	      FontSize		      14
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"Sources"
-		Location		[16, 100, 737, 762]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  From
-		  Name			  "From1"
-		  SID			  27
-		  Position		  [15, 21, 85, 49]
-		  GotoTag		  "tp1b5a4d4f_8e6b_44c6_b206_01ecc0f6f87b"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  From
-		  Name			  "From2"
-		  SID			  28
-		  Position		  [15, 66, 85, 94]
-		  GotoTag		  "tpdaee3c95_2880_4be3_b13e_7474cd73e1da"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  From
-		  Name			  "From3"
-		  SID			  29
-		  Position		  [15, 111, 85, 139]
-		  GotoTag		  "tpa9f4d072_8b79_448e_8cc7_5bd187fc80d2"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Mux
-		  Name			  "Mux"
-		  SID			  8
-		  Ports			  [3, 1]
-		  Position		  [325, 270, 330, 610]
-		  Inputs		  "[6 1 6]"
-		  DisplayOption		  "bar"
-		}
-		Block {
-		  BlockType		  Outport
-		  Name			  "u"
-		  SID			  9
-		  Position		  [505, 433, 535, 447]
-		  IconDisplay		  "Port number"
-		  OutDataType		  "sfix(16)"
-		  OutScaling		  "2^0"
-		}
-		Line {
-		  SrcBlock		  "Mux"
-		  SrcPort		  1
-		  DstBlock		  "u"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "From1"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "From2"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  2
-		}
-		Line {
-		  SrcBlock		  "From3"
-		  SrcPort		  1
-		  DstBlock		  "Mux"
-		  DstPort		  3
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      "S-Function"
-	      Name		      "State-Space"
-	      SID		      10
-	      Ports		      [2, 2]
-	      Position		      [115, 35, 245, 155]
-	      FontName		      "Arial"
-	      FontSize		      14
-	      FunctionName	      "sfun_spssw_contc"
-	      Parameters	      "S.A, S.B, S.C, S.D, S.x0, S.EnableUseOfTLC,S.SwitchResistance ,S.SwitchType, S.SwitchGateInit"
-	      "ialValue, S.OutputsToResetToZero"
-	      EnableBusSupport	      off
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Status"
-	      SID		      11
-	      Ports		      [1]
-	      Position		      [280, 113, 345, 137]
-	      FontName		      "Arial"
-	      FontSize		      14
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"Status"
-		Location		[124, 85, 631, 971]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "status"
-		  SID			  12
-		  Position		  [15, 373, 45, 387]
-		  IconDisplay		  "Port number"
-		  OutDataType		  "sfix(16)"
-		  OutScaling		  "2^0"
-		}
-		Block {
-		  BlockType		  Demux
-		  Name			  "Demux"
-		  SID			  13
-		  Ports			  [1, 1]
-		  Position		  [100, 191, 105, 569]
-		  BackgroundColor	  "black"
-		  ShowName		  off
-		  Outputs		  "1"
-		  DisplayOption		  "bar"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto1"
-		  SID			  17
-		  Position		  [325, 21, 395, 49]
-		  GotoTag		  "tp8c9fd4e8_6269_4228_8558_2852c14e38cd"
-		  TagVisibility		  "global"
-		}
-		Line {
-		  SrcBlock		  "status"
-		  SrcPort		  1
-		  DstBlock		  "Demux"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  1
-		  DstBlock		  "Goto1"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Block {
-	      BlockType		      SubSystem
-	      Name		      "Yout"
-	      SID		      14
-	      Ports		      [1]
-	      Position		      [280, 53, 345, 77]
-	      FontName		      "Arial"
-	      FontSize		      14
-	      MinAlgLoopOccurrences   off
-	      PropExecContextOutsideSubsystem off
-	      RTWSystemCode	      "Auto"
-	      FunctionWithSeparateData off
-	      Opaque		      off
-	      RequestExecContextInheritance off
-	      MaskHideContents	      off
-	      System {
-		Name			"Yout"
-		Location		[124, 85, 631, 971]
-		Open			off
-		ModelBrowserVisibility	off
-		ModelBrowserWidth	200
-		ScreenColor		"white"
-		PaperOrientation	"landscape"
-		PaperPositionMode	"auto"
-		PaperType		"A4"
-		PaperUnits		"centimeters"
-		TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-		TiledPageScale		1
-		ShowPageBoundaries	off
-		ZoomFactor		"100"
-		Block {
-		  BlockType		  Inport
-		  Name			  "v,i"
-		  SID			  15
-		  Position		  [15, 373, 45, 387]
-		  IconDisplay		  "Port number"
-		  OutDataType		  "sfix(16)"
-		  OutScaling		  "2^0"
-		}
-		Block {
-		  BlockType		  Demux
-		  Name			  "Demux"
-		  SID			  16
-		  Ports			  [1, 8]
-		  Position		  [100, 193, 105, 572]
-		  BackgroundColor	  "black"
-		  ShowName		  off
-		  Outputs		  "[6 1 1 1 1 1 1 1]"
-		  DisplayOption		  "bar"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto1"
-		  SID			  19
-		  Position		  [325, 21, 395, 49]
-		  GotoTag		  "tpa73cb62f_a5be_408c_8bad_e2131d11553c"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto2"
-		  SID			  20
-		  Position		  [325, 66, 395, 94]
-		  GotoTag		  "tp0d761f1a_50b9_436c_9d53_468604c5a942"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto3"
-		  SID			  21
-		  Position		  [325, 111, 395, 139]
-		  GotoTag		  "tpf1b9120d_aabf_44a1_8108_6e3524fd7c2c"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto4"
-		  SID			  22
-		  Position		  [325, 156, 395, 184]
-		  GotoTag		  "tp46809eaf_365f_4f64_bfc2_6f72e5584e14"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto5"
-		  SID			  23
-		  Position		  [325, 201, 395, 229]
-		  GotoTag		  "tp47bce942_f419_446d_a69f_2e78fba2f2a6"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto6"
-		  SID			  24
-		  Position		  [325, 246, 395, 274]
-		  GotoTag		  "tp30bd21e2_d29c_4275_97a8_caddea826427"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto7"
-		  SID			  25
-		  Position		  [325, 291, 395, 319]
-		  GotoTag		  "tp6a35c798_1ab6_4cfd_8b58_186aaf107f0f"
-		  TagVisibility		  "global"
-		}
-		Block {
-		  BlockType		  Goto
-		  Name			  "Goto8"
-		  SID			  26
-		  Position		  [325, 336, 395, 364]
-		  GotoTag		  "tp3842d94f_f2ef_424b_874f_e69fe17734a7"
-		  TagVisibility		  "global"
-		}
-		Line {
-		  SrcBlock		  "v,i"
-		  SrcPort		  1
-		  Points		  [35, 0]
-		  DstBlock		  "Demux"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  1
-		  DstBlock		  "Goto1"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  2
-		  DstBlock		  "Goto2"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  3
-		  DstBlock		  "Goto3"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  4
-		  DstBlock		  "Goto4"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  5
-		  DstBlock		  "Goto5"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  6
-		  DstBlock		  "Goto6"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  7
-		  DstBlock		  "Goto7"
-		  DstPort		  1
-		}
-		Line {
-		  SrcBlock		  "Demux"
-		  SrcPort		  8
-		  DstBlock		  "Goto8"
-		  DstPort		  1
-		}
-	      }
-	    }
-	    Line {
-	      SrcBlock		      "State-Space"
-	      SrcPort		      1
-	      DstBlock		      "Yout"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "State-Space"
-	      SrcPort		      2
-	      DstBlock		      "Status"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Sources"
-	      SrcPort		      1
-	      DstBlock		      "State-Space"
-	      DstPort		      1
-	    }
-	    Line {
-	      SrcBlock		      "Gates"
-	      SrcPort		      1
-	      DstBlock		      "State-Space"
-	      DstPort		      2
-	    }
-	  }
-	}
-	Block {
-	  BlockType		  Ground
-	  Name			  "Ground"
-	  SID			  1
-	  Position		  [315, 40, 335, 60]
-	  ShowName		  off
-	}
-	Block {
-	  BlockType		  Terminator
-	  Name			  "Terminator"
-	  SID			  2
-	  Position		  [355, 40, 375, 60]
-	  ShowName		  off
-	}
-	Line {
-	  SrcBlock		  "Ground"
-	  SrcPort		  1
-	  DstBlock		  "Terminator"
-	  DstPort		  1
-	}
-	Annotation {
-	  Name			  "Graphical user interface for the analysis of  SimPowerSystems circuits. \nPlace the Powergui block in the"
-	  " top-level of your model and double-click\non it to open the GUI."
-	  Position		  [14, 29]
-	  HorizontalAlignment	  "left"
-	  ForegroundColor	  "blue"
-	  FontName		  "Arial"
-	  FontSize		  12
-	}
-      }
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimulationMode	      "Continuous"
+      SampleTime	      "50e-6"
+      frequency		      "60"
+      SPID		      off
+      DisableSnubberDevices   off
+      DisableRonSwitches      off
+      DisableVfSwitches	      off
+      SwTol		      "0"
+      Interpol		      off
+      frequencyindice	      "50"
+      echomessages	      off
+      HookPort		      off
+      DisplayEquations	      off
+      FunctionMessages	      off
+      EnableUseOfTLC	      off
+      x0status		      "blocks"
+      RestoreLinks	      "warning"
+      ResistiveCurrentMeasurement off
+      Ylog		      off
+      Xlog		      on
+      ShowGrid		      off
+      save		      off
+      variable		      "ZData"
+      structure		      "psb3phPWM1_str"
+      ZoomFFT		      off
+      StartTime		      "0.01"
+      cycles		      "4"
+      DisplayStyle	      "1"
+      fundamental	      "50"
+      FreqAxis		      on
+      MaxFrequency	      "500"
+      frequencyindicesteady   "1"
+      display		      off
+      methode		      off
     }
     Block {
       BlockType		      Reference
@@ -2910,153 +2235,72 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Universal Bridge\n3 arms1"
-      SrcPort		      LConn1
-      Points		      [5, 0]
-      Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"LCL filter1"
-	DstPort			LConn1
-      }
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[-10, 0; 0, 270]
-	DstBlock		"Vab_conv"
-	DstPort			LConn1
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "LCL filter1"
-      SrcPort		      LConn2
-      Points		      [-5, 0]
-      Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"Universal Bridge\n3 arms1"
-	DstPort			LConn2
-      }
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[10, 0]
-	DstBlock		"Vab_conv"
-	DstPort			LConn2
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Universal Bridge\n3 arms1"
-      SrcPort		      LConn3
-      DstBlock		      "LCL filter1"
-      DstPort		      LConn3
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [340, 170; -15, 0; 0, 100]
-      DstBlock		      "LCL filter3"
-      DstPort		      LConn1
+      Points		      [275, 170; -55, 0; 0, 150; -5, 0]
+      DstBlock		      "Three-Phase Source"
+      DstPort		      RConn1
       Branch {
 	ConnectType		"SRC_DEST"
-	SrcBlock		"LCL filter2"
-	SrcPort			LConn1
-	Points			[-30, 0]
-      }
-      Branch {
-	ConnectType		"SRC_SRC"
-	DstBlock		"LCL filter1"
-	DstPort			RConn1
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [345, 190; 0, 80]
-      DstBlock		      "LCL filter3"
-      DstPort		      LConn2
-      Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"LCL filter1"
-	SrcPort			RConn2
-	Points			[15, 0]
-      }
-      Branch {
-	ConnectType		"SRC_SRC"
-	DstBlock		"LCL filter2"
-	DstPort			LConn2
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [360, 210; 5, 0; 0, 60]
-      DstBlock		      "LCL filter3"
-      DstPort		      LConn3
-      Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"LCL filter1"
-	SrcPort			RConn3
-	Points			[30, 0]
-      }
-      Branch {
-	ConnectType		"SRC_SRC"
-	DstBlock		"LCL filter2"
-	DstPort			LConn3
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "LCL filter3"
-      SrcPort		      RConn2
-      Points		      [0, 20]
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[-20, 0]
+	Points			[325, 170; -50, 0]
 	Branch {
-	  ConnectType		  "DEST_DEST"
-	  SrcBlock		  "LCL filter3"
-	  SrcPort		  RConn1
-	  Points		  [0, 20]
+	  ConnectType		  "SRC_DEST"
+	  Points		  [490, 170; -165, 0]
+	  Branch {
+	    ConnectType		    "SRC_DEST"
+	    SrcBlock		    "Vab_trafo1"
+	    SrcPort		    LConn1
+	    Points		    [0, -130; 25, 0; 0, -140]
+	  }
+	  Branch {
+	    ConnectType		    "SRC_SRC"
+	    DstBlock		    "gen_trafo"
+	    DstPort		    LConn1
+	  }
 	}
 	Branch {
-	  ConnectType		  "DEST_SRC"
-	  DstBlock		  "Ground2"
+	  ConnectType		  "SRC_SRC"
+	  DstBlock		  "Three-Phase\nHarmonic Filter"
 	  DstPort		  LConn1
 	}
       }
       Branch {
-	ConnectType		"DEST_DEST"
-	SrcBlock		"LCL filter3"
-	SrcPort			RConn3
-	Points			[0, 20; -20, 0]
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "LCL filter2"
-      SrcPort		      RConn1
-      Points		      [5, 0]
-      Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"gen_trafo"
-	DstPort			LConn1
-      }
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[0, 140; -25, 0]
-	DstBlock		"Vab_trafo1"
+	ConnectType		"SRC_SRC"
+	DstBlock		"Vab_conv"
 	DstPort			LConn1
       }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "LCL filter2"
-      SrcPort		      RConn2
-      DstBlock		      "gen_trafo"
-      DstPort		      LConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "LCL filter2"
-      SrcPort		      RConn3
-      DstBlock		      "gen_trafo"
-      DstPort		      LConn3
+      Points		      [285, 190; -55, 0; 0, 150; -15, 0]
+      DstBlock		      "Three-Phase Source"
+      DstPort		      RConn2
+      Branch {
+	ConnectType		"SRC_DEST"
+	Points			[345, 190; -60, 0]
+	Branch {
+	  ConnectType		  "SRC_SRC"
+	  DstBlock		  "Three-Phase\nHarmonic Filter"
+	  DstPort		  LConn2
+	}
+	Branch {
+	  ConnectType		  "SRC_SRC"
+	  Points		  [130, 0]
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "gen_trafo"
+	    DstPort		    LConn2
+	  }
+	  Branch {
+	    ConnectType		    "DEST_SRC"
+	    DstBlock		    "Vab_trafo1"
+	    DstPort		    LConn2
+	  }
+	}
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Vab_conv"
+	DstPort			LConn2
+      }
     }
     Line {
       LineType		      "Connection"
@@ -3287,14 +2531,6 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Vab_trafo1"
-      SrcPort		      LConn2
-      Points		      [0, -40; 35, 0]
-      DstBlock		      "Ground4"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
       SrcBlock		      "Vab_line1"
       SrcPort		      LConn2
       Points		      [0, -35; 40, 0]
@@ -3356,8 +2592,35 @@ Model {
       DstBlock		      "Subsystem1"
       DstPort		      RConn3
     }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Three-Phase\nHarmonic Filter"
+      SrcPort		      RConn1
+      DstBlock		      "Ground2"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [365, 210; -125, 0; 0, 150; -25, 0]
+      DstBlock		      "Three-Phase Source"
+      DstPort		      RConn3
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"gen_trafo"
+	SrcPort			LConn3
+	Points			[-135, 0]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Three-Phase\nHarmonic Filter"
+	DstPort			LConn3
+      }
+    }
     Annotation {
       Position		      [180, 167]
+    }
+    Annotation {
+      Position		      [352, 297]
     }
   }
 }

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.3"
+    ComputedModelVersion    "1.4"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "IS"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 29 11:11:07 2016"
+  LastModifiedDate	  "Mon Feb 29 14:42:20 2016"
   RTWModifiedTimeStamp	  378641081
-  ModelVersionFormat	  "1.%<AutoIncrement:3>"
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,7 +110,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.10.0"
 	  StartTime		  "0.0"
-	  StopTime		  "10.0"
+	  StopTime		  "0.1"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -587,10 +587,27 @@ Model {
     FontAngle		    "normal"
   }
   BlockParameterDefaults {
+    Block {
+      BlockType		      Scope
+      ModelBased	      off
+      TickLabels	      "OneTimeTick"
+      ZoomMode		      "on"
+      Grid		      "on"
+      TimeRange		      "auto"
+      YMin		      "-5"
+      YMax		      "5"
+      SaveToWorkspace	      off
+      SaveName		      "ScopeData"
+      LimitDataPoints	      on
+      MaxDataPoints	      "5000"
+      Decimation	      "1"
+      SampleInput	      off
+      SampleTime	      "-1"
+    }
   }
   System {
     Name		    "fin_1ph"
-    Location		    [6, 74, 677, 700]
+    Location		    [2, 70, 1364, 720]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -604,7 +621,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    28
+    SIDHighWatermark	    41
     Block {
       BlockType		      Reference
       Name		      "150kV cable"
@@ -697,7 +714,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "33kV cable"
+      Name		      "33kV cable to 150"
       SID		      8
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [476, 150, 504, 220]
@@ -728,7 +745,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "33kV cable1"
+      Name		      "33kV cable1 to 150"
       SID		      9
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [530, 96, 600, 124]
@@ -756,7 +773,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "33kV cable2"
+      Name		      "33kV cable2 to 150"
       SID		      12
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [621, 150, 649, 220]
@@ -818,7 +835,7 @@ Model {
       Name		      "AC Voltage Source"
       SID		      27
       Ports		      [0, 0, 0, 0, 0, 1, 1]
-      Position		      [48, 135, 72, 170]
+      Position		      [13, 135, 37, 170]
       BlockRotation	      270
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -834,18 +851,69 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      Amplitude		      "100"
+      Amplitude		      "150000"
       Phase		      "0"
-      Frequency		      "60"
+      Frequency		      "50"
       SampleTime	      "0"
       Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DC Voltage\nSource"
+      SID		      36
+      Ports		      [0, 0, 0, 0, 0, 1, 1]
+      Position		      [60, 430, 80, 465]
+      BlockRotation	      270
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Electrical\nSources/DC Voltage Source"
+      SourceType	      "DC Voltage Source"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Amplitude		      "150e3"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Discrete\nPWM Generator\n6 pulses"
+      SID		      37
+      Ports		      [0, 1]
+      Position		      [315, 348, 360, 372]
+      BlockMirror	      on
+      LibraryVersion	      "1.612"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib_extras/Discrete \nControl Blocks/Discrete\nPWM Generator"
+      SourceType	      "Discrete PWM Generator"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratorMode	      "3-arm  bridge (6 pulses)"
+      Fc		      "900"
+      Ts		      "0.000001"
+      Internal		      on
+      mIndex		      "0.85"
+      Freq		      "50"
+      Phase		      "0"
     }
     Block {
       BlockType		      Reference
       Name		      "Ground"
       SID		      1
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [49, 220, 71, 245]
+      Position		      [14, 250, 36, 275]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -867,6 +935,27 @@ Model {
       SID		      20
       Ports		      [0, 0, 0, 0, 0, 1]
       Position		      [199, 260, 221, 285]
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground10"
+      SID		      40
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [289, 530, 311, 555]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -1010,6 +1099,48 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Ground8"
+      SID		      33
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [814, 550, 836, 575]
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground9"
+      SID		      38
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [114, 560, 136, 585]
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "LCL filter to 150"
       SID		      4
       Ports		      [0, 0, 0, 0, 0, 1, 1]
@@ -1096,6 +1227,28 @@ Model {
       Measurements	      "None"
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      30
+      Ports		      [2]
+      Position		      [1135, 394, 1240, 561]
+      Floating		      off
+      Location		      [1, 45, 1367, 739]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-5~-5"
+      YMax		      "5~5"
+      SaveToWorkspace	      on
+      SaveName		      "fin_1ph"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
       BlockType		      Reference
       Name		      "Series RLC Load"
       SID		      28
@@ -1127,6 +1280,89 @@ Model {
       SetiL0		      off
       InitialCurrent	      "0"
       Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Universal Bridge\n3 arms1"
+      SID		      39
+      Ports		      [1, 0, 0, 0, 0, 3, 2]
+      Position		      [175, 401, 235, 479]
+      BlockMirror	      on
+      BackgroundColor	      "lightBlue"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib/Power\nElectronics/Universal Bridge"
+      SourceType	      "Universal Bridge"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      Arms		      "3"
+      SnubberResistance	      "10000"
+      SnubberCapacitance      "inf"
+      Device		      "IGBT / Diodes"
+      Ron		      "1e-4"
+      Lon		      "0"
+      ForwardVoltages	      "[  1  1  ]"
+      ForwardVoltage	      ".8"
+      GTOparameters	      "[ 10e-6 , 20e-6 ]"
+      IGBTparameters	      "[ 1e-6 , 2e-6 ]"
+      Measurements	      "None"
+      Measurements_2	      "None"
+      converterType	      "Rectifier"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Vab_line1"
+      SID		      32
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [980, 500, 1020, 540]
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Vab_line2"
+      SID		      31
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [980, 415, 1020, 455]
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBequivalent	      "0"
     }
     Block {
       BlockType		      Reference
@@ -1214,6 +1450,62 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "powergui"
+      SID		      29
+      Ports		      []
+      Position		      [390, 515, 456, 554]
+      Priority		      "1"
+      LibraryVersion	      "1.1899"
+      UserDataPersistent      on
+      UserData		      "DataTag0"
+      FontName		      "Verdana"
+      SourceBlock	      "powerlib/powergui"
+      SourceType	      "PSB option menu block"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      SimulationMode	      "Continuous"
+      SampleTime	      "50e-6"
+      frequency		      "60"
+      SPID		      off
+      DisableSnubberDevices   off
+      DisableRonSwitches      off
+      DisableVfSwitches	      off
+      SwTol		      "0"
+      Interpol		      off
+      frequencyindice	      "0"
+      echomessages	      off
+      HookPort		      off
+      DisplayEquations	      off
+      FunctionMessages	      off
+      EnableUseOfTLC	      off
+      x0status		      "blocks"
+      RestoreLinks	      "warning"
+      ResistiveCurrentMeasurement off
+      Ylog		      off
+      Xlog		      on
+      ShowGrid		      off
+      save		      off
+      variable		      "ZData"
+      structure		      "fin_1ph"
+      ZoomFFT		      off
+      StartTime		      "0.92"
+      cycles		      "3"
+      DisplayStyle	      "3"
+      fundamental	      "50"
+      FreqAxis		      on
+      MaxFrequency	      "1000"
+      frequencyindicesteady   "1"
+      display		      off
+      methode		      off
+    }
+    Block {
+      BlockType		      Reference
       Name		      "tuned_filter"
       SID		      18
       Ports		      [0, 0, 0, 0, 0, 1, 1]
@@ -1273,18 +1565,18 @@ Model {
       Points		      [40, 0]
       Branch {
 	ConnectType		"DEST_SRC"
-	DstBlock		"33kV cable1"
+	DstBlock		"33kV cable1 to 150"
 	DstPort			LConn1
       }
       Branch {
 	ConnectType		"DEST_SRC"
-	DstBlock		"33kV cable"
+	DstBlock		"33kV cable to 150"
 	DstPort			LConn1
       }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "33kV cable1"
+      SrcBlock		      "33kV cable1 to 150"
       SrcPort		      RConn1
       Points		      [20, 0]
       Branch {
@@ -1294,7 +1586,7 @@ Model {
       }
       Branch {
 	ConnectType		"DEST_SRC"
-	DstBlock		"33kV cable2"
+	DstBlock		"33kV cable2 to 150"
 	DstPort			LConn1
       }
     }
@@ -1371,14 +1663,14 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Ground3"
       SrcPort		      LConn1
-      DstBlock		      "33kV cable2"
+      DstBlock		      "33kV cable2 to 150"
       DstPort		      RConn1
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Ground2"
       SrcPort		      LConn1
-      DstBlock		      "33kV cable"
+      DstBlock		      "33kV cable to 150"
       DstPort		      RConn1
     }
     Line {
@@ -1387,14 +1679,6 @@ Model {
       SrcPort		      LConn1
       DstBlock		      "LCL filter to 150"
       DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "AC Voltage Source"
-      SrcPort		      RConn1
-      Points		      [0, -10]
-      DstBlock		      "LCL filter2 to 150"
-      DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
@@ -1408,8 +1692,17 @@ Model {
       SrcBlock		      "Series RLC Load"
       SrcPort		      LConn1
       Points		      [0, -25]
-      DstBlock		      "ph_reactor"
-      DstPort		      RConn1
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"ph_reactor"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[60, 0; 0, 215; -380, 0; 0, 185]
+	DstBlock		"Vab_line1"
+	DstPort			LConn1
+      }
     }
     Line {
       LineType		      "Connection"
@@ -1418,5 +1711,116 @@ Model {
       DstBlock		      "Ground7"
       DstPort		      LConn1
     }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Vab_line1"
+      SrcPort		      LConn2
+      Points		      [-140, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Ground8"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, -85]
+	DstBlock		"Vab_line2"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_line2"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Vab_line1"
+      SrcPort		      1
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [125, 520; 35, 0; 0, -60]
+      DstBlock		      "Universal Bridge\n3 arms1"
+      DstPort		      RConn2
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"DC Voltage\nSource"
+	SrcPort			LConn1
+	Points			[0, 40; 55, 0]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Ground9"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Universal Bridge\n3 arms1"
+      SrcPort		      RConn1
+      Points		      [0, -55; -90, 0]
+      DstBlock		      "DC Voltage\nSource"
+      DstPort		      RConn1
+    }
+    Line {
+      SrcBlock		      "Discrete\nPWM Generator\n6 pulses"
+      SrcPort		      1
+      Points		      [-50, 0; 0, 50]
+      DstBlock		      "Universal Bridge\n3 arms1"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Universal Bridge\n3 arms1"
+      SrcPort		      LConn3
+      Points		      [50, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Ground10"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, -20]
+	DstBlock		"Universal Bridge\n3 arms1"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Vab_line2"
+      SrcPort		      LConn1
+      Points		      [0, -140; -880, 0; 0, -175]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"LCL filter2 to 150"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[-30, 0; 0, 200; 195, 0]
+	DstBlock		"Universal Bridge\n3 arms1"
+	DstPort			LConn1
+      }
+    }
+  }
+}
+MatData {
+  NumRecords		  1
+  DataRecord {
+    Tag			    DataTag0
+    Data		    "  %)30     .    * ,   8    (     @         %    \"     $    !     0         %  0 #     $   \"$    <&]W9"
+    "7)G=6D     <W1E861Y<W1A=&4 :6YI='-T871E<P  ;&]A9&9L;W<     ;'1I=FEE=P      >FUE=&5R        9F9T=&]O;       <F5P;W)"
+    "T        :'ES=&5R97-I<P  ;&EN97!A<F%M    5',                   X    P    !@    @    &          4    (             "
+    "  !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8  "
+    "  (    !@         %    \"                0         )          X    P    !@    @    &          4    (              "
+    " !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8   "
+    " (    !@         %    \"                0         )          X    P    !@    @    &          4    (               "
+    "!          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    "
+    "(    !@         %    \"                0         )          X    P    !@    @    &          4    (               !"
+    "          D         #@   #     &    \"     8         !0    @               $         \"0         "
   }
 }
