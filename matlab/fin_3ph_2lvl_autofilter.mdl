@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.10"
+    ComputedModelVersion    "1.19"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "IS"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Mon Feb 29 14:41:47 2016"
-  RTWModifiedTimeStamp	  378645748
-  ModelVersionFormat	  "1.%<AutoIncrement:10>"
+  LastModifiedDate	  "Wed Mar 02 17:56:26 2016"
+  RTWModifiedTimeStamp	  378841090
+  ModelVersionFormat	  "1.%<AutoIncrement:19>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -110,7 +110,7 @@ Model {
 	  $ObjectID		  2
 	  Version		  "1.10.0"
 	  StartTime		  "0.0"
-	  StopTime		  "0.1"
+	  StopTime		  "0.5"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -588,7 +588,12 @@ Model {
   }
   BlockParameterDefaults {
     Block {
-      BlockType		      PMIOPort
+      BlockType		      Mux
+      Inputs		      "4"
+      DisplayOption	      "none"
+      UseBusObject	      off
+      BusObject		      "BusObject"
+      NonVirtualBus	      off
     }
     Block {
       BlockType		      Scope
@@ -607,29 +612,10 @@ Model {
       SampleInput	      off
       SampleTime	      "-1"
     }
-    Block {
-      BlockType		      SubSystem
-      ShowPortLabels	      "FromPortIcon"
-      Permissions	      "ReadWrite"
-      PermitHierarchicalResolution "All"
-      TreatAsAtomicUnit	      off
-      CheckFcnCallInpInsideContextMsg off
-      SystemSampleTime	      "-1"
-      RTWFcnNameOpts	      "Auto"
-      RTWFileNameOpts	      "Auto"
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      SimViewingDevice	      off
-      DataTypeOverride	      "UseLocalSettings"
-      MinMaxOverflowLogging   "UseLocalSettings"
-    }
   }
   System {
     Name		    "fin_3ph_2lvl_autofilter"
-    Location		    [2, 70, 1364, 720]
+    Location		    [2, 74, 1340, 708]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -643,13 +629,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    88
+    SIDHighWatermark	    136
     Block {
       BlockType		      Reference
       Name		      "3wind_trafo"
       SID		      44
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [760, 161, 845, 219]
+      Position		      [855, 161, 940, 219]
       AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -671,7 +657,173 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "DC Voltage\nSource"
+      Name		      "C1_cable_150kv"
+      SID		      109
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [968, 255, 1032, 340]
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "darkGreen"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "C"
+      Resistance	      "1"
+      Inductance	      "1e-3"
+      Capacitance	      "5.2e-4"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "C1_cable_33to150"
+      SID		      104
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [598, 285, 662, 370]
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "orange"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "C"
+      Resistance	      "1"
+      Inductance	      "1e-3"
+      Capacitance	      "9.71e-4"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "C2_cable_150kv"
+      SID		      110
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [1143, 255, 1207, 340]
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "darkGreen"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "C"
+      Resistance	      "1"
+      Inductance	      "1e-3"
+      Capacitance	      "5.2e-4"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "C2_cable_33to150"
+      SID		      105
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [773, 255, 837, 340]
+      BlockRotation	      270
+      BlockMirror	      on
+      ForegroundColor	      "orange"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "C"
+      Resistance	      "1"
+      Inductance	      "1e-3"
+      Capacitance	      "9.71e-4"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current Measurement"
+      SID		      131
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [1570, 158, 1595, 182]
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Current Measurement1"
+      SID		      132
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [540, 103, 565, 127]
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "DC \nVoltage\nSource"
       SID		      3
       Ports		      [0, 0, 0, 0, 0, 1, 1]
       Position		      [15, 170, 35, 205]
@@ -690,7 +842,7 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      Amplitude		      "150e3"
+      Amplitude		      "212e3"
       Measurements	      "None"
     }
     Block {
@@ -698,7 +850,7 @@ Model {
       Name		      "Discrete\nPWM Generator\n6 pulses"
       SID		      85
       Ports		      [0, 1]
-      Position		      [270, 28, 315, 52]
+      Position		      [265, 13, 310, 37]
       BlockMirror	      on
       LibraryVersion	      "1.612"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -713,10 +865,10 @@ Model {
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
       GeneratorMode	      "3-arm  bridge (6 pulses)"
-      Fc		      "900"
+      Fc		      "1000"
       Ts		      "0.000001"
       Internal		      on
-      mIndex		      "0.85"
+      mIndex		      "1"
       Freq		      "50"
       Phase		      "0"
     }
@@ -725,7 +877,28 @@ Model {
       Name		      "Ground"
       SID		      4
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [69, 300, 91, 325]
+      Position		      [39, 310, 61, 335]
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground1"
+      SID		      91
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [309, 435, 331, 460]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -744,9 +917,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Ground2"
-      SID		      40
+      SID		      106
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [334, 385, 356, 410]
+      Position		      [739, 450, 761, 475]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -767,7 +940,28 @@ Model {
       Name		      "Ground3"
       SID		      47
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1094, 410, 1116, 435]
+      Position		      [1359, 405, 1381, 430]
+      BlockRotation	      270
+      BlockMirror	      on
+      ShowName		      off
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Ground"
+      SourceType	      "Ground"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "a"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Ground4"
+      SID		      107
+      Ports		      [0, 0, 0, 0, 0, 1]
+      Position		      [599, 435, 621, 460]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -786,9 +980,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Ground5"
-      SID		      53
+      SID		      111
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [639, 425, 661, 450]
+      Position		      [1144, 405, 1166, 430]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -807,9 +1001,9 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Ground6"
-      SID		      54
+      SID		      112
       Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [754, 425, 776, 450]
+      Position		      [989, 405, 1011, 430]
       BlockRotation	      270
       BlockMirror	      on
       ShowName		      off
@@ -827,77 +1021,392 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Ground7"
-      SID		      55
-      Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [859, 415, 881, 440]
-      BlockRotation	      270
-      BlockMirror	      on
-      ShowName		      off
+      Name		      "LCL filter1"
+      SID		      92
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [225, 161, 310, 219]
+      ForegroundColor	      "red"
+      AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
       FontName		      "Verdana"
       FontSize		      11
-      SourceBlock	      "powerlib/Elements/Ground"
-      SourceType	      "Ground"
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
       PhysicalDomain	      "powersysdomain"
       SubClassName	      "unknown"
       LeftPortType	      "p1"
       RightPortType	      "p1"
-      LConnTagsString	      "a"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "RL"
+      Resistance	      "0.1"
+      Inductance	      "3.41e-3"
+      Capacitance	      "1e-6"
+      Measurements	      "None"
     }
     Block {
       BlockType		      Reference
-      Name		      "Ground8"
-      SID		      56
-      Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1199, 455, 1221, 480]
-      BlockRotation	      270
-      BlockMirror	      on
-      ShowName		      off
+      Name		      "LCL filter2"
+      SID		      93
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [370, 161, 455, 219]
+      ForegroundColor	      "red"
+      AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
       FontName		      "Verdana"
       FontSize		      11
-      SourceBlock	      "powerlib/Elements/Ground"
-      SourceType	      "Ground"
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
       PhysicalDomain	      "powersysdomain"
       SubClassName	      "unknown"
       LeftPortType	      "p1"
       RightPortType	      "p1"
-      LConnTagsString	      "a"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "RL"
+      Resistance	      "0.1"
+      Inductance	      "1.82e-3"
+      Capacitance	      "1e-6"
+      Measurements	      "None"
     }
     Block {
       BlockType		      Reference
-      Name		      "Ground9"
-      SID		      57
-      Ports		      [0, 0, 0, 0, 0, 1]
-      Position		      [1019, 435, 1041, 460]
+      Name		      "LCL filter3"
+      SID		      94
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [308, 285, 372, 370]
       BlockRotation	      270
       BlockMirror	      on
-      ShowName		      off
+      ForegroundColor	      "red"
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
       FontName		      "Verdana"
       FontSize		      11
-      SourceBlock	      "powerlib/Elements/Ground"
-      SourceType	      "Ground"
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
       PhysicalDomain	      "powersysdomain"
       SubClassName	      "unknown"
       LeftPortType	      "p1"
       RightPortType	      "p1"
-      LConnTagsString	      "a"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "RC"
+      Resistance	      "2"
+      Inductance	      "1e-3"
+      Capacitance	      "5.24e-5"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      114
+      Ports		      [2, 1]
+      Position		      [250, 681, 255, 719]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      116
+      Ports		      [2, 1]
+      Position		      [665, 681, 670, 719]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux3"
+      SID		      118
+      Ports		      [2, 1]
+      Position		      [1055, 681, 1060, 719]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux4"
+      SID		      102
+      Ports		      [4, 1]
+      Position		      [1610, 722, 1615, 783]
+      ShowName		      off
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux5"
+      SID		      120
+      Ports		      [2, 1]
+      Position		      [1345, 681, 1350, 719]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux6"
+      SID		      125
+      Ports		      [2, 1]
+      Position		      [460, 681, 465, 719]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Mux
+      Name		      "Mux7"
+      SID		      128
+      Ports		      [2, 1]
+      Position		      [870, 681, 875, 719]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "RL_cable_ 150kv"
+      SID		      113
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [1040, 161, 1125, 219]
+      ForegroundColor	      "darkGreen"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "RL"
+      Resistance	      "5.6e-2"
+      Inductance	      "1e-3"
+      Capacitance	      "1e-6"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "RL_cable_33to150"
+      SID		      108
+      Ports		      [0, 0, 0, 0, 0, 3, 3]
+      Position		      [680, 161, 765, 219]
+      ForegroundColor	      "orange"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Elements/Three-Phase\nSeries RLC Branch"
+      SourceType	      "Three-Phase Series RLC Branch"
+      PhysicalDomain	      "powersysdomain"
+      SubClassName	      "unknown"
+      LeftPortType	      "p1"
+      RightPortType	      "p1"
+      LConnTagsString	      "A|B|C"
+      RConnTagsString	      "A|B|C"
+      BranchType	      "RL"
+      Resistance	      "2.19e-2"
+      Inductance	      "1.07e-3"
+      Capacitance	      "1e-6"
+      Measurements	      "None"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope"
+      SID		      134
+      Ports		      [2]
+      Position		      [1665, 38, 1705, 107]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [1, 45, 1367, 739]
+      Open		      off
+      NumInputPorts	      "2"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+      }
+      YMin		      "-175000~24.75"
+      YMax		      "200000~28.25"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope-3wind"
+      SID		      129
+      Ports		      [1]
+      Position		      [910, 671, 940, 729]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str7"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      MaxDataPoints	      "50000"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope-filterLCL"
+      SID		      115
+      Ports		      [1]
+      Position		      [290, 671, 320, 729]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str1"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "50000"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope-gen_trafo"
+      SID		      126
+      Ports		      [1]
+      Position		      [500, 671, 530, 729]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str6"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "50000"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope-line1"
+      SID		      117
+      Ports		      [1]
+      Position		      [705, 671, 735, 729]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str2"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      MaxDataPoints	      "50000"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope-line2"
+      SID		      119
+      Ports		      [1]
+      Position		      [1095, 671, 1125, 729]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str3"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      MaxDataPoints	      "50000"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "Scope-teuned_filter"
+      SID		      121
+      Ports		      [1]
+      Position		      [1385, 671, 1415, 729]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      off
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str4"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      MaxDataPoints	      "50000"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
       Name		      "Scope1"
       SID		      26
       Ports		      [7]
-      Position		      [1240, 494, 1295, 606]
+      Position		      [1640, 554, 1695, 666]
       BackgroundColor	      "green"
       Floating		      off
-      Location		      [688, 49, 1363, 735]
-      Open		      off
+      Location		      [5, 45, 1371, 739]
+      Open		      on
       NumInputPorts	      "7"
       ZoomMode		      "xonly"
       List {
@@ -916,815 +1425,42 @@ Model {
       SaveToWorkspace	      on
       SaveName		      "psb3phPWM1_str"
       DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      MaxDataPoints	      "500000"
+      MaxDataPoints	      "30000"
       SampleTime	      "0"
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
-      SID		      59
-      Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [660, 55, 830, 125]
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.216"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem"
-	Location		[641, 138, 1314, 615]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Reference
-	  Name			  "C1_cable_33to150"
-	  SID			  60
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [133, 230, 197, 315]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  AttributesFormatString  "\\n"
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-	  SourceType		  "Three-Phase Series RLC Branch"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "A|B|C"
-	  RConnTagsString	  "A|B|C"
-	  BranchType		  "C"
-	  Resistance		  "1"
-	  Inductance		  "1e-3"
-	  Capacitance		  "9.71e-4"
-	  Measurements		  "None"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "C2_cable_33to150"
-	  SID			  61
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [363, 230, 427, 315]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  AttributesFormatString  "\\n"
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-	  SourceType		  "Three-Phase Series RLC Branch"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "A|B|C"
-	  RConnTagsString	  "A|B|C"
-	  BranchType		  "C"
-	  Resistance		  "1"
-	  Inductance		  "1e-3"
-	  Capacitance		  "9.71e-4"
-	  Measurements		  "None"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Ground1"
-	  SID			  62
-	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [364, 380, 386, 405]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Ground"
-	  SourceType		  "Ground"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "a"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Ground2"
-	  SID			  63
-	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [134, 380, 156, 405]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Ground"
-	  SourceType		  "Ground"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "a"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "RL_cable_33to150"
-	  SID			  64
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [235, 136, 320, 194]
-	  AttributesFormatString  "\\n"
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-	  SourceType		  "Three-Phase Series RLC Branch"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "A|B|C"
-	  RConnTagsString	  "A|B|C"
-	  BranchType		  "RL"
-	  Resistance		  "2.19e-2"
-	  Inductance		  "1.07e-3"
-	  Capacitance		  "1e-6"
-	  Measurements		  "None"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort1A"
-	  SID			  65
-	  Tag			  "PMCPort"
-	  Position		  [50, 101, 80, 119]
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "1"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort1B"
-	  SID			  66
-	  Tag			  "PMCPort"
-	  Position		  [50, 156, 80, 174]
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "2"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort1C"
-	  SID			  67
-	  Tag			  "PMCPort"
-	  Position		  [50, 211, 80, 229]
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "3"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort2A"
-	  SID			  68
-	  Tag			  "PMCPort"
-	  Position		  [485, 101, 515, 119]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "4"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort2B"
-	  SID			  69
-	  Tag			  "PMCPort"
-	  Position		  [485, 156, 515, 174]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "5"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort2C"
-	  SID			  70
-	  Tag			  "PMCPort"
-	  Position		  [485, 211, 515, 229]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "6"
-	  Side			  "Right"
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C2_cable_33to150"
-	  SrcPort		  RConn2
-	  Points		  [0, 20]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [-20, 0]
-	    Branch {
-	      ConnectType	      "DEST_SRC"
-	      DstBlock		      "Ground1"
-	      DstPort		      LConn1
-	    }
-	    Branch {
-	      ConnectType	      "DEST_DEST"
-	      SrcBlock		      "C2_cable_33to150"
-	      SrcPort		      RConn1
-	      Points		      [0, 20]
-	    }
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "C2_cable_33to150"
-	    SrcPort		    RConn3
-	    Points		    [0, 20; -20, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_33to150"
-	  SrcPort		  RConn2
-	  Points		  [0, 20]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [-20, 0]
-	    Branch {
-	      ConnectType	      "DEST_SRC"
-	      DstBlock		      "Ground2"
-	      DstPort		      LConn1
-	    }
-	    Branch {
-	      ConnectType	      "DEST_DEST"
-	      SrcBlock		      "C1_cable_33to150"
-	      SrcPort		      RConn1
-	      Points		      [0, 20]
-	    }
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "C1_cable_33to150"
-	    SrcPort		    RConn3
-	    Points		    [0, 20; -20, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RL_cable_33to150"
-	  SrcPort		  RConn1
-	  Points		  [40, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "C2_cable_33to150"
-	    DstPort		    LConn1
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort2A"
-	    SrcPort		    RConn1
-	    Points		    [-20, 0; 0, 35; -75, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RL_cable_33to150"
-	  SrcPort		  RConn2
-	  Points		  [60, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "C2_cable_33to150"
-	    DstPort		    LConn2
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort2B"
-	    SrcPort		    RConn1
-	    Points		    [-75, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_33to150"
-	  SrcPort		  LConn2
-	  Points		  [0, -50]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "RL_cable_33to150"
-	    DstPort		    LConn2
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort1B"
-	    SrcPort		    RConn1
-	    Points		    [70, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_33to150"
-	  SrcPort		  LConn3
-	  Points		  [0, -30]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "RL_cable_33to150"
-	    DstPort		    LConn3
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort1C"
-	    SrcPort		    RConn1
-	    Points		    [20, 0; 0, -35; 70, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RL_cable_33to150"
-	  SrcPort		  RConn3
-	  Points		  [80, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "C2_cable_33to150"
-	    DstPort		    LConn3
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort2C"
-	    SrcPort		    RConn1
-	    Points		    [-20, 0; 0, -35; -35, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_33to150"
-	  SrcPort		  LConn1
-	  Points		  [0, -70]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "RL_cable_33to150"
-	    DstPort		    LConn1
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort1A"
-	    SrcPort		    RConn1
-	    Points		    [20, 0; 0, 35; 30, 0]
-	  }
-	}
+      BlockType		      Scope
+      Name		      "Scope6"
+      SID		      103
+      Ports		      [1]
+      Position		      [1650, 726, 1680, 784]
+      BackgroundColor	      "green"
+      Floating		      off
+      Location		      [1, 45, 1367, 739]
+      Open		      on
+      NumInputPorts	      "1"
+      ZoomMode		      "xonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
       }
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem1"
-      SID		      71
-      Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [900, 55, 1070, 125]
-      NamePlacement	      "alternate"
-      LibraryVersion	      "1.216"
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem1"
-	Location		[657, 145, 1330, 622]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Reference
-	  Name			  "C1_cable_150kv"
-	  SID			  72
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [133, 230, 197, 315]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  AttributesFormatString  "\\n"
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-	  SourceType		  "Three-Phase Series RLC Branch"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "A|B|C"
-	  RConnTagsString	  "A|B|C"
-	  BranchType		  "C"
-	  Resistance		  "1"
-	  Inductance		  "1e-3"
-	  Capacitance		  "5.2e-7"
-	  Measurements		  "None"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "C2_cable_150kv"
-	  SID			  73
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [363, 230, 427, 315]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  AttributesFormatString  "\\n"
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-	  SourceType		  "Three-Phase Series RLC Branch"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "A|B|C"
-	  RConnTagsString	  "A|B|C"
-	  BranchType		  "C"
-	  Resistance		  "1"
-	  Inductance		  "1e-3"
-	  Capacitance		  "5.2e-7"
-	  Measurements		  "None"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Ground1"
-	  SID			  74
-	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [364, 380, 386, 405]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Ground"
-	  SourceType		  "Ground"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "a"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Ground2"
-	  SID			  75
-	  Ports			  [0, 0, 0, 0, 0, 1]
-	  Position		  [134, 380, 156, 405]
-	  BlockRotation		  270
-	  BlockMirror		  on
-	  ShowName		  off
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Ground"
-	  SourceType		  "Ground"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "a"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "RL_cable_ 150kv"
-	  SID			  76
-	  Ports			  [0, 0, 0, 0, 0, 3, 3]
-	  Position		  [235, 136, 320, 194]
-	  AttributesFormatString  "\\n"
-	  LibraryVersion	  "1.1899"
-	  DialogController	  "POWERSYS.PowerSysDialog"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  SourceBlock		  "powerlib/Elements/Three-Phase\nSeries RLC Branch"
-	  SourceType		  "Three-Phase Series RLC Branch"
-	  PhysicalDomain	  "powersysdomain"
-	  SubClassName		  "unknown"
-	  LeftPortType		  "p1"
-	  RightPortType		  "p1"
-	  LConnTagsString	  "A|B|C"
-	  RConnTagsString	  "A|B|C"
-	  BranchType		  "RL"
-	  Resistance		  "5.6e-2"
-	  Inductance		  "1e-3"
-	  Capacitance		  "1e-6"
-	  Measurements		  "None"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort1A"
-	  SID			  77
-	  Tag			  "PMCPort"
-	  Position		  [50, 101, 80, 119]
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "1"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort1B"
-	  SID			  78
-	  Tag			  "PMCPort"
-	  Position		  [50, 156, 80, 174]
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "2"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort1C"
-	  SID			  79
-	  Tag			  "PMCPort"
-	  Position		  [50, 211, 80, 229]
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "3"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort2A"
-	  SID			  80
-	  Tag			  "PMCPort"
-	  Position		  [485, 101, 515, 119]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "4"
-	  Side			  "Right"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort2B"
-	  SID			  81
-	  Tag			  "PMCPort"
-	  Position		  [485, 156, 515, 174]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "5"
-	  Side			  "Left"
-	}
-	Block {
-	  BlockType		  PMIOPort
-	  Name			  "Connection\nPort2C"
-	  SID			  82
-	  Tag			  "PMCPort"
-	  Position		  [485, 211, 515, 229]
-	  BlockMirror		  on
-	  NamePlacement		  "alternate"
-	  FontName		  "Verdana"
-	  FontSize		  11
-	  Port			  "6"
-	  Side			  "Right"
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C2_cable_150kv"
-	  SrcPort		  RConn2
-	  Points		  [0, 20]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [-20, 0]
-	    Branch {
-	      ConnectType	      "DEST_SRC"
-	      DstBlock		      "Ground1"
-	      DstPort		      LConn1
-	    }
-	    Branch {
-	      ConnectType	      "DEST_DEST"
-	      SrcBlock		      "C2_cable_150kv"
-	      SrcPort		      RConn1
-	      Points		      [0, 20]
-	    }
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "C2_cable_150kv"
-	    SrcPort		    RConn3
-	    Points		    [0, 20; -20, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_150kv"
-	  SrcPort		  RConn2
-	  Points		  [0, 20]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    Points		    [-20, 0]
-	    Branch {
-	      ConnectType	      "DEST_SRC"
-	      DstBlock		      "Ground2"
-	      DstPort		      LConn1
-	    }
-	    Branch {
-	      ConnectType	      "DEST_DEST"
-	      SrcBlock		      "C1_cable_150kv"
-	      SrcPort		      RConn1
-	      Points		      [0, 20]
-	    }
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "C1_cable_150kv"
-	    SrcPort		    RConn3
-	    Points		    [0, 20; -20, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RL_cable_ 150kv"
-	  SrcPort		  RConn1
-	  Points		  [40, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "C2_cable_150kv"
-	    DstPort		    LConn1
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort2A"
-	    SrcPort		    RConn1
-	    Points		    [-20, 0; 0, 35; -75, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RL_cable_ 150kv"
-	  SrcPort		  RConn2
-	  Points		  [60, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "C2_cable_150kv"
-	    DstPort		    LConn2
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort2B"
-	    SrcPort		    RConn1
-	    Points		    [-75, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_150kv"
-	  SrcPort		  LConn2
-	  Points		  [0, -50]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "RL_cable_ 150kv"
-	    DstPort		    LConn2
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort1B"
-	    SrcPort		    RConn1
-	    Points		    [70, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_150kv"
-	  SrcPort		  LConn3
-	  Points		  [0, -30]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "RL_cable_ 150kv"
-	    DstPort		    LConn3
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort1C"
-	    SrcPort		    RConn1
-	    Points		    [20, 0; 0, -35; 70, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "RL_cable_ 150kv"
-	  SrcPort		  RConn3
-	  Points		  [80, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "C2_cable_150kv"
-	    DstPort		    LConn3
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort2C"
-	    SrcPort		    RConn1
-	    Points		    [-20, 0; 0, -35; -35, 0]
-	  }
-	}
-	Line {
-	  LineType		  "Connection"
-	  SrcBlock		  "C1_cable_150kv"
-	  SrcPort		  LConn1
-	  Points		  [0, -70]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "RL_cable_ 150kv"
-	    DstPort		    LConn1
-	  }
-	  Branch {
-	    ConnectType		    "DEST_DEST"
-	    SrcBlock		    "Connection\nPort1A"
-	    SrcPort		    RConn1
-	    Points		    [20, 0; 0, 35; 30, 0]
-	  }
-	}
-      }
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Three-Phase\nHarmonic Filter"
-      SID		      86
-      Ports		      [0, 0, 0, 0, 0, 3, 1]
-      Position		      [315, 245, 375, 325]
-      BlockRotation	      270
-      BlockMirror	      on
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Elements/Three-Phase\nHarmonic Filter"
-      SourceType	      "Three-Phase Harmonic Filter"
-      PhysicalDomain	      "powersysdomain"
-      SubClassName	      "unknown"
-      LeftPortType	      "p1"
-      RightPortType	      "p1"
-      LConnTagsString	      "A|B|C"
-      RConnTagsString	      "n"
-      FilterType	      "Double-tuned"
-      FilterConnection	      "Y (neutral)"
-      ParNom		      "[260e3 50]"
-      Qc		      "49e6"
-      Fr		      "[5*60]"
-      Frd		      "[11*50 13*50]"
-      Q			      "16"
-      Measurements	      "None"
+      TimeRange		      "0.5"
+      YMin		      "-500"
+      YMax		      "500"
+      SaveToWorkspace	      on
+      SaveName		      "psb3phPWM1_str5"
+      DataFormat	      "StructureWithTime"
+      MaxDataPoints	      "20000"
+      SampleTime	      "0"
     }
     Block {
       BlockType		      Reference
       Name		      "Three-Phase\nParallel RLC Load"
       SID		      50
       Ports		      [0, 0, 0, 0, 0, 3]
-      Position		      [1282, 260, 1338, 325]
+      Position		      [1602, 260, 1658, 325]
       BlockRotation	      270
       BlockMirror	      on
-      NamePlacement	      "alternate"
       AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -1738,50 +1474,19 @@ Model {
       RightPortType	      "p1"
       LConnTagsString	      "A|B|C"
       Configuration	      "Y (grounded)"
-      NominalVoltage	      "106e3"
+      NominalVoltage	      "150e3"
       NominalFrequency	      "50"
-      ActivePower	      "10e3"
-      InductivePower	      "100"
-      CapacitivePower	      "100"
+      ActivePower	      "100e3"
+      InductivePower	      "10000"
+      CapacitivePower	      "0"
       Measurements	      "None"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Three-Phase Source"
-      SID		      87
-      Ports		      [0, 0, 0, 0, 0, 0, 3]
-      Position		      [115, 311, 200, 369]
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      FontName		      "Verdana"
-      FontSize		      11
-      SourceBlock	      "powerlib/Electrical\nSources/Three-Phase Source"
-      SourceType	      "Three-Phase Source"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      Voltage		      "260e3"
-      PhaseAngle	      "0"
-      Frequency		      "50"
-      InternalConnection      "Yg"
-      SpecifyImpedance	      off
-      Resistance	      "0.8929"
-      Inductance	      "16.58e-3"
-      ShortCircuitLevel	      "100e6"
-      BaseVoltage	      "25e3"
-      XRratio		      "7"
     }
     Block {
       BlockType		      Reference
       Name		      "Universal Bridge\n3 arms1"
       SID		      84
       Ports		      [1, 0, 0, 0, 0, 3, 2]
-      Position		      [130, 141, 190, 219]
+      Position		      [100, 141, 160, 219]
       BlockMirror	      on
       BackgroundColor	      "lightBlue"
       AttributesFormatString  "\\n"
@@ -1813,11 +1518,65 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Vab_3wind\n_trafo"
+      SID		      58
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [948, 490, 972, 515]
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Vab_conv"
       SID		      32
       Tag		      "PoWeRsYsTeMmEaSuReMeNt"
       Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [268, 455, 292, 480]
+      Position		      [183, 490, 207, 515]
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Vab_filter1"
+      SID		      31
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [468, 490, 492, 515]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1844,7 +1603,34 @@ Model {
       SID		      25
       Tag		      "PoWeRsYsTeMmEaSuReMeNt"
       Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [1148, 455, 1172, 480]
+      Position		      [1558, 490, 1582, 515]
+      BlockRotation	      270
+      BlockMirror	      on
+      NamePlacement	      "alternate"
+      AttributesFormatString  "\\n"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
+      SourceType	      "Voltage Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Magnitude"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Vab_gen\n_trafo"
+      SID		      30
+      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
+      Ports		      [0, 1, 0, 0, 0, 2]
+      Position		      [563, 490, 587, 515]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1868,10 +1654,10 @@ Model {
     Block {
       BlockType		      Reference
       Name		      "Vab_line1"
-      SID		      30
+      SID		      29
       Tag		      "PoWeRsYsTeMmEaSuReMeNt"
       Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [593, 455, 617, 480]
+      Position		      [853, 490, 877, 515]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1898,7 +1684,7 @@ Model {
       SID		      28
       Tag		      "PoWeRsYsTeMmEaSuReMeNt"
       Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [808, 455, 832, 480]
+      Position		      [1208, 490, 1232, 515]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -1921,65 +1707,11 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "Vab_line3"
-      SID		      58
+      Name		      "Vdc"
+      SID		      122
       Tag		      "PoWeRsYsTeMmEaSuReMeNt"
       Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [953, 455, 977, 480]
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
-      SourceType	      "Voltage Measurement"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      PhasorSimulation	      off
-      OutputType	      "Magnitude"
-      PSBequivalent	      "0"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Vab_trafo1"
-      SID		      31
-      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
-      Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [458, 455, 482, 480]
-      BlockRotation	      270
-      BlockMirror	      on
-      NamePlacement	      "alternate"
-      AttributesFormatString  "\\n"
-      LibraryVersion	      "1.1899"
-      DialogController	      "POWERSYS.PowerSysDialog"
-      SourceBlock	      "powerlib/Measurements/Voltage Measurement"
-      SourceType	      "Voltage Measurement"
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      PhasorSimulation	      off
-      OutputType	      "Magnitude"
-      PSBequivalent	      "0"
-    }
-    Block {
-      BlockType		      Reference
-      Name		      "Vab_trafo2"
-      SID		      29
-      Tag		      "PoWeRsYsTeMmEaSuReMeNt"
-      Ports		      [0, 1, 0, 0, 0, 2]
-      Position		      [718, 455, 742, 480]
+      Position		      [78, 490, 102, 515]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2005,7 +1737,7 @@ Model {
       Name		      "conv_trafo"
       SID		      46
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1005, 161, 1090, 219]
+      Position		      [1250, 161, 1335, 219]
       AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -2030,7 +1762,7 @@ Model {
       Name		      "gen_trafo"
       SID		      43
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [515, 161, 600, 219]
+      Position		      [510, 161, 595, 219]
       AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -2055,7 +1787,7 @@ Model {
       Name		      "ph_reactor"
       SID		      49
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1170, 161, 1255, 219]
+      Position		      [1430, 161, 1515, 219]
       AttributesFormatString  "\\n"
       LibraryVersion	      "1.1899"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -2080,7 +1812,7 @@ Model {
       Name		      "powergui"
       SID		      10
       Ports		      []
-      Position		      [365, 35, 511, 91]
+      Position		      [330, 15, 476, 71]
       Priority		      "1"
       LibraryVersion	      "1.1899"
       UserDataPersistent      on
@@ -2096,8 +1828,8 @@ Model {
       RTWMemSecDataConstants  "Inherit from model"
       RTWMemSecDataInternal   "Inherit from model"
       RTWMemSecDataParameters "Inherit from model"
-      SimulationMode	      "Continuous"
-      SampleTime	      "50e-6"
+      SimulationMode	      "Discrete"
+      SampleTime	      "5e-6"
       frequency		      "60"
       SPID		      off
       DisableSnubberDevices   off
@@ -2105,7 +1837,7 @@ Model {
       DisableVfSwitches	      off
       SwTol		      "0"
       Interpol		      off
-      frequencyindice	      "50"
+      frequencyindice	      "0"
       echomessages	      off
       HookPort		      off
       DisplayEquations	      off
@@ -2121,12 +1853,12 @@ Model {
       variable		      "ZData"
       structure		      "psb3phPWM1_str"
       ZoomFFT		      off
-      StartTime		      "0.01"
-      cycles		      "4"
+      StartTime		      "0.36"
+      cycles		      "6"
       DisplayStyle	      "1"
       fundamental	      "50"
       FreqAxis		      on
-      MaxFrequency	      "500"
+      MaxFrequency	      "5000"
       frequencyindicesteady   "1"
       display		      off
       methode		      off
@@ -2136,7 +1868,7 @@ Model {
       Name		      "tuned_filter"
       SID		      48
       Ports		      [0, 0, 0, 0, 0, 3, 3]
-      Position		      [1093, 260, 1157, 345]
+      Position		      [1358, 255, 1422, 340]
       BlockRotation	      270
       BlockMirror	      on
       NamePlacement	      "alternate"
@@ -2161,269 +1893,75 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Universal Bridge\n3 arms1"
+      SrcBlock		      "DC \nVoltage\nSource"
       SrcPort		      RConn1
-      Points		      [0, -55; -90, 0]
-      DstBlock		      "DC Voltage\nSource"
-      DstPort		      RConn1
+      Points		      [0, -10]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, -20; 60, 0]
+	DstBlock		"Universal Bridge\n3 arms1"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[-15, 0; 0, 330]
+	DstBlock		"Vdc"
+	DstPort			LConn1
+      }
     }
     Line {
       LineType		      "Connection"
-      Points		      [80, 260; 35, 0; 0, -60]
-      DstBlock		      "Universal Bridge\n3 arms1"
-      DstPort		      RConn2
-      Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"DC Voltage\nSource"
-	SrcPort			LConn1
-	Points			[0, 40; 55, 0]
-      }
+      Points		      [50, 280; 0, -20; 35, 0]
       Branch {
 	ConnectType		"SRC_SRC"
 	DstBlock		"Ground"
 	DstPort			LConn1
       }
-    }
-    Line {
-      SrcBlock		      "Vab_filter2"
-      SrcPort		      1
-      Points		      [0, 110]
-      DstBlock		      "Scope1"
-      DstPort		      7
-    }
-    Line {
-      SrcBlock		      "Vab_line2"
-      SrcPort		      1
-      Points		      [0, 80]
-      DstBlock		      "Scope1"
-      DstPort		      5
-    }
-    Line {
-      SrcBlock		      "Vab_trafo2"
-      SrcPort		      1
-      Points		      [0, 65]
-      DstBlock		      "Scope1"
-      DstPort		      4
-    }
-    Line {
-      SrcBlock		      "Vab_line1"
-      SrcPort		      1
-      Points		      [0, 50]
-      DstBlock		      "Scope1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Vab_trafo1"
-      SrcPort		      1
-      Points		      [0, 35]
-      DstBlock		      "Scope1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Vab_conv"
-      SrcPort		      1
-      Points		      [0, 20]
-      DstBlock		      "Scope1"
-      DstPort		      1
+      Branch {
+	ConnectType		"SRC_SRC"
+	Points			[45, 0]
+	DstBlock		"Vdc"
+	DstPort			LConn2
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 0]
+	DstBlock		"Universal Bridge\n3 arms1"
+	DstPort			RConn2
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"DC \nVoltage\nSource"
+	SrcPort			LConn1
+	Points			[0, 40; 60, 0]
+      }
     }
     Line {
       SrcBlock		      "Discrete\nPWM Generator\n6 pulses"
       SrcPort		      1
-      Points		      [-50, 0; 0, 110]
+      Points		      [-80, 0; 0, 125]
       DstBlock		      "Universal Bridge\n3 arms1"
       DstPort		      1
     }
     Line {
       LineType		      "Connection"
-      Points		      [275, 170; -55, 0; 0, 150; -5, 0]
-      DstBlock		      "Three-Phase Source"
-      DstPort		      RConn1
+      SrcBlock		      "gen_trafo"
+      SrcPort		      LConn2
+      Points		      [-10, 0]
       Branch {
-	ConnectType		"SRC_DEST"
-	Points			[325, 170; -50, 0]
-	Branch {
-	  ConnectType		  "SRC_DEST"
-	  Points		  [490, 170; -165, 0]
-	  Branch {
-	    ConnectType		    "SRC_DEST"
-	    SrcBlock		    "Vab_trafo1"
-	    SrcPort		    LConn1
-	    Points		    [0, -130; 25, 0; 0, -140]
-	  }
-	  Branch {
-	    ConnectType		    "SRC_SRC"
-	    DstBlock		    "gen_trafo"
-	    DstPort		    LConn1
-	  }
-	}
-	Branch {
-	  ConnectType		  "SRC_SRC"
-	  DstBlock		  "Three-Phase\nHarmonic Filter"
-	  DstPort		  LConn1
-	}
+	ConnectType		"DEST_SRC"
+	DstBlock		"LCL filter2"
+	DstPort			RConn2
       }
       Branch {
-	ConnectType		"SRC_SRC"
-	DstBlock		"Vab_conv"
-	DstPort			LConn1
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [285, 190; -55, 0; 0, 150; -15, 0]
-      DstBlock		      "Three-Phase Source"
-      DstPort		      RConn2
-      Branch {
-	ConnectType		"SRC_DEST"
-	Points			[345, 190; -60, 0]
-	Branch {
-	  ConnectType		  "SRC_SRC"
-	  DstBlock		  "Three-Phase\nHarmonic Filter"
-	  DstPort		  LConn2
-	}
-	Branch {
-	  ConnectType		  "SRC_SRC"
-	  Points		  [130, 0]
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "gen_trafo"
-	    DstPort		    LConn2
-	  }
-	  Branch {
-	    ConnectType		    "DEST_SRC"
-	    DstBlock		    "Vab_trafo1"
-	    DstPort		    LConn2
-	  }
-	}
-      }
-      Branch {
-	ConnectType		"SRC_SRC"
-	DstBlock		"Vab_conv"
+	ConnectType		"DEST_SRC"
+	DstBlock		"Vab_filter1"
 	DstPort			LConn2
       }
     }
     Line {
       LineType		      "Connection"
-      Points		      [620, 170; 10, 0; 0, -105; 15, 0]
-      DstBlock		      "Subsystem"
-      DstPort		      LConn1
-      Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"gen_trafo"
-	SrcPort			RConn1
-	Points			[5, 0]
-      }
-      Branch {
-	ConnectType		"SRC_SRC"
-	Points			[0, 150; -20, 0]
-	DstBlock		"Vab_line1"
-	DstPort			LConn1
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "gen_trafo"
-      SrcPort		      RConn2
-      Points		      [50, 0; 0, -55; 180, 0]
-      DstBlock		      "Subsystem"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "gen_trafo"
-      SrcPort		      RConn3
-      Points		      [30, 0]
-      DstBlock		      "Subsystem"
-      DstPort		      LConn2
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [740, 170; 5, 0]
-      DstBlock		      "3wind_trafo"
-      DstPort		      LConn1
-      Branch {
-	ConnectType		"SRC_SRC"
-	Points			[0, 150; -15, 0]
-	DstBlock		"Vab_trafo2"
-	DstPort			LConn1
-      }
-      Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"Subsystem"
-	SrcPort			RConn2
-	Points			[15, 0; 0, 60; -140, 0; 0, 20; 20, 0]
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Subsystem"
-      SrcPort		      LConn3
-      Points		      [0, 75]
-      DstBlock		      "3wind_trafo"
-      DstPort		      LConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Subsystem"
-      SrcPort		      RConn3
-      Points		      [0, 25; -135, 0; 0, 70]
-      DstBlock		      "3wind_trafo"
-      DstPort		      LConn3
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [865, 170; 20, 0; 0, -105]
-      DstBlock		      "Subsystem1"
-      DstPort		      LConn1
-      Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"3wind_trafo"
-	SrcPort			RConn1
-	Points			[5, 0]
-      }
-      Branch {
-	ConnectType		"SRC_SRC"
-	Points			[0, 145; -50, 0]
-	DstBlock		"Vab_line2"
-	DstPort			LConn1
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "3wind_trafo"
-      SrcPort		      RConn2
-      Points		      [40, 0; 0, -55; 185, 0]
-      DstBlock		      "Subsystem1"
-      DstPort		      RConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "3wind_trafo"
-      SrcPort		      RConn3
-      Points		      [20, 0; 0, -120]
-      DstBlock		      "Subsystem1"
-      DstPort		      LConn2
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Subsystem1"
-      SrcPort		      RConn2
-      Points		      [0, 55; -100, 0; 0, 25]
-      Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"conv_trafo"
-	DstPort			LConn1
-      }
-      Branch {
-	ConnectType		"DEST_SRC"
-	Points			[0, 150; -25, 0]
-	DstBlock		"Vab_line3"
-	DstPort			LConn1
-      }
-    }
-    Line {
-      LineType		      "Connection"
-      Points		      [1105, 380; 20, 0]
+      Points		      [1370, 375; 20, 0]
       Branch {
 	ConnectType		"SRC_DEST"
 	SrcBlock		"tuned_filter"
@@ -2449,178 +1987,851 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "conv_trafo"
-      SrcPort		      RConn3
-      Points		      [40, 0]
+      SrcBlock		      "ph_reactor"
+      SrcPort		      LConn3
+      Points		      [-5, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"conv_trafo"
+	DstPort			RConn3
+      }
       Branch {
 	ConnectType		"DEST_SRC"
 	DstBlock		"tuned_filter"
 	DstPort			LConn3
       }
-      Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"ph_reactor"
-	DstPort			LConn3
-      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "conv_trafo"
-      SrcPort		      RConn2
-      Points		      [20, 0]
+      SrcBlock		      "ph_reactor"
+      SrcPort		      LConn2
+      Points		      [-25, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"conv_trafo"
+	DstPort			RConn2
+      }
       Branch {
 	ConnectType		"DEST_SRC"
 	DstBlock		"tuned_filter"
 	DstPort			LConn2
       }
-      Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"ph_reactor"
-	DstPort			LConn2
-      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "conv_trafo"
-      SrcPort		      RConn1
-      Points		      [0, 0]
+      SrcBlock		      "ph_reactor"
+      SrcPort		      LConn1
+      Points		      [-50, 0]
       Branch {
 	ConnectType		"DEST_SRC"
+	DstBlock		"conv_trafo"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[5, 0]
 	DstBlock		"tuned_filter"
 	DstPort			LConn1
       }
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [1555, 170; -15, 0; 0, 305; 25, 0]
+      DstBlock		      "Vab_filter2"
+      DstPort		      LConn1
       Branch {
-	ConnectType		"DEST_SRC"
-	DstBlock		"ph_reactor"
+	ConnectType		"SRC_DEST"
+	SrcBlock		"ph_reactor"
+	SrcPort			RConn1
+	Points			[25, 0]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Current Measurement"
 	DstPort			LConn1
       }
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "Three-Phase\nParallel RLC Load"
-      SrcPort		      LConn1
-      Points		      [0, -15]
+      SrcPort		      LConn2
+      Points		      [0, -55; -55, 0]
       Branch {
 	ConnectType		"DEST_SRC"
-	Points			[0, -60]
 	DstBlock		"ph_reactor"
-	DstPort			RConn1
+	DstPort			RConn2
       }
       Branch {
 	ConnectType		"DEST_SRC"
-	Points			[-20, 0; 0, 170; -115, 0]
 	DstBlock		"Vab_filter2"
-	DstPort			LConn1
+	DstPort			LConn2
       }
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "ph_reactor"
-      SrcPort		      RConn2
-      Points		      [40, 0]
-      DstBlock		      "Three-Phase\nParallel RLC Load"
-      DstPort		      LConn2
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "ph_reactor"
       SrcPort		      RConn3
-      Points		      [60, 0]
+      Points		      [120, 0]
       DstBlock		      "Three-Phase\nParallel RLC Load"
       DstPort		      LConn3
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Vab_line1"
-      SrcPort		      LConn2
-      Points		      [0, -35; 40, 0]
-      DstBlock		      "Ground5"
-      DstPort		      LConn1
+      Points		      [335, 170; -10, 0]
+      DstBlock		      "LCL filter1"
+      DstPort		      RConn1
+      Branch {
+	ConnectType		"SRC_SRC"
+	Points			[-15, 0]
+	DstBlock		"LCL filter3"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"LCL filter2"
+	SrcPort			LConn1
+	Points			[-20, 0]
+      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Vab_trafo2"
-      SrcPort		      LConn2
-      Points		      [0, -40; 30, 0]
-      DstBlock		      "Ground6"
-      DstPort		      LConn1
+      Points		      [340, 190; 15, 0]
+      DstBlock		      "LCL filter2"
+      DstPort		      LConn2
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"LCL filter3"
+	DstPort			LConn2
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"LCL filter1"
+	SrcPort			RConn2
+	Points			[15, 0]
+      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Vab_line2"
-      SrcPort		      LConn2
-      Points		      [0, -50; 45, 0]
-      DstBlock		      "Ground7"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Vab_line3"
-      SrcPort		      LConn2
-      Points		      [0, -35; 60, 0]
-      DstBlock		      "Ground9"
-      DstPort		      LConn1
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "Vab_filter2"
-      SrcPort		      LConn2
-      Points		      [0, -10; 45, 0]
-      DstBlock		      "Ground8"
-      DstPort		      LConn1
-    }
-    Line {
-      SrcBlock		      "Vab_line3"
-      SrcPort		      1
-      Points		      [0, 95]
-      DstBlock		      "Scope1"
-      DstPort		      6
-    }
-    Line {
-      LineType		      "Connection"
-      SrcBlock		      "conv_trafo"
-      SrcPort		      LConn2
-      Points		      [0, -35; -120, 0; 0, -40]
-      DstBlock		      "Subsystem1"
+      Points		      [355, 210; 0, 0]
+      DstBlock		      "LCL filter2"
       DstPort		      LConn3
+      Branch {
+	ConnectType		"SRC_SRC"
+	Points			[5, 0]
+	DstBlock		"LCL filter3"
+	DstPort			LConn3
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"LCL filter1"
+	SrcPort			RConn3
+	Points			[30, 0]
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "LCL filter3"
+      SrcPort		      RConn3
+      Points		      [0, 20; -20, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"LCL filter3"
+	SrcPort			RConn2
+	Points			[0, 20]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[-20, 0]
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "LCL filter3"
+	  SrcPort		  RConn1
+	  Points		  [0, 20]
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "Ground1"
+	  DstPort		  LConn1
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "LCL filter2"
+      SrcPort		      RConn3
+      DstBlock		      "gen_trafo"
+      DstPort		      LConn3
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [475, 170; -5, 0]
+      DstBlock		      "LCL filter2"
+      DstPort		      RConn1
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Vab_filter1"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	Points			[0, -55]
+	DstBlock		"Current Measurement1"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [190, 170; 15, 0; 5, 0]
+      DstBlock		      "LCL filter1"
+      DstPort		      LConn1
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Universal Bridge\n3 arms1"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"Vab_conv"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "LCL filter1"
+      SrcPort		      LConn2
+      Points		      [-10, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Universal Bridge\n3 arms1"
+	DstPort			LConn2
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Vab_conv"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "LCL filter1"
+      SrcPort		      LConn3
+      DstBlock		      "Universal Bridge\n3 arms1"
+      DstPort		      LConn3
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [785, 170; 45, 0]
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"C2_cable_33to150"
+	SrcPort			LConn1
+	Points			[0, -70]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"RL_cable_33to150"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"3wind_trafo"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 75; 30, 0]
+	DstBlock		"Vab_line1"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      Labels		      [0, 0]
+      Points		      [790, 190; 45, 0]
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"RL_cable_33to150"
+	DstPort			RConn2
+      }
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"C2_cable_33to150"
+	SrcPort			LConn2
+	Points			[-15, 0; 0, -50]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"3wind_trafo"
+	DstPort			LConn2
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 50; 35, 0]
+	DstBlock		"Vab_line1"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "gen_trafo"
+      SrcPort		      RConn2
+      Points		      [10, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[20, 0]
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "RL_cable_33to150"
+	  DstPort		  LConn2
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  Points		  [0, 80]
+	  DstBlock		  "C1_cable_33to150"
+	  DstPort		  LConn2
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 55; -40, 0]
+	DstBlock		"Vab_gen\n_trafo"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "RL_cable_33to150"
+      SrcPort		      LConn3
+      Points		      [-15, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"C1_cable_33to150"
+	DstPort			LConn3
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"gen_trafo"
+	SrcPort			RConn3
+	Points			[40, 0]
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "3wind_trafo"
+      SrcPort		      LConn3
+      Points		      [-45, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"RL_cable_33to150"
+	DstPort			RConn3
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 25; 30, 0]
+	DstBlock		"C2_cable_33to150"
+	DstPort			LConn3
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "gen_trafo"
+      SrcPort		      RConn1
+      Points		      [5, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[15, 0]
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "RL_cable_33to150"
+	  DstPort		  LConn1
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  Points		  [0, 90; -20, 0]
+	  DstBlock		  "C1_cable_33to150"
+	  DstPort		  LConn1
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 65; -45, 0]
+	DstBlock		"Vab_gen\n_trafo"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "C2_cable_150kv"
+      SrcPort		      RConn3
+      Points		      [0, 20; -20, 0]
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"C2_cable_150kv"
+	SrcPort			RConn2
+	Points			[0, 20]
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[-20, 0]
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "Ground5"
+	  DstPort		  LConn1
+	}
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "C2_cable_150kv"
+	  SrcPort		  RConn1
+	  Points		  [0, 20]
+	}
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Ground6"
+      SrcPort		      LConn1
+      Points		      [-20, 0; 0, -15]
+      Branch {
+	ConnectType		"DEST_DEST"
+	Points			[1000, 375; -20, 0]
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "C1_cable_150kv"
+	  SrcPort		  RConn3
+	  Points		  [0, 20; -20, 0]
+	}
+	Branch {
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "C1_cable_150kv"
+	  SrcPort		  RConn2
+	  Points		  [0, 20]
+	}
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"C1_cable_150kv"
+	SrcPort			RConn1
+	Points			[0, 20]
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [1155, 170; 60, 0]
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"C2_cable_150kv"
+	SrcPort			LConn1
+	Points			[0, -70]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"RL_cable_ 150kv"
+	DstPort			RConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"conv_trafo"
+	DstPort			LConn1
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Vab_line2"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      Points		      [1175, 190; 50, 0]
+      Branch {
+	ConnectType		"SRC_DEST"
+	SrcBlock		"C2_cable_150kv"
+	SrcPort			LConn2
+	Points			[0, -50]
+      }
+      Branch {
+	ConnectType		"SRC_SRC"
+	DstBlock		"RL_cable_ 150kv"
+	DstPort			RConn2
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"conv_trafo"
+	DstPort			LConn2
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Vab_line2"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "3wind_trafo"
+      SrcPort		      RConn2
+      Points		      [10, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[35, 0]
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "RL_cable_ 150kv"
+	  DstPort		  LConn2
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "C1_cable_150kv"
+	  DstPort		  LConn2
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"Vab_3wind\n_trafo"
+	DstPort			LConn2
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "3wind_trafo"
+      SrcPort		      RConn3
+      Points		      [65, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"RL_cable_ 150kv"
+	DstPort			LConn3
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"C1_cable_150kv"
+	DstPort			LConn3
+      }
     }
     Line {
       LineType		      "Connection"
       SrcBlock		      "conv_trafo"
       SrcPort		      LConn3
-      Points		      [-5, 0; 0, -75; 105, 0; 0, -20]
-      DstBlock		      "Subsystem1"
-      DstPort		      RConn3
+      Points		      [-40, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"RL_cable_ 150kv"
+	DstPort			RConn3
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	DstBlock		"C2_cable_150kv"
+	DstPort			LConn3
+      }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "Three-Phase\nHarmonic Filter"
+      SrcBlock		      "3wind_trafo"
       SrcPort		      RConn1
-      DstBlock		      "Ground2"
+      Points		      [5, 0]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[20, 0]
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "RL_cable_ 150kv"
+	  DstPort		  LConn1
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "C1_cable_150kv"
+	  DstPort		  LConn1
+	}
+      }
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[0, 50; -5, 0]
+	DstBlock		"Vab_3wind\n_trafo"
+	DstPort			LConn1
+      }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "C1_cable_33to150"
+      SrcPort		      RConn2
+      Points		      [0, 20]
+      Branch {
+	ConnectType		"DEST_SRC"
+	Points			[-20, 0]
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "C1_cable_33to150"
+	  SrcPort		  RConn1
+	  Points		  [0, 20]
+	}
+	Branch {
+	  ConnectType		  "DEST_SRC"
+	  DstBlock		  "Ground4"
+	  DstPort		  LConn1
+	}
+      }
+      Branch {
+	ConnectType		"DEST_DEST"
+	SrcBlock		"C1_cable_33to150"
+	SrcPort			RConn3
+	Points			[0, 20; -20, 0]
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_conv"
+      SrcPort		      1
+      Points		      [0, 45]
+      Branch {
+	Points			[1345, 0]
+	Branch {
+	  DstBlock		  "Scope1"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 165]
+	  DstBlock		  "Mux4"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, 125]
+	DstBlock		"Mux1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_filter1"
+      SrcPort		      1
+      Points		      [0, 60]
+      Branch {
+	Points			[-40, 0]
+	Branch {
+	  Points		  [-220, 0; 0, 130]
+	  DstBlock		  "Mux1"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 110]
+	  DstBlock		  "Mux6"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[1030, 0]
+	Branch {
+	  DstBlock		  "Scope1"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 165]
+	  DstBlock		  "Mux4"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_gen\n_trafo"
+      SrcPort		      1
+      Points		      [0, 75]
+      Branch {
+	DstBlock		"Scope1"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 95]
+	DstBlock		"Mux2"
+	DstPort			1
+      }
+      Branch {
+	Points			[-160, 0; 0, 115]
+	DstBlock		"Mux6"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_line1"
+      SrcPort		      1
+      Points		      [0, 90]
+      Branch {
+	DstBlock		"Scope1"
+	DstPort			4
+      }
+      Branch {
+	Points			[-25, 0]
+	Branch {
+	  Points		  [-200, 0; 0, 100]
+	  DstBlock		  "Mux2"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 80]
+	  DstBlock		  "Mux7"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_3wind\n_trafo"
+      SrcPort		      1
+      Points		      [0, 105]
+      Branch {
+	DstBlock		"Scope1"
+	DstPort			5
+      }
+      Branch {
+	Points			[0, 65]
+	DstBlock		"Mux3"
+	DstPort			1
+      }
+      Branch {
+	Points			[-145, 0; 0, 85]
+	DstBlock		"Mux7"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_line2"
+      SrcPort		      1
+      Points		      [0, 120]
+      Branch {
+	DstBlock		"Scope1"
+	DstPort			6
+      }
+      Branch {
+	Points			[-200, 0; 0, 70]
+	DstBlock		"Mux3"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 50]
+	DstBlock		"Mux5"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Vab_filter2"
+      SrcPort		      1
+      Points		      [0, 135]
+      Branch {
+	DstBlock		"Scope1"
+	DstPort			7
+      }
+      Branch {
+	Points			[-260, 0; 0, 55]
+	DstBlock		"Mux5"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 105]
+	DstBlock		"Mux4"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Mux4"
+      SrcPort		      1
+      DstBlock		      "Scope6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "Scope-filterLCL"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "Scope-line1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux3"
+      SrcPort		      1
+      DstBlock		      "Scope-line2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux5"
+      SrcPort		      1
+      DstBlock		      "Scope-teuned_filter"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Vdc"
+      SrcPort		      1
+      Points		      [0, 255]
+      DstBlock		      "Mux4"
+      DstPort		      4
+    }
+    Line {
+      SrcBlock		      "Mux6"
+      SrcPort		      1
+      DstBlock		      "Scope-gen_trafo"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux7"
+      SrcPort		      1
+      DstBlock		      "Scope-3wind"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Current Measurement"
+      SrcPort		      1
+      Points		      [25, 0; 0, -75]
+      DstBlock		      "Scope"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Current Measurement1"
+      SrcPort		      1
+      Points		      [530, 0; 0, -55]
+      DstBlock		      "Scope"
+      DstPort		      1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "Current Measurement"
+      SrcPort		      RConn1
+      DstBlock		      "Three-Phase\nParallel RLC Load"
       DstPort		      LConn1
     }
     Line {
       LineType		      "Connection"
-      Points		      [365, 210; -125, 0; 0, 150; -25, 0]
-      DstBlock		      "Three-Phase Source"
-      DstPort		      RConn3
+      SrcBlock		      "Current Measurement1"
+      SrcPort		      RConn1
+      Points		      [30, 0; 0, 30; -120, 0; 0, 20]
+      DstBlock		      "gen_trafo"
+      DstPort		      LConn1
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "C2_cable_33to150"
+      SrcPort		      RConn2
+      Points		      [0, 15]
       Branch {
-	ConnectType		"SRC_DEST"
-	SrcBlock		"gen_trafo"
-	SrcPort			LConn3
-	Points			[-135, 0]
+	ConnectType		"DEST_SRC"
+	Points			[0, 5]
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "C2_cable_33to150"
+	  SrcPort		  RConn3
+	  Points		  [0, 20; -20, 0]
+	}
+	Branch {
+	  ConnectType		  "DEST_DEST"
+	  SrcBlock		  "C2_cable_33to150"
+	  SrcPort		  RConn1
+	  Points		  [0, 20; 20, 0]
+	}
       }
       Branch {
-	ConnectType		"SRC_SRC"
-	DstBlock		"Three-Phase\nHarmonic Filter"
-	DstPort			LConn3
+	ConnectType		"DEST_SRC"
+	Points			[0, 5; -55, 0]
+	DstBlock		"Ground2"
+	DstPort			LConn1
       }
     }
     Annotation {
       Position		      [180, 167]
-    }
-    Annotation {
-      Position		      [352, 297]
     }
   }
 }

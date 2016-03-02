@@ -1,0 +1,23 @@
+ Frequency scan:
+ 
+ Jun Li, N. Samaan and S. Williams, "Modeling of Large Wind Farm Systems for Dynamic and Harmonics Analysis", Transmission and Distribution Conference and Exposition, T&D, IEEE/PES, 2008, pp. 1–7. 
+ 
+  >>>>>>>>>>>>>>>				H. K. Lukasz, J. Hjerrild and C. L. Bak, "Harmonic Models of a Back-to-Back  Converter in Large Offshore Wind Farms Compared with Measurement Data", Nordic Wind Power Conference 2009, Bornholm, Denmark, 2009. 
+  
+   Z. Huang, Y. Cui and W. Xu, "Application of Modal Sensitivity for Power System Harmonic Resonance Analysis," Power Systems, IEEE Transactions on, vol. 22, 2007, pp. 222–231.  
+   
+   C. Chang, S. Chan and J. Teng, "A Fast Method for Driving Point Impedance Calculation of Unbalanced Distribution System", IEEE International Conference on Systems & Signals (ICSS 2005), 2005, pp. 134–138. 
+   
+   >>>>>>>>>>>>>>>				 J. Arrillaga and W. Neville," Power System Harmonics", ISBN: 0470851295, West Sussex: Wiley & Sons, 2003.  
+	
+	>>>>>>>>>>>>>>>					H. K. Lukasz, J. Hjerrild and C. L. Bak, "Wind Farm Structures´ Impact on Harmonic Emission and Grid Interaction", European Wind Energy Conference 2010, Warsaw, Poland, 2010.  
+	
+	R. Zheng, "Harmonic Resonances Due to a Grid-Connected Wind Farm", Harmonics and Quality of Power (ICHQP), 14th International Conference on, Bergamo, Italy, pp. 1, 2010. 
+	
+	Harmonic resonance Mode Analysis:
+	
+	>>>>>>>>>>>>>>>					J. Machowski, "Power System Dynamics Stability and Control", ISBN: 0470725583, Chichester, U.K.: Wiley, 2008
+	
+	 Caixia Yang, Kaipei Liu and Dongxu Wang, "Harmonic resonance circuit's modeling and simulation," Power and Energy Engineering Conference, (APPEEC 2009), ISBN: 978-1-4244-2486-3, Wuhan, China, 27–31 March 2009, pp. 1–5.  
+	 
+	  C. Yang, K. Liu and Q. Zhang, "An Improved Modal Analysis Method for Harmonic Resonance Analysis," Industrial Technology, (ICIT 2008), IEEE International Conference on, ISBN: 978-1-4244-1705-6, Chengdu, China, 2008, pp. 1–5.  
