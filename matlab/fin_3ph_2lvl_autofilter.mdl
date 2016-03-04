@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.19"
+    ComputedModelVersion    "1.20"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "IS"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Mar 02 17:56:26 2016"
-  RTWModifiedTimeStamp	  378841090
-  ModelVersionFormat	  "1.%<AutoIncrement:19>"
+  LastModifiedDate	  "Fri Mar 04 11:04:36 2016"
+  RTWModifiedTimeStamp	  378985577
+  ModelVersionFormat	  "1.%<AutoIncrement:20>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -615,7 +615,7 @@ Model {
   }
   System {
     Name		    "fin_3ph_2lvl_autofilter"
-    Location		    [2, 74, 1340, 708]
+    Location		    [2, 70, 1348, 704]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -629,10 +629,10 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    136
+    SIDHighWatermark	    137
     Block {
       BlockType		      Reference
-      Name		      "3wind_trafo"
+      Name		      "3wind_trafo_to150"
       SID		      44
       Ports		      [0, 0, 0, 0, 0, 3, 3]
       Position		      [855, 161, 940, 219]
@@ -651,7 +651,7 @@ Model {
       RConnTagsString	      "A|B|C"
       BranchType	      "L"
       Resistance	      "1"
-      Inductance	      "3.87e-2"
+      Inductance	      "2.27e-3"
       Capacitance	      "1e-6"
       Measurements	      "None"
     }
@@ -798,6 +798,31 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "Current Measurement0"
+      SID		      137
+      Ports		      [0, 1, 0, 0, 0, 1, 1]
+      Position		      [360, 108, 385, 132]
+      NamePlacement	      "alternate"
+      LibraryVersion	      "1.1899"
+      DialogController	      "POWERSYS.PowerSysDialog"
+      FontName		      "Verdana"
+      FontSize		      11
+      SourceBlock	      "powerlib/Measurements/Current Measurement"
+      SourceType	      "Current Measurement"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      PhasorSimulation	      off
+      OutputType	      "Complex"
+      PSBequivalent	      "0"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Current Measurement1"
       SID		      132
       Ports		      [0, 1, 0, 0, 0, 1, 1]
@@ -850,7 +875,7 @@ Model {
       Name		      "Discrete\nPWM Generator\n6 pulses"
       SID		      85
       Ports		      [0, 1]
-      Position		      [265, 13, 310, 37]
+      Position		      [245, 18, 290, 42]
       BlockMirror	      on
       LibraryVersion	      "1.612"
       DialogController	      "POWERSYS.PowerSysDialog"
@@ -1040,7 +1065,7 @@ Model {
       LConnTagsString	      "A|B|C"
       RConnTagsString	      "A|B|C"
       BranchType	      "RL"
-      Resistance	      "0.1"
+      Resistance	      "0.2"
       Inductance	      "3.41e-3"
       Capacitance	      "1e-6"
       Measurements	      "None"
@@ -1066,7 +1091,7 @@ Model {
       LConnTagsString	      "A|B|C"
       RConnTagsString	      "A|B|C"
       BranchType	      "RL"
-      Resistance	      "0.1"
+      Resistance	      "0.2"
       Inductance	      "1.82e-3"
       Capacitance	      "1e-6"
       Measurements	      "None"
@@ -1095,7 +1120,7 @@ Model {
       LConnTagsString	      "A|B|C"
       RConnTagsString	      "A|B|C"
       BranchType	      "RC"
-      Resistance	      "2"
+      Resistance	      "5"
       Inductance	      "1e-3"
       Capacitance	      "5.24e-5"
       Measurements	      "None"
@@ -1225,20 +1250,24 @@ Model {
       BlockType		      Scope
       Name		      "Scope"
       SID		      134
-      Ports		      [2]
-      Position		      [1665, 38, 1705, 107]
+      Ports		      [3]
+      Position		      [1665, 40, 1705, 110]
       BackgroundColor	      "green"
       Floating		      off
       Location		      [1, 45, 1367, 739]
       Open		      off
-      NumInputPorts	      "2"
+      NumInputPorts	      "3"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
 	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
-      YMin		      "-175000~24.75"
-      YMax		      "200000~28.25"
+      YMin		      "-175000~24.75~-5"
+      YMax		      "200000~28.25~5"
+      SaveToWorkspace	      on
+      SaveName		      "two_lvl_currents"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -1285,9 +1314,9 @@ Model {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
-      TimeRange		      "0.5"
-      YMin		      "-500"
-      YMax		      "500"
+      TimeRange		      "0.3             "
+      YMin		      "-225000"
+      YMax		      "225000"
       SaveToWorkspace	      on
       SaveName		      "psb3phPWM1_str1"
       DataFormat	      "StructureWithTime"
@@ -1406,7 +1435,7 @@ Model {
       BackgroundColor	      "green"
       Floating		      off
       Location		      [5, 45, 1371, 739]
-      Open		      on
+      Open		      off
       NumInputPorts	      "7"
       ZoomMode		      "xonly"
       List {
@@ -1423,7 +1452,7 @@ Model {
       YMin		      "-500~-400~-5~-5~-5~-5~-5"
       YMax		      "500~500~5~5~5~5~5"
       SaveToWorkspace	      on
-      SaveName		      "psb3phPWM1_str"
+      SaveName		      "two_lvl_volgates"
       DataFormat	      "StructureWithTime"
       MaxDataPoints	      "30000"
       SampleTime	      "0"
@@ -1433,11 +1462,11 @@ Model {
       Name		      "Scope6"
       SID		      103
       Ports		      [1]
-      Position		      [1650, 726, 1680, 784]
+      Position		      [1660, 726, 1690, 784]
       BackgroundColor	      "green"
       Floating		      off
-      Location		      [1, 45, 1367, 739]
-      Open		      on
+      Location		      [5, 45, 1371, 739]
+      Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
       List {
@@ -1458,7 +1487,7 @@ Model {
       Name		      "Three-Phase\nParallel RLC Load"
       SID		      50
       Ports		      [0, 0, 0, 0, 0, 3]
-      Position		      [1602, 260, 1658, 325]
+      Position		      [1602, 265, 1658, 330]
       BlockRotation	      270
       BlockMirror	      on
       AttributesFormatString  "\\n"
@@ -1473,12 +1502,12 @@ Model {
       LeftPortType	      "p1"
       RightPortType	      "p1"
       LConnTagsString	      "A|B|C"
-      Configuration	      "Y (grounded)"
+      Configuration	      "Delta"
       NominalVoltage	      "150e3"
       NominalFrequency	      "50"
-      ActivePower	      "100e3"
-      InductivePower	      "10000"
-      CapacitivePower	      "0"
+      ActivePower	      "1000e3"
+      InductivePower	      "100000"
+      CapacitivePower	      "100000"
       Measurements	      "None"
     }
     Block {
@@ -1569,6 +1598,12 @@ Model {
       PhasorSimulation	      off
       OutputType	      "Magnitude"
       PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	LinearAnalysisInput	on
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Reference
@@ -1596,6 +1631,13 @@ Model {
       PhasorSimulation	      off
       OutputType	      "Magnitude"
       PSBequivalent	      "0"
+      Port {
+	PortNumber		1
+	LinearAnalysisOutput	on
+	LinearAnalysisOpenLoop	on
+	RTWStorageClass		"Auto"
+	DataLoggingNameMode	"SignalName"
+      }
     }
     Block {
       BlockType		      Reference
@@ -1759,7 +1801,7 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "gen_trafo"
+      Name		      "gen_trafo_to150"
       SID		      43
       Ports		      [0, 0, 0, 0, 0, 3, 3]
       Position		      [510, 161, 595, 219]
@@ -1778,7 +1820,7 @@ Model {
       RConnTagsString	      "A|B|C"
       BranchType	      "L"
       Resistance	      "1"
-      Inductance	      "3.03e-3"
+      Inductance	      "1.47e-4"
       Capacitance	      "1e-6"
       Measurements	      "None"
     }
@@ -1851,10 +1893,10 @@ Model {
       ShowGrid		      off
       save		      off
       variable		      "ZData"
-      structure		      "psb3phPWM1_str"
+      structure		      "two_lvl_currents"
       ZoomFFT		      off
-      StartTime		      "0.36"
-      cycles		      "6"
+      StartTime		      "0.1"
+      cycles		      "10"
       DisplayStyle	      "1"
       fundamental	      "50"
       FreqAxis		      on
@@ -1939,13 +1981,13 @@ Model {
     Line {
       SrcBlock		      "Discrete\nPWM Generator\n6 pulses"
       SrcPort		      1
-      Points		      [-80, 0; 0, 125]
+      Points		      [-60, 0; 0, 120]
       DstBlock		      "Universal Bridge\n3 arms1"
       DstPort		      1
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "gen_trafo"
+      SrcBlock		      "gen_trafo_to150"
       SrcPort		      LConn2
       Points		      [-10, 0]
       Branch {
@@ -2019,17 +2061,16 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "ph_reactor"
-      SrcPort		      LConn1
-      Points		      [-50, 0]
+      SrcBlock		      "conv_trafo"
+      SrcPort		      RConn1
+      Points		      [20, 0]
       Branch {
 	ConnectType		"DEST_SRC"
-	DstBlock		"conv_trafo"
-	DstPort			RConn1
+	DstBlock		"ph_reactor"
+	DstPort			LConn1
       }
       Branch {
 	ConnectType		"DEST_SRC"
-	Points			[5, 0]
 	DstBlock		"tuned_filter"
 	DstPort			LConn1
       }
@@ -2055,7 +2096,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "Three-Phase\nParallel RLC Load"
       SrcPort		      LConn2
-      Points		      [0, -55; -55, 0]
+      Points		      [0, -60; -55, 0]
       Branch {
 	ConnectType		"DEST_SRC"
 	DstBlock		"ph_reactor"
@@ -2159,7 +2200,7 @@ Model {
       LineType		      "Connection"
       SrcBlock		      "LCL filter2"
       SrcPort		      RConn3
-      DstBlock		      "gen_trafo"
+      DstBlock		      "gen_trafo_to150"
       DstPort		      LConn3
     }
     Line {
@@ -2181,17 +2222,18 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      Points		      [190, 170; 15, 0; 5, 0]
-      DstBlock		      "LCL filter1"
+      Points		      [190, 170; -15, 0]
+      DstBlock		      "Universal Bridge\n3 arms1"
       DstPort		      LConn1
       Branch {
 	ConnectType		"SRC_SRC"
-	DstBlock		"Universal Bridge\n3 arms1"
+	DstBlock		"Vab_conv"
 	DstPort			LConn1
       }
       Branch {
 	ConnectType		"SRC_SRC"
-	DstBlock		"Vab_conv"
+	Points			[0, -50]
+	DstBlock		"Current Measurement0"
 	DstPort			LConn1
       }
     }
@@ -2234,7 +2276,7 @@ Model {
       }
       Branch {
 	ConnectType		"DEST_SRC"
-	DstBlock		"3wind_trafo"
+	DstBlock		"3wind_trafo_to150"
 	DstPort			LConn1
       }
       Branch {
@@ -2261,7 +2303,7 @@ Model {
       }
       Branch {
 	ConnectType		"DEST_SRC"
-	DstBlock		"3wind_trafo"
+	DstBlock		"3wind_trafo_to150"
 	DstPort			LConn2
       }
       Branch {
@@ -2273,7 +2315,7 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "gen_trafo"
+      SrcBlock		      "gen_trafo_to150"
       SrcPort		      RConn2
       Points		      [10, 0]
       Branch {
@@ -2310,14 +2352,14 @@ Model {
       }
       Branch {
 	ConnectType		"DEST_DEST"
-	SrcBlock		"gen_trafo"
+	SrcBlock		"gen_trafo_to150"
 	SrcPort			RConn3
 	Points			[40, 0]
       }
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "3wind_trafo"
+      SrcBlock		      "3wind_trafo_to150"
       SrcPort		      LConn3
       Points		      [-45, 0]
       Branch {
@@ -2334,28 +2376,29 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "gen_trafo"
-      SrcPort		      RConn1
-      Points		      [5, 0]
+      Points		      [630, 170; 35, 0]
+      DstBlock		      "RL_cable_33to150"
+      DstPort		      LConn1
       Branch {
-	ConnectType		"DEST_SRC"
-	Points			[15, 0]
+	ConnectType		"SRC_DEST"
+	Points			[615, 170; 15, 0]
 	Branch {
-	  ConnectType		  "DEST_SRC"
-	  DstBlock		  "RL_cable_33to150"
-	  DstPort		  LConn1
+	  ConnectType		  "SRC_DEST"
+	  SrcBlock		  "gen_trafo_to150"
+	  SrcPort		  RConn1
+	  Points		  [5, 0]
 	}
 	Branch {
-	  ConnectType		  "DEST_SRC"
-	  Points		  [0, 90; -20, 0]
-	  DstBlock		  "C1_cable_33to150"
+	  ConnectType		  "SRC_SRC"
+	  Points		  [0, 65; -45, 0]
+	  DstBlock		  "Vab_gen\n_trafo"
 	  DstPort		  LConn1
 	}
       }
       Branch {
-	ConnectType		"DEST_SRC"
-	Points			[0, 65; -45, 0]
-	DstBlock		"Vab_gen\n_trafo"
+	ConnectType		"SRC_SRC"
+	Points			[0, 90; -20, 0]
+	DstBlock		"C1_cable_33to150"
 	DstPort			LConn1
       }
     }
@@ -2466,7 +2509,7 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "3wind_trafo"
+      SrcBlock		      "3wind_trafo_to150"
       SrcPort		      RConn2
       Points		      [10, 0]
       Branch {
@@ -2491,7 +2534,7 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "3wind_trafo"
+      SrcBlock		      "3wind_trafo_to150"
       SrcPort		      RConn3
       Points		      [65, 0]
       Branch {
@@ -2523,7 +2566,7 @@ Model {
     }
     Line {
       LineType		      "Connection"
-      SrcBlock		      "3wind_trafo"
+      SrcBlock		      "3wind_trafo_to150"
       SrcPort		      RConn1
       Points		      [5, 0]
       Branch {
@@ -2776,16 +2819,16 @@ Model {
     Line {
       SrcBlock		      "Current Measurement"
       SrcPort		      1
-      Points		      [25, 0; 0, -75]
+      Points		      [25, 0; 0, -65]
       DstBlock		      "Scope"
-      DstPort		      2
+      DstPort		      3
     }
     Line {
       SrcBlock		      "Current Measurement1"
       SrcPort		      1
-      Points		      [530, 0; 0, -55]
+      Points		      [530, 0; 0, -35]
       DstBlock		      "Scope"
-      DstPort		      1
+      DstPort		      2
     }
     Line {
       LineType		      "Connection"
@@ -2799,7 +2842,7 @@ Model {
       SrcBlock		      "Current Measurement1"
       SrcPort		      RConn1
       Points		      [30, 0; 0, 30; -120, 0; 0, 20]
-      DstBlock		      "gen_trafo"
+      DstBlock		      "gen_trafo_to150"
       DstPort		      LConn1
     }
     Line {
@@ -2829,6 +2872,21 @@ Model {
 	DstBlock		"Ground2"
 	DstPort			LConn1
       }
+    }
+    Line {
+      LineType		      "Connection"
+      SrcBlock		      "LCL filter1"
+      SrcPort		      LConn1
+      Points		      [-5, 0; 0, -30; 200, 0; 0, -15]
+      DstBlock		      "Current Measurement0"
+      DstPort		      RConn1
+    }
+    Line {
+      SrcBlock		      "Current Measurement0"
+      SrcPort		      1
+      Points		      [65, 0; 0, -70; 1120, 0; 0, 5]
+      DstBlock		      "Scope"
+      DstPort		      1
     }
     Annotation {
       Position		      [180, 167]
