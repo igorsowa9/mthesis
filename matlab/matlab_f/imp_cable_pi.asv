@@ -1,0 +1,10 @@
+function [Z] = imp_cable_pi(Xl,R,Xc,Rc)
+%Z_CABLE_PI Summary of this function goes here
+%   Detailed explanation goes here
+Z2a = (R+Xl)*Xc/((R+Xl)+Xc);
+Z2b = 1/(s*Cable150_C2);
+Z2 = Z2a*Z2b/(Z2a+Z2b);
+
+
+end
+

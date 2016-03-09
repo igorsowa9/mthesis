@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.20"
+    ComputedModelVersion    "1.21"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -25,9 +25,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "IS"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri Mar 04 11:04:36 2016"
-  RTWModifiedTimeStamp	  378985577
-  ModelVersionFormat	  "1.%<AutoIncrement:20>"
+  LastModifiedDate	  "Mon Mar 07 17:48:31 2016"
+  RTWModifiedTimeStamp	  379273709
+  ModelVersionFormat	  "1.%<AutoIncrement:21>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -615,7 +615,7 @@ Model {
   }
   System {
     Name		    "fin_3ph_2lvl_autofilter"
-    Location		    [2, 70, 1348, 704]
+    Location		    [2, 74, 1340, 708]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -710,7 +710,7 @@ Model {
       BranchType	      "C"
       Resistance	      "1"
       Inductance	      "1e-3"
-      Capacitance	      "9.71e-4"
+      Capacitance	      "9.71e-7"
       Measurements	      "None"
     }
     Block {
@@ -768,7 +768,7 @@ Model {
       BranchType	      "C"
       Resistance	      "1"
       Inductance	      "1e-3"
-      Capacitance	      "9.71e-4"
+      Capacitance	      "9.71e-7"
       Measurements	      "None"
     }
     Block {
@@ -1277,7 +1277,7 @@ Model {
       Name		      "Scope-3wind"
       SID		      129
       Ports		      [1]
-      Position		      [910, 671, 940, 729]
+      Position		      [915, 656, 945, 714]
       BackgroundColor	      "green"
       Floating		      off
       Location		      [5, 45, 1371, 739]
@@ -1462,7 +1462,7 @@ Model {
       Name		      "Scope6"
       SID		      103
       Ports		      [1]
-      Position		      [1660, 726, 1690, 784]
+      Position		      [1655, 726, 1685, 784]
       BackgroundColor	      "green"
       Floating		      off
       Location		      [5, 45, 1371, 739]
@@ -1893,10 +1893,10 @@ Model {
       ShowGrid		      off
       save		      off
       variable		      "ZData"
-      structure		      "two_lvl_currents"
+      structure		      "two_lvl_volgates"
       ZoomFFT		      off
-      StartTime		      "0.1"
-      cycles		      "10"
+      StartTime		      "0.36"
+      cycles		      "7"
       DisplayStyle	      "1"
       fundamental	      "50"
       FreqAxis		      on
@@ -2813,6 +2813,7 @@ Model {
     Line {
       SrcBlock		      "Mux7"
       SrcPort		      1
+      Points		      [20, 0]
       DstBlock		      "Scope-3wind"
       DstPort		      1
     }
@@ -2897,15 +2898,15 @@ MatData {
   NumRecords		  1
   DataRecord {
     Tag			    DataTag0
-    Data		    "  %)30     .    * ,   8    (     @         %    \"     $    !     0         %  0 #     $   \"$    <&]W9"
+    Data		    "  %)30     .    , ,   8    (     @         %    \"     $    !     0         %  0 #     $   \"$    <&]W9"
     "7)G=6D     <W1E861Y<W1A=&4 :6YI='-T871E<P  ;&]A9&9L;W<     ;'1I=FEE=P      >FUE=&5R        9F9T=&]O;       <F5P;W)"
     "T        :'ES=&5R97-I<P  ;&EN97!A<F%M    5',                   X    P    !@    @    &          4    (             "
     "  !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8  "
     "  (    !@         %    \"                0         )          X    P    !@    @    &          4    (              "
     " !          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8   "
-    " (    !@         %    \"                0         )          X    P    !@    @    &          4    (               "
-    "!          D         #@   #     &    \"     8         !0    @               $         \"0         .    ,     8    "
-    "(    !@         %    \"                0         )          X    P    !@    @    &          4    (               !"
-    "          D         #@   #     &    \"     8         !0    @               $         \"0         "
+    " (    !@         %    \"                0         )          X    X    !@    @    &          4    (     0    $    "
+    "!          D    (         0!1X4 .    ,     8    (    !@         %    \"                0         )          X    P"
+    "    !@    @    &          4    (               !          D         #@   #     &    \"     8         !0    @      "
+    "         $         \"0         .    ,     8    (    !@         %    \"                0         )          "
   }
 }
