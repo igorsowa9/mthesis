@@ -1,13 +1,17 @@
-clear all; clc; close all
+clear all; close all; clc
+
+% AALTO V2:
+% DIFFERENT VALUES OF COMPONENTS (ORIGINAL DATA IS AT 150kV)
+% UNKNOWN TYPE/TOPOLOGY OF AC TUNED FILTER
 
 %% system data:
 LCL_L1o = 1.2; % H
-LCL_R1o = 0.0; % ohm %%%%%%
+LCL_R1o = 0.0; % ohm 
 LCL_L2o = 0.641; % H
-LCL_R2o = 0.0; % ohm %%%%%%
+LCL_R2o = 0.0; % ohm 
 LCL_Co = 1.491e-7; % F
-LCL_Rco = 0; % ohm %%%%%%
-Tr1_Lo = 51.568e-3; % H
+LCL_Rco = 0; % ohm 
+Tr1_Lo = 38.676e-3; % H %%%%%%%%%%%%%%%%%%%%%%%
 
 Cable33_Lo = 18.181e-3; % H
 Cable33_Ro = 0.372; % ohm
@@ -20,20 +24,27 @@ Cable150_Ro = 0.056; % ohm
 Cable150_C1o = 0.52e-6; % F
 Cable150_C2o = Cable150_C1o; % F
 Tr3_Lo = 19.338e-3; % H
-Tuned_Co = 5.658e-6; % F
+
+Tuned_R1o = 12.63;
+Tuned_C1o = 5.658e-6; % F
+Tuned_L1o = 1.8e-3;
+Tuned_R2o = 21.63;
+Tuned_C2o = 1.89e-6; % F
+Tuned_L2o = 0.883e-3;
+
 PhReact_Lo = 19.3e-3; % H
 
 %% ------- settings -------
 f = 50;
 w = 2*pi*f;
-H = 0:0.01:30; % background dashed plot only for this resolution
+H = 0:0.01:30;
 
-ymax = 1e6;
+ymax = 100e3;
 view = [0,H(length(H)),0,ymax];
 % view = [9 14 0 100]; % zoom
 xlab = 'harmonics order';
 ylab = 'impedance (ohms)';
-plots = [true false true false];
+plots = [true false false false];
 
 load('four_cases_orginal_low.mat');
 
@@ -43,6 +54,7 @@ Vout = 150e3;
 Vlow = 150e3;
 Vmid = 150e3;
 Vhigh = 150e3;
+
 LCL_L1 = ind_equiv(LCL_L1o,f,Vlow,Vout);
 LCL_R1 = res_equiv(LCL_R1o,Vlow,Vout);
 LCL_L2 = ind_equiv(LCL_L2o,f,Vlow,Vout);
@@ -62,7 +74,14 @@ Cable150_R = res_equiv(Cable150_Ro,Vhigh,Vout);
 Cable150_C1 = cap_equiv(Cable150_C1o,f,Vhigh,Vout);
 Cable150_C2 = cap_equiv(Cable150_C2o,f,Vhigh,Vout);
 Tr3_L = ind_equiv(Tr3_Lo,f,Vhigh,Vout);
-Tuned_C = cap_equiv(Tuned_Co,f,Vhigh,Vout);
+
+Tuned_R1 = res_equiv(Tuned_R1o,Vhigh,Vout);
+Tuned_C1 = cap_equiv(Tuned_C1o,f,Vhigh,Vout);
+Tuned_L1 = ind_equiv(Tuned_L1o,f,Vhigh,Vout);
+Tuned_R2 = res_equiv(Tuned_R2o,Vhigh,Vout);
+Tuned_C2 = cap_equiv(Tuned_C2o,f,Vhigh,Vout);
+Tuned_L2 = ind_equiv(Tuned_L2o,f,Vhigh,Vout);
+
 PhReact_L = ind_equiv(PhReact_Lo,f,Vhigh,Vout);
 
 %% Impedance - 1 leg (seen from WT)
@@ -72,7 +91,13 @@ if plots(1)==true
         h=H(hh);
         s = 1i*h*w;
 
-        Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Ztuned1 = imp_parallel(Tuned_R1, s*Tuned_L1) + 1/(s*Tuned_C1);
+        Ztuned2 = imp_parallel(Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);        
+        Ztuned = Ztuned1+Ztuned2;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Z1 = imp_parallel(s*PhReact_L, Ztuned) + s*Tr3_L;
         Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
         Z3 = imp_parallel(Z2, 1/(s*Cable150_C1)) + s*Tr2_L;
         Z4 = imp_parallel(Z3, 1/(s*Cable33_C2)) + Cable33_R+s*Cable33_L;
@@ -87,8 +112,9 @@ if plots(1)==true
     clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z Zabs
 
     figure(1)
-    plot(H,ZabsM1, 'b', 'LineWidth', 2); % hold on
-    % plot(H,ZabsM1org_low, 'black:', 'LineWidth', 1); hold off
+    plot(H,ZabsM1, 'b', 'LineWidth', 2); hold on
+%     plot(H,ZabsM1org_low, 'black--', 'LineWidth', 1) 
+    hold off
     % view1 = [0,H(length(H)),0,300];
     axis(view)
     title('1. case: 1 WT');
@@ -132,14 +158,22 @@ if plots(2)==true
 end
 
 %% Impedance - 4 legs (seen from WT)
-if plots(3)==true
+if plots(3)==true 
     ZabsM3 = zeros(length(H),1);
     RM3 = zeros(length(H),1);
     for hh=1:length(H)
         h=H(hh);
         s = 1i*h*w;
+        
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Ztuned1 = imp_parallel(Tuned_R1, s*Tuned_L1) + 1/(s*Tuned_C1);
+        Ztuned2 = imp_parallel(Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);        
+        Ztuned = Ztuned1+Ztuned2;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+%         Ztuned = imp_parallel(s*Tuned_L1,Tuned_R1)+1/(s*Tuned_C1);
 
-        Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
+        Z1 = imp_parallel(s*PhReact_L, Ztuned) + s*Tr3_L;
 
         Z1B = imp_parallel(LCL_R1+s*LCL_L1, 1/(s*LCL_C))+ LCL_R2+s*LCL_L2+s*Tr1_L;
         Z2B = imp_parallel(Z1B, 1/(s*Cable33_C1)) + Cable33_R+s*Cable33_L;
@@ -162,13 +196,13 @@ if plots(3)==true
 
         Zabs = abs(Z);
         ZabsM3(hh) = Zabs;
-    %     RM3(hh) = real(Z);
+        RM3(hh) = real(Z);
     end
     clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z1B Z2B Z3B Z1A Z Zabs
 
     figure(3)
-    plot(H,ZabsM3, 'b', 'LineWidth', 2); %hold on
-    %plot(H,ZabsM3org_low, 'black', 'LineWidth', 1); hold off
+    plot(H,ZabsM3, 'b', 'LineWidth', 1); hold on
+%   plot(H,ZabsM3org_low, 'black', 'LineWidth', 1); hold off
     %plot(H,RM3, 'r'); hold off
     axis(view)
     title('3. case: 4 WT');
@@ -176,7 +210,7 @@ if plots(3)==true
     ylabel(ylab);
 end
 
-% Impedance - 4 legs (seen from WT) with R proportional to harmonics
+%% Impedance - 4 legs (seen from WT) with R proportional to harmonics
 if plots(4)==true 
     ZabsM4 = zeros(length(H),1);
     RM4 = zeros(length(H),1);

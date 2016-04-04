@@ -2,6 +2,20 @@ clear all
 close all
 clc
 
+plot(-2:5, (-2:5).^2-1)
+
+%# vertical line
+hx = graph2d.constantline(0, 'LineStyle',':', 'Color',[.7 .7 .7]);
+changedependvar(hx,'x');
+
+%# horizontal line
+hy = graph2d.constantline(0, 'Color',[.7 .7 .7]);
+changedependvar(hy,'y');
+
+break
+
+
+
 f = 50;
 tmax = 0.1;
 t = 0:0.0001:tmax;
