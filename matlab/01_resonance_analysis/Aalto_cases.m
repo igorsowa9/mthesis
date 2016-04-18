@@ -1,4 +1,4 @@
-clear all; clc
+clear variables; clc; close all
 
 %% system data:
 LCL_L1o = 1.2; % H
@@ -26,22 +26,22 @@ PhReact_Lo = 19.3e-3; % H
 %% ------- settings -------
 f = 50;
 w = 2*pi*f;
-H = 0:0.01:30;
+H = 0:0.01:30; % background dashed plot only for this resolution
 
-ymax = 200;
+ymax = 1e5;
 view = [0,H(length(H)),0,ymax];
 % view = [9 14 0 100]; % zoom
 xlab = 'harmonics order';
 ylab = 'impedance (ohms)';
-plots = [true false false false];
+plots = [true true true true];
 
 load('four_cases_orginal_low.mat');
 
 %% convertion to equivalent circuit at V=150kV
 Vout = 150e3;
 
-Vlow = 8e3;
-Vmid = 33e3;
+Vlow = 150e3;
+Vmid = 150e3;
 Vhigh = 150e3;
 LCL_L1 = ind_equiv(LCL_L1o,f,Vlow,Vout);
 LCL_R1 = res_equiv(LCL_R1o,Vlow,Vout);
@@ -87,8 +87,8 @@ if plots(1)==true
     clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z Zabs
 
     figure(1)
-    plot(H,ZabsM1, 'b', 'LineWidth', 2); hold on
-    plot(H,ZabsM1org_low, 'black--', 'LineWidth', 1); hold off
+    plot(H,ZabsM1, 'b', 'LineWidth', 2); % hold on
+    % plot(H,ZabsM1org_low, 'black:', 'LineWidth', 1); hold off
     % view1 = [0,H(length(H)),0,300];
     axis(view)
     title('1. case: 1 WT');
@@ -166,9 +166,9 @@ if plots(3)==true
     end
     clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z1B Z2B Z3B Z1A Z Zabs
 
-    figure(100)
-    plot(H,ZabsM3, 'b', 'LineWidth', 2); hold on
-    plot(H,ZabsM3org_low, 'black', 'LineWidth', 1); hold off
+    figure(3)
+    plot(H,ZabsM3, 'b', 'LineWidth', 2); %hold on
+    %plot(H,ZabsM3org_low, 'black', 'LineWidth', 1); hold off
     %plot(H,RM3, 'r'); hold off
     axis(view)
     title('3. case: 4 WT');

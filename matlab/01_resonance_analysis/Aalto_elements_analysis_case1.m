@@ -1,4 +1,4 @@
-clear all; close all; clc
+clear variables; close all; 
 
 %% system data:
 % load('Aalto_data0to150org.mat') % only original values
@@ -22,7 +22,7 @@ Cable150_C1o = 0.52e-6; % F
 Cable150_C2o = Cable150_C1o; % F
 Tr3_Lo = 19.338e-3; % H
 Tuned_Co = 5.658e-6; % F
-PhReact_Lo = 2*19.3e-3; % H
+PhReact_Lo = 19.3e-3; % H
 
 %% ------- settings -------
 f = 50;
@@ -31,7 +31,11 @@ H = 0:0.01:30;
 
 %% convertion to equivalent circuit at V=150kV
 Vout = 150e3;
-Vlow = 8e3;
+
+Vlow = 150e3;
+Vmid = 150e3;
+Vhigh = 150e3;
+
 LCL_L1 = ind_equiv(LCL_L1o,f,Vlow,Vout);
 LCL_R1 = res_equiv(LCL_R1o,Vlow,Vout);
 LCL_L2 = ind_equiv(LCL_L2o,f,Vlow,Vout);
@@ -40,50 +44,52 @@ LCL_C  = cap_equiv(LCL_Co,f,Vlow,Vout);
 LCL_Rc = res_equiv(LCL_Rco,Vlow,Vout);
 Tr1_L  = ind_equiv(Tr1_Lo,f,Vlow,Vout);
 
-Cable33_L  = ind_equiv(Cable33_Lo,f,33e3,Vout);
-Cable33_R  = res_equiv(Cable33_Ro,33e3,Vout);
-Cable33_C1 = cap_equiv(Cable33_C1o,f,33e3,Vout);
-Cable33_C2 = cap_equiv(Cable33_C2o,f,33e3,Vout);
-Tr2_L = ind_equiv(Tr2_Lo,f,33e3,Vout);
+Cable33_L  = ind_equiv(Cable33_Lo,f,Vmid,Vout);
+Cable33_R  = res_equiv(Cable33_Ro,Vmid,Vout);
+Cable33_C1 = cap_equiv(Cable33_C1o,f,Vmid,Vout);
+Cable33_C2 = cap_equiv(Cable33_C2o,f,Vmid,Vout);
+Tr2_L = ind_equiv(Tr2_Lo,f,Vmid,Vout);
 
-Cable150_L = ind_equiv(Cable150_Lo,f,150e3,Vout);
-Cable150_R = res_equiv(Cable150_Ro,150e3,Vout);
-Cable150_C1 = cap_equiv(Cable150_C1o,f,150e3,Vout);
-Cable150_C2 = cap_equiv(Cable150_C2o,f,150e3,Vout);
-Tr3_L = ind_equiv(Tr3_Lo,f,150e3,Vout);
-Tuned_C = cap_equiv(Tuned_Co,f,150e3,Vout);
-PhReact_L = ind_equiv(PhReact_Lo,f,150e3,Vout);
-% if modified has to be read in Z calc !!!!!!!!!!!
-save('Aalto_data0to150mod.mat','LCL_L1o','LCL_R1o','LCL_L2o','LCL_R2o',...
+Cable150_L = ind_equiv(Cable150_Lo,f,Vhigh,Vout);
+Cable150_R = res_equiv(Cable150_Ro,Vhigh,Vout);
+Cable150_C1 = cap_equiv(Cable150_C1o,f,Vhigh,Vout);
+Cable150_C2 = cap_equiv(Cable150_C2o,f,Vhigh,Vout);
+Tr3_L = ind_equiv(Tr3_Lo,f,Vhigh,Vout);
+Tuned_C = cap_equiv(Tuned_Co,f,Vhigh,Vout);
+PhReact_L = ind_equiv(PhReact_Lo,f,Vhigh,Vout);
+
+% if modified has to be read in Zdiff calculations !!!!!!!!!!!
+save('data_to_load/Aalto_data0to150mod.mat','LCL_L1o','LCL_R1o','LCL_L2o','LCL_R2o',...
     'LCL_Co','LCL_Rco','Tr1_Lo','Cable33_Lo','Cable33_Ro','Cable33_C1o',...
     'Cable33_C2o','Tr2_Lo','Cable150_Lo','Cable150_Ro','Cable150_C1o',...
-    'Cable150_C2o','Cable150_C1o; % F
-Tr3_Lo = 19.338e-3; % H
-Tuned_Co = 5.658e-6; % F
-PhReact_Lo = 2*19.3e-3; % H
+    'Cable150_C2o','Cable150_C1o','Tr3_Lo','Tuned_Co','PhReact_Lo',...
+    'LCL_L1','LCL_R1','LCL_L2','LCL_R2',...
+    'LCL_C','LCL_Rc','Tr1_L','Cable33_L','Cable33_R','Cable33_C1',...
+    'Cable33_C2','Tr2_L','Cable150_L','Cable150_R','Cable150_C1',...
+    'Cable150_C2','Cable150_C1','Tr3_L','Tuned_C','PhReact_L');
 
-%% no harmonic for each element analysis
-h = 11.24; s = 1i*h*w;
-harmStr = ['Case 1 - Harmonic: ' num2str(h) '. - 5%-500% of '];
+%% harmonic order for each element analysis
+h = 13; s = 1i*h*w;
+harmStr = ['Case 1 - Harmonic: ' num2str(h) '. - 1%-300% of '];
 %% graphs
-imp_max = 1000;
+imp_max = 1e6;
 res = 0.01;
-res_length = 200;
+res_length = 300;
 res_value0_idx = 100;
 
 NAME = 1;
 VOLT = 2;
 
-valuesL = {{'LCL_L1'        8e3}    {'LCL_L2'       8e3}...
-           {'Tr1_L'         8e3}    {'Cable33_L'    33e3}...
-           {'Tr2_L'         33e3}   {'Cable150_L'   150e3}...
-           {'Tr3_L'         150e3}  {'PhReact_L'    150e3}};
-valuesC = {{'LCL_C'         8e3}    {'Cable33_C1'   33e3}...
-           {'Cable33_C2'    33e3}   {'Cable150_C1'  150e3}...
-           {'Cable150_C2'   150e3}  {'Tuned_C'      150e3}};
-valuesR = {{'LCL_R1'        8e3}    {'LCL_R2'       8e3}...
-           {'LCL_Rc'        8e3}    {'Cable33_R'    33e3}...
-           {'Cable150_R'    150e3}  };
+valuesL = {{'LCL_L1'        Vlow}    {'LCL_L2'       Vlow}...
+           {'Tr1_L'         Vlow}    {'Cable33_L'    Vmid}...
+           {'Tr2_L'         Vmid}   {'Cable150_L'    Vhigh}...
+           {'Tr3_L'         Vhigh}  {'PhReact_L'     Vhigh}};
+valuesC = {{'LCL_C'         Vlow}    {'Cable33_C1'   Vmid}...
+           {'Cable33_C2'    Vmid}   {'Cable150_C1'   Vhigh}...
+           {'Cable150_C2'   Vhigh}  {'Tuned_C'       Vhigh}};
+valuesR = {{'LCL_R1'        Vlow}    {'LCL_R2'       Vlow}...
+           {'LCL_Rc'        Vlow}    {'Cable33_R'    Vmid}...
+           {'Cable150_R'    Vhigh}  };
 
 %% analysis for L elements varying (case 1)
 
@@ -104,19 +110,17 @@ for vv = 1:length(valuesL)
     plot(E,ZabsVL(vv,:), 'LineWidth', 2);
     axis([0 res_length*res*value0 0 imp_max]);
     
-    hx = graph2d.constantline(value0, 'LineStyle',':', 'Color','black');
-    changedependvar(hx,'x');
+    line([value0 value0],[0 imp_max], 'LineStyle',':', 'Color','black');
     text(.6,.95, ['Current L value: ' num2str(value0)],...
         'FontSize',10,'Color','black','Units','normalized');
     Zrow = ZabsVL(vv,:);
     Znow = Zrow(res_value0_idx);
-    hynow = graph2d.constantline(Znow, 'Color','green');
-    changedependvar(hynow,'y');
+    line([0 res_length*res*value0], [Znow Znow], 'Color','green');
+
     text(.6,.9,['Current Z value: ' num2str(Znow)],...
         'FontSize',10,'Color','green','Units','normalized');
     Zmax = max(Zrow);
-    hymax = graph2d.constantline(Zmax, 'Color','red');
-    changedependvar(hymax,'y');
+	line([0 res_length*res*value0], [Zmax Zmax], 'Color','red');
     text(.6,.85,['Max. Z value: ' num2str(Zmax)],...
         'FontSize',10,'Color','red','Units','normalized');
     valmax = E(Zrow==Zmax);
@@ -149,19 +153,16 @@ for vv = 1:length(valuesC)
     plot(E,ZabsVC(vv,:), 'LineWidth', 2);
     axis([0 res_length*res*value0 0 imp_max]);
     
-    hx = graph2d.constantline(value0, 'LineStyle',':', 'Color','black');
-    changedependvar(hx,'x');
+    line([value0 value0],[0 imp_max], 'LineStyle',':', 'Color','black');
     text(.6,.95, ['Current C value: ' num2str(value0)],...
         'FontSize',10,'Color','black','Units','normalized');
     Zrow = ZabsVC(vv,:);
     Znow = Zrow(res_value0_idx);
-    hynow = graph2d.constantline(Znow, 'Color','green');
-    changedependvar(hynow,'y');
+    line([0 res_length*res*value0], [Znow Znow], 'Color','green');
     text(.6,.9,['Current Z value: ' num2str(Znow)],...
         'FontSize',10,'Color','green','Units','normalized');
     Zmax = max(Zrow);
-    hymax = graph2d.constantline(Zmax, 'Color','red');
-    changedependvar(hymax,'y');
+    line([0 res_length*res*value0], [Zmax Zmax], 'Color','red');
     text(.6,.85,['Max. Z value: ' num2str(Zmax)],...
         'FontSize',10,'Color','red','Units','normalized');
     valmax = E(Zrow==Zmax);
@@ -173,7 +174,7 @@ for vv = 1:length(valuesC)
     ylabel('total impedance seen [ohms]');
 end
 clear E vv value value0 Znow Zmax hx hynow hymax       
-break
+return
 %% analysis for R elements varying (case 1)
 
 ZabsVR = zeros(length(valuesR), res_length);    

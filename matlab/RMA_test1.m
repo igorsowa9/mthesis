@@ -1,4 +1,4 @@
-clear all; clc; close all;
+clear variables; clc; close all;
 
 %% data
 
@@ -62,13 +62,14 @@ hold off
 
 % admittance matrix
 n_bus = 3;
-res = 0.001;
+res = 0.1;
 
 H = res:res:60;
 n_h = length(H);
 
 % mode 1
-ZmodalM = zeros(n_h,4); % harm order, mode, modal imp abs, angle
+ZmodalMaxM = zeros(n_h,4); % harm order, mode, modal imp abs, angle
+ZmodalAllM = zeros(n_h,n_bus);
 PFmodalM = zeros(n_h,n_bus+1); % PFs for buses
 for hh = 1:length(H)
     h = H(hh);
@@ -88,15 +89,20 @@ for hh = 1:length(H)
     [T,A] = eig(Y); % T - rigth eigenvector matrix
     L = inv(T); % L - left eigenvector matrix
     
-    [lambda,mode] = min(abs(e));
-    Zmodal = 1/lambda;
+    ZmodalAll = abs(inv(A));
+    for zz = 1:n_bus
+        ZmodalAllM(hh,zz) = ZmodalAll(zz,zz);
+    end
+    
+    [lambdaMin,mode] = min(abs(e));
+    ZmodalMax = 1/lambdaMin;
     em = e(mode);
     ang = rad2deg(angle(em));
     
-    ZmodalM(hh,1) = h;
-    ZmodalM(hh,2) = mode;
-    ZmodalM(hh,3) = Zmodal;
-    ZmodalM(hh,4) = ang;
+    ZmodalMaxM(hh,1) = h;
+    ZmodalMaxM(hh,2) = mode;
+    ZmodalMaxM(hh,3) = ZmodalMax;
+    ZmodalMaxM(hh,4) = ang;
     
     PFmodalM(hh,1) = h;
     PFmodalM(hh,2) = abs(L(1,mode)*T(mode,1));
@@ -105,16 +111,20 @@ for hh = 1:length(H)
     
 end
 figure(2);
-plot(H,ZmodalM(:,3));
+plot(H,ZmodalAllM);
 axis([0 60 0 500]);
 
-[Z_peak,h_crit_idx] = findpeaks(ZmodalM(:,3));
+figure(3);
+plot(H,ZmodalMaxM(:,3));
+axis([0 60 0 500]);
+
+[Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM(:,3));
 h_crit = h_crit_idx * res;
 
-ZmodalM(h_crit_idx,:)
+ZmodalMaxM(h_crit_idx,:)
 PFmodalM(h_crit_idx,:)
 
-break
+
 
 %     % bus number choice <<<<<<<<<<<<<<<<<<<<<<
 %     bus = 1;

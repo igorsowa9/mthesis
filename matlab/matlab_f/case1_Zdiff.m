@@ -7,7 +7,6 @@ function [Zabs] = case1_Zdiff(element, value, s)
 %     load('Aalto_data0to150org.mat'); %% ONLY ORIGINAL DATA
     load('Aalto_data0to150mod.mat');
     eval([element '=value;']); % assign 'value' to 'element'
-    
     Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
     Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
     Z3 = imp_parallel(Z2, 1/(s*Cable150_C1)) + s*Tr2_L;

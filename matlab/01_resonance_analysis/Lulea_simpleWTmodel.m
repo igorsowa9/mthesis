@@ -1,4 +1,4 @@
-clear all; close all; clc
+clear variables; close all; clc
 
 %% System data:
 % Subst. transformer (T2)
@@ -73,13 +73,16 @@ end
 figure(1)
 plot(H,Z_HVabsM, 'LineWidth', 1)
 axis([0 10 0 3]);
+xlabel('harmonics');
+ylabel('Impedance [ohms]');
+title('Impedance seen from HV substation');
 
 figure(2)
 plot(H,U_MVdistM, 'LineWidth', 1)
 axis([0 10 0 5]);
 xlabel('harmonics');
-ylabel('Voltage distortion amplification (U_MV/U_HV)');
-title('');
+ylabel('U_MV / U_HV');
+title('Voltage distortion amplification');
 
 
 

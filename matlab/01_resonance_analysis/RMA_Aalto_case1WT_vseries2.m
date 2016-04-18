@@ -1,15 +1,14 @@
-clear all; clc; close all;
+clear variables; close all;
 
 %% data
-
-%% system data:
+% system data:
 LCL_L1o = 1.2; % H
 LCL_R1o = 0.0; % ohm 
 LCL_L2o = 0.641; % H
 LCL_R2o = 0.0; % ohm 
 LCL_Co = 1.491e-7; % F
 LCL_Rco = 0; % ohm 
-Tr1_Lo = 51.568e-3; % H %%%%%%%%%%%%%%%%%%%%%%%
+Tr1_Lo = 51.568e-3; % H
 
 Cable33_Lo = 18.181e-3; % H
 Cable33_Ro = 0.372; % ohm
@@ -28,17 +27,15 @@ PhReact_Lo = 19.3e-3; % H
 %% ------- settings -------
 f = 50;
 w = 2*pi*f;
-res = 1;
+res = 0.01;
 H = res:res:30;
+fprintf('--------------- CASE 1 (1 WT); resolution: %f --------------- \n', res);
 
 ymax = 50e3;
 view = [0,H(length(H)),0,ymax];
 % view = [9 14 0 100]; % zoom
 xlab = 'harmonics order';
 ylab = 'impedance (ohms)';
-plots = [true false false false];
-
-load('four_cases_orginal_low.mat');
 
 %% convertion to equivalent circuit at V=150kV
 Vout = 150e3;
@@ -68,36 +65,33 @@ Tr3_L = ind_equiv(Tr3_Lo,f,Vhigh,Vout);
 Tuned_C = cap_equiv(Tuned_Co,f,Vhigh,Vout);
 PhReact_L = ind_equiv(PhReact_Lo,f,Vhigh,Vout);
 
-%% Impedance - 1 leg (seen from WT)
-if plots(1)==true 
-    ZabsM1 = zeros(length(H),1);
-    for hh=1:length(H)
-        h=H(hh);
-        s = 1i*h*w;
+%% Impedance - 1 leg (seen from middle LCL point)
+ZabsM1 = zeros(length(H),1);
+for hh=1:length(H)
+    h=H(hh);
+    s = 1i*h*w;
 
-        Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
-        Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
-        Z3 = imp_parallel(Z2, 1/(s*Cable150_C1)) + s*Tr2_L;
-        Z4 = imp_parallel(Z3, 1/(s*Cable33_C2)) + Cable33_R+s*Cable33_L;
-        Z5 = imp_parallel(Z4, 1/(s*Cable33_C1)) + s*Tr1_L + LCL_R2+s*LCL_L2;
-        Z6 = imp_parallel(Z5, 1/(s*LCL_C));
-        Z7 = LCL_R1+s*LCL_L1;
-        Z = imp_parallel(Z6, Z7);
+    Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
+    Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
+    Z3 = imp_parallel(Z2, 1/(s*Cable150_C1)) + s*Tr2_L;
+    Z4 = imp_parallel(Z3, 1/(s*Cable33_C2)) + Cable33_R+s*Cable33_L;
+    Z5 = imp_parallel(Z4, 1/(s*Cable33_C1)) + s*Tr1_L + LCL_R2+s*LCL_L2;
+    Z6 = imp_parallel(Z5, 1/(s*LCL_C));
+    Z7 = LCL_R1+s*LCL_L1;
+    % Z = imp_parallel(Z6, Z7);
+    Z = Z6;
 
-        Zabs = abs(Z);
-        ZabsM1(hh) = Zabs;
-    end
-    clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z Zabs
-
-    figure(1)
-    plot(H,ZabsM1, 'b', 'LineWidth', 2); hold on
-    hold off
-    axis(view)
-    title('1. case: 1 WT');
-    xlabel(xlab);
-    ylabel(ylab);
+    Zabs = abs(Z);
+    ZabsM1(hh) = Zabs;
 end
+clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z Zabs
 
+figure(1)
+plot(H,ZabsM1, 'b', 'LineWidth', 2)
+axis(view)
+title('Frequency Sweep: 1. case (1 WT). Seen from middle LCL');
+xlabel(xlab);
+ylabel(ylab);
 
 %% harmonics modal analysis
 
@@ -105,7 +99,8 @@ end
 n_bus = 7;
 n_h = length(H);
 
-ZmodalM = zeros(n_h,4); % harm order, mode, modal imp abs, angle
+ZmodalMaxM = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
+ZmodalAllM = zeros(n_h,n_bus); % all modes (impedances)
 PFmodalM = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
 for hh = 1:length(H)
     h = H(hh);
@@ -117,7 +112,8 @@ for hh = 1:length(H)
     y44 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
     y55 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
     y66 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
-    y77 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(LCL_R1+s*LCL_L1);
+    y77 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc;
+%     y88 = 1/(LCL_R1+s*LCL_L1);
 
     y12 = 1/(s*Tr3_L);
     y23 = 1/(Cable150_R+s*Cable150_L);
@@ -125,44 +121,60 @@ for hh = 1:length(H)
     y45 = 1/(Cable33_R+s*Cable33_L);
     y56 = 1/(s*Tr1_L);
     y67 = 1/(LCL_R2+s*LCL_L2);
+%     y78 = 1/(LCL_R1+s*LCL_L1);
 
-    Y = [y11    -y12    0       0       0       0       0   ;...
-        -y12    y22     -y23    0       0       0       0   ;...
-        0       -y23    y33     -y34    0       0       0   ;...
-        0       0       -y34    y44     -y45    0       0   ;...
-        0       0       0       -y45    y55     -y56    0   ;...
-        0       0       0       0       -y56    y66     -y67;...
-        0       0       0       0       0       -y67    y77 ];
+    Y = [y11    -y12    0       0       0       0       0          ;...
+        -y12    y22     -y23    0       0       0       0          ;...
+        0       -y23    y33     -y34    0       0       0          ;...
+        0       0       -y34    y44     -y45    0       0          ;...
+        0       0       0       -y45    y55     -y56    0          ;...
+        0       0       0       0       -y56    y66     -y67       ;...
+        0       0       0       0       0       -y67    y77        ];
     
     e = eig(Y); % eigenvalues
     [T,A] = eig(Y); % T - rigth eigenvector matrix
     L = inv(T); % L - left eigenvector matrix
     
-    [lambda,mode] = min(abs(e));
-    Zmodal = 1/lambda;
+    ZmodalAll = abs(inv(A));
+    for zz = 1:n_bus
+        ZmodalAllM(hh,zz) = ZmodalAll(zz,zz);
+    end
+    
+    [lambdaMin,mode] = min(abs(e));
+    ZmodalMax = 1/lambdaMin;
     em = e(mode);
     ang = rad2deg(angle(em));
     
-    ZmodalM(hh,1) = h;
-    ZmodalM(hh,2) = mode;
-    ZmodalM(hh,3) = Zmodal;
-    ZmodalM(hh,4) = ang;
+    ZmodalMaxM(hh,1) = h;
+    ZmodalMaxM(hh,2) = mode;
+    ZmodalMaxM(hh,3) = ZmodalMax;
+    ZmodalMaxM(hh,4) = ang;
     
     PFmodalM(hh,1) = h;
     for b=2:n_bus+1
-        PFmodalM(hh,b) = abs(L(b-1,mode)*T(mode,b-1));
+        PFmodalM(hh,b) = abs(L(mode,b-1)*T(b-1,mode));
     end
     
 end
 figure(2);
-plot(H,ZmodalM(:,3));
+plot(H,ZmodalAllM);
 axis(view);
+title('Harmonics Modal Analysis (ALL modes): 1. case (1 WT)');
+xlabel(xlab);
+ylabel(ylab);
 
-[Z_peak,h_crit_idx] = findpeaks(ZmodalM(:,3));
+figure(3);
+plot(H,ZmodalMaxM(:,3));
+axis(view)
+title('Harmonics Modal Analysis (for only MAX impedances): 1. case (1 WT)');
+xlabel(xlab);
+ylabel(ylab);
+
+[Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM(:,3));
 h_crit = h_crit_idx * res;
 
 fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
-ZmodalHcrit = ZmodalM(h_crit_idx,:)
+ZmodalHcrit = ZmodalMaxM(h_crit_idx,:)
 
 fprintf('harmonic order - participation factors for all buses\n');
 PFmodalHcrit = PFmodalM(h_crit_idx,:);
@@ -175,40 +187,11 @@ for f=1:length(PFmodalHcrit(:,1))
         ZmodalHcrit(f,1), find(m==max(m)), max(m));
 end
 
-
-break
-
-%     % bus number choice <<<<<<<<<<<<<<<<<<<<<<
-%     bus = 1;
-%     I = zeros(n_bus,1);
-%     I(bus) = 1;
-% 
-%     J = T*I;
-%     U = A\J; % kolejne wiesze to mody! nie bus'y
-% 
-%     Tcrit = T(mode,:); % rows taken
-% 
-% 
-%     V = L/A*T*I; % shows the harmonic voltages at certain 
-%     % bus as a result of harmonic current injection
-% 
-% 
-%     % modal current J1 linear projection of the physical 
-%     % currents in the direction of the first eigenvector
-%     J1 = sum(J);
-% 
-%     
-%     Ainv_aprox = zeros(n_bus,n_bus);
-%     Ainv_aprox(mode,mode) = invA(mode,mode); % only critical impedance left
-% 
-%     Vaprox = L*Ainv_aprox*T*I;
-%     
-%     invA = inv(A);
-%     ZmodalM(hh) = abs(invA(mode,mode));
-%     [abs(A) rad2deg(angle(A))]
-% 
-% figure(2)
-% plot(H,ZM4)
-% axis([0 60 0 500]);
-
-
+top_modes = unique(ZmodalMaxM(h_crit_idx,2));
+top_modes_impedances = ZmodalAllM(:,top_modes);
+figure(4)
+plot(H,top_modes_impedances);
+title('Harmonics Modal Analysis (Critical modes only): 1. case (1 WT)');
+legend(num2str(top_modes));
+xlabel(xlab);
+ylabel(ylab);

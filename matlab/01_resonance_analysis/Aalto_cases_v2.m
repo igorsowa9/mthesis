@@ -1,4 +1,8 @@
-clear all; close all; clc
+clear variables; close all; clc
+
+% AALTO V2:
+% DIFFERENT VALUES OF COMPONENTS (ORIGINAL DATA IS AT 150kV)
+% UNKNOWN TYPE/TOPOLOGY OF AC TUNED FILTER ((((51.568e-3))))
 
 %% system data:
 LCL_L1o = 1.2; % H
@@ -21,13 +25,14 @@ Cable150_C1o = 0.52e-6; % F
 Cable150_C2o = Cable150_C1o; % F
 Tr3_Lo = 19.338e-3; % H
 
-Tuned_R1o = 12.63;
-Tuned_C1o = 5.658e-6; % F
+%%% FILTER %%%%%%%%%%%%%%%%%%%%
+Tuned_R1o = 21.63;
+Tuned_C1o = 3.77e-6; % F
 Tuned_L1o = 1.8e-3;
 Tuned_R2o = 21.63;
 Tuned_C2o = 1.89e-6; % F
 Tuned_L2o = 0.883e-3;
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 PhReact_Lo = 19.3e-3; % H
 
 %% ------- settings -------
@@ -87,7 +92,13 @@ if plots(1)==true
         h=H(hh);
         s = 1i*h*w;
 
-        Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Ztuned1 = imp_parallel(Tuned_R1, s*Tuned_L1) + 1/(s*Tuned_C1);
+        Ztuned2 = imp_parallel(Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);        
+        Ztuned = Ztuned1+Ztuned2;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Z1 = imp_parallel(s*PhReact_L, Ztuned) + s*Tr3_L;
         Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
         Z3 = imp_parallel(Z2, 1/(s*Cable150_C1)) + s*Tr2_L;
         Z4 = imp_parallel(Z3, 1/(s*Cable33_C2)) + Cable33_R+s*Cable33_L;
@@ -103,7 +114,8 @@ if plots(1)==true
 
     figure(1)
     plot(H,ZabsM1, 'b', 'LineWidth', 2); hold on
-    plot(H,ZabsM1org_low, 'black--', 'LineWidth', 1); hold off
+%     plot(H,ZabsM1org_low, 'black--', 'LineWidth', 1) 
+    hold off
     % view1 = [0,H(length(H)),0,300];
     axis(view)
     title('1. case: 1 WT');
@@ -118,7 +130,13 @@ if plots(2)==true
         h=H(hh);
         s = 1i*h*w;
 
-        Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Ztuned1 = imp_parallel(Tuned_R1, s*Tuned_L1) + 1/(s*Tuned_C1);
+        Ztuned2 = imp_parallel(Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);        
+        Ztuned = Ztuned1+Ztuned2;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%        
+        
+        Z1 = imp_parallel(s*PhReact_L, Ztuned) + s*Tr3_L;
         Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
         Z3 = imp_parallel(Z2, 1/(s*Cable150_C1));
 
@@ -154,9 +172,13 @@ if plots(3)==true
         h=H(hh);
         s = 1i*h*w;
         
-        Ztuned1 = Tuned_R2+s*Tuned_L2+1/(s*Tuned_C2);
-        Ztuned2 = imp_parallel(imp_parallel(Tuned_R1,s*Tuned_L1),1/(s*Tuned_C1));
-        Ztuned = Ztuned1+Ztuned2;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%         Ztuned1 = Tuned_R1 + s*Tuned_L1 + 1/(s*Tuned_C1);
+%         Ztuned2 = Ztuned1;
+%         Ztuned3 = imp_parallel(Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);        
+%         Ztuned = imp_parallel(imp_parallel(Ztuned1,Ztuned2),Ztuned3);
+        Ztuned = imp_parallel(Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
         
 %         Ztuned = imp_parallel(s*Tuned_L1,Tuned_R1)+1/(s*Tuned_C1);
 
@@ -188,7 +210,7 @@ if plots(3)==true
     clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z1B Z2B Z3B Z1A Z Zabs
 
     figure(3)
-    plot(H,ZabsM3, 'b', 'LineWidth', 2); hold on
+    plot(H,ZabsM3, 'b', 'LineWidth', 1); hold on
 %   plot(H,ZabsM3org_low, 'black', 'LineWidth', 1); hold off
     %plot(H,RM3, 'r'); hold off
     axis(view)
@@ -205,7 +227,13 @@ if plots(4)==true
         h=H(hh);
         s = 1i*h*w;
 
-        Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        Ztuned1 = imp_parallel(h*Tuned_R1, s*Tuned_L1) + 1/(s*Tuned_C1);
+        Ztuned2 = imp_parallel(h*Tuned_R2, s*Tuned_L2) + 1/(s*Tuned_C2);        
+        Ztuned = Ztuned1+Ztuned2;
+        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
+        Z1 = imp_parallel(s*PhReact_L, Ztuned) + s*Tr3_L;
 
         Z1B = imp_parallel(h*LCL_R1+s*LCL_L1, 1/(s*LCL_C))+ h*LCL_R2+s*LCL_L2+s*Tr1_L;
         Z2B = imp_parallel(Z1B, 1/(s*Cable33_C1)) + h*Cable33_R+s*Cable33_L;
