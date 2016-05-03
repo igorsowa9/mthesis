@@ -1,4 +1,4 @@
-clear variables; close all;
+clear variables; close all; clc
 
 %% data
 % system data:
@@ -28,9 +28,9 @@ PhReact_Lo = 19.3e-3; % H
 f = 50;
 w = 2*pi*f;
 res = 0.01;
-H = res:res:30;
-%               Zmodels f.sweep HMA     Stability
-calculate = [   true    true    false true];
+H = res:res:40;
+%               Zmodels f.sweep HMA     Stability-bode   nyquist others
+calculate = [   true    false    true    true        false      false];
 
 fprintf('--------------- CASE 1 (1 WT); resolution: %f --------------- \n', res);
 
@@ -76,7 +76,8 @@ if calculate(1)==true
 
     Hf = H*f;
     figure(1); hold on;
-    subplot(2,1,1)
+    
+    subplot(2,2,1)
     pos = semilogx(Hf,mag2db(abs(Zwt_p)), 'LineWidth', 1); hold on
     neg = semilogx(Hf,mag2db(abs(Zwt_n)), 'r', 'LineWidth', 1); hold off
     legend([pos,neg], 'positive', 'negative')
@@ -84,7 +85,9 @@ if calculate(1)==true
     xlabel('Frequency [Hz] (log axis)');
     ylabel('Impedance of WT conv. (LCL_L1 incl.) [dB]');
     clear pos neg
-    subplot(2,1,2)
+    grid on
+    
+    subplot(2,2,2)
     pos = semilogx(Hf,mag2db(abs(Zhvdc_p)), 'LineWidth', 1); hold on
     neg = semilogx(Hf,mag2db(abs(Zhvdc_n)), 'r', 'LineWidth', 1); hold off
     legend([pos,neg], 'positive', 'negative')
@@ -92,10 +95,34 @@ if calculate(1)==true
     xlabel('Frequency [Hz] (log axis)');
     ylabel('Impedance of WT conv. (PhR.&tunedC incl.) [dB]');
     clear pos neg
+    grid on
+    
+    subplot(2,2,3)
+    pos = semilogx(Hf,angle(rad2deg(Zwt_p)), 'LineWidth', 1); hold on
+    neg = semilogx(Hf,angle(rad2deg(Zwt_n)), 'r', 'LineWidth', 1); hold off
+    legend([pos,neg], 'positive', 'negative')
+    title('Impedance of WT converter rated: 400 MW');
+    xlabel('Frequency [Hz] (log axis)');
+    ylabel('Impedance phase of WT conv. (LCL_L1 incl.) [deg]');
+    clear pos neg
+    grid on
+    
+    subplot(2,2,4)
+    pos = semilogx(Hf,angle(rad2deg(Zhvdc_p)), 'LineWidth', 1); hold on
+    neg = semilogx(Hf,angle(rad2deg(Zhvdc_n)), 'r', 'LineWidth', 1); hold off
+    legend([pos,neg], 'positive', 'negative')
+    title('Impedance of WT converter rated: 400 MW');
+    xlabel('Frequency [Hz] (log axis)');
+    ylabel('Impedance phase of WT conv. (LCL_L1 incl.) [deg]');
+    clear pos neg
+    grid on
+    
+    hold off
 end
 
-%% Impedance - 1 leg (seen from middle LCL point)
+%% frequency sweep - 1 leg (seen from middle LCL point)
 if calculate(2)==true
+    fprintf('\n\n-------- Frequency Sweep --------\n\n')
     ZabsM1 = zeros(length(H),2);
     for model = 1:2 % 1-no conv.impedance models; 2-with conv.impedance models
         for hh=1:length(H)
@@ -142,11 +169,21 @@ if calculate(2)==true
     xlabel(xlab);
     ylabel(strcat(ylab,' (Y-log)'));
     legend(num2str([1:2]'));
+    
+    [zz1,ww1] = findpeaks(ZabsM1(:,1));
+    [zz2,ww2] = findpeaks(ZabsM1(:,2));
+    fprintf('\nNo converter model:')
+    fprintf('\n- for h.order: %f, peak impedance: %f',[ww1'*res; zz1'])
+    fprintf('\nWith converter model:')
+    fprintf('\n- for h.order: %f, peak impedance: %f',[ww2'*res; zz2'])
+    
+    clear zz1 ww1 zz2 ww2
 end
 
 %% harmonics modal analysis - model 1 (no conv. models)
+
 if calculate(3)==true
-    fprintf('\n\n-------- HMA - without converter models --------')
+    fprintf('\n\n-------- HMA - without converter models --------\n\n')
     % admittance matrix
     n_bus = 7;
     n_h = length(H);
@@ -154,6 +191,7 @@ if calculate(3)==true
     ZmodalMaxM = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
     ZmodalAllM = zeros(n_h,n_bus); % all modes (impedances)
     PFmodalM = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
+    eM1 = zeros(n_bus,n_h);
     for hh = 1:length(H)
         h = H(hh);
         s = 1i*h*w;
@@ -182,6 +220,7 @@ if calculate(3)==true
             0       0       0       0       0       -y67    y77 ];
 
         e = eig(Y); % eigenvalues
+        eM1(:,hh) = e; 
         [T,A] = eig(Y); % T - rigth eigenvector matrix
         L = inv(T); % L - left eigenvector matrix
 
@@ -225,18 +264,21 @@ if calculate(3)==true
     [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM(:,3));
     h_crit = h_crit_idx * res;
 
-    fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
+    fprintf('--> harmonic order - critical mode - modal impedance(abs) - angle\n');
     ZmodalHcrit = ZmodalMaxM(h_crit_idx,:)
 
-    fprintf('harmonic order - participation factors for all buses\n');
+    fprintf('--> harmonic order - participation factors for all buses\n');
     PFmodalHcrit = PFmodalM(h_crit_idx,:);
     PFmodalHcrit = PFmodalHcrit(:,2:end)
+    
+    fprintf('--> Eigenvalues of critical frequencies\n');
+    eM1(:,h_crit_idx)
 
-    fprintf('greates participation factors:\n');
-    for f=1:length(PFmodalHcrit(:,1))
-        m = PFmodalHcrit(f,:);
+    fprintf('--> greatest participation factors:\n');
+    for ff=1:length(PFmodalHcrit(:,1))
+        m = PFmodalHcrit(ff,:);
         fprintf('For harmonic: %f, bus: %f has greatest PF=%f\n',...
-            ZmodalHcrit(f,1), find(m==max(m)), max(m));
+            ZmodalHcrit(ff,1), find(m==max(m)), max(m));
     end
 
     top_modes = unique(ZmodalMaxM(h_crit_idx,2));
@@ -250,10 +292,11 @@ if calculate(3)==true
     ylabel(ylab);
 
     %% harmonics modal analysis - model 2 (with conv. models)
-    fprintf('\n\n-------- HMA - with converter models --------')
+    fprintf('\n\n-------- HMA - with converter models --------\n\n')
     ZmodalMaxM2 = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
     ZmodalAllM2 = zeros(n_h,n_bus); % all modes (impedances)
     PFmodalM2 = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
+    eM2 = zeros(n_bus,n_h);
     for hh = 1:length(H)
         h = H(hh);
         s = 1i*h*w;
@@ -282,6 +325,7 @@ if calculate(3)==true
             0       0       0       0       0       -y67    y77 ];
 
         e = eig(Y); % eigenvalues
+        eM2(:,hh) = e; 
         [T,A] = eig(Y); % T - rigth eigenvector matrix
         L = inv(T); % L - left eigenvector matrix
 
@@ -325,18 +369,21 @@ if calculate(3)==true
     [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM2(:,3));
     h_crit = h_crit_idx * res;
 
-    fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
+    fprintf('--> harmonic order - critical mode - modal impedance(abs) - angle\n');
     ZmodalHcrit = ZmodalMaxM2(h_crit_idx,:)
 
-    fprintf('harmonic order - participation factors for all buses\n');
+    fprintf('--> harmonic order - participation factors for all buses\n');
     PFmodalHcrit = PFmodalM2(h_crit_idx,:);
     PFmodalHcrit = PFmodalHcrit(:,2:end)
-
-    fprintf('greates participation factors:\n');
-    for f=1:length(PFmodalHcrit(:,1))
-        m = PFmodalHcrit(f,:);
+    
+    fprintf('--> Eigenvalues of critical frequencies\n');
+    eM2(:,h_crit_idx)
+    
+    fprintf('--> greatest participation factors:\n');
+    for ff=1:length(PFmodalHcrit(:,1))
+        m = PFmodalHcrit(ff,:);
         fprintf('For harmonic: %f, bus: %f has greatest PF=%f\n',...
-            ZmodalHcrit(f,1), find(m==max(m)), max(m));
+            ZmodalHcrit(ff,1), find(m==max(m)), max(m));
     end
 
     top_modes = unique(ZmodalMaxM2(h_crit_idx,2));
@@ -352,14 +399,89 @@ end
 
 %% Stability
 % PCC of the system to analyze stability is between TR3 and Cable 150kV.
-% Thus TR3 belongs to Zr. LCL_L1 included in Zw. Zc is the rest of the grid.
+% Thus TR3 belongs to Zr/Zl. LCL_L1 included in Zw. Zc is the rest of the grid.
 % Zc (inner grid) has to be improved because now it includes only series
 % impedances.
-if calculate(4)==true
+nyqview = 1.5;
+Hstab = 0.2:0.01:40; % order
+Hfstab = Hstab*f; % Hz
 
+if calculate(4)==true
     fprintf('\n\n-------- Stability of the system --------\n')
-    Hstab = 0:0.01:100;
+    [Zwt_p, Zwt_n, ~, ~, Zhvdc_p, Zhvdc_n, ~, ~] = convertersImpedanceModel(Hstab,S_WTconverter);
+    
+    %% BODE
+    ZspM = zeros(1,length(Hstab));
+    ZsnM = zeros(1,length(Hstab));
+    Ztr3M = zeros(1,length(Hstab));
+    for hh = 1:length(Hstab)
+        h = Hstab(hh);
+        s = 1i*h*w;
+        
+        Z1p = imp_parallel(Zwt_p(hh),1/(s*LCL_C)) + ...
+            LCL_R2 + s*(LCL_L2+Tr1_L);
+        Z2p = imp_parallel(Z1p,1/(s*Cable33_C1))+Cable33_R+s*Cable33_L;
+        Z3p = imp_parallel(Z2p,1/(s*Cable33_C2))+s*Tr2_L;
+        Z4p = imp_parallel(Z3p,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
+        Zsp = imp_parallel(Z4p,1/(s*Cable150_C2));
+        ZspM(hh) = Zsp;
+        
+        Z1n = imp_parallel(Zwt_n(hh),1/(s*LCL_C)) + ...
+            LCL_R2 + s*(LCL_L2+Tr1_L);
+        Z2n = imp_parallel(Z1n,1/(s*Cable33_C1))+Cable33_R+s*Cable33_L;
+        Z3n = imp_parallel(Z2n,1/(s*Cable33_C2))+s*Tr2_L;
+        Z4n = imp_parallel(Z3n,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
+        Zsn = imp_parallel(Z4n,1/(s*Cable150_C2));
+        ZsnM(hh) = Zsn;
+    
+        Ztr3M(hh) = s*Tr3_L;
+    end
+    clear Z1p Z2p Z3p Z4p Zsp Z1n Z2n Z3n Z4n Zsn
+    
+    Zlp = Zhvdc_p + Ztr3M;
+    Zln = Zhvdc_n + Ztr3M;
+    
+    figure(7)
+    title('Bode diagram of frequency dependent impedance of source nad load');
+    subplot(2,1,1)
+    pos = semilogx(Hfstab,mag2db(abs(ZspM)), 'b','LineWidth', 1); hold on
+    neg = semilogx(Hfstab,mag2db(abs(ZsnM)), 'b--', 'LineWidth', 1); 
+    grdpos = semilogx(Hfstab,mag2db(abs(Zlp)), 'r', 'LineWidth', 1);
+    grdneg = semilogx(Hfstab,mag2db(abs(Zln)), 'r--', 'LineWidth', 1); hold off
+    grid on
+    V = axis;
+    axis([10, 2000, V(3), V(4)]);
+    legend([pos,neg,grdpos,grdneg], 'pos. source', 'neg. source',...
+        'pos. grid', 'neg. grid');
+    xlabel('Frequency [Hz] (log axis)');
+    ylabel('Impedances magnitude [dB]');
+    clear pos neg grdpos grdneg V
+    
+    subplot(2,1,2)
+    pos = semilogx(Hfstab,rad2deg(angle(ZspM)), 'b','LineWidth', 1); hold on
+    neg = semilogx(Hfstab,rad2deg(angle(ZsnM)), 'b--', 'LineWidth', 1); 
+    grdpos = semilogx(Hfstab,rad2deg(angle(Zlp)), 'r', 'LineWidth', 1);
+    grdneg = semilogx(Hfstab,rad2deg(angle(Zln)), 'r--', 'LineWidth', 1); hold off
+    grid on
+    V = axis;
+    axis([10, 2000, V(3), V(4)]);
+    legend([pos,neg,grdpos,grdneg], 'pos. source', 'neg. source',...
+        'pos. grid', 'neg. grid');
+    xlabel('Frequency [Hz] (log axis)');
+    ylabel('Angle [deg]');
+    clear pos neg grdpos grdneg V
+    
+end   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+if calculate(5)==true
+    
+    fprintf('\n\n-------- Stability of the system --------\n')
     [Zwt_p, Zwt_n, TFwt_p, TFwt_n, Zhvdc_p, Zhvdc_n, TFhvdc_p, TFhvdc_n] = convertersImpedanceModel(Hstab,S_WTconverter);
+        
+    %% TF - Nyquist - 3 elements
     
     s = tf('s');
     TFtr3 = s*Tr3_L;
@@ -377,10 +499,12 @@ if calculate(4)==true
     clear s
     
     figure(7)
+    subplot(1,2,1)
+    title('With only series impedances as impedance of the grid')
     nyquist(TF_p); hold on
     nyquist(TF_n); 
     circle(0,0,1); 
-    axis([-1.5 1.5 -1.5 1.5]);
+    axis([-nyqview nyqview -nyqview nyqview]);
     hold off
     
     % Only positive sequence
@@ -400,25 +524,76 @@ if calculate(4)==true
     WcircleHz = W(closest_idx)/(2*pi)
     WcircleOrder = WcircleHz/f
     
-    % ABCD two-port matrix
-    s = h*1i*w;
-    E = [1 0;s*LCL_C 1]*[1 LCL_R2+s*(LCL_L2+Tr1_L);0 1]*...
-        [1 0;s*Cable33_C1 1]*[1 Cable33_R+s*Cable33_L;0 1]*...
-        [1 0;s*Cable33_C2 1]*[1 s*Tr2_L;0 1]*[1 0;s*Cable150_C1 1]*...
-        [1 Cable150_R+s*Cable150_L;0 1]*[1 0;s*Cable150_C2 1];
-    A = E(1,1);
-    B = E(1,2);
-    C = E(2,1);
-    D = E(2,2);
+    %% Nyquist simplified - 2 elements
+    s = tf('s');
+    TF1 = minreal(minreal(imp_parallel(TFwt_p,1/(s*LCL_C))) + LCL_R2 + (LCL_L2+Tr1_L)*s);
+    TF2 = minreal(minreal(imp_parallel(TF1,1/(s*Cable33_C1))) + Cable33_R + Cable33_L*s);
+    TF3 = minreal(minreal(imp_parallel(TF2,1/(s*Cable33_C2))) + Tr2_L*s);
+    TF4 = minreal(minreal(imp_parallel(TF3,1/(s*Cable150_C1))) + Cable150_R + Cable150_L*s);
+    TFs = TF4;
+    %     TFs = minreal(imp_parallel(TF4,1/(s*Cable150_C2)));
     
-    Z11 = A/C;
-    Z12 = (A*D-B*C)/C;
-    Z21 = 1/C;
-    Z22 = D/C;
+    % !!!!!!!!!!!!!!!!!!!!! too many zeros and poles !!!!!!!!!!!!!!!!!!!!!!
     
-    Zin = Z11 - (Z12*Z21/(Z22+Zhvdc_p(100))); %!!!!!!!!!!!!!!!! HVDC as load
-    Zout = Z22 - (Z12*Z21/(Z11+Zwt_p(100))); %!!!!!!!!!!!!!!!! WT as load
+    TFtr3 = s*Tr3_L;
+    TFl_p = minreal(TFhvdc_p+TFtr3);
     
+    TF_p = minreal(TFs/TFl_p);
+    
+    clear s
+    
+    figure(7)
+    subplot(1,2,2)
+    nyquist(TF_p); hold on
+    circle(0,0,1); 
+%     axis([-nyqview nyqview -nyqview nyqview]);
+    hold off
+    
+    %% Nyquist with Zin Zout
+    if calculate(6)==true
+        % ABCD two-port matrix
+        s = tf('s');
+        E = [1 0;s*LCL_C 1]*[1 LCL_R2+s*(LCL_L2+Tr1_L);0 1]*...
+            [1 0;s*Cable33_C1 1]*[1 Cable33_R+s*Cable33_L;0 1]*...
+            [1 0;s*Cable33_C2 1]*[1 s*Tr2_L;0 1]*[1 0;s*Cable150_C1 1]*...
+            [1 Cable150_R+s*Cable150_L;0 1]*[1 0;s*Cable150_C2 1];
+        A = E(1,1);
+        B = E(1,2);
+        C = E(2,1);
+        D = E(2,2);
+
+        Z11 = A/C;
+        Z12 = (A*D-B*C)/C;
+        Z21 = 1/C;
+        Z22 = D/C;
+
+        TFc_in = Z11 - (Z12*Z21/(Z22+TFhvdc_p)); % System input impedance with
+    %     impedance of HVDC as load
+        TFc_out = Z22 - (Z12*Z21/(Z11+TFwt_p)); % System output impedance with
+    %     impedance of WT as a load
+
+        TF_p_in = minreal(TFr_p/(TFw_p+TFc_in));
+        TF_n_in = minreal(TFr_n/(TFw_n+TFc_in));
+        TF_p_out = minreal(TFr_p/(TFw_p+TFc_out));
+        TF_n_out = minreal(TFr_n/(TFw_n+TFc_out));
+        clear s
+
+        figure(8)
+        title('with Z of the grid as Zin - HVDC impedance as "load"')
+        nyquist(TF_p_in); hold on
+        nyquist(TF_n_in); 
+        circle(0,0,1); 
+        axis([-1.5 1.5 -1.5 1.5]);
+        hold off
+
+        figure(9)
+        title('with Z of the grid as Zout - WT impedance as "load"')
+        nyquist(TF_p_out); hold on
+        nyquist(TF_n_out); 
+        circle(0,0,1); 
+        axis([-1.5 1.5 -1.5 1.5]);
+        hold off
+    end
     
 %     figure(8)
 %     nyquist(TF_p,{0.001,W(closest_idx)}); hold on

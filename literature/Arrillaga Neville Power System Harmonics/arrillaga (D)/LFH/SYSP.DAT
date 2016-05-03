@@ -1,6 +1,0 @@
-         This is a Simple 14 Busbar Test system to Demonstrate LFH.              
-         The parameters are taken from the South Island of New Zealand           
-         Power System. Have fun trying LFH.     N.R.Watson                       
- SLACK BUSBAR =  B1                                                                                                       
- BASE POWER (MVA) =    100.00000                                                                                                    
- BASE FREQUENCY (Hz) = 50.000000                                                                                                      

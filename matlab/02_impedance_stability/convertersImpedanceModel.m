@@ -19,7 +19,7 @@ V0 = Vll*sqrt(2)/0.8;
 V1 = Vll/sqrt(3);
 I1 = Sr_wt/(sqrt(3)*Vll);
 
-L = 1.2;% 0.526e-6; % ph. imp. at 150kV !!!!!!!!!!!!!!!!!!!!
+L =  1.2 ;% 0.526e-6; % ph. imp. at 150kV !!!!!!!!!!!!!!!!!!!!
 
 % Hi(s) current control compensator
 Kp_i = 0.44e-6;
@@ -39,9 +39,9 @@ for hh=1:length(H)
     s = h*1i*w1;
     
     if (s-1i*w1)==0
-        bignum = 10e6;
+        bignum = 10e4;
         ZpM(hh) = (bignum*V0 + (s-1i*w1)*L)/...
-            (1-Tpll(s-1i*w1)*(1+bignum*I1*V0/V1));
+            (1-(V1*bignum/(2*(1+V1*bignum)))*(1+bignum*I1*V0/V1));
     else
         ZpM(hh) = (Hi(s-1i*w1)*V0 + (s-1i*w1)*L)/...
             (1-Tpll(s-1i*w1)*(1+Hi(s-1i*w1)*I1*V0/V1));
@@ -85,7 +85,7 @@ for hh=1:length(H)
     s = h*1i*w1;
     
     if (s-1i*w1)==0
-        bignum = 10e6;
+        bignum = 10e4;
         ZpM(hh) = (bignum*Vdc + s*L)/...
             (1+Yf(s)*(bignum*Vdc+s*L)+((bignum+1i*Kid)*bignum*Vdc));
     else
