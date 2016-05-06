@@ -1,6 +1,7 @@
 clearvars; close all; clc
 
 %% data
+
 % system data:
 LCL_L1o = 1.2; % H
 LCL_R1o = 0.0; % ohm 
@@ -8,7 +9,7 @@ LCL_L2o = 0.641; % H
 LCL_R2o = 0.0; % ohm 
 LCL_Co = 1.491e-7; % F
 LCL_Rco = 0; % ohm 
-Tr1_Lo = 51.568e-3; % H
+Tr1_Lo = 51.568e-3; % H %%%%%%%%%%%%%%%%%%%%%%%
 
 Cable33_Lo = 18.181e-3; % H
 Cable33_Ro = 0.372; % ohm
@@ -29,18 +30,16 @@ f = 50;
 w = 2*pi*f;
 res = 0.01;
 H = res:res:40;
-%               Zmodels f.sweep HMA     Stability-bode   nyquist others
-calculate = [   true    true    true    true        false      false];
+%               Zmodels f.sweep HMA     Stability-bode
+calculate = [   true    true    true    true];
 
-fprintf('--------------- CASE 1 (1 WT); resolution: %f --------------- \n', res);
+fprintf('--------------- CASE 2 (2 WT); resolution: %f --------------- \n', res);
 
 ymax = 50e3;
 view = [0,H(length(H)),0,ymax];
 % view = [9 14 0 100]; % zoom
 xlab = 'Harmonics Order';
 ylab = 'Impedance [Ohm]';
-
-save('results/settingsCase1.mat', 'f', 'res', 'H', 'view', 'xlab', 'ylab');
 
 %% convertion to equivalent circuit at V=150kV
 Vout = 150e3;
@@ -133,43 +132,51 @@ end
 %% frequency sweep - 1 leg (seen from middle LCL point)
 if calculate(2)==true
     fprintf('\n\n-------- Frequency Sweep --------\n\n')
-    ZabsM1 = zeros(length(H),2);
+    ZabsM2 = zeros(length(H),2);
     for model = 1:2 % 1-no conv.impedance models; 2-with conv.impedance models
         for hh=1:length(H)
             h=H(hh);
             s = 1i*h*w;
-
+            
             if model==1
                 Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
             elseif model==2
                 Z1 = Zhvdc_p(hh) + s*Tr3_L;
             end
+                
             Z2 = imp_parallel(Z1, 1/(s*Cable150_C2)) + Cable150_R+s*Cable150_L;
-            Z3 = imp_parallel(Z2, 1/(s*Cable150_C1)) + s*Tr2_L;
-            Z4 = imp_parallel(Z3, 1/(s*Cable33_C2)) + Cable33_R+s*Cable33_L;
-            Z5 = imp_parallel(Z4, 1/(s*Cable33_C1)) + s*Tr1_L + LCL_R2+s*LCL_L2;
-            Z6 = imp_parallel(Z5, 1/(s*LCL_C));
-
-%             Z6 = s*Tr1_L + LCL_R2+s*LCL_L2 + Cable33_R+s*Cable33_L +...
-%                 s*Tr2_L + Cable150_R+s*Cable150_L;
+            Z3 = imp_parallel(Z2, 1/(s*Cable150_C1));
+            
             if model==1
-                Z7 = LCL_R1+s*LCL_L1;
+                Z1B = imp_parallel(LCL_R1+s*LCL_L1,1/(s*LCL_C))+LCL_R2+s*LCL_L2+s*Tr1_L;
             elseif model==2
-                Z7 = Zwt_p(hh);
+                Z1B = imp_parallel(Zwt_p(hh),1/(s*LCL_C))+LCL_R2+s*LCL_L2+s*Tr1_L;
             end
-            Z = imp_parallel(Z6, Z7);
+            Z2B = imp_parallel(Z1B, 1/(s*Cable33_C1)) + Cable33_R+s*Cable33_L;
+            Z3B = imp_parallel(Z2B, 1/(s*Cable33_C2)) + s*Tr2_L;
+
+            Z4 = imp_parallel(Z3B, Z3) + s*Tr2_L;
+            Z5 = imp_parallel(Z4, 1/(s*Cable33_C2)) + Cable33_R+s*Cable33_L;
+            Z6 = imp_parallel(Z5, 1/(s*Cable33_C1)) + s*Tr1_L + s*LCL_L2+LCL_R2;
+            Z7 = imp_parallel(Z6, 1/(s*LCL_C));
+            if model==1
+                Z8 = LCL_R1+s*LCL_L1;
+            elseif model==2
+                Z8 = Zwt_p(hh);
+            end
+            Z = imp_parallel(Z7, Z8);
 
             Zabs = abs(Z);
-            ZabsM1(hh,model) = Zabs;
+            ZabsM2(hh,model) = Zabs;
         end
-        clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z Zabs
     end
+    clear hh h Z1 Z2 Z3 Z4 Z5 Z6 Z7 Z8 Z1B Z2B Z3B Z1A Z Zabs
 
     fig2 = figure(2);
     fig2.Position = [292 180 759 489];
-    model1 = plot(H,ZabsM1(:,1), 'LineWidth', 1,...
+    model1 = plot(H,ZabsM2(:,1), 'LineWidth', 1,...
         'Color',[4/255, 164/255, 217/255]); hold on
-    model2 = plot(H,ZabsM1(:,2), 'LineWidth', 1,...
+    model2 = plot(H,ZabsM2(:,2), 'LineWidth', 1,...
         'Color',[226/255, 104/255, 24/255]);
     axis(view)
     title('Frequency sweep - seen from middle LCL filter point');
@@ -181,9 +188,9 @@ if calculate(2)==true
     
     fig3 = figure(3);
     fig3.Position = [292 180 759 489];
-    model1 = semilogy(H,ZabsM1(:,1), 'LineWidth', 1,...
+    model1 = semilogy(H,ZabsM2(:,1), 'LineWidth', 1,...
         'Color',[4/255, 164/255, 217/255]); hold on
-    model2 = semilogy(H,ZabsM1(:,2), 'LineWidth', 1,...
+    model2 = semilogy(H,ZabsM2(:,2), 'LineWidth', 1,...
         'Color',[226/255, 104/255, 24/255]);
     title('Frequency sweep - seen from middle LCL filter point');
     xlabel(xlab);
@@ -192,8 +199,8 @@ if calculate(2)==true
     hold off
     clear model1 model2;
     
-    [zz1,ww1] = findpeaks(ZabsM1(:,1));
-    [zz2,ww2] = findpeaks(ZabsM1(:,2));
+    [zz1,ww1] = findpeaks(ZabsM2(:,1));
+    [zz2,ww2] = findpeaks(ZabsM2(:,2));
     fprintf('\nNo converter model:')
     fprintf('\n- for h.order: %f, peak impedance: %f',[ww1'*res; zz1'])
     fprintf('\nWith converter model:')
@@ -203,11 +210,10 @@ if calculate(2)==true
 end
 
 %% harmonics modal analysis - model 1 (no conv. models)
-
 if calculate(3)==true
     fprintf('\n\n-------- HMA - without converter models --------\n\n')
     % admittance matrix
-    n_bus = 7;
+    n_bus = 11;
     n_h = length(H);
 
     ZmodalMaxM = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
@@ -218,28 +224,44 @@ if calculate(3)==true
         h = H(hh);
         s = 1i*h*w;
 
-        y11 = 1/(s*PhReact_L) + s*Tuned_C + 1/(s*Tr3_L);
-        y22 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
-        y33 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 1/(s*Tr2_L);
-        y44 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
-        y55 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
-        y66 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
-        y77 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(LCL_R1+s*LCL_L1);
+        y1_1 = 1/(s*PhReact_L) + s*Tuned_C + 1/(s*Tr3_L);
+        y2_2 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
+        y3_3 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 2*1/(s*Tr2_L);
 
-        y12 = 1/(s*Tr3_L);
-        y23 = 1/(Cable150_R+s*Cable150_L);
-        y34 = 1/(s*Tr2_L);
-        y45 = 1/(Cable33_R+s*Cable33_L);
-        y56 = 1/(s*Tr1_L);
-        y67 = 1/(LCL_R2+s*LCL_L2);
+        y4_4 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
+        y5_5 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
+        y6_6 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
+        y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(LCL_R1+s*LCL_L1);
 
-        Y = [y11    -y12    0       0       0       0       0   ;...
-            -y12    y22     -y23    0       0       0       0   ;...
-            0       -y23    y33     -y34    0       0       0   ;...
-            0       0       -y34    y44     -y45    0       0   ;...
-            0       0       0       -y45    y55     -y56    0   ;...
-            0       0       0       0       -y56    y66     -y67;...
-            0       0       0       0       0       -y67    y77 ];
+        y8_8 = y4_4;
+        y9_9 = y5_5;
+        y10_10 = y6_6;
+        y11_11 = y7_7;
+
+        y1_2 = 1/(s*Tr3_L);    
+        y2_3 = 1/(Cable150_R+s*Cable150_L);
+
+        y3_4 = 1/(s*Tr2_L);
+        y3_8 = y3_4;
+
+        y4_5 = 1/(Cable33_R+s*Cable33_L);
+        y5_6 = 1/(s*Tr1_L);
+        y6_7 = 1/(LCL_R2+s*LCL_L2);
+        y8_9 = y4_5;
+        y9_10 = y5_6;
+        y10_11 = y6_7;
+
+        Y = [y1_1 -y1_2 0 0 0 0 0 0 0 0 0;...
+            -y1_2 y2_2 -y2_3 0 0 0 0 0 0 0 0;...
+            0 -y2_3 y3_3 -y3_4 0 0 0 -y3_8 0 0 0;...
+            0 0 -y3_4 y4_4 -y4_5 0 0 0 0 0 0;...
+            0 0 0 -y4_5 y5_5 -y5_6 0 0 0 0 0;...
+            0 0 0 0 -y5_6 y6_6 -y6_7 0 0 0 0;...
+            0 0 0 0 0 -y6_7 y7_7 0 0 0 0;...
+            0 0 -y3_8 0 0 0 0 y8_8 -y8_9 0 0;...
+            0 0 0 0 0 0 0 -y8_9 y9_9 -y9_10 0;...
+            0 0 0 0 0 0 0 0 -y9_10 y10_10 -y10_11;...
+            0 0 0 0 0 0 0 0 0 -y10_11 y11_11];
 
         e = eig(Y); % eigenvalues
         eM1(:,hh) = e; 
@@ -276,34 +298,45 @@ if calculate(3)==true
     xlabel(xlab);
     ylabel(ylab);
     legend(num2str([1:n_bus]'),'Location','NorthEast');
-
+    
     fig5 = figure(5);
     fig5.Position = [244 115 847 576];
     subplot(2,1,1)
     plot(H,ZmodalMaxM(:,3));
     axis(view)
-    title('HMA (only max. modes) - no conv. models');
+    title('HMA (only max. modes) - no conv. models');    
     xlabel(xlab);
     ylabel(ylab);
 
     [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM(:,3));
     h_crit = h_crit_idx * res;
 
-    fprintf('--> harmonic order - critical mode - modal impedance(abs) - angle\n');
+    fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
     ZmodalHcrit = ZmodalMaxM(h_crit_idx,:)
 
-    fprintf('--> harmonic order - participation factors for all buses\n');
+    fprintf('harmonic order - participation factors for all buses\n');
     PFmodalHcrit = PFmodalM(h_crit_idx,:);
     PFmodalHcrit = PFmodalHcrit(:,2:end)
     
     fprintf('--> Eigenvalues of critical frequencies\n');
     eM1(:,h_crit_idx)
 
-    fprintf('--> greatest participation factors:\n');
+    fprintf('greates participation factors:\n');
     for ff=1:length(PFmodalHcrit(:,1))
-        m = PFmodalHcrit(ff,:);
-        fprintf('For harmonic: %f, bus: %f has greatest PF=%f\n',...
-            ZmodalHcrit(ff,1), find(m==max(m)), max(m));
+        M = PFmodalHcrit(ff,:);
+        mx = max(M);
+        tmx = find(M==mx);
+        omx1 = 0.99999*mx;
+        omx2 = 1.00001*mx;
+        omx = setdiff(intersect(find(M>omx1),find(M<omx2)),tmx);
+
+        fprintf('For harmonic: %f, bus: %s has greatest PF=%f.\n',...
+            ZmodalHcrit(ff,1), num2str(tmx), mx);
+        if ~isempty(omx)
+            fprintf('\t(also same PF at buses: ');
+            fprintf('%s', num2str(omx));
+            fprintf(')\n');
+        end
     end
 
     top_modes = unique(ZmodalMaxM(h_crit_idx,2));
@@ -313,7 +346,7 @@ if calculate(3)==true
     fig6.Position = [244 115 847 576];
     subplot(2,1,1)
     plot(H,top_modes_impedances);
-    title('HMA (critical modes only) - no conv. models');
+    title('HMA (critical modes only) - with conv. models');
     legend(num2str(top_modes));
     xlabel(xlab);
     ylabel(ylab);
@@ -328,28 +361,44 @@ if calculate(3)==true
         h = H(hh);
         s = 1i*h*w;
 
-        y11 = 1/(Zhvdc_p(hh)) + 1/(s*Tr3_L);
-        y22 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
-        y33 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 1/(s*Tr2_L);
-        y44 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
-        y55 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
-        y66 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
-        y77 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(Zwt_p(hh));
+        y1_1 = 1/(Zhvdc_p(hh)) + 1/(s*Tr3_L);
+        y2_2 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
+        y3_3 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 2*1/(s*Tr2_L);
 
-        y12 = 1/(s*Tr3_L);
-        y23 = 1/(Cable150_R+s*Cable150_L);
-        y34 = 1/(s*Tr2_L);
-        y45 = 1/(Cable33_R+s*Cable33_L);
-        y56 = 1/(s*Tr1_L);
-        y67 = 1/(LCL_R2+s*LCL_L2);
+        y4_4 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
+        y5_5 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
+        y6_6 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
+        y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(Zwt_p(hh));
 
-        Y = [y11    -y12    0       0       0       0       0   ;...
-            -y12    y22     -y23    0       0       0       0   ;...
-            0       -y23    y33     -y34    0       0       0   ;...
-            0       0       -y34    y44     -y45    0       0   ;...
-            0       0       0       -y45    y55     -y56    0   ;...
-            0       0       0       0       -y56    y66     -y67;...
-            0       0       0       0       0       -y67    y77 ];
+        y8_8 = y4_4;
+        y9_9 = y5_5;
+        y10_10 = y6_6;
+        y11_11 = y7_7;
+
+        y1_2 = 1/(s*Tr3_L);    
+        y2_3 = 1/(Cable150_R+s*Cable150_L);
+
+        y3_4 = 1/(s*Tr2_L);
+        y3_8 = y3_4;
+
+        y4_5 = 1/(Cable33_R+s*Cable33_L);
+        y5_6 = 1/(s*Tr1_L);
+        y6_7 = 1/(LCL_R2+s*LCL_L2);
+        y8_9 = y4_5;
+        y9_10 = y5_6;
+        y10_11 = y6_7;
+
+        Y = [y1_1 -y1_2 0 0 0 0 0 0 0 0 0;...
+            -y1_2 y2_2 -y2_3 0 0 0 0 0 0 0 0;...
+            0 -y2_3 y3_3 -y3_4 0 0 0 -y3_8 0 0 0;...
+            0 0 -y3_4 y4_4 -y4_5 0 0 0 0 0 0;...
+            0 0 0 -y4_5 y5_5 -y5_6 0 0 0 0 0;...
+            0 0 0 0 -y5_6 y6_6 -y6_7 0 0 0 0;...
+            0 0 0 0 0 -y6_7 y7_7 0 0 0 0;...
+            0 0 -y3_8 0 0 0 0 y8_8 -y8_9 0 0;...
+            0 0 0 0 0 0 0 -y8_9 y9_9 -y9_10 0;...
+            0 0 0 0 0 0 0 0 -y9_10 y10_10 -y10_11;...
+            0 0 0 0 0 0 0 0 0 -y10_11 y11_11];
 
         e = eig(Y); % eigenvalues
         eM2(:,hh) = e; 
@@ -385,33 +434,44 @@ if calculate(3)==true
     xlabel(xlab);
     ylabel(ylab);
     legend(num2str([1:n_bus]'),'Location','NorthEast');
-
+    
     figure(5);
     subplot(2,1,2)
     plot(H,ZmodalMaxM2(:,3));
     axis(view)
-    title('HMA (only max. modes) - with conv. models');
+    title('HMA (only max. modes) - with conv. models');    
     xlabel(xlab);
     ylabel(ylab);
-    
+
     [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM2(:,3));
     h_crit = h_crit_idx * res;
 
-    fprintf('--> harmonic order - critical mode - modal impedance(abs) - angle\n');
+    fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
     ZmodalHcrit = ZmodalMaxM2(h_crit_idx,:)
 
-    fprintf('--> harmonic order - participation factors for all buses\n');
+    fprintf('harmonic order - participation factors for all buses\n');
     PFmodalHcrit = PFmodalM2(h_crit_idx,:);
     PFmodalHcrit = PFmodalHcrit(:,2:end)
     
     fprintf('--> Eigenvalues of critical frequencies\n');
     eM2(:,h_crit_idx)
-    
-    fprintf('--> greatest participation factors:\n');
+
+    fprintf('greates participation factors:\n');
     for ff=1:length(PFmodalHcrit(:,1))
-        m = PFmodalHcrit(ff,:);
-        fprintf('For harmonic: %f, bus: %f has greatest PF=%f\n',...
-            ZmodalHcrit(ff,1), find(m==max(m)), max(m));
+        M = PFmodalHcrit(ff,:);
+        mx = max(M);
+        tmx = find(M==mx);
+        omx1 = 0.99999*mx;
+        omx2 = 1.00001*mx;
+        omx = setdiff(intersect(find(M>omx1),find(M<omx2)),tmx);
+
+        fprintf('For harmonic: %f, bus: %s has greatest PF=%f.\n',...
+            ZmodalHcrit(ff,1), num2str(tmx), mx);
+        if ~isempty(omx)
+            fprintf('\t(also same PF at buses: ');
+            fprintf('%s', num2str(omx));
+            fprintf(')\n');
+        end
     end
 
     top_modes = unique(ZmodalMaxM2(h_crit_idx,2));
@@ -450,7 +510,8 @@ if calculate(4)==true
             LCL_R2 + s*(LCL_L2+Tr1_L);
         Z2p = imp_parallel(Z1p,1/(s*Cable33_C1))+Cable33_R+s*Cable33_L;
         Z3p = imp_parallel(Z2p,1/(s*Cable33_C2))+s*Tr2_L;
-        Z4p = imp_parallel(Z3p,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
+        Z3pB = imp_parallel(Z3p,Z3p); % incl. second branch
+        Z4p = imp_parallel(Z3pB,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
         Zsp = imp_parallel(Z4p,1/(s*Cable150_C2));
         ZspM(hh) = Zsp;
         
@@ -458,13 +519,14 @@ if calculate(4)==true
             LCL_R2 + s*(LCL_L2+Tr1_L);
         Z2n = imp_parallel(Z1n,1/(s*Cable33_C1))+Cable33_R+s*Cable33_L;
         Z3n = imp_parallel(Z2n,1/(s*Cable33_C2))+s*Tr2_L;
-        Z4n = imp_parallel(Z3n,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
+        Z3nB = imp_parallel(Z3n,Z3n); % incl. second branch
+        Z4n = imp_parallel(Z3nB,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
         Zsn = imp_parallel(Z4n,1/(s*Cable150_C2));
         ZsnM(hh) = Zsn;
     
         Ztr3M(hh) = s*Tr3_L;
     end
-    clear Z1p Z2p Z3p Z4p Zsp Z1n Z2n Z3n Z4n Zsn
+    clear Z1p Z2p Z3p Z4p Zsp Z1n Z2n Z3n Z4n Zsn Z3pB Z3nB
     
     Zlp = Zhvdc_p + Ztr3M;
     Zln = Zhvdc_n + Ztr3M;
@@ -502,161 +564,7 @@ if calculate(4)==true
     
 end   
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-if calculate(5)==true
-    
-    [Zwt_p, Zwt_n, TFwt_p, TFwt_n, Zhvdc_p, Zhvdc_n, TFhvdc_p, TFhvdc_n] = convertersImpedanceModel(Hstab,S_WTconverter);
-        
-    %% TF - Nyquist - 3 elements
-    
-    s = tf('s');
-    TFtr3 = s*Tr3_L;
-    TFr_p = minreal(TFhvdc_p+TFtr3);
-    TFr_n = minreal(TFhvdc_n+TFtr3);
-    
-    TFw_p = TFwt_p;
-    TFw_n = TFwt_n;
-    
-    TFc = (LCL_R2+Cable33_R+Cable150_R)+...
-        (LCL_L2+Tr1_L+Cable33_L+Tr2_L+Cable150_L)*s; % series impedances only !!
-    
-    TF_p = minreal(TFr_p/(TFw_p+TFc));
-    TF_n = minreal(TFr_n/(TFw_n+TFc));
-    clear s
-    
-    figure(7)
-    subplot(1,2,1)
-    title('With only series impedances as impedance of the grid')
-    nyquist(TF_p); hold on
-    nyquist(TF_n); 
-    circle(0,0,1); 
-    axis([-nyqview nyqview -nyqview nyqview]);
-    hold off
-    
-    % Only positive sequence
-    [REp,IMp,W] = nyquist(TF_p);
-    
-    REp = REp(:);
-    IMp = IMp(:);
-    
-    distancesToZero = sqrt(REp.^2+IMp.^2);
-    distancesToCircle = abs(sqrt(REp.^2+IMp.^2)-1);
-    
-    closest_idx = intersect(find(distancesToZero>0.99),find(distancesToZero<1.01));
-    if isempty(closest_idx)
-        closest = min(distancesToCircle);
-        closest_idx = find(abs(distancesToCircle) == closest);
-    end
-    WcircleHz = W(closest_idx)/(2*pi)
-    WcircleOrder = WcircleHz/f
-    
-    %% Nyquist simplified - 2 elements
-    s = tf('s');
-    TF1 = minreal(minreal(imp_parallel(TFwt_p,1/(s*LCL_C))) + LCL_R2 + (LCL_L2+Tr1_L)*s);
-    TF2 = minreal(minreal(imp_parallel(TF1,1/(s*Cable33_C1))) + Cable33_R + Cable33_L*s);
-    TF3 = minreal(minreal(imp_parallel(TF2,1/(s*Cable33_C2))) + Tr2_L*s);
-    TF4 = minreal(minreal(imp_parallel(TF3,1/(s*Cable150_C1))) + Cable150_R + Cable150_L*s);
-    TFs = TF4;
-    %     TFs = minreal(imp_parallel(TF4,1/(s*Cable150_C2)));
-    
-    % !!!!!!!!!!!!!!!!!!!!! too many zeros and poles !!!!!!!!!!!!!!!!!!!!!!
-    
-    TFtr3 = s*Tr3_L;
-    TFl_p = minreal(TFhvdc_p+TFtr3);
-    
-    TF_p = minreal(TFs/TFl_p);
-    
-    clear s
-    
-    figure(7)
-    subplot(1,2,2)
-    nyquist(TF_p); hold on
-    circle(0,0,1); 
-%     axis([-nyqview nyqview -nyqview nyqview]);
-    hold off
-    
-    %% Nyquist with Zin Zout
-    if calculate(6)==true
-        % ABCD two-port matrix
-        s = tf('s');
-        E = [1 0;s*LCL_C 1]*[1 LCL_R2+s*(LCL_L2+Tr1_L);0 1]*...
-            [1 0;s*Cable33_C1 1]*[1 Cable33_R+s*Cable33_L;0 1]*...
-            [1 0;s*Cable33_C2 1]*[1 s*Tr2_L;0 1]*[1 0;s*Cable150_C1 1]*...
-            [1 Cable150_R+s*Cable150_L;0 1]*[1 0;s*Cable150_C2 1];
-        A = E(1,1);
-        B = E(1,2);
-        C = E(2,1);
-        D = E(2,2);
-
-        Z11 = A/C;
-        Z12 = (A*D-B*C)/C;
-        Z21 = 1/C;
-        Z22 = D/C;
-
-        TFc_in = Z11 - (Z12*Z21/(Z22+TFhvdc_p)); % System input impedance with
-    %     impedance of HVDC as load
-        TFc_out = Z22 - (Z12*Z21/(Z11+TFwt_p)); % System output impedance with
-    %     impedance of WT as a load
-
-        TF_p_in = minreal(TFr_p/(TFw_p+TFc_in));
-        TF_n_in = minreal(TFr_n/(TFw_n+TFc_in));
-        TF_p_out = minreal(TFr_p/(TFw_p+TFc_out));
-        TF_n_out = minreal(TFr_n/(TFw_n+TFc_out));
-        clear s
-
-        figure(8)
-        title('with Z of the grid as Zin - HVDC impedance as "load"')
-        nyquist(TF_p_in); hold on
-        nyquist(TF_n_in); 
-        circle(0,0,1); 
-        axis([-1.5 1.5 -1.5 1.5]);
-        hold off
-
-        figure(9)
-        title('with Z of the grid as Zout - WT impedance as "load"')
-        nyquist(TF_p_out); hold on
-        nyquist(TF_n_out); 
-        circle(0,0,1); 
-        axis([-1.5 1.5 -1.5 1.5]);
-        hold off
-    end
-    
-%     figure(8)
-%     nyquist(TF_p,{0.001,W(closest_idx)}); hold on
-%     circle(0,0,1); 
-%     axis([-1.5 1.5 -1.5 1.5]);
-%     hold off
-    
-%     figure(9)
-%     nyquist(TF_p,{0.001,3412}); hold on
-%     circle(0,0,1); 
-%     axis([-1.5 1.5 -1.5 1.5]);
-%     hold off
-    
-%     TR3_Z = Tr3_L * 1i*Hstab*w;
-%     Zr_p = Zhvdc_p + TR3_Z; 
-%     Zw_p = Zwt_p;
-%     Zr_n = Zhvdc_n + TR3_Z; 
-%     Zw_n = Zwt_n; 
-%       
-%     Zc = (LCL_R2+Cable33_R+Cable150_R)*ones(1,length(Hstab)) +...
-%         (LCL_L2+Tr1_L+Cable33_L+Tr2_L+Cable150_L) * 1i*Hstab*w; % series impedances only !!
-% 
-%     nyq_p = Zr_p./(Zw_p+Zc);
-%     nyq_n = Zr_n./(Zw_n+Zc);
-%     figure(8)
-%     plot(nyq_p, 'b'); hold on
-%     plot(nyq_n, 'r');
-%     grid on
-%     circle(0,0,1); 
-% %     axis([-1.5 1.5 -1.5 1.5]);
-%     hold off
-    
-end
-
 %% Save variables
-FS_ZM1 = ZabsM1; % FS data
-HMA_ZmaxM1 = [ZmodalMaxM(:,3) ZmodalMaxM2(:,3)]; % HMA max modes only data
-save('results/fromCase1.mat', 'FS_ZM1', 'HMA_ZmaxM1');
-
+FS_ZM2 = ZabsM2; % FS data
+HMA_ZmaxM2 = [ZmodalMaxM(:,3) ZmodalMaxM2(:,3)]; % HMA max modes only data
+save('results/fromCase2.mat', 'FS_ZM2', 'HMA_ZmaxM2');
