@@ -6,7 +6,6 @@ load('results/fromCase2.mat');
 load('results/fromCase3.mat');
 
 % colors of cases 1 2 3
-
 color1 = [179, 179, 179];
 color2 = [87, 86, 161];
 color3 = [1, 0, 59];
@@ -26,6 +25,7 @@ title('Frequency sweep - VS models - all three cases');
 xlabel(xlab);
 ylabel(ylab);
 legend([imp1,imp2,imp3],'Case 1','Case 2','Case 3');
+grid on
 hold off
 clear imp1 imp2 imp3;
 
@@ -42,6 +42,7 @@ title('Frequency sweep - VS models - all three cases');
 xlabel(xlab);
 ylabel(strcat(ylab,' (log axis)'));
 legend([imp1,imp2,imp3],'Case 1','Case 2','Case 3');
+grid on
 hold off
 clear imp1 imp2 imp3;
 
@@ -59,6 +60,7 @@ title('Frequency sweep - Z(s) models - all three cases');
 xlabel(xlab);
 ylabel(ylab);
 legend([imp1,imp2,imp3],'Case 1','Case 2','Case 3');
+grid on
 hold off
 clear imp1 imp2 imp3;
 
@@ -75,13 +77,14 @@ title('Frequency sweep - Z(s) models - all three cases');
 xlabel(xlab);
 ylabel(strcat(ylab,' (log axis)'));
 legend([imp1,imp2,imp3],'Case 1','Case 2','Case 3');
+grid on
 hold off
 clear imp1 imp2 imp3;
 
 %% HMA comparison
 % VS models
 fig5 = figure(5);
-fig5.Position = [244 115 847 576];
+fig5.Position = [292 180 759 489];
 hma1 = plot(H,HMA_ZmaxM1(:,1), 'LineWidth', 1,...
         'Color',[color1(1)/255, color1(2)/255, color1(3)/255]); hold on
 hma2 = plot(H,HMA_ZmaxM2(:,1), 'LineWidth', 1,...
@@ -93,12 +96,13 @@ title('HMA - VS models - all three cases');
 xlabel(xlab);
 ylabel(ylab);
 legend([hma1,hma2,hma3],'Case 1','Case 2','Case 3');
+grid on
 hold off
 clear hma1 hma2 hma3;
 
 % VS models
 fig6 = figure(6);
-fig6.Position = [244 115 847 576];
+fig6.Position = [292 180 759 489];
 hma1 = plot(H,HMA_ZmaxM1(:,2), 'LineWidth', 1,...
         'Color',[color1(1)/255, color1(2)/255, color1(3)/255]); hold on
 hma2 = plot(H,HMA_ZmaxM2(:,2), 'LineWidth', 1,...
@@ -110,6 +114,7 @@ title('HMA - Z(s) models - all three cases');
 xlabel(xlab);
 ylabel(ylab);
 legend([hma1,hma2,hma3],'Case 1','Case 2','Case 3');
+grid on
 hold off
 clear hma1 hma2 hma3;
 

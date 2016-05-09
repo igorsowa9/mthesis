@@ -29,9 +29,13 @@ PhReact_Lo = 19.3e-3; % H
 f = 50;
 w = 2*pi*f;
 res = 0.01;
-H = res:res:40;
+H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode
 calculate = [   true    true    true    true];
+
+colm1 = [56, 18, 77]; % VS
+colm2 = [196, 141, 227]; % CS-WT
+colm3 = [242, 0, 52]; % Z(s)
 
 fprintf('--------------- CASE 3 (4 WT); resolution: %f --------------- \n', res);
 
@@ -132,23 +136,26 @@ end
 %% Impedance - 4 legs (seen from middle LCL point)
 if calculate(2)==true
     fprintf('\n\n-------- Frequency Sweep --------\n\n')
-    ZabsM3 = zeros(length(H),1);
-    for model = 1:2;
+    ZabsM3 = zeros(length(H),3);
+    for model = 1:3;  % 1-VS; 2-CS (WT conv.),3-Z(s)
         for hh=1:length(H)
             h=H(hh);
             s = 1i*h*w;
             
-            if model==1
+            if (model==1 || model==2)
                 Z1 = imp_parallel(s*PhReact_L, 1/(s*Tuned_C)) + s*Tr3_L;
-            elseif model==2
+            elseif model==3
                 Z1 = Zhvdc_p(hh) + s*Tr3_L;
             end
             
             if model==1
                 Z1B = imp_parallel(LCL_R1+s*LCL_L1,1/(s*LCL_C))+LCL_R2+s*LCL_L2+s*Tr1_L;
             elseif model==2
+                Z1B = imp_parallel(10e8,1/(s*LCL_C))+LCL_R2+s*LCL_L2+s*Tr1_L;
+            elseif model==3
                 Z1B = imp_parallel(Zwt_p(hh),1/(s*LCL_C))+LCL_R2+s*LCL_L2+s*Tr1_L;
             end
+            
             Z2B = imp_parallel(Z1B, 1/(s*Cable33_C1)) + Cable33_R+s*Cable33_L;
             Z3B = imp_parallel(Z2B, 1/(s*Cable33_C2)) + s*Tr2_L;
 
@@ -167,6 +174,8 @@ if calculate(2)==true
             if model==1
                 Z8 = LCL_R1+s*LCL_L1;
             elseif model==2
+                Z8 = 10e8;
+            elseif model==3
                 Z8 = Zwt_p(hh);
             end
             Z = imp_parallel(Z7, Z8);
@@ -180,29 +189,35 @@ if calculate(2)==true
     fig2 = figure(2);
     fig2.Position = [292 180 759 489];
     model1 = plot(H,ZabsM3(:,1), 'LineWidth', 1,...
-        'Color',[4/255, 164/255, 217/255]); hold on
+        'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]); hold on
     model2 = plot(H,ZabsM3(:,2), 'LineWidth', 1,...
-        'Color',[226/255, 104/255, 24/255]);
+        'Color',[colm2(1)/255, colm2(2)/255, colm2(3)/255]);
+    model3 = plot(H,ZabsM3(:,3), 'LineWidth', 1,...
+        'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
     axis(view)
-    title('Frequency sweep - seen from middle LCL filter point');
+    title('Frequency sweep - seen from LCL filter middle bus');
     xlabel(xlab);
     ylabel(ylab);
-    legend([model1,model2], 'no conv. models', 'with conv. models');
+    legend([model1,model2,model3], 'VS model','CS-WT model', 'Z(s) model');
+    grid on
     hold off
-    clear model1 model2;
+    clear model1 model2 model3;
     
     fig3 = figure(3);
     fig3.Position = [292 180 759 489];
     model1 = semilogy(H,ZabsM3(:,1), 'LineWidth', 1,...
-        'Color',[4/255, 164/255, 217/255]); hold on
+        'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]); hold on
     model2 = semilogy(H,ZabsM3(:,2), 'LineWidth', 1,...
-        'Color',[226/255, 104/255, 24/255]);
-    title('Frequency sweep - seen from middle LCL filter point');
+        'Color',[colm2(1)/255, colm2(2)/255, colm2(3)/255]);
+    model3 = semilogy(H,ZabsM3(:,3), 'LineWidth', 1,...
+        'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
+    title('Frequency sweep - seen from LCL filter middle bus');
     xlabel(xlab);
     ylabel(strcat(ylab,' (log axis)'));
-    legend([model1,model2], 'no conv. models', 'with conv. models');
+    legend([model1,model2,model3], 'VS model','CS-WT model', 'Z(s) model');
+    grid on
     hold off
-    clear model1 model2;
+    clear model1 model2 model3;
     
     [zz1,ww1] = findpeaks(ZabsM3(:,1));
     [zz2,ww2] = findpeaks(ZabsM3(:,2));
@@ -330,19 +345,21 @@ if calculate(3)==true
     subplot(2,1,1)
     plot(H,ZmodalAllM);
     axis(view);
-    title('HMA (all modes) - no conv. models');
+    title('HMA (all modes) - VS model');
     xlabel(xlab);
     ylabel(ylab);
     legend(num2str([1:n_bus]'),'Location','NorthEastOutside');
+    grid on
 
     fig5 = figure(5);
     fig5.Position = [244 115 847 576];
     subplot(2,1,1)
-    plot(H,ZmodalMaxM(:,3));
+    plot(H,ZmodalMaxM(:,3), 'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]);
     axis(view)
-    title('HMA (only max. modes) - no conv. models');    
+    title('HMA (only max. modes) - VS model');    
     xlabel(xlab);
     ylabel(ylab);
+    grid on
 
     [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM(:,3));
     h_crit = h_crit_idx * res;
@@ -382,10 +399,11 @@ if calculate(3)==true
     fig6.Position = [244 115 847 576];
     subplot(2,1,1)
     plot(H,top_modes_impedances);
-    title('HMA (critical modes only) - with conv. models');
+    title('HMA (critical modes only) - VS model');
     legend(num2str(top_modes));
     xlabel(xlab);
     ylabel(ylab);
+    grid on
 
     %% harmonics modal analysis - model 2 (no conv. models)
     fprintf('\n\n-------- HMA - with converter models --------\n\n')
@@ -497,18 +515,20 @@ if calculate(3)==true
     subplot(2,1,2)
     plot(H,ZmodalAllM2);
     axis(view);
-    title('HMA (all modes) - with conv. models');
+    title('HMA (all modes) - Z(s) model');
     xlabel(xlab);
     ylabel(ylab);
     legend('','Location','NorthEastOutside');
+    grid on
 
     figure(5);
     subplot(2,1,2)
-    plot(H,ZmodalMaxM2(:,3));
+    plot(H,ZmodalMaxM2(:,3), 'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
     axis(view)
-    title('HMA (only max. modes) - with conv. models');    
+    title('HMA (only max. modes) - Z(s) model');    
     xlabel(xlab);
     ylabel(ylab);
+    grid on
 
     [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM2(:,3));
     h_crit = h_crit_idx * res;
@@ -546,10 +566,11 @@ if calculate(3)==true
     figure(6)
     subplot(2,1,2)
     plot(H,top_modes_impedances);
-    title('HMA (critical modes only) - with conv. models');
+    title('HMA (critical modes only) - Z(s) model');
     legend(num2str(top_modes));
     xlabel(xlab);
     ylabel(ylab);
+    grid on
 end
 
 %% Stability
@@ -558,7 +579,7 @@ end
 % Zc (inner grid) has to be improved because now it includes only series
 % impedances.
 nyqview = 1.5;
-Hstab = 0.2:0.01:40; % order
+Hstab = 0.2:res:40; % order
 Hfstab = Hstab*f; % Hz
 
 if calculate(4)==true
