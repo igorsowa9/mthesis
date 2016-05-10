@@ -31,7 +31,7 @@ w = 2*pi*f;
 res = 0.01;
 H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode
-calculate = [   true    true   true     true];
+calculate = [   true    false   false   true];
 
 colm1 = [56, 18, 77]; % VS
 colm2 = [196, 141, 227]; % CS-WT
@@ -653,45 +653,31 @@ if calculate(4)==true
     clear pos neg grdpos grdneg V
     
     % Intersection of curves and stability margin
+    % Find point of intersection
     eps = 1;
-    % Find point of intersection - Positive
-    y1p = abs(ZspM);
-    y1n = abs(ZsnM);
+    y1 = abs(ZspM);
     y2 = abs(Zlp);
-    idx_p = find(abs(y1p-y2) < eps);
-    idx_n = find(abs(y1n-y2) < eps);
+    idx = find(abs(y1-y2) < eps);
 
     % points at less than 1.5 order exluded
     fundamental_idx = find(Hstab==1);
     start_idx = fundamental_idx + 0.5/res;
     Hstab_idx = 1:length(Hstab);
+    idx_filtered = intersect(idx,Hstab_idx(start_idx:end));
     
-    idx_filtered_p = intersect(idx_p,Hstab_idx(start_idx:end));
-    idx_filtered_n = intersect(idx_n,Hstab_idx(start_idx:end));
-    
-    px_p = Hfstab(idx_filtered_p);
-    py_p = y1p(idx_filtered_p);
-    px_n = Hfstab(idx_filtered_n);
-    py_n = y1n(idx_filtered_n);
+    px = Hfstab(idx_filtered);
+    py = y1(idx_filtered);
     
     figure(7)
     subplot(2,1,1); hold on
-    plot(px_p, mag2db(py_p), 'o', 'MarkerSize', 18, 'Color', [0.5 0.9 0.1]);
-    plot(px_n, mag2db(py_n), 'o', 'MarkerSize', 18, 'Color', [0.8 0.1 0.5]);
+    plot(px, mag2db(py), 'ro', 'MarkerSize', 18)
     hold off
     
     % phase margins = 180-fi
-    fi1_p = angle(ZspM);
-    fi1_n = angle(ZsnM);
+    fi1 = angle(ZspM);
     fi2 = angle(Zlp);
-    fi_diff_p = abs(rad2deg(fi1_p-fi2));
-    fi_diff_n = abs(rad2deg(fi1_n-fi2));
-    ph_margin_p = 180 - fi_diff_p(idx_filtered_p);
-    ph_margin_n = 180 - fi_diff_n(idx_filtered_n);
-    order_filtered_p = Hstab(idx_filtered_p);
-    order_filtered_n = Hstab(idx_filtered_n);
-    MarginsP = [order_filtered_p' [50*order_filtered_p]' ph_margin_p']
-    MarginsN = [order_filtered_n' [50*order_filtered_n]' ph_margin_n']
+    fi_diff = abs(rad2deg(fi1-fi2);
+    fi_diff(idx_filtered)
     
 end   
 

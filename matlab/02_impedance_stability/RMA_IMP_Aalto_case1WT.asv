@@ -32,9 +32,9 @@ H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode   nyquist others
 calculate = [   true    true    true    true false      false];
 
-colormodels = [56  18  77;
-            196 141 227;
-            242 0   52]/255;
+colm1 = [56, 18, 77]; % VS
+colm2 = [196, 141, 227]; % CS-WT
+colm3 = [242, 0, 52]; % Z(s)
 
 fprintf('--------------- CASE 1 (1 WT); resolution: %f --------------- \n', res);
 
@@ -172,11 +172,11 @@ if calculate(2)==true
     fig2 = figure(2);
     fig2.Position = [292 180 759 489];
     model1 = plot(H,ZabsM1(:,1), 'LineWidth', 1,...
-        'Color',[colormodels(1,1), colormodels(1,2), colormodels(1,3)]); hold on
+        'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]); hold on
     model2 = plot(H,ZabsM1(:,2), 'LineWidth', 1,...
-        'Color',[colormodels(2,1), colormodels(2,2), colormodels(2,3)]);
+        'Color',[colm2(1)/255, colm2(2)/255, colm2(3)/255]);
     model3 = plot(H,ZabsM1(:,3), 'LineWidth', 1,...
-        'Color',[colormodels(3,1), colormodels(3,2), colormodels(3,3)]);
+        'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
     axis(view)
     title('Frequency sweep - seen from LCL filter middle bus');
     xlabel(xlab);
@@ -189,11 +189,11 @@ if calculate(2)==true
     fig3 = figure(3);
     fig3.Position = [292 180 759 489];
     model1 = semilogy(H,ZabsM1(:,1), 'LineWidth', 1,...
-        'Color',[colormodels(1,1), colormodels(1,2), colormodels(1,3)]); hold on
+        'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]); hold on
     model2 = semilogy(H,ZabsM1(:,2), 'LineWidth', 1,...
-        'Color',[colormodels(2,1), colormodels(2,2), colormodels(2,3)]);
+        'Color',[colm2(1)/255, colm2(2)/255, colm2(3)/255]);
     model3 = semilogy(H,ZabsM1(:,3), 'LineWidth', 1,...
-        'Color',[colormodels(3,1), colormodels(3,2), colormodels(3,3)]);
+        'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
     title('Frequency sweep - seen from LCL filter middle bus');
     xlabel(xlab);
     ylabel(strcat(ylab,' (log axis)'));
@@ -225,7 +225,7 @@ if calculate(3)==true
     ZmodalMaxMSave = zeros(n_h,3);
     modelStr = {'VS', 'CS', 'Z(s)'};
     for model = 1:3
-        fprintf(strcat('\n ---- HMA: \t',modelStr{model}, ' model ----\n'));
+        fprintf(strcat('\n ---- HMA:\t',modelStr{model}, ' model ----\n'));
         ZmodalMaxTable = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
         ZmodalMaxM = zeros(n_h,1);
         ZmodalAllM = zeros(n_h,n_bus); % all modes (impedances)
@@ -269,7 +269,7 @@ if calculate(3)==true
                 0       0       0       0       0       -y67    y77 ];
 
             e = eig(Y); % eigenvalues
-            eM(:,hh) = e;
+            eM(:,hh) = e; 
             [T,A] = eig(Y); % T - rigth eigenvector matrix
             L = inv(T); % L - left eigenvector matrix
 
@@ -297,11 +297,11 @@ if calculate(3)==true
 
         end
         fig4 = figure(4);
-        fig4.Position = [244 13 847 700];
+        fig4.Position = [244 115 847 576];
         subplot(3,1,model)
         plot(H,ZmodalAllM);
         axis(view);
-        str = strcat('HMA (all modes):',modelStr{model},' model');
+        str = strcat('HMA (all modes) -\t',modelStr{model},' model');
         title(str);
         xlabel(xlab);
         ylabel(ylab);
@@ -309,11 +309,11 @@ if calculate(3)==true
         grid on
 
         fig5 = figure(5);
-        fig5.Position = [244 13 847 700];
+        fig5.Position = [244 115 847 576];
         subplot(3,1,model)
-        plot(H,ZmodalMaxM, 'Color',[colormodels(model,1) colormodels(model,2) colormodels(model,3)]);
+        plot(H,ZmodalMaxM, 'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]);
         axis(view)
-        str = strcat('HMA (only max. modes):',modelStr{model},' model');
+        str = strcat('HMA (only max. modes) - ',modelStr{model},' model');
         title(str);
         xlabel(xlab);
         ylabel(ylab);
@@ -343,10 +343,10 @@ if calculate(3)==true
         top_modes_impedances = ZmodalAllM(:,top_modes);
 
         fig6 = figure(6);
-        fig6.Position = [244 13 847 700];
+        fig6.Position = [244 115 847 576];
         subplot(3,1,model)
         plot(H,top_modes_impedances);
-        str = strcat('HMA (critical modes only):',modelStr{model},' model');
+        str = strcat('HMA (critical modes only) - ',modelStr{model},' model');
         title(str);
         legend(num2str(top_modes));
         xlabel(xlab);
@@ -356,7 +356,6 @@ if calculate(3)==true
         ZmodalMaxMSave(:,model) = ZmodalMaxM;
     end
 end
-
 %% Stability
 % PCC of the system to analyze stability is between TR3 and Cable 150kV.
 % Thus TR3 belongs to Zr/Zl. LCL_L1 included in Zw. Zc is the rest of the grid.
