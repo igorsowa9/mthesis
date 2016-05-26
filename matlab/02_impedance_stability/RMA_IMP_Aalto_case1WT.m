@@ -1,6 +1,7 @@
 clearvars; close all; clc
 
 %% data
+
 % system data:
 LCL_L1o = 1.2; % H
 LCL_R1o = 0.0; % ohm 
@@ -30,7 +31,7 @@ w = 2*pi*f;
 res = 0.01;
 H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode   nyquist others
-calculate = [   true    true    true    true false      false];
+calculate = [   true    true    true    true    false      false];
 
 colormodels = [56  18  77;
             196 141 227;
@@ -82,55 +83,58 @@ if calculate(1)==true
 
     Hf = H*f;
     figure(1); hold on;
-    
-    subplot(2,2,1)
+    subplot(2,1,1)
     pos = semilogx(Hf,mag2db(abs(Zwt_p)), 'LineWidth', 1); hold on
     neg = semilogx(Hf,mag2db(abs(Zwt_n)), 'r', 'LineWidth', 1); hold off
     legend([pos,neg], 'positive', 'negative','Location','SouthEast');
     title('Impedance of aggregated WT converter (100MW)');
     xlabel('Frequency [Hz]');
-    ylabel('Impedance magnitude [dB]');
+    ylabel('Magnitude [dB]');
     V = axis;
     axis([Hf(1), Hf(end), V(3), V(4)]);
     clear pos neg V
     grid on
+    hold off
     
-    subplot(2,2,2)
+    figure(2); hold on;
+    subplot(2,1,1)
     pos = semilogx(Hf,mag2db(abs(Zhvdc_p)), 'LineWidth', 1); hold on
     neg = semilogx(Hf,mag2db(abs(Zhvdc_n)), 'r', 'LineWidth', 1); hold off
     legend([pos,neg], 'positive', 'negative','Location','SouthEast');
     title('Impedance of HVDC converter');
     xlabel('Frequency [Hz]');
-    ylabel('Impedance magnitude [dB]');
+    ylabel('Magnitude [dB]');
     V = axis;
-    axis([Hf(1), Hf(end), V(3), V(4)]);
+    axis([Hf(1), Hf(end), -10, V(4)]);
     clear pos neg V
     grid on
+    hold off
     
-    subplot(2,2,3)
+    figure(1); hold on;
+    subplot(2,1,2)
     pos = semilogx(Hf,angle(rad2deg(Zwt_p)), 'LineWidth', 1); hold on
     neg = semilogx(Hf,angle(rad2deg(Zwt_n)), 'r', 'LineWidth', 1); hold off
-    legend([pos,neg], 'positive', 'negative')
-    title('Impedance of aggregated WT converter (100MW)');
+%     legend([pos,neg], 'positive', 'negative')
+%     title('Impedance of aggregated WT converter (100MW)');
     xlabel('Frequency [Hz]');
-    ylabel('Impedance angle [deg.]');
+    ylabel('Angle [deg.]');
     V = axis;
     axis([Hf(1), Hf(end), V(3), V(4)]);
     clear pos neg V
     grid on
     
-    subplot(2,2,4)
+    figure(2); hold on;
+    subplot(2,1,2)
     pos = semilogx(Hf,angle(rad2deg(Zhvdc_p)), 'LineWidth', 1); hold on
     neg = semilogx(Hf,angle(rad2deg(Zhvdc_n)), 'r', 'LineWidth', 1); hold off
-    legend([pos,neg], 'positive', 'negative')
-    title('Impedance of HVDC converter');
+%     legend([pos,neg], 'positive', 'negative')
+%     title('Impedance of HVDC converter');
     xlabel('Frequency [Hz]');
-    ylabel('Impedance angle [deg.]');
+    ylabel('Angle [deg.]');
     V = axis;
     axis([Hf(1), Hf(end), V(3), V(4)]);
     clear pos neg V
     grid on
-    
     hold off
 end
 
@@ -212,25 +216,27 @@ if calculate(2)==true
     fprintf('\nZ(s) model:')
     fprintf('\n- for h.order: %f, peak impedance: %f',[ww3'*res; zz3'])
     
-    clear zz1 ww1 zz2 ww2
+    clear zz1 ww1 zz2 ww2 zz3 ww3
 end
 clear model
 %% harmonics modal analysis - models 1,2,3 (VS,CS,Zs)
 
 if calculate(3)==true
-    fprintf('\n\n-------- HMA - without converter models --------\n\n')
+    fprintf('\n\n-------- HMA - all three models --------\n\n')
     % admittance matrix
     n_bus = 7;
     n_h = length(H);
     ZmodalMaxMSave = zeros(n_h,3);
     modelStr = {'VS', 'CS', 'Z(s)'};
+    Saver = {[] [] []};
     for model = 1:3
         fprintf(strcat('\n ---- HMA: \t',modelStr{model}, ' model ----\n'));
         ZmodalMaxTable = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
         ZmodalMaxM = zeros(n_h,1);
         ZmodalAllM = zeros(n_h,n_bus); % all modes (impedances)
-        PFmodalM = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
+        PFmodalM = zeros(n_h,n_bus); % PFs for each bus for each harmonic
         eM = zeros(n_bus,n_h);
+        
         for hh = 1:length(H)
             h = H(hh);
             s = 1i*h*w;
@@ -290,9 +296,8 @@ if calculate(3)==true
 
             ZmodalMaxM(hh) = ZmodalMax;
 
-            PFmodalM(hh,1) = h;
-            for b=2:n_bus+1
-                PFmodalM(hh,b) = abs(L(mode,b-1)*T(b-1,mode));
+            for b=1:n_bus
+                PFmodalM(hh,b) = abs(L(mode,b)*T(b,mode));
             end
 
         end
@@ -326,11 +331,13 @@ if calculate(3)==true
         ZmodalHcrit = ZmodalMaxTable(h_crit_idx,:)
 
         fprintf('--> harmonic order - participation factors for all buses\n');
-        PFmodalHcrit = PFmodalM(h_crit_idx,:);
-        PFmodalHcrit = PFmodalHcrit(:,2:end)
+        PFmodalHcrit = PFmodalM(h_crit_idx,:)
+        sum(PFmodalHcrit,2)
+        Saver{model} = PFmodalHcrit;
 
         fprintf('--> Eigenvalues of critical frequencies\n');
-        eM(:,h_crit_idx);
+        eMcrit = eM(:,h_crit_idx);
+        abs(eMcrit.^-1)
 
         fprintf('--> greatest participation factors:\n');
         for ff=1:length(PFmodalHcrit(:,1))
@@ -363,7 +370,7 @@ end
 % Zc (inner grid) has to be improved because now it includes only series
 % impedances.
 nyqview = 1.5;
-Hstab = 0.2:0.01:40; % order
+Hstab = 0.2:res:40; % order
 Hfstab = Hstab*f; % Hz
 
 if calculate(4)==true
@@ -431,6 +438,93 @@ if calculate(4)==true
     xlabel('Frequency [Hz]');
     ylabel('Angle [deg]');
     clear pos neg grdpos grdneg V
+    
+    %% Intersection of curves and stability margin
+    eps = 0.1;
+    % points at less than 1.5 order exluded
+    fundamental_idx = find(Hstab==1);
+    start_idx = fundamental_idx + 0.5/res;
+    Hstab_idx = 1:length(Hstab);
+    
+    fprintf('\n --- Intersections of grid positive with source pos and neg ---');
+    % Find point of intersection - Grid/Load positive
+    y1p = abs(ZspM);
+    y1n = abs(ZsnM);
+    y2 = abs(Zlp);
+    distance_p = abs(y1p-y2);
+    distance_n = abs(y1n-y2);
+    idx_p = find(distance_p < eps);
+    idx_n = find(distance_n < eps);
+    
+    idx_filtered_p = intersect(idx_p,Hstab_idx(start_idx:end));
+    idx_filtered_n = intersect(idx_n,Hstab_idx(start_idx:end));
+    
+    px_pp = Hfstab(idx_filtered_p);
+    py_pp = y1p(idx_filtered_p);
+    px_np = Hfstab(idx_filtered_n);
+    py_np = y1n(idx_filtered_n);
+    
+    % phase margins = 180-fi
+    fi1_p = angle(ZspM);
+    fi1_n = angle(ZsnM);
+    fi2 = angle(Zlp);
+    fi_diff_p = abs(rad2deg(fi1_p-fi2));
+    fi_diff_n = abs(rad2deg(fi1_n-fi2));
+    ph_margin_p = 180 - fi_diff_p(idx_filtered_p);
+    ph_margin_n = 180 - fi_diff_n(idx_filtered_n);
+    order_filtered_p = Hstab(idx_filtered_p);
+    order_filtered_n = Hstab(idx_filtered_n);
+    distance_p = distance_p';
+    distance_n = distance_n';
+    MarginsP = [order_filtered_p' [50*order_filtered_p]'...
+        ph_margin_p' distance_p(idx_filtered_p)]
+    MarginsN = [order_filtered_n' [50*order_filtered_n]'...
+        ph_margin_n' distance_n(idx_filtered_n)]  
+    clear idx_filtered_p idx_filtered_n
+    
+    fprintf('\n --- Intersections of grid negative with source pos and neg ---');
+    % Find point of intersection - Grid/Load negative
+    y1p = abs(ZspM);
+    y1n = abs(ZsnM);
+    y2 = abs(Zln);
+    distance_p = abs(y1p-y2);
+    distance_n = abs(y1n-y2);
+    idx_p = find(distance_p < eps);
+    idx_n = find(distance_n < eps);
+    
+    idx_filtered_p = intersect(idx_p,Hstab_idx(start_idx:end));
+    idx_filtered_n = intersect(idx_n,Hstab_idx(start_idx:end));
+    
+    px_pn = Hfstab(idx_filtered_p);
+    py_pn = y1p(idx_filtered_p);
+    px_nn = Hfstab(idx_filtered_n);
+    py_nn = y1n(idx_filtered_n);
+    
+    % phase margins = 180-fi
+    fi1_p = angle(ZspM);
+    fi1_n = angle(ZsnM);
+    fi2 = angle(Zln);
+    fi_diff_p = abs(rad2deg(fi1_p-fi2));
+    fi_diff_n = abs(rad2deg(fi1_n-fi2));
+    ph_margin_p = 180 - fi_diff_p(idx_filtered_p);
+    ph_margin_n = 180 - fi_diff_n(idx_filtered_n);
+    order_filtered_p = Hstab(idx_filtered_p);
+    order_filtered_n = Hstab(idx_filtered_n);
+    distance_p = distance_p';
+    distance_n = distance_n';
+    MarginsP = [order_filtered_p' [50*order_filtered_p]'...
+        ph_margin_p' distance_p(idx_filtered_p)]
+    MarginsN = [order_filtered_n' [50*order_filtered_n]'...
+        ph_margin_n' distance_n(idx_filtered_n)]
+    
+    figure(7)
+    subplot(2,1,1); 
+    hold on
+    plot(px_pp, mag2db(py_pp), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    plot(px_np, mag2db(py_np), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    plot(px_pn, mag2db(py_pn), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    plot(px_nn, mag2db(py_nn), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    hold off
     
 end   
 

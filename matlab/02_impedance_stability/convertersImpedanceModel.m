@@ -14,12 +14,19 @@ f1 = 50;
 w1 = 2*pi*f1;
 
 %% WT converter
-Vll = 150e3;
-V0 = Vll*sqrt(2)/0.8;
-V1 = Vll/sqrt(3);
-I1 = Sr_wt/(sqrt(3)*Vll);
+% Vlineline_peak = m/2 * Vdc * sqrt(3)
 
-L =  1.2 ;% 0.526e-6; % ph. imp. at 150kV !!!!!!!!!!!!!!!!!!!!
+Vll_to = 150e3; % Vlineline_rms
+V1_to = Vll_to*sqrt(2)/sqrt(3); % Vphase_peak
+V0_to = 2*V1_to*sqrt(3)/(sqrt(3)*0.75); % Vdc
+I1_to = Sr_wt/(sqrt(3)*(sqrt(3)*V1_to));
+
+V0 = 1500; % Vdc
+V1 = 563; % Vphase_peak
+I1 = 236e3; % Iphase_peak
+
+% L =  1.2 ;% 0.526e-6;
+L = 1.2*(V0/V0_to)^2; % convert our 150kV value to the 1500Vdc level
 
 % Hi(s) current control compensator
 Kp_i = 0.44e-6;
@@ -49,8 +56,10 @@ for hh=1:length(H)
     ZnM(hh) = (Hi(s+1i*w1)*V0 + (s+1i*w1)*L)/...
         (1-Tpll(s+1i*w1)*(1+Hi(s+1i*w1)*I1*V0/V1));
 end
-Zwt_p = ZpM;
-Zwt_n = ZnM;
+% conversion from 1500dc to our 150kVac
+Zwt_p = ZpM * (V1_to/V1)^2;
+Zwt_n = ZnM * (V1_to/V1)^2;
+% ----------------------
 clear ZpM ZnM;
 
 s = tf('s');
@@ -61,9 +70,9 @@ TFwt_n = (Hi(s+1i*w1)*V0 + (s+1i*w1)*L)/...
 clear s
 %% HVDC converter
 
-Vdc = 300e3; % HVDC DC link voltage
-L = 19.3e-3; % ph. inductance (PHR at 150kV) !!!!!!!!!!!!!!!
-Cf = 17.7e-6; % Tuned filter capacitance !!!!!!!!!!!!
+Vdc = 300e3; % HVDC DC link voltage - this V/I levels correspond to 150 kV - no conversion
+L = 19.3e-3; % our ph. inductance (PHR at 150kV)
+Cf = 5.658e-6; % our Tuned filter capacitance
 % Hi(s) current control compensator
 Kp_i = 0.075e-3;
 Ki_i = 0.094;

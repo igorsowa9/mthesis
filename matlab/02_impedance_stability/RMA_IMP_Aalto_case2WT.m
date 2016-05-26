@@ -33,9 +33,9 @@ H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode
 calculate = [   true    true    true    true];
 
-colm1 = [56, 18, 77]; % VS
-colm2 = [196, 141, 227]; % CS-WT
-colm3 = [242, 0, 52]; % Z(s)
+colormodels = [56  18  77;
+            196 141 227;
+            242 0   52]/255;
 
 fprintf('--------------- CASE 2 (2 WT); resolution: %f --------------- \n', res);
 
@@ -183,11 +183,11 @@ if calculate(2)==true
     fig2 = figure(2);
     fig2.Position = [292 180 759 489];
     model1 = plot(H,ZabsM2(:,1), 'LineWidth', 1,...
-        'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]); hold on
+        'Color',[colormodels(1,1), colormodels(1,2), colormodels(1,3)]); hold on
     model2 = plot(H,ZabsM2(:,2), 'LineWidth', 1,...
-        'Color',[colm2(1)/255, colm2(2)/255, colm2(3)/255]);
+        'Color',[colormodels(2,1), colormodels(2,2), colormodels(2,3)]);
     model3 = plot(H,ZabsM2(:,3), 'LineWidth', 1,...
-        'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
+        'Color',[colormodels(3,1), colormodels(3,2), colormodels(3,3)]);
     axis(view)
     title('Frequency sweep - seen from LCL filter middle bus');
     xlabel(xlab);
@@ -200,11 +200,11 @@ if calculate(2)==true
     fig3 = figure(3);
     fig3.Position = [292 180 759 489];
     model1 = semilogy(H,ZabsM2(:,1), 'LineWidth', 1,...
-        'Color',[colm1(1)/255, colm1(2)/255, colm1(3)/255]); hold on
+        'Color',[colormodels(1,1), colormodels(1,2), colormodels(1,3)]); hold on
     model2 = semilogy(H,ZabsM2(:,2), 'LineWidth', 1,...
-        'Color',[colm2(1)/255, colm2(2)/255, colm2(3)/255]);
+        'Color',[colormodels(2,1), colormodels(2,2), colormodels(2,3)]);
     model3 = semilogy(H,ZabsM2(:,3), 'LineWidth', 1,...
-        'Color',[colm3(1)/255, colm3(2)/255, colm3(3)/255]);
+        'Color',[colormodels(3,1), colormodels(3,2), colormodels(3,3)]);
     title('Frequency sweep - seen from LCL filter middle bus');
     xlabel(xlab);
     ylabel(strcat(ylab,' (log axis)'));
@@ -215,294 +215,188 @@ if calculate(2)==true
     
     [zz1,ww1] = findpeaks(ZabsM2(:,1));
     [zz2,ww2] = findpeaks(ZabsM2(:,2));
-    fprintf('\nNo converter model:')
+    [zz3,ww3] = findpeaks(ZabsM2(:,3));
+    fprintf('\nVS model:')
     fprintf('\n- for h.order: %f, peak impedance: %f',[ww1'*res; zz1'])
-    fprintf('\nWith converter model:')
+    fprintf('\nCS model:')
     fprintf('\n- for h.order: %f, peak impedance: %f',[ww2'*res; zz2'])
+    fprintf('\nZ(s) model:')
+    fprintf('\n- for h.order: %f, peak impedance: %f',[ww3'*res; zz3'])
     
-    clear zz1 ww1 zz2 ww2
+    clear zz1 ww1 zz2 ww2 zz3 ww3
 end
 
-%% harmonics modal analysis - model 1 (no conv. models)
+%% harmonics modal analysis - models 1,2,3 (VS,CS,Zs)
+
 if calculate(3)==true
-    fprintf('\n\n-------- HMA - without converter models --------\n\n')
+    fprintf('\n\n-------- HMA - all three models --------\n\n')
     % admittance matrix
     n_bus = 11;
     n_h = length(H);
+    ZmodalMaxMSave = zeros(n_h,3);
+    modelStr = {'VS', 'CS', 'Z(s)'};
+    Saver = {[] [] []};
+    for model = 1:3
+        fprintf(strcat('\n ---- HMA: \t',modelStr{model}, ' model ----\n'));
+        ZmodalMaxTable = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
+        ZmodalMaxM = zeros(n_h,1);
+        ZmodalAllM = zeros(n_h,n_bus); % all modes (impedances)
+        PFmodalM = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
+        eM = zeros(n_bus,n_h);
+        for hh = 1:length(H)
+            h = H(hh);
+            s = 1i*h*w;
+            
+            if (model==1 || model==2)
+                y1_1 = 1/(s*PhReact_L) + s*Tuned_C + 1/(s*Tr3_L);
+            elseif model==3
+                y1_1 = 1/(Zhvdc_p(hh)) + 1/(s*Tr3_L);
+            end
+            y2_2 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
+            y3_3 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 2*1/(s*Tr2_L);
 
-    ZmodalMaxM = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
-    ZmodalAllM = zeros(n_h,n_bus); % all modes (impedances)
-    PFmodalM = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
-    eM1 = zeros(n_bus,n_h);
-    for hh = 1:length(H)
-        h = H(hh);
-        s = 1i*h*w;
+            y4_4 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
+            y5_5 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
+            y6_6 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
+                
+            if model==1
+                y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(LCL_R1+s*LCL_L1);
+            elseif model==2
+                y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc;
+            elseif model==3
+                y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(Zwt_p(hh));
+            end
+            y8_8 = y4_4;
+            y9_9 = y5_5;
+            y10_10 = y6_6;
+            y11_11 = y7_7;
 
-        y1_1 = 1/(s*PhReact_L) + s*Tuned_C + 1/(s*Tr3_L);
-        y2_2 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
-        y3_3 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 2*1/(s*Tr2_L);
+            y1_2 = 1/(s*Tr3_L);    
+            y2_3 = 1/(Cable150_R+s*Cable150_L);
 
-        y4_4 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
-        y5_5 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
-        y6_6 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
-        y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(LCL_R1+s*LCL_L1);
+            y3_4 = 1/(s*Tr2_L);
+            y3_8 = y3_4;
 
-        y8_8 = y4_4;
-        y9_9 = y5_5;
-        y10_10 = y6_6;
-        y11_11 = y7_7;
+            y4_5 = 1/(Cable33_R+s*Cable33_L);
+            y5_6 = 1/(s*Tr1_L);
+            y6_7 = 1/(LCL_R2+s*LCL_L2);
+            y8_9 = y4_5;
+            y9_10 = y5_6;
+            y10_11 = y6_7;
 
-        y1_2 = 1/(s*Tr3_L);    
-        y2_3 = 1/(Cable150_R+s*Cable150_L);
+            Y = [y1_1 -y1_2 0 0 0 0 0 0 0 0 0;...
+                -y1_2 y2_2 -y2_3 0 0 0 0 0 0 0 0;...
+                0 -y2_3 y3_3 -y3_4 0 0 0 -y3_8 0 0 0;...
+                0 0 -y3_4 y4_4 -y4_5 0 0 0 0 0 0;...
+                0 0 0 -y4_5 y5_5 -y5_6 0 0 0 0 0;...
+                0 0 0 0 -y5_6 y6_6 -y6_7 0 0 0 0;...
+                0 0 0 0 0 -y6_7 y7_7 0 0 0 0;...
+                0 0 -y3_8 0 0 0 0 y8_8 -y8_9 0 0;...
+                0 0 0 0 0 0 0 -y8_9 y9_9 -y9_10 0;...
+                0 0 0 0 0 0 0 0 -y9_10 y10_10 -y10_11;...
+                0 0 0 0 0 0 0 0 0 -y10_11 y11_11];
 
-        y3_4 = 1/(s*Tr2_L);
-        y3_8 = y3_4;
+            e = eig(Y); % eigenvalues
+            eM(:,hh) = e; 
+            [T,A] = eig(Y); % T - rigth eigenvector matrix
+            L = inv(T); % L - left eigenvector matrix
 
-        y4_5 = 1/(Cable33_R+s*Cable33_L);
-        y5_6 = 1/(s*Tr1_L);
-        y6_7 = 1/(LCL_R2+s*LCL_L2);
-        y8_9 = y4_5;
-        y9_10 = y5_6;
-        y10_11 = y6_7;
+            ZmodalAll = abs(inv(A));
+            for zz = 1:n_bus
+                ZmodalAllM(hh,zz) = ZmodalAll(zz,zz);
+            end
 
-        Y = [y1_1 -y1_2 0 0 0 0 0 0 0 0 0;...
-            -y1_2 y2_2 -y2_3 0 0 0 0 0 0 0 0;...
-            0 -y2_3 y3_3 -y3_4 0 0 0 -y3_8 0 0 0;...
-            0 0 -y3_4 y4_4 -y4_5 0 0 0 0 0 0;...
-            0 0 0 -y4_5 y5_5 -y5_6 0 0 0 0 0;...
-            0 0 0 0 -y5_6 y6_6 -y6_7 0 0 0 0;...
-            0 0 0 0 0 -y6_7 y7_7 0 0 0 0;...
-            0 0 -y3_8 0 0 0 0 y8_8 -y8_9 0 0;...
-            0 0 0 0 0 0 0 -y8_9 y9_9 -y9_10 0;...
-            0 0 0 0 0 0 0 0 -y9_10 y10_10 -y10_11;...
-            0 0 0 0 0 0 0 0 0 -y10_11 y11_11];
+            [lambdaMin,mode] = min(abs(e));
+            ZmodalMax = 1/lambdaMin;
+            em = e(mode);
+            ang = rad2deg(angle(em));
 
-        e = eig(Y); % eigenvalues
-        eM1(:,hh) = e; 
-        [T,A] = eig(Y); % T - rigth eigenvector matrix
-        L = inv(T); % L - left eigenvector matrix
+            ZmodalMaxTable(hh,1) = h;
+            ZmodalMaxTable(hh,2) = mode;
+            ZmodalMaxTable(hh,3) = ZmodalMax;
+            ZmodalMaxTable(hh,4) = ang;
+            
+            ZmodalMaxM(hh) = ZmodalMax;
 
-        ZmodalAll = abs(inv(A));
-        for zz = 1:n_bus
-            ZmodalAllM(hh,zz) = ZmodalAll(zz,zz);
+            PFmodalM(hh,1) = h;
+            for b=2:n_bus+1
+                PFmodalM(hh,b) = abs(L(mode,b-1)*T(b-1,mode));
+            end
+
+        end
+        fig4 = figure(4);
+        fig4.Position = [244 13 847 700];
+        subplot(3,1,model)
+        plot(H,ZmodalAllM);
+        axis(view);
+        str = strcat('HMA (all modes):',modelStr{model},' model');
+        title(str);
+        xlabel(xlab);
+        ylabel(ylab);
+        legend(num2str([1:n_bus]'),'Location','NorthEast');
+        grid on
+
+        fig5 = figure(5);
+        fig5.Position = [244 13 847 700];
+        subplot(3,1,model)
+        plot(H,ZmodalMaxM, 'Color',[colormodels(model,1) colormodels(model,2) colormodels(model,3)]);
+        axis(view)
+        str = strcat('HMA (only max. modes):',modelStr{model},' model');
+        title(str);  
+        xlabel(xlab);
+        ylabel(ylab);
+        grid on
+
+        [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxTable(:,3));
+        h_crit = h_crit_idx * res;
+
+        fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
+        ZmodalHcrit = ZmodalMaxTable(h_crit_idx,:)
+
+        fprintf('harmonic order - participation factors for all buses\n');
+        PFmodalHcrit = PFmodalM(h_crit_idx,:);
+        PFmodalHcrit = PFmodalHcrit(:,2:end)
+        sum(PFmodalHcrit,2)
+        Saver{model} = PFmodalHcrit;
+
+        fprintf('--> Eigenvalues of critical frequencies\n');
+        eMcrit = eM(:,h_crit_idx);
+        abs(eMcrit.^-1)
+
+        fprintf('greates participation factors:\n');
+        for ff=1:length(PFmodalHcrit(:,1))
+            M = PFmodalHcrit(ff,:);
+            mx = max(M);
+            tmx = find(M==mx);
+            omx1 = 0.99999*mx;
+            omx2 = 1.00001*mx;
+            omx = setdiff(intersect(find(M>omx1),find(M<omx2)),tmx);
+
+            fprintf('For harmonic: %f, bus: %s has greatest PF=%f.\n',...
+                ZmodalHcrit(ff,1), num2str(tmx), mx);
+            if ~isempty(omx)
+                fprintf('\t(also same PF at buses: ');
+                fprintf('%s', num2str(omx));
+                fprintf(')\n');
+            end
         end
 
-        [lambdaMin,mode] = min(abs(e));
-        ZmodalMax = 1/lambdaMin;
-        em = e(mode);
-        ang = rad2deg(angle(em));
+        top_modes = unique(ZmodalMaxTable(h_crit_idx,2));
+        top_modes_impedances = ZmodalAllM(:,top_modes);
 
-        ZmodalMaxM(hh,1) = h;
-        ZmodalMaxM(hh,2) = mode;
-        ZmodalMaxM(hh,3) = ZmodalMax;
-        ZmodalMaxM(hh,4) = ang;
-
-        PFmodalM(hh,1) = h;
-        for b=2:n_bus+1
-            PFmodalM(hh,b) = abs(L(mode,b-1)*T(b-1,mode));
-        end
-
+        fig6 = figure(6);
+        fig6.Position = [244 13 847 700];
+        subplot(3,1,model)
+        plot(H,top_modes_impedances);
+        str = strcat('HMA (critical modes only):',modelStr{model},' model');
+        title(str);
+        legend(num2str(top_modes));
+        xlabel(xlab);
+        ylabel(ylab);
+        grid on
+        
+        ZmodalMaxMSave(:,model) = ZmodalMaxM;
     end
-    fig4 = figure(4);
-    fig4.Position = [244 115 847 576];
-    subplot(2,1,1)
-    plot(H,ZmodalAllM);
-    axis(view);
-    title('HMA (all modes) - VS model');
-    xlabel(xlab);
-    ylabel(ylab);
-    legend(num2str([1:n_bus]'),'Location','NorthEast');
-    grid on
-    
-    fig5 = figure(5);
-    fig5.Position = [244 115 847 576];
-    subplot(2,1,1)
-    plot(H,ZmodalMaxM(:,3), 'Color', [colm1(1)/255, colm1(2)/255, colm1(3)/255]);
-    axis(view)
-    title('HMA (only max. modes) - VS model');    
-    xlabel(xlab);
-    ylabel(ylab);
-    grid on
-    
-    [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM(:,3));
-    h_crit = h_crit_idx * res;
-
-    fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
-    ZmodalHcrit = ZmodalMaxM(h_crit_idx,:)
-
-    fprintf('harmonic order - participation factors for all buses\n');
-    PFmodalHcrit = PFmodalM(h_crit_idx,:);
-    PFmodalHcrit = PFmodalHcrit(:,2:end)
-    
-    fprintf('--> Eigenvalues of critical frequencies\n');
-    eM1(:,h_crit_idx)
-
-    fprintf('greates participation factors:\n');
-    for ff=1:length(PFmodalHcrit(:,1))
-        M = PFmodalHcrit(ff,:);
-        mx = max(M);
-        tmx = find(M==mx);
-        omx1 = 0.99999*mx;
-        omx2 = 1.00001*mx;
-        omx = setdiff(intersect(find(M>omx1),find(M<omx2)),tmx);
-
-        fprintf('For harmonic: %f, bus: %s has greatest PF=%f.\n',...
-            ZmodalHcrit(ff,1), num2str(tmx), mx);
-        if ~isempty(omx)
-            fprintf('\t(also same PF at buses: ');
-            fprintf('%s', num2str(omx));
-            fprintf(')\n');
-        end
-    end
-
-    top_modes = unique(ZmodalMaxM(h_crit_idx,2));
-    top_modes_impedances = ZmodalAllM(:,top_modes);
-    
-    fig6 = figure(6);
-    fig6.Position = [244 115 847 576];
-    subplot(2,1,1)
-    plot(H,top_modes_impedances);
-    title('HMA (critical modes only) - VS model');
-    legend(num2str(top_modes));
-    xlabel(xlab);
-    ylabel(ylab);
-    grid on
-    
-    %% harmonics modal analysis - model 2 (with conv. models)
-    fprintf('\n\n-------- HMA - with converter models --------\n\n')
-    ZmodalMaxM2 = zeros(n_h,4); % harm order, mode of max imp, modal imp abs, angle
-    ZmodalAllM2 = zeros(n_h,n_bus); % all modes (impedances)
-    PFmodalM2 = zeros(n_h,n_bus+1); % PFs for each bus for each harmonic
-    eM2 = zeros(n_bus,n_h);
-    for hh = 1:length(H)
-        h = H(hh);
-        s = 1i*h*w;
-
-        y1_1 = 1/(Zhvdc_p(hh)) + 1/(s*Tr3_L);
-        y2_2 = 1/(s*Tr3_L) + s*Cable150_C2 + 1/(Cable150_R+s*Cable150_L);
-        y3_3 = 1/(Cable150_R+s*Cable150_L) + s*Cable150_C1 + 2*1/(s*Tr2_L);
-
-        y4_4 = 1/(s*Tr2_L) + s*Cable33_C2 + 1/(Cable33_R+s*Cable33_L);
-        y5_5 = 1/(Cable33_R+s*Cable33_L) + s*Cable33_C2 + 1/(s*Tr1_L);
-        y6_6 = 1/(s*Tr1_L) + 1/(LCL_R2+s*LCL_L2);
-        y7_7 = 1/(LCL_R2+s*LCL_L2) + s*LCL_C+LCL_Rc + 1/(Zwt_p(hh));
-
-        y8_8 = y4_4;
-        y9_9 = y5_5;
-        y10_10 = y6_6;
-        y11_11 = y7_7;
-
-        y1_2 = 1/(s*Tr3_L);    
-        y2_3 = 1/(Cable150_R+s*Cable150_L);
-
-        y3_4 = 1/(s*Tr2_L);
-        y3_8 = y3_4;
-
-        y4_5 = 1/(Cable33_R+s*Cable33_L);
-        y5_6 = 1/(s*Tr1_L);
-        y6_7 = 1/(LCL_R2+s*LCL_L2);
-        y8_9 = y4_5;
-        y9_10 = y5_6;
-        y10_11 = y6_7;
-
-        Y = [y1_1 -y1_2 0 0 0 0 0 0 0 0 0;...
-            -y1_2 y2_2 -y2_3 0 0 0 0 0 0 0 0;...
-            0 -y2_3 y3_3 -y3_4 0 0 0 -y3_8 0 0 0;...
-            0 0 -y3_4 y4_4 -y4_5 0 0 0 0 0 0;...
-            0 0 0 -y4_5 y5_5 -y5_6 0 0 0 0 0;...
-            0 0 0 0 -y5_6 y6_6 -y6_7 0 0 0 0;...
-            0 0 0 0 0 -y6_7 y7_7 0 0 0 0;...
-            0 0 -y3_8 0 0 0 0 y8_8 -y8_9 0 0;...
-            0 0 0 0 0 0 0 -y8_9 y9_9 -y9_10 0;...
-            0 0 0 0 0 0 0 0 -y9_10 y10_10 -y10_11;...
-            0 0 0 0 0 0 0 0 0 -y10_11 y11_11];
-
-        e = eig(Y); % eigenvalues
-        eM2(:,hh) = e; 
-        [T,A] = eig(Y); % T - rigth eigenvector matrix
-        L = inv(T); % L - left eigenvector matrix
-
-        ZmodalAll = abs(inv(A));
-        for zz = 1:n_bus
-            ZmodalAllM2(hh,zz) = ZmodalAll(zz,zz);
-        end
-
-        [lambdaMin,mode] = min(abs(e));
-        ZmodalMax = 1/lambdaMin;
-        em = e(mode);
-        ang = rad2deg(angle(em));
-
-        ZmodalMaxM2(hh,1) = h;
-        ZmodalMaxM2(hh,2) = mode;
-        ZmodalMaxM2(hh,3) = ZmodalMax;
-        ZmodalMaxM2(hh,4) = ang;
-
-        PFmodalM2(hh,1) = h;
-        for b=2:n_bus+1
-            PFmodalM2(hh,b) = abs(L(mode,b-1)*T(b-1,mode));
-        end
-
-    end
-    figure(4);
-    subplot(2,1,2)
-    plot(H,ZmodalAllM2);
-    axis(view);
-    title('HMA (all modes) - Z(s) model');
-    xlabel(xlab);
-    ylabel(ylab);
-    legend(num2str([1:n_bus]'),'Location','NorthEast');
-    grid on
-    
-    figure(5);
-    subplot(2,1,2)
-    plot(H,ZmodalMaxM2(:,3), 'Color', [colm3(1)/255, colm3(2)/255, colm3(3)/255]);
-    axis(view)
-    title('HMA (only max. modes) - Z(s) model');    
-    xlabel(xlab);
-    ylabel(ylab);
-    grid on
-    
-    [Z_peak,h_crit_idx] = findpeaks(ZmodalMaxM2(:,3));
-    h_crit = h_crit_idx * res;
-
-    fprintf('harmonic order - critical mode - modal impedance(abs) - angle\n');
-    ZmodalHcrit = ZmodalMaxM2(h_crit_idx,:)
-
-    fprintf('harmonic order - participation factors for all buses\n');
-    PFmodalHcrit = PFmodalM2(h_crit_idx,:);
-    PFmodalHcrit = PFmodalHcrit(:,2:end)
-    
-    fprintf('--> Eigenvalues of critical frequencies\n');
-    eM2(:,h_crit_idx)
-
-    fprintf('greates participation factors:\n');
-    for ff=1:length(PFmodalHcrit(:,1))
-        M = PFmodalHcrit(ff,:);
-        mx = max(M);
-        tmx = find(M==mx);
-        omx1 = 0.99999*mx;
-        omx2 = 1.00001*mx;
-        omx = setdiff(intersect(find(M>omx1),find(M<omx2)),tmx);
-
-        fprintf('For harmonic: %f, bus: %s has greatest PF=%f.\n',...
-            ZmodalHcrit(ff,1), num2str(tmx), mx);
-        if ~isempty(omx)
-            fprintf('\t(also same PF at buses: ');
-            fprintf('%s', num2str(omx));
-            fprintf(')\n');
-        end
-    end
-
-    top_modes = unique(ZmodalMaxM2(h_crit_idx,2));
-    top_modes_impedances = ZmodalAllM2(:,top_modes);
-    figure(6)
-    subplot(2,1,2)
-    plot(H,top_modes_impedances);
-    title('HMA (critical modes only) - Z(s) model');
-    legend(num2str(top_modes));
-    xlabel(xlab);
-    ylabel(ylab);
-    grid on
 end
 
 %% Stability
@@ -511,7 +405,7 @@ end
 % Zc (inner grid) has to be improved because now it includes only series
 % impedances.
 nyqview = 1.5;
-Hstab = 0.2:0.01:40; % order
+Hstab = 0.2:res:40; % order
 Hfstab = Hstab*f; % Hz
 
 if calculate(4)==true
@@ -582,9 +476,96 @@ if calculate(4)==true
     ylabel('Angle [deg]');
     clear pos neg grdpos grdneg V
     
+    %% Intersection of curves and stability margin
+    eps = 0.1;
+    % points at less than 1.5 order exluded
+    fundamental_idx = find(Hstab==1);
+    start_idx = fundamental_idx + 0.5/res;
+    Hstab_idx = 1:length(Hstab);
+    
+    fprintf('\n --- Intersections of grid positive with source pos and neg ---');
+    % Find point of intersection - Grid/Load positive
+    y1p = abs(ZspM);
+    y1n = abs(ZsnM);
+    y2 = abs(Zlp);
+    distance_p = abs(y1p-y2);
+    distance_n = abs(y1n-y2);
+    idx_p = find(distance_p < eps);
+    idx_n = find(distance_n < eps);
+    
+    idx_filtered_p = intersect(idx_p,Hstab_idx(start_idx:end));
+    idx_filtered_n = intersect(idx_n,Hstab_idx(start_idx:end));
+    
+    px_pp = Hfstab(idx_filtered_p);
+    py_pp = y1p(idx_filtered_p);
+    px_np = Hfstab(idx_filtered_n);
+    py_np = y1n(idx_filtered_n);
+    
+    % phase margins = 180-fi
+    fi1_p = angle(ZspM);
+    fi1_n = angle(ZsnM);
+    fi2 = angle(Zlp);
+    fi_diff_p = abs(rad2deg(fi1_p-fi2));
+    fi_diff_n = abs(rad2deg(fi1_n-fi2));
+    ph_margin_p = 180 - fi_diff_p(idx_filtered_p);
+    ph_margin_n = 180 - fi_diff_n(idx_filtered_n);
+    order_filtered_p = Hstab(idx_filtered_p);
+    order_filtered_n = Hstab(idx_filtered_n);
+    distance_p = distance_p';
+    distance_n = distance_n';
+    MarginsP = [order_filtered_p' [50*order_filtered_p]'...
+        ph_margin_p' distance_p(idx_filtered_p)]
+    MarginsN = [order_filtered_n' [50*order_filtered_n]'...
+        ph_margin_n' distance_n(idx_filtered_n)]  
+    clear idx_filtered_p idx_filtered_n
+    
+    fprintf('\n --- Intersections of grid negative with source pos and neg ---');
+    % Find point of intersection - Grid/Load negative
+    y1p = abs(ZspM);
+    y1n = abs(ZsnM);
+    y2 = abs(Zln);
+    distance_p = abs(y1p-y2);
+    distance_n = abs(y1n-y2);
+    idx_p = find(distance_p < eps);
+    idx_n = find(distance_n < eps);
+    
+    idx_filtered_p = intersect(idx_p,Hstab_idx(start_idx:end));
+    idx_filtered_n = intersect(idx_n,Hstab_idx(start_idx:end));
+    
+    px_pn = Hfstab(idx_filtered_p);
+    py_pn = y1p(idx_filtered_p);
+    px_nn = Hfstab(idx_filtered_n);
+    py_nn = y1n(idx_filtered_n);
+    
+    % phase margins = 180-fi
+    fi1_p = angle(ZspM);
+    fi1_n = angle(ZsnM);
+    fi2 = angle(Zln);
+    fi_diff_p = abs(rad2deg(fi1_p-fi2));
+    fi_diff_n = abs(rad2deg(fi1_n-fi2));
+    ph_margin_p = 180 - fi_diff_p(idx_filtered_p);
+    ph_margin_n = 180 - fi_diff_n(idx_filtered_n);
+    order_filtered_p = Hstab(idx_filtered_p);
+    order_filtered_n = Hstab(idx_filtered_n);
+    distance_p = distance_p';
+    distance_n = distance_n';
+    MarginsP = [order_filtered_p' [50*order_filtered_p]'...
+        ph_margin_p' distance_p(idx_filtered_p)]
+    MarginsN = [order_filtered_n' [50*order_filtered_n]'...
+        ph_margin_n' distance_n(idx_filtered_n)]
+    
+    figure(7)
+    subplot(2,1,1); 
+    hold on
+    plot(px_pp, mag2db(py_pp), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    plot(px_np, mag2db(py_np), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    plot(px_pn, mag2db(py_pn), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    plot(px_nn, mag2db(py_nn), 'o', 'MarkerSize', 10, 'Color', [0.8 0.1 0.5]);
+    hold off
+    
 end   
 
 %% Save variables
 FS_ZM2 = ZabsM2; % FS data
-HMA_ZmaxM2 = [ZmodalMaxM(:,3) ZmodalMaxM2(:,3)]; % HMA max modes only data
+HMA_ZmaxM2 = ZmodalMaxMSave; % HMA max modes only data
 save('results/fromCase2.mat', 'FS_ZM2', 'HMA_ZmaxM2');
