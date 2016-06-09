@@ -1,0 +1,93 @@
+\begin{thebibliography}{10}
+
+\bibitem{das}
+{\em Power System Harmonics and Passive Filter Designs}.
+\newblock •, 2015.
+
+\bibitem{rosa}
+{\em Harmonics and Power Systems}.
+\newblock •, 2006.
+
+\bibitem{arrillaga}
+{\em Power System Harmonics}.
+\newblock •, 2003.
+
+\bibitem{harmonicseffects}
+IEEE, ``The effects of power system harmonics on power system equipment and
+  loads,'' {\em IEEE Transactions}, 1985.
+
+\bibitem{xu2005}
+W.~X. Z. H. Y. C.~H. Wang, ``Harmonic resonance mode analysis,'' {\em IEEE
+  TRANSACTIONS ON POWER DELIVERY, VOL. 20, NO. 2,}, APRIL 2005.
+
+\bibitem{modal1982}
+•, ``Selective modal analysis with applications to electric power systems—ii.
+  the dynamic stability problem,'' {\em IEEE Trans. Power App. Syst.}, 1982.
+
+\bibitem{bradt2012}
+M.~B. B. B. E. C. D. M. J. S. T. S. T. S. M. S. R. W. I. P. W. P. C. S. D.~W.
+  Group, ``Harmonics and resonance issues in wind power plants,'' {\em •},
+  2012.
+
+\bibitem{bellman1970}
+{\em Introduction to Matrix Analysis, 2nd ed.}
+\newblock New York: Mc-Graw-Hill, 1970.
+
+\bibitem{perez1982}
+{\em Selective modal analysis with applications to electric power systems—I.
+  Heuristic introduction}.
+\newblock IEEE Trans. Power App. Syst, 1982.
+
+\bibitem{pham2013}
+L.~Pham, ``A review of full scale converter for wind turbines,'' {\em IEEE},
+  2013.
+
+\bibitem{borwin1}
+C.~B. C. R. A. M. D.~J. Jung, ``Borwin1 – first experiences with harmonic
+  interactions in converter dominated grids,'' {\em International ETG Congress
+  2015}, 2015.
+
+\bibitem{liusun2014}
+H.~L.~J. Sun, ``Voltage stability and control of offshore wind farms with ac
+  collection and hvdc transmission,'' {\em IEEE JOURNAL OF EMERGING AND
+  SELECTED TOPICS IN POWER ELECTRONICS}, 2014.
+
+\bibitem{sun2011}
+J.~Sun, ``Impedance-based stability criterion for grid-connected inverters,''
+  {\em IEEE TRANSACTIONS ON POWER ELECTRONICS}, 2100.
+
+\bibitem{middlebrook1976}
+{\em Input filter considerations in design and application of switching
+  regulators}.
+\newblock IEEE Ind. Appl. Soc. Annu. Meeting, 1976.
+
+\bibitem{liusun2013}
+H.~Liu and J.~Sun, ``A study of offshore wind hvdc system stability and
+  control,'' {\em Department of Electrical, Computer and Systems Engineering,
+  Rensselaer Polytechnic Institute, Troy, NY, USA}, 2013.
+
+\bibitem{bing2009}
+Z.~B. K.~J. Karimi; and J.~Sun, ``Input impedance modeling and analysis of
+  line-commutated rectifiers,'' {\em IEEE Trans. Power Electron}, 2009.
+
+\bibitem{cespedes2014}
+M.~Cespedes and J.~Sun, ``Impedance modeling and analysis of gridconnected
+  voltage-source converters,'' {\em IEEE Trans. Power Electron.}, 2014.
+
+\bibitem{larsen2012}
+E.~L.~G. Drobnjak; and H.~Elahi, ``Standardization of vsc-hvdc interface with
+  offshore wind generation,'' {\em 11th Int. Workshop Large-Scale Integr. Wind
+  Power Power Syst.}, 2012.
+
+\bibitem{iec61000}
+•, ``Iec series 61000 standards,'' tech. rep., •, •.
+
+\bibitem{en50160}
+•, ``Voltage characteristics of electricity supplied by public distribution
+  systems,'' tech. rep., Brussels, 1994.
+
+\bibitem{ieee519}
+•, ``Ieee recommended practice and requirements for harmonic control in
+  electrical systems,'' tech. rep., •, 1992.
+
+\end{thebibliography}
