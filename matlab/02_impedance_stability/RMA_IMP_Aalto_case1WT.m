@@ -31,7 +31,7 @@ w = 2*pi*f;
 res = 0.01;
 H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode   nyquist others
-calculate = [   true    true    true    true    false      false];
+calculate = [   true    true    true true false      false];
 
 colormodels = [56  18  77;
             196 141 227;

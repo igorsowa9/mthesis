@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  9 JUN 2016 11:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  10 JUN 2016 15:03
 entering extended mode
 **./mthesis.tex
 (mthesis.tex
@@ -751,24 +751,24 @@ Package: placeins 2005/04/18  v 2.2
 (mthesis.aux)
 \openout1 = `mthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 93.
-LaTeX Font Info:    ... okay on input line 93.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 93.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 93.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
+LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 94.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 93.
+LaTeX Font Info:    ... okay on input line 94.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -835,16 +835,16 @@ File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 93.
-Package gensymb Info: Math companion symbols declared on input line 93.
-LaTeX Info: Redefining \degree on input line 93.
-LaTeX Info: Redefining \celsius on input line 93.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 94.
+Package gensymb Info: Math companion symbols declared on input line 94.
+LaTeX Info: Redefining \degree on input line 94.
+LaTeX Info: Redefining \celsius on input line 94.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 93.
-LaTeX Info: Redefining \ohm on input line 93.
-Package gensymb Info: Using \textohm for \ohm on input line 93.
-LaTeX Info: Redefining \micro on input line 93.
-Package gensymb Info: Using \textmu for \micro on input line 93.
+erthousand on input line 94.
+LaTeX Info: Redefining \ohm on input line 94.
+Package gensymb Info: Using \textohm for \ohm on input line 94.
+LaTeX Info: Redefining \micro on input line 94.
+Package gensymb Info: Using \textmu for \micro on input line 94.
  (C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\floatrow\fr-subfig.sty
 Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
 \FBsc@max=\skip131
@@ -890,7 +890,7 @@ Missing character: There is no ô in font cmr12!
 File: img/theory/series_circ.PNG Graphic file (type png)
 
 <use img/theory/series_circ.PNG>
-Package pdftex.def Info: img/theory/series_circ.PNG used on input line 214.
+Package pdftex.def Info: img/theory/series_circ.PNG used on input line 215.
 (pdftex.def)             Requested size: 135.89174pt x 91.00583pt.
  [5]
 <img/theory/series_resonance_f876.png, id=47, 421.575pt x 316.18124pt>
@@ -898,7 +898,7 @@ File: img/theory/series_resonance_f876.png Graphic file (type png)
 
 <use img/theory/series_resonance_f876.png>
 Package pdftex.def Info: img/theory/series_resonance_f876.png used on input lin
-e 240.
+e 241.
 (pdftex.def)             Requested size: 317.07614pt x 237.81078pt.
  [6 <./img/theory/series_circ.PNG> <./img/theory/series_resonance_f876.png (PNG
  copy)>]
@@ -906,7 +906,7 @@ e 240.
 File: img/theory/parallel_circ.png Graphic file (type png)
 
 <use img/theory/parallel_circ.png>
-Package pdftex.def Info: img/theory/parallel_circ.png used on input line 259.
+Package pdftex.def Info: img/theory/parallel_circ.png used on input line 260.
 (pdftex.def)             Requested size: 135.89174pt x 71.31552pt.
 
 <img/theory/parallel_resonance_f356.png, id=55, 421.575pt x 316.18124pt>
@@ -914,14 +914,14 @@ File: img/theory/parallel_resonance_f356.png Graphic file (type png)
 
 <use img/theory/parallel_resonance_f356.png>
 Package pdftex.def Info: img/theory/parallel_resonance_f356.png used on input l
-ine 285.
+ine 286.
 (pdftex.def)             Requested size: 317.07614pt x 237.81078pt.
  [7 <./img/theory/parallel_circ.png>] <img/theory/tank_circ.PNG, id=60, 169.382
 81pt x 219.82124pt>
 File: img/theory/tank_circ.PNG Graphic file (type png)
 
 <use img/theory/tank_circ.PNG>
-Package pdftex.def Info: img/theory/tank_circ.PNG used on input line 298.
+Package pdftex.def Info: img/theory/tank_circ.PNG used on input line 299.
 (pdftex.def)             Requested size: 90.5922pt x 117.57132pt.
  [8 <./img/theory/parallel_resonance_f356.png> <./img/theory/tank_circ.PNG>]
 <img/theory/tank_parallel_resonance_f447.png, id=66, 421.575pt x 316.18124pt>
@@ -929,46 +929,35 @@ File: img/theory/tank_parallel_resonance_f447.png Graphic file (type png)
 
 <use img/theory/tank_parallel_resonance_f447.png>
 Package pdftex.def Info: img/theory/tank_parallel_resonance_f447.png used on in
-put line 320.
+put line 321.
 (pdftex.def)             Requested size: 317.07614pt x 237.81078pt.
- [9 <./img/theory/tank_parallel_resonance_f447.png>] [10]
-
-LaTeX Warning: Citation `nabeakagi' on page 11 undefined on input line 384.
-
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-[11]
-
-LaTeX Warning: Citation `park1929' on page 12 undefined on input line 449.
-
-[12] [13]
+ [9 <./img/theory/tank_parallel_resonance_f447.png>] [10] [11] [12]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
- [14]
+ [13]
 Missing character: There is no ‚ in font cmss12!
 Missing character: There is no Ä in font cmss12!
 Missing character: There is no ì in font cmss12!
- [15] [16] [17]
-<img/theory/stability_model1.png, id=101, 384.43625pt x 165.61874pt>
+ [14] [15] [16]
+<img/theory/stability_model1.png, id=98, 384.43625pt x 165.61874pt>
 File: img/theory/stability_model1.png Graphic file (type png)
 
 <use img/theory/stability_model1.png>
-Package pdftex.def Info: img/theory/stability_model1.png used on input line 631
+Package pdftex.def Info: img/theory/stability_model1.png used on input line 635
 .
 (pdftex.def)             Requested size: 226.48395pt x 97.57268pt.
 
-<img/theory/stability_loop.png, id=102, 506.89375pt x 155.58125pt>
+<img/theory/stability_loop.png, id=99, 506.89375pt x 155.58125pt>
 File: img/theory/stability_loop.png Graphic file (type png)
 
 <use img/theory/stability_loop.png>
-Package pdftex.def Info: img/theory/stability_loop.png used on input line 647.
+Package pdftex.def Info: img/theory/stability_loop.png used on input line 651.
 (pdftex.def)             Requested size: 226.48395pt x 69.51474pt.
- [18 <./img/theory/stability_model1.png (PNG copy)>]
+ [17 <./img/theory/stability_model1.png (PNG copy)>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
@@ -999,35 +988,35 @@ Missing character: There is no ú in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ù in font cmr12!
- <img/theory/stability_model2.png, id=106, 302.12875pt x 125.46875pt>
+ <img/theory/stability_model2.png, id=103, 302.12875pt x 125.46875pt>
 File: img/theory/stability_model2.png Graphic file (type png)
 
 <use img/theory/stability_model2.png>
-Package pdftex.def Info: img/theory/stability_model2.png used on input line 664
+Package pdftex.def Info: img/theory/stability_model2.png used on input line 668
 .
 (pdftex.def)             Requested size: 226.48395pt x 94.05537pt.
- [19 <./img/theory/stability_loop.png (PNG copy)> <./img/theory/stability_model
+ [18 <./img/theory/stability_loop.png (PNG copy)> <./img/theory/stability_model
 2.png (PNG copy)>]
-<img/theory/stability_model3.png, id=110, 382.42876pt x 130.4875pt>
+<img/theory/stability_model3.png, id=107, 382.42876pt x 130.4875pt>
 File: img/theory/stability_model3.png Graphic file (type png)
 
 <use img/theory/stability_model3.png>
-Package pdftex.def Info: img/theory/stability_model3.png used on input line 682
+Package pdftex.def Info: img/theory/stability_model3.png used on input line 686
 .
 (pdftex.def)             Requested size: 226.48395pt x 77.27763pt.
- [20 <./img/theory/stability_model3.png (PNG copy)>] <img/theory/pi_model.png, 
-id=115, 202.7575pt x 128.48pt>
+ [19 <./img/theory/stability_model3.png (PNG copy)>] <img/theory/pi_model.png, 
+id=111, 202.7575pt x 128.48pt>
 File: img/theory/pi_model.png Graphic file (type png)
 
 <use img/theory/pi_model.png>
-Package pdftex.def Info: img/theory/pi_model.png used on input line 731.
+Package pdftex.def Info: img/theory/pi_model.png used on input line 735.
 (pdftex.def)             Requested size: 135.89174pt x 86.1125pt.
- [21 <./img/theory/pi_model.png (PNG copy)>]
-<img/theory/vscsmodels.png, id=120, 368.37625pt x 137.51375pt>
+ [20 <./img/theory/pi_model.png (PNG copy)>]
+<img/theory/vscsmodels.png, id=117, 368.37625pt x 137.51375pt>
 File: img/theory/vscsmodels.png Graphic file (type png)
 
 <use img/theory/vscsmodels.png>
-Package pdftex.def Info: img/theory/vscsmodels.png used on input line 754.
+Package pdftex.def Info: img/theory/vscsmodels.png used on input line 758.
 (pdftex.def)             Requested size: 226.48395pt x 84.54422pt.
 Missing character: There is no ‚ in font cmss12!
 Missing character: There is no Ä in font cmss12!
@@ -1035,71 +1024,66 @@ Missing character: There is no ú in font cmss12!
 Missing character: There is no ‚ in font cmss12!
 Missing character: There is no Ä in font cmss12!
 Missing character: There is no ù in font cmss12!
-
-
-LaTeX Warning: Citation `sun2009linearization' on page 22 undefined on input li
-ne 770.
-
-[22 <./img/theory/vscsmodels.png (PNG copy)>]
-<img/theory/WT_scheme.png, id=124, 809.27344pt x 541.27219pt>
+ [21 <./img/theory/vscsmodels.png (PNG copy)>]
+<img/theory/WT_scheme.png, id=121, 809.27344pt x 541.27219pt>
 File: img/theory/WT_scheme.png Graphic file (type png)
 
 <use img/theory/WT_scheme.png>
-Package pdftex.def Info: img/theory/WT_scheme.png used on input line 779.
+Package pdftex.def Info: img/theory/WT_scheme.png used on input line 783.
 (pdftex.def)             Requested size: 271.7835pt x 181.78362pt.
- [23 <./img/theory/WT_scheme.png>]
-<img/theory/HVDC_scheme.png, id=128, 711.4078pt x 469.755pt>
+ [22 <./img/theory/WT_scheme.png>]
+<img/theory/HVDC_scheme.png, id=125, 711.4078pt x 469.755pt>
 File: img/theory/HVDC_scheme.png Graphic file (type png)
 
 <use img/theory/HVDC_scheme.png>
-Package pdftex.def Info: img/theory/HVDC_scheme.png used on input line 819.
+Package pdftex.def Info: img/theory/HVDC_scheme.png used on input line 823.
 (pdftex.def)             Requested size: 271.7835pt x 179.46925pt.
- [24 <./img/theory/HVDC_scheme.png>] [25]
-[26]
+ [23 <./img/theory/HVDC_scheme.png>] [24]
+[25]
 Chapter 2.
-<img/system_full.png, id=139, 682.04813pt x 1146.53343pt>
+<img/system_full.png, id=135, 682.04813pt x 1146.53343pt>
 File: img/system_full.png Graphic file (type png)
 
 <use img/system_full.png>
-Package pdftex.def Info: img/system_full.png used on input line 883.
+Package pdftex.def Info: img/system_full.png used on input line 889.
 (pdftex.def)             Requested size: 407.66833pt x 685.30118pt.
 
 
-LaTeX Warning: Float too large for page by 8.3943pt on input line 886.
+LaTeX Warning: Float too large for page by 8.3943pt on input line 892.
 
-[27
+[26
 
-] [28 <./img/system_full.png>]
-<img/Case3/system_case3.png, id=146, 698.61pt x 1156.32pt>
+] [27 <./img/system_full.png>]
+<img/Case3/system_case3.png, id=143, 698.61pt x 1156.32pt>
 File: img/Case3/system_case3.png Graphic file (type png)
 
 <use img/Case3/system_case3.png>
-Package pdftex.def Info: img/Case3/system_case3.png used on input line 896.
+Package pdftex.def Info: img/Case3/system_case3.png used on input line 902.
 (pdftex.def)             Requested size: 407.66833pt x 674.75949pt.
- [29
+ [28
 
-] [30 <./img/Case3/system_case3.png>]
-<img/table_systemdata.png, id=153, 295.85532pt x 367.3725pt>
+] [29 <./img/Case3/system_case3.png>]
+<img/table_systemdata.png, id=150, 301.125pt x 280.04625pt>
 File: img/table_systemdata.png Graphic file (type png)
 
 <use img/table_systemdata.png>
-Package pdftex.def Info: img/table_systemdata.png used on input line 905.
-(pdftex.def)             Requested size: 226.48395pt x 281.24083pt.
+Package pdftex.def Info: img/table_systemdata.png used on input line 911.
+(pdftex.def)             Requested size: 226.48395pt x 210.63667pt.
 
-<img/Case1/system_case1.png, id=154, 1327.20844pt x 276.28218pt>
+<img/Case1/system_case1.png, id=151, 1327.20844pt x 276.28218pt>
 File: img/Case1/system_case1.png Graphic file (type png)
 
 <use img/Case1/system_case1.png>
-Package pdftex.def Info: img/Case1/system_case1.png used on input line 972.
+Package pdftex.def Info: img/Case1/system_case1.png used on input line 978.
 (pdftex.def)             Requested size: 452.9679pt x 94.29303pt.
 
-<img/Case2/system_case2.png, id=155, 1324.95pt x 412.54124pt>
+<img/Case2/system_case2.png, id=152, 1324.95pt x 412.54124pt>
 File: img/Case2/system_case2.png Graphic file (type png)
 
 <use img/Case2/system_case2.png>
-Package pdftex.def Info: img/Case2/system_case2.png used on input line 982.
+Package pdftex.def Info: img/Case2/system_case2.png used on input line 988.
 (pdftex.def)             Requested size: 452.9679pt x 141.03644pt.
- [31
+ [30
 
  <./img/table_systemdata.png> <./img/Case1/system_case1.png>]
 Missing character: There is no ‚ in font cmr12!
@@ -1111,436 +1095,421 @@ Missing character: There is no ì in font cmr12!
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- <img/tableWT.png, id=160, 403.5075pt x 386.94562pt>
+ <img/tableWT.png, id=157, 281.55188pt x 172.39406pt>
 File: img/tableWT.png Graphic file (type png)
 
 <use img/tableWT.png>
-Package pdftex.def Info: img/tableWT.png used on input line 998.
-(pdftex.def)             Requested size: 226.48395pt x 217.18993pt.
- [32 <./img/Case2/system_case2.png>]
-<img/tableHVDC.png, id=165, 402.75468pt x 389.20406pt>
+Package pdftex.def Info: img/tableWT.png used on input line 1004.
+(pdftex.def)             Requested size: 226.48395pt x 138.67564pt.
+ <img/tableHVDC.png, id=158, 288.3272pt x 154.32657pt>
 File: img/tableHVDC.png Graphic file (type png)
- <use img/tableHVDC.png>
-Package pdftex.def Info: img/tableHVDC.png used on input line 1006.
-(pdftex.def)             Requested size: 226.48395pt x 218.86142pt.
 
-<img/modelWT.png, id=166, 421.575pt x 316.18124pt>
+<use img/tableHVDC.png>
+Package pdftex.def Info: img/tableHVDC.png used on input line 1012.
+(pdftex.def)             Requested size: 226.48395pt x 121.22902pt.
+ [31 <./img/Case2/system_case2.png> <./img/tableWT.png>] <img/modelWT.png, id=1
+63, 421.575pt x 316.18124pt>
 File: img/modelWT.png Graphic file (type png)
  <use img/modelWT.png>
-Package pdftex.def Info: img/modelWT.png used on input line 1017.
+Package pdftex.def Info: img/modelWT.png used on input line 1022.
 (pdftex.def)             Requested size: 362.37569pt x 271.78513pt.
 
-[33 <./img/tableWT.png> <./img/tableHVDC.png>]
-<img/modelHVDC.png, id=172, 421.575pt x 316.18124pt>
+<img/modelHVDC.png, id=164, 421.575pt x 316.18124pt>
 File: img/modelHVDC.png Graphic file (type png)
  <use img/modelHVDC.png>
-Package pdftex.def Info: img/modelHVDC.png used on input line 1025.
+Package pdftex.def Info: img/modelHVDC.png used on input line 1030.
 (pdftex.def)             Requested size: 362.37569pt x 271.78513pt.
 
-[34 <./img/modelWT.png> <./img/modelHVDC.png>]
-<img/Case1/Case1_FS_lin.png, id=176, 571.38469pt x 368.1253pt>
+[32 <./img/tableHVDC.png> <./img/modelWT.png>] [33 <./img/modelHVDC.png>]
+<img/Case1/Case1_FS_lin.png, id=173, 571.38469pt x 368.1253pt>
 File: img/Case1/Case1_FS_lin.png Graphic file (type png)
 
 <use img/Case1/Case1_FS_lin.png>
-Package pdftex.def Info: img/Case1/Case1_FS_lin.png used on input line 1044.
+Package pdftex.def Info: img/Case1/Case1_FS_lin.png used on input line 1049.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [35
 
-]
-<img/Case1/Case1_FS_log.png, id=180, 571.38469pt x 368.1253pt>
+<img/Case1/Case1_FS_log.png, id=174, 571.38469pt x 368.1253pt>
 File: img/Case1/Case1_FS_log.png Graphic file (type png)
 
 <use img/Case1/Case1_FS_log.png>
-Package pdftex.def Info: img/Case1/Case1_FS_log.png used on input line 1054.
+Package pdftex.def Info: img/Case1/Case1_FS_log.png used on input line 1059.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [36 <./img/Case1/Case1_FS_lin.png>]
-<img/Case1/table_FS.png, id=184, 251.43938pt x 137.7647pt>
+ [34 <./img/Case1/Case1_FS_lin.png>]
+<img/Case1/table_FS.png, id=178, 251.43938pt x 137.7647pt>
 File: img/Case1/table_FS.png Graphic file (type png)
 
 <use img/Case1/table_FS.png>
-Package pdftex.def Info: img/Case1/table_FS.png used on input line 1065.
+Package pdftex.def Info: img/Case1/table_FS.png used on input line 1070.
 (pdftex.def)             Requested size: 226.48395pt x 124.09006pt.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- [37 <./img/Case1/Case1_FS_log.png> <./img/Case1/table_FS.png>] <img/Case1/Case
-1_HMA_max.png, id=189, 637.63219pt x 526.96875pt>
+ [35 <./img/Case1/Case1_FS_log.png> <./img/Case1/table_FS.png>] <img/Case1/Case
+1_HMA_max.png, id=183, 637.63219pt x 526.96875pt>
 File: img/Case1/Case1_HMA_max.png Graphic file (type png)
 
 <use img/Case1/Case1_HMA_max.png>
-Package pdftex.def Info: img/Case1/Case1_HMA_max.png used on input line 1083.
+Package pdftex.def Info: img/Case1/Case1_HMA_max.png used on input line 1088.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
 
-<img/Case1/Case1_HMA_all.png, id=190, 637.63219pt x 526.96875pt>
+<img/Case1/Case1_HMA_all.png, id=184, 637.63219pt x 526.96875pt>
 File: img/Case1/Case1_HMA_all.png Graphic file (type png)
 
 <use img/Case1/Case1_HMA_all.png>
-Package pdftex.def Info: img/Case1/Case1_HMA_all.png used on input line 1093.
+Package pdftex.def Info: img/Case1/Case1_HMA_all.png used on input line 1098.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [38 <./img/Case1/Case1_HMA_max.png>]
-<img/Case1/Case1_HMA_crit.png, id=195, 637.63219pt x 526.96875pt>
+ [36 <./img/Case1/Case1_HMA_max.png>]
+<img/Case1/Case1_HMA_crit.png, id=188, 637.63219pt x 526.96875pt>
 File: img/Case1/Case1_HMA_crit.png Graphic file (type png)
 
 <use img/Case1/Case1_HMA_crit.png>
-Package pdftex.def Info: img/Case1/Case1_HMA_crit.png used on input line 1103.
+Package pdftex.def Info: img/Case1/Case1_HMA_crit.png used on input line 1108.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [39 <./img/Case1/Case1_HMA_all.png>]
-<img/Case1/table_HRMA1.png, id=199, 227.34938pt x 207.02344pt>
+ [37 <./img/Case1/Case1_HMA_all.png>]
+<img/Case1/table_HRMA1.png, id=192, 227.34938pt x 207.02344pt>
 File: img/Case1/table_HRMA1.png Graphic file (type png)
 
 <use img/Case1/table_HRMA1.png>
-Package pdftex.def Info: img/Case1/table_HRMA1.png used on input line 1115.
+Package pdftex.def Info: img/Case1/table_HRMA1.png used on input line 1120.
 (pdftex.def)             Requested size: 226.48395pt x 206.2395pt.
- [40 <./img/Case1/Case1_HMA_crit.png>]
-<img/Case1/table_HRMA2.png, id=203, 437.38406pt x 186.6975pt>
+ [38 <./img/Case1/Case1_HMA_crit.png>]
+<img/Case1/table_HRMA2.png, id=197, 437.38406pt x 186.6975pt>
 File: img/Case1/table_HRMA2.png Graphic file (type png)
 
 <use img/Case1/table_HRMA2.png>
-Package pdftex.def Info: img/Case1/table_HRMA2.png used on input line 1123.
+Package pdftex.def Info: img/Case1/table_HRMA2.png used on input line 1128.
 (pdftex.def)             Requested size: 452.9679pt x 193.35176pt.
- [41 <./img/Case1/table_HRMA1.png> <./img/Case1/table_HRMA2.png>] <img/Case1/PF
-_model.png, id=209, 895.09406pt x 191.9672pt>
+ [39 <./img/Case1/table_HRMA1.png> <./img/Case1/table_HRMA2.png>] <img/Case1/PF
+_model.png, id=203, 895.09406pt x 191.9672pt>
 File: img/Case1/PF_model.png Graphic file (type png)
 
 <use img/Case1/PF_model.png>
-Package pdftex.def Info: img/Case1/PF_model.png used on input line 1136.
+Package pdftex.def Info: img/Case1/PF_model.png used on input line 1141.
 (pdftex.def)             Requested size: 452.9679pt x 97.14917pt.
 
-<img/Case1/PF_imp7_VS.PNG, id=210, 555.57562pt x 391.4625pt>
+<img/Case1/PF_imp7_VS.PNG, id=204, 555.57562pt x 391.4625pt>
 File: img/Case1/PF_imp7_VS.PNG Graphic file (type png)
 
 <use img/Case1/PF_imp7_VS.PNG>
-Package pdftex.def Info: img/Case1/PF_imp7_VS.PNG used on input line 1146.
+Package pdftex.def Info: img/Case1/PF_imp7_VS.PNG used on input line 1151.
 (pdftex.def)             Requested size: 362.37569pt x 255.33762pt.
 
-<img/Case1/PF_imp7_CS.PNG, id=211, 557.83406pt x 392.21532pt>
+<img/Case1/PF_imp7_CS.PNG, id=205, 557.83406pt x 392.21532pt>
 File: img/Case1/PF_imp7_CS.PNG Graphic file (type png)
 
 <use img/Case1/PF_imp7_CS.PNG>
-Package pdftex.def Info: img/Case1/PF_imp7_CS.PNG used on input line 1154.
+Package pdftex.def Info: img/Case1/PF_imp7_CS.PNG used on input line 1159.
 (pdftex.def)             Requested size: 362.37569pt x 254.79329pt.
- [42 <./img/Case1/PF_model.png (PNG copy)> <./img/Case1/PF_imp7_VS.PNG>]
-<img/Case1/table_powerfactory.PNG, id=216, 295.1025pt x 46.67438pt>
+ [40 <./img/Case1/PF_model.png (PNG copy)> <./img/Case1/PF_imp7_VS.PNG>]
+<img/Case1/table_powerfactory.PNG, id=210, 295.1025pt x 46.67438pt>
 File: img/Case1/table_powerfactory.PNG Graphic file (type png)
 
 <use img/Case1/table_powerfactory.PNG>
 Package pdftex.def Info: img/Case1/table_powerfactory.PNG used on input line 11
-67.
+72.
 (pdftex.def)             Requested size: 271.7835pt x 42.98721pt.
 
-<img/Case1/PF_impAll_VS.PNG, id=217, 557.08125pt x 393.72093pt>
+<img/Case1/PF_impAll_VS.PNG, id=211, 557.08125pt x 393.72093pt>
 File: img/Case1/PF_impAll_VS.PNG Graphic file (type png)
 
 <use img/Case1/PF_impAll_VS.PNG>
-Package pdftex.def Info: img/Case1/PF_impAll_VS.PNG used on input line 1176.
+Package pdftex.def Info: img/Case1/PF_impAll_VS.PNG used on input line 1181.
 (pdftex.def)             Requested size: 362.37569pt x 256.11383pt.
 
-<img/Case1/PF_impAllLegend.PNG, id=218, 301.125pt x 140.02313pt>
+<img/Case1/PF_impAllLegend.PNG, id=212, 301.125pt x 140.02313pt>
 File: img/Case1/PF_impAllLegend.PNG Graphic file (type png)
 
 <use img/Case1/PF_impAllLegend.PNG>
-Package pdftex.def Info: img/Case1/PF_impAllLegend.PNG used on input line 1177.
+Package pdftex.def Info: img/Case1/PF_impAllLegend.PNG used on input line 1182.
 
 (pdftex.def)             Requested size: 181.18439pt x 84.25381pt.
- [43 <./img/Case1/PF_imp7_CS.PNG> <./img/Case1/table_powerfactory.PNG>]
-<img/Case1/PF_impAll_CS.PNG, id=224, 555.57562pt x 392.21532pt>
+ [41 <./img/Case1/PF_imp7_CS.PNG> <./img/Case1/table_powerfactory.PNG>]
+<img/Case1/PF_impAll_CS.PNG, id=218, 555.57562pt x 392.21532pt>
 File: img/Case1/PF_impAll_CS.PNG Graphic file (type png)
 
 <use img/Case1/PF_impAll_CS.PNG>
-Package pdftex.def Info: img/Case1/PF_impAll_CS.PNG used on input line 1185.
+Package pdftex.def Info: img/Case1/PF_impAll_CS.PNG used on input line 1190.
 (pdftex.def)             Requested size: 362.37569pt x 255.82866pt.
- [44 <./img/Case1/PF_impAll_VS.PNG> <./img/Case1/PF_impAllLegend.PNG> <./img/Ca
+ [42 <./img/Case1/PF_impAll_VS.PNG> <./img/Case1/PF_impAllLegend.PNG> <./img/Ca
 se1/PF_impAll_CS.PNG>]
-<img/Case2/Case2_FS_lin.png, id=232, 571.38469pt x 368.1253pt>
+<img/Case2/Case2_FS_lin.png, id=225, 571.38469pt x 368.1253pt>
 File: img/Case2/Case2_FS_lin.png Graphic file (type png)
 
 <use img/Case2/Case2_FS_lin.png>
-Package pdftex.def Info: img/Case2/Case2_FS_lin.png used on input line 1206.
+Package pdftex.def Info: img/Case2/Case2_FS_lin.png used on input line 1212.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [45
+ [43
 
 ]
-<img/Case2/Case2_FS_log.png, id=236, 571.38469pt x 368.1253pt>
+<img/Case2/Case2_FS_log.png, id=229, 571.38469pt x 368.1253pt>
 File: img/Case2/Case2_FS_log.png Graphic file (type png)
 
 <use img/Case2/Case2_FS_log.png>
-Package pdftex.def Info: img/Case2/Case2_FS_log.png used on input line 1214.
+Package pdftex.def Info: img/Case2/Case2_FS_log.png used on input line 1220.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [46 <./img/Case2/Case2_FS_lin.png> <./img/Case2/Case2_FS_log.png>]
-<img/Case2/table_FS.png, id=240, 249.18094pt x 161.10187pt>
+ [44 <./img/Case2/Case2_FS_lin.png> <./img/Case2/Case2_FS_log.png>]
+<img/Case2/table_FS.png, id=234, 249.18094pt x 161.10187pt>
 File: img/Case2/table_FS.png Graphic file (type png)
 
 <use img/Case2/table_FS.png>
-Package pdftex.def Info: img/Case2/table_FS.png used on input line 1226.
+Package pdftex.def Info: img/Case2/table_FS.png used on input line 1232.
 (pdftex.def)             Requested size: 226.48395pt x 146.43085pt.
 
-<img/Case2/Case2_HMA_max.png, id=241, 637.63219pt x 526.96875pt>
+<img/Case2/Case2_HMA_max.png, id=235, 637.63219pt x 526.96875pt>
 File: img/Case2/Case2_HMA_max.png Graphic file (type png)
 
 <use img/Case2/Case2_HMA_max.png>
-Package pdftex.def Info: img/Case2/Case2_HMA_max.png used on input line 1239.
+Package pdftex.def Info: img/Case2/Case2_HMA_max.png used on input line 1243.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [47
+ [45
 
  <./img/Case2/table_FS.png>]
-<img/Case2/Case2_HMA_all.png, id=246, 637.63219pt x 526.96875pt>
+<img/Case2/Case2_HMA_all.png, id=240, 637.63219pt x 526.96875pt>
 File: img/Case2/Case2_HMA_all.png Graphic file (type png)
 
 <use img/Case2/Case2_HMA_all.png>
-Package pdftex.def Info: img/Case2/Case2_HMA_all.png used on input line 1247.
+Package pdftex.def Info: img/Case2/Case2_HMA_all.png used on input line 1251.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [48 <./img/Case2/Case2_HMA_max.png>] [49 <./img/Case2/Case2_HMA_all.png>]
-<img/Case2/Case2_HMA_crit.png, id=253, 637.63219pt x 526.96875pt>
+ [46 <./img/Case2/Case2_HMA_max.png>] [47 <./img/Case2/Case2_HMA_all.png>]
+<img/Case2/Case2_HMA_crit.png, id=247, 637.63219pt x 526.96875pt>
 File: img/Case2/Case2_HMA_crit.png Graphic file (type png)
 
 <use img/Case2/Case2_HMA_crit.png>
-Package pdftex.def Info: img/Case2/Case2_HMA_crit.png used on input line 1255.
+Package pdftex.def Info: img/Case2/Case2_HMA_crit.png used on input line 1259.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
 
-<img/Case2/table_HRMA1.png, id=254, 225.84375pt x 240.9pt>
+<img/Case2/table_HRMA1.png, id=248, 225.84375pt x 240.9pt>
 File: img/Case2/table_HRMA1.png Graphic file (type png)
 
 <use img/Case2/table_HRMA1.png>
-Package pdftex.def Info: img/Case2/table_HRMA1.png used on input line 1267.
-(pdftex.def)             Requested size: 226.48395pt x 241.5978pt.
- [50
+Package pdftex.def Info: img/Case2/table_HRMA1.png used on input line 1271.
+(pdftex.def)             Requested size: 203.83417pt x 217.43655pt.
+ [48
 
  <./img/Case2/Case2_HMA_crit.png>]
-<img/Case2/table_HRMA2.png, id=259, 437.38406pt x 225.84375pt>
+<img/Case2/table_HRMA2.png, id=252, 437.38406pt x 225.84375pt>
 File: img/Case2/table_HRMA2.png Graphic file (type png)
 
 <use img/Case2/table_HRMA2.png>
-Package pdftex.def Info: img/Case2/table_HRMA2.png used on input line 1275.
-(pdftex.def)             Requested size: 452.9679pt x 233.89325pt.
- [51 <./img/Case2/table_HRMA1.png> <./img/Case2/table_HRMA2.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
+Package pdftex.def Info: img/Case2/table_HRMA2.png used on input line 1279.
+(pdftex.def)             Requested size: 407.66833pt x 210.50117pt.
+ [49 <./img/Case2/table_HRMA1.png> <./img/Case2/table_HRMA2.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
- <img/Case2/PF_model.png, id=265, 903.375pt x 313.17pt>
+ <img/Case2/PF_model.png, id=258, 903.375pt x 313.17pt>
 File: img/Case2/PF_model.png Graphic file (type png)
 
 <use img/Case2/PF_model.png>
-Package pdftex.def Info: img/Case2/PF_model.png used on input line 1295.
+Package pdftex.def Info: img/Case2/PF_model.png used on input line 1298.
 (pdftex.def)             Requested size: 452.9679pt x 157.03378pt.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
- [52 <./img/Case2/PF_model.png (PNG copy)>]
-<img/Case2/PF_imp7_VS.PNG, id=269, 553.31718pt x 389.20406pt>
+
+<img/Case2/PF_imp7_VS.PNG, id=259, 553.31718pt x 389.20406pt>
 File: img/Case2/PF_imp7_VS.PNG Graphic file (type png)
 
 <use img/Case2/PF_imp7_VS.PNG>
-Package pdftex.def Info: img/Case2/PF_imp7_VS.PNG used on input line 1305.
+Package pdftex.def Info: img/Case2/PF_imp7_VS.PNG used on input line 1308.
 (pdftex.def)             Requested size: 362.37569pt x 254.89192pt.
-
-<img/Case2/PF_imp7_CS.PNG, id=270, 554.82281pt x 389.95688pt>
+ [50 <./img/Case2/PF_model.png (PNG copy)>]
+<img/Case2/PF_imp7_CS.PNG, id=264, 554.82281pt x 389.95688pt>
 File: img/Case2/PF_imp7_CS.PNG Graphic file (type png)
 
 <use img/Case2/PF_imp7_CS.PNG>
-Package pdftex.def Info: img/Case2/PF_imp7_CS.PNG used on input line 1313.
+Package pdftex.def Info: img/Case2/PF_imp7_CS.PNG used on input line 1316.
 (pdftex.def)             Requested size: 362.37569pt x 254.69472pt.
- [53 <./img/Case2/PF_imp7_VS.PNG>]
-<img/Case2/table_powerfactory.PNG, id=275, 364.36125pt x 44.41594pt>
+ [51 <./img/Case2/PF_imp7_VS.PNG> <./img/Case2/PF_imp7_CS.PNG>]
+<img/Case2/table_powerfactory.PNG, id=270, 364.36125pt x 44.41594pt>
 File: img/Case2/table_powerfactory.PNG Graphic file (type png)
 
 <use img/Case2/table_powerfactory.PNG>
 Package pdftex.def Info: img/Case2/table_powerfactory.PNG used on input line 13
-24.
+27.
 (pdftex.def)             Requested size: 271.7835pt x 33.13158pt.
 
-<img/Case2/PF_impAll_VS.PNG, id=276, 555.57562pt x 391.4625pt>
+<img/Case2/PF_impAll_VS.PNG, id=271, 555.57562pt x 391.4625pt>
 File: img/Case2/PF_impAll_VS.PNG Graphic file (type png)
 
 <use img/Case2/PF_impAll_VS.PNG>
-Package pdftex.def Info: img/Case2/PF_impAll_VS.PNG used on input line 1333.
+Package pdftex.def Info: img/Case2/PF_impAll_VS.PNG used on input line 1336.
 (pdftex.def)             Requested size: 362.37569pt x 255.33762pt.
 
-<img/Case2/PF_impAllLegend.PNG, id=277, 301.125pt x 140.02313pt>
+<img/Case2/PF_impAllLegend.PNG, id=272, 301.125pt x 140.02313pt>
 File: img/Case2/PF_impAllLegend.PNG Graphic file (type png)
 
 <use img/Case2/PF_impAllLegend.PNG>
-Package pdftex.def Info: img/Case2/PF_impAllLegend.PNG used on input line 1334.
+Package pdftex.def Info: img/Case2/PF_impAllLegend.PNG used on input line 1337.
 
 (pdftex.def)             Requested size: 181.18439pt x 84.25381pt.
- [54 <./img/Case2/PF_imp7_CS.PNG> <./img/Case2/table_powerfactory.PNG>]
-<img/Case2/PF_impAll_CS.PNG, id=283, 557.83406pt x 392.96812pt>
+
+<img/Case2/PF_impAll_CS.PNG, id=273, 557.83406pt x 392.96812pt>
 File: img/Case2/PF_impAll_CS.PNG Graphic file (type png)
 
 <use img/Case2/PF_impAll_CS.PNG>
-Package pdftex.def Info: img/Case2/PF_impAll_CS.PNG used on input line 1342.
+Package pdftex.def Info: img/Case2/PF_impAll_CS.PNG used on input line 1345.
 (pdftex.def)             Requested size: 362.37569pt x 255.28233pt.
- [55 <./img/Case2/PF_impAll_VS.PNG> <./img/Case2/PF_impAllLegend.PNG> <./img/Ca
-se2/PF_impAll_CS.PNG>]
-<img/Case3/Case3_FS_lin.png, id=290, 571.38469pt x 368.1253pt>
+ [52
+
+ <./img/Case2/table_powerfactory.PNG> <./img/Case2/PF_impAll_VS.PNG> <./img/Cas
+e2/PF_impAllLegend.PNG>] [53 <./img/Case2/PF_impAll_CS.PNG>]
+<img/Case3/Case3_FS_lin.png, id=284, 571.38469pt x 368.1253pt>
 File: img/Case3/Case3_FS_lin.png Graphic file (type png)
 
 <use img/Case3/Case3_FS_lin.png>
-Package pdftex.def Info: img/Case3/Case3_FS_lin.png used on input line 1362.
+Package pdftex.def Info: img/Case3/Case3_FS_lin.png used on input line 1365.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [56
 
-]
-<img/Case3/Case3_FS_log.png, id=295, 571.38469pt x 368.1253pt>
+<img/Case3/Case3_FS_log.png, id=285, 571.38469pt x 368.1253pt>
 File: img/Case3/Case3_FS_log.png Graphic file (type png)
 
 <use img/Case3/Case3_FS_log.png>
-Package pdftex.def Info: img/Case3/Case3_FS_log.png used on input line 1370.
+Package pdftex.def Info: img/Case3/Case3_FS_log.png used on input line 1373.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [57 <./img/Case3/Case3_FS_lin.png> <./img/Case3/Case3_FS_log.png>]
-<img/Case3/table_FS.png, id=299, 249.93375pt x 185.19188pt>
+ [54 <./img/Case3/Case3_FS_lin.png>]
+<img/Case3/table_FS.png, id=289, 249.93375pt x 185.19188pt>
 File: img/Case3/table_FS.png Graphic file (type png)
 
 <use img/Case3/table_FS.png>
-Package pdftex.def Info: img/Case3/table_FS.png used on input line 1382.
+Package pdftex.def Info: img/Case3/table_FS.png used on input line 1385.
 (pdftex.def)             Requested size: 226.48395pt x 167.82123pt.
 
-Overfull \hbox (6.22559pt too wide) in paragraph at lines 1389--1390
+Overfull \hbox (6.22559pt too wide) in paragraph at lines 1392--1393
 \OT1/cmr/m/n/12 HRMA re-sults. Again, the graphs present max-i-mum modal impeda
 nces, modal impedances
  []
 
-<img/Case3/Case3_HMA_max.png, id=300, 637.63219pt x 526.96875pt>
+<img/Case3/Case3_HMA_max.png, id=290, 637.63219pt x 526.96875pt>
 File: img/Case3/Case3_HMA_max.png Graphic file (type png)
 
 <use img/Case3/Case3_HMA_max.png>
-Package pdftex.def Info: img/Case3/Case3_HMA_max.png used on input line 1393.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [58
-
- <./img/Case3/table_FS.png>]
-<img/Case3/Case3_HMA_all.png, id=305, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case3/Case3_HMA_max.png used on input line 1396.
+(pdftex.def)             Requested size: 407.66833pt x 336.91309pt.
+ [55 <./img/Case3/Case3_FS_log.png> <./img/Case3/table_FS.png>]
+<img/Case3/Case3_HMA_all.png, id=295, 637.63219pt x 526.96875pt>
 File: img/Case3/Case3_HMA_all.png Graphic file (type png)
 
 <use img/Case3/Case3_HMA_all.png>
-Package pdftex.def Info: img/Case3/Case3_HMA_all.png used on input line 1401.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [59 <./img/Case3/Case3_HMA_max.png>] [60 <./img/Case3/Case3_HMA_all.png>]
-<img/Case3/Case3_HMA_crit.png, id=312, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case3/Case3_HMA_all.png used on input line 1404.
+(pdftex.def)             Requested size: 407.66833pt x 336.91309pt.
+ [56 <./img/Case3/Case3_HMA_max.png>]
+<img/Case3/Case3_HMA_crit.png, id=300, 637.63219pt x 526.96875pt>
 File: img/Case3/Case3_HMA_crit.png Graphic file (type png)
 
 <use img/Case3/Case3_HMA_crit.png>
-Package pdftex.def Info: img/Case3/Case3_HMA_crit.png used on input line 1409.
+Package pdftex.def Info: img/Case3/Case3_HMA_crit.png used on input line 1412.
 (pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
-
-<img/Case3/table_HRMA1.png, id=313, 225.09094pt x 264.99pt>
+ [57 <./img/Case3/Case3_HMA_all.png>]
+[58 <./img/Case3/Case3_HMA_crit.png>]
+<img/Case3/table_HRMA1.png, id=307, 225.09094pt x 264.99pt>
 File: img/Case3/table_HRMA1.png Graphic file (type png)
 
 <use img/Case3/table_HRMA1.png>
-Package pdftex.def Info: img/Case3/table_HRMA1.png used on input line 1421.
+Package pdftex.def Info: img/Case3/table_HRMA1.png used on input line 1424.
 (pdftex.def)             Requested size: 226.48395pt x 266.6431pt.
- [61
 
- <./img/Case3/Case3_HMA_crit.png>]
-<img/Case3/table_HRMA2.png, id=317, 444.91219pt x 478.78876pt>
+<img/Case3/table_HRMA2.png, id=308, 444.91219pt x 478.78876pt>
 File: img/Case3/table_HRMA2.png Graphic file (type png)
 
 <use img/Case3/table_HRMA2.png>
-Package pdftex.def Info: img/Case3/table_HRMA2.png used on input line 1429.
+Package pdftex.def Info: img/Case3/table_HRMA2.png used on input line 1432.
 (pdftex.def)             Requested size: 452.9679pt x 487.45946pt.
- [62 <./img/Case3/table_HRMA1.png>] [63 <./img/Case3/table_HRMA2.png>]
-<img/Case3/PF_model.png, id=327, 615.0478pt x 392.21532pt>
+ [59
+
+ <./img/Case3/table_HRMA1.png>] [60 <./img/Case3/table_HRMA2.png>]
+<img/Case3/PF_model.png, id=317, 615.0478pt x 392.21532pt>
 File: img/Case3/PF_model.png Graphic file (type png)
 
 <use img/Case3/PF_model.png>
-Package pdftex.def Info: img/Case3/PF_model.png used on input line 1442.
+Package pdftex.def Info: img/Case3/PF_model.png used on input line 1445.
 (pdftex.def)             Requested size: 452.9679pt x 288.8583pt.
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
 
-<img/Case3/PF_imp7_VS.PNG, id=328, 557.83406pt x 391.4625pt>
+<img/Case3/PF_imp7_VS.PNG, id=318, 557.83406pt x 391.4625pt>
 File: img/Case3/PF_imp7_VS.PNG Graphic file (type png)
 
 <use img/Case3/PF_imp7_VS.PNG>
-Package pdftex.def Info: img/Case3/PF_imp7_VS.PNG used on input line 1452.
+Package pdftex.def Info: img/Case3/PF_imp7_VS.PNG used on input line 1455.
 (pdftex.def)             Requested size: 362.37569pt x 254.30424pt.
- [64
+ [61
 
  <./img/Case3/PF_model.png>]
-<img/Case3/PF_imp7_CS.PNG, id=333, 557.08125pt x 391.4625pt>
+<img/Case3/PF_imp7_CS.PNG, id=323, 557.08125pt x 391.4625pt>
 File: img/Case3/PF_imp7_CS.PNG Graphic file (type png)
 
 <use img/Case3/PF_imp7_CS.PNG>
-Package pdftex.def Info: img/Case3/PF_imp7_CS.PNG used on input line 1460.
+Package pdftex.def Info: img/Case3/PF_imp7_CS.PNG used on input line 1463.
 (pdftex.def)             Requested size: 362.37569pt x 254.64471pt.
- [65 <./img/Case3/PF_imp7_VS.PNG> <./img/Case3/PF_imp7_CS.PNG>]
-<img/Case3/table_powerfactory.PNG, id=339, 438.8897pt x 45.92157pt>
+ [62 <./img/Case3/PF_imp7_VS.PNG> <./img/Case3/PF_imp7_CS.PNG>]
+<img/Case3/table_powerfactory.PNG, id=330, 438.8897pt x 45.92157pt>
 File: img/Case3/table_powerfactory.PNG Graphic file (type png)
 
 <use img/Case3/table_powerfactory.PNG>
 Package pdftex.def Info: img/Case3/table_powerfactory.PNG used on input line 14
-71.
+74.
 (pdftex.def)             Requested size: 362.37569pt x 37.91658pt.
 
-<img/Case3/PF_impAll_VS.PNG, id=340, 558.58687pt x 391.4625pt>
+<img/Case3/PF_impAll_VS.PNG, id=331, 558.58687pt x 391.4625pt>
 File: img/Case3/PF_impAll_VS.PNG Graphic file (type png)
 
 <use img/Case3/PF_impAll_VS.PNG>
-Package pdftex.def Info: img/Case3/PF_impAll_VS.PNG used on input line 1480.
+Package pdftex.def Info: img/Case3/PF_impAll_VS.PNG used on input line 1483.
 (pdftex.def)             Requested size: 362.37569pt x 253.96376pt.
 
-<img/Case3/PF_impAllLegend.PNG, id=341, 301.125pt x 140.02313pt>
+<img/Case3/PF_impAllLegend.PNG, id=332, 301.125pt x 140.02313pt>
 File: img/Case3/PF_impAllLegend.PNG Graphic file (type png)
 
 <use img/Case3/PF_impAllLegend.PNG>
-Package pdftex.def Info: img/Case3/PF_impAllLegend.PNG used on input line 1481.
+Package pdftex.def Info: img/Case3/PF_impAllLegend.PNG used on input line 1484.
 
 (pdftex.def)             Requested size: 181.18439pt x 84.25381pt.
 
-<img/Case3/PF_impAll_CS.PNG, id=342, 557.08125pt x 393.72093pt>
+<img/Case3/PF_impAll_CS.PNG, id=333, 557.08125pt x 393.72093pt>
 File: img/Case3/PF_impAll_CS.PNG Graphic file (type png)
 
 <use img/Case3/PF_impAll_CS.PNG>
-Package pdftex.def Info: img/Case3/PF_impAll_CS.PNG used on input line 1489.
+Package pdftex.def Info: img/Case3/PF_impAll_CS.PNG used on input line 1492.
 (pdftex.def)             Requested size: 362.37569pt x 256.11383pt.
- [66
+ [63
 
  <./img/Case3/table_powerfactory.PNG> <./img/Case3/PF_impAll_VS.PNG> <./img/Cas
 e3/PF_impAllLegend.PNG>]
-<img/Case123/FS_VS_log.png, id=349, 571.38469pt x 368.1253pt>
-File: img/Case123/FS_VS_log.png Graphic file (type png)
+<img/Case123/FS_VS_log_colored.png, id=340, 552.56438pt x 385.44pt>
+File: img/Case123/FS_VS_log_colored.png Graphic file (type png)
 
-<use img/Case123/FS_VS_log.png>
-Package pdftex.def Info: img/Case123/FS_VS_log.png used on input line 1511.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [67 <./img/Case3/PF_impAll_CS.PNG>]
-<img/Case123/FS_VS_table.png, id=354, 351.56343pt x 106.14656pt>
+<use img/Case123/FS_VS_log_colored.png>
+Package pdftex.def Info: img/Case123/FS_VS_log_colored.png used on input line 1
+514.
+(pdftex.def)             Requested size: 407.66833pt x 284.36833pt.
+ [64 <./img/Case3/PF_impAll_CS.PNG>]
+<img/Case123/FS_VS_table.png, id=345, 351.56343pt x 106.14656pt>
 File: img/Case123/FS_VS_table.png Graphic file (type png)
 
 <use img/Case123/FS_VS_table.png>
-Package pdftex.def Info: img/Case123/FS_VS_table.png used on input line 1520.
-(pdftex.def)             Requested size: 362.37569pt x 109.40991pt.
+Package pdftex.def Info: img/Case123/FS_VS_table.png used on input line 1523.
+(pdftex.def)             Requested size: 294.42636pt x 88.89525pt.
 
-<img/Case123/HRMA_VS.png, id=355, 571.38469pt x 368.1253pt>
+<img/Case123/HRMA_VS.png, id=346, 571.38469pt x 368.1253pt>
 File: img/Case123/HRMA_VS.png Graphic file (type png)
 
 <use img/Case123/HRMA_VS.png>
-Package pdftex.def Info: img/Case123/HRMA_VS.png used on input line 1530.
+Package pdftex.def Info: img/Case123/HRMA_VS.png used on input line 1534.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [68 <./img/Case123/FS_VS_log.png> <./img/Case123/FS_VS_table.png>]
+ [65 <./img/Case123/FS_VS_log_colored.png> <./img/Case123/FS_VS_table.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 
-<img/Case123/PF_VS_table.png, id=361, 437.38406pt x 480.29437pt>
+<img/Case123/PF_VS_table.png, id=352, 437.38406pt x 480.29437pt>
 File: img/Case123/PF_VS_table.png Graphic file (type png)
 
 <use img/Case123/PF_VS_table.png>
-Package pdftex.def Info: img/Case123/PF_VS_table.png used on input line 1541.
+Package pdftex.def Info: img/Case123/PF_VS_table.png used on input line 1545.
 (pdftex.def)             Requested size: 452.9679pt x 497.413pt.
- [69 <./img/Case123/HRMA_VS.png>] [70 <./img/Case123/PF_VS_table.png>]
+ [66 <./img/Case123/HRMA_VS.png>] [67 <./img/Case123/PF_VS_table.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
@@ -1554,88 +1523,79 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 
-<img/Case123/HRMA_VS_table.png, id=369, 444.15938pt x 150.5625pt>
+<img/Case123/HRMA_VS_table.png, id=360, 444.15938pt x 150.5625pt>
 File: img/Case123/HRMA_VS_table.png Graphic file (type png)
 
 <use img/Case123/HRMA_VS_table.png>
-Package pdftex.def Info: img/Case123/HRMA_VS_table.png used on input line 1551.
+Package pdftex.def Info: img/Case123/HRMA_VS_table.png used on input line 1558.
 
 (pdftex.def)             Requested size: 452.9679pt x 153.54872pt.
 
-<img/Case123/FS_CS_log.png, id=370, 571.38469pt x 368.1253pt>
+<img/Case123/FS_CS_log.png, id=361, 571.38469pt x 368.1253pt>
 File: img/Case123/FS_CS_log.png Graphic file (type png)
 
 <use img/Case123/FS_CS_log.png>
-Package pdftex.def Info: img/Case123/FS_CS_log.png used on input line 1561.
+Package pdftex.def Info: img/Case123/FS_CS_log.png used on input line 1568.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [71
+ [68
 
  <./img/Case123/HRMA_VS_table.png>]
-<img/Case123/FS_CS_table.png, id=375, 351.56343pt x 108.405pt>
+<img/Case123/FS_CS_table.png, id=367, 351.56343pt x 108.405pt>
 File: img/Case123/FS_CS_table.png Graphic file (type png)
 
 <use img/Case123/FS_CS_table.png>
-Package pdftex.def Info: img/Case123/FS_CS_table.png used on input line 1570.
+Package pdftex.def Info: img/Case123/FS_CS_table.png used on input line 1577.
 (pdftex.def)             Requested size: 362.37569pt x 111.73778pt.
 
-<img/Case123/HRMA_CS.png, id=376, 571.38469pt x 368.1253pt>
+<img/Case123/HRMA_CS.png, id=368, 571.38469pt x 368.1253pt>
 File: img/Case123/HRMA_CS.png Graphic file (type png)
 
 <use img/Case123/HRMA_CS.png>
-Package pdftex.def Info: img/Case123/HRMA_CS.png used on input line 1581.
+Package pdftex.def Info: img/Case123/HRMA_CS.png used on input line 1588.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [72 <./img/Case123/FS_CS_log.png> <./img/Case123/FS_CS_table.png>]
+ [69 <./img/Case123/FS_CS_log.png> <./img/Case123/FS_CS_table.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 
-<img/Case123/PF_CS_table.png, id=381, 437.38406pt x 480.29437pt>
+<img/Case123/PF_CS_table.png, id=373, 437.38406pt x 480.29437pt>
 File: img/Case123/PF_CS_table.png Graphic file (type png)
 
 <use img/Case123/PF_CS_table.png>
-Package pdftex.def Info: img/Case123/PF_CS_table.png used on input line 1592.
+Package pdftex.def Info: img/Case123/PF_CS_table.png used on input line 1599.
 (pdftex.def)             Requested size: 452.9679pt x 497.413pt.
- [73 <./img/Case123/HRMA_CS.png>] [74 <./img/Case123/PF_CS_table.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-
-<img/Case123/HRMA_CS_table.png, id=390, 443.40656pt x 131.74219pt>
+ [70 <./img/Case123/HRMA_CS.png>] [71 <./img/Case123/PF_CS_table.png>]
+<img/Case123/HRMA_CS_table.png, id=381, 443.40656pt x 131.74219pt>
 File: img/Case123/HRMA_CS_table.png Graphic file (type png)
 
 <use img/Case123/HRMA_CS_table.png>
-Package pdftex.def Info: img/Case123/HRMA_CS_table.png used on input line 1602.
+Package pdftex.def Info: img/Case123/HRMA_CS_table.png used on input line 1609.
 
 (pdftex.def)             Requested size: 452.9679pt x 134.59033pt.
 
-<img/Case123/FS_Zs_log.png, id=391, 571.38469pt x 368.1253pt>
+<img/Case123/FS_Zs_log.png, id=382, 571.38469pt x 368.1253pt>
 File: img/Case123/FS_Zs_log.png Graphic file (type png)
 
 <use img/Case123/FS_Zs_log.png>
-Package pdftex.def Info: img/Case123/FS_Zs_log.png used on input line 1613.
+Package pdftex.def Info: img/Case123/FS_Zs_log.png used on input line 1620.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
+ [72
 
-<img/Case123/FS_Zs_table.png, id=392, 352.31625pt x 72.27pt>
+ <./img/Case123/HRMA_CS_table.png>]
+<img/Case123/FS_Zs_table.png, id=387, 352.31625pt x 72.27pt>
 File: img/Case123/FS_Zs_table.png Graphic file (type png)
 
 <use img/Case123/FS_Zs_table.png>
-Package pdftex.def Info: img/Case123/FS_Zs_table.png used on input line 1622.
+Package pdftex.def Info: img/Case123/FS_Zs_table.png used on input line 1629.
 (pdftex.def)             Requested size: 362.37569pt x 74.33304pt.
- [75
 
- <./img/Case123/HRMA_CS_table.png> <./img/Case123/FS_Zs_log.png>]
-<img/Case123/HRMA_Zs.png, id=397, 571.38469pt x 368.1253pt>
+<img/Case123/HRMA_Zs.png, id=388, 571.38469pt x 368.1253pt>
 File: img/Case123/HRMA_Zs.png Graphic file (type png)
 
 <use img/Case123/HRMA_Zs.png>
-Package pdftex.def Info: img/Case123/HRMA_Zs.png used on input line 1632.
+Package pdftex.def Info: img/Case123/HRMA_Zs.png used on input line 1639.
 (pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
+ [73 <./img/Case123/FS_Zs_log.png> <./img/Case123/FS_Zs_table.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
@@ -1646,146 +1606,140 @@ Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ô in font cmr12!
 
-<img/Case123/PF_Zs_table.png, id=398, 438.8897pt x 407.27156pt>
+<img/Case123/PF_Zs_table.png, id=393, 438.8897pt x 407.27156pt>
 File: img/Case123/PF_Zs_table.png Graphic file (type png)
 
 <use img/Case123/PF_Zs_table.png>
-Package pdftex.def Info: img/Case123/PF_Zs_table.png used on input line 1645.
+Package pdftex.def Info: img/Case123/PF_Zs_table.png used on input line 1652.
 (pdftex.def)             Requested size: 452.9679pt x 420.34576pt.
- [76 <./img/Case123/FS_Zs_table.png> <./img/Case123/HRMA_Zs.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-
-<img/Case123/HRMA_Zs_table.png, id=403, 439.6425pt x 108.405pt>
+ [74 <./img/Case123/HRMA_Zs.png>]
+<img/Case123/HRMA_Zs_table.png, id=398, 439.6425pt x 108.405pt>
 File: img/Case123/HRMA_Zs_table.png Graphic file (type png)
 
 <use img/Case123/HRMA_Zs_table.png>
-Package pdftex.def Info: img/Case123/HRMA_Zs_table.png used on input line 1655.
+Package pdftex.def Info: img/Case123/HRMA_Zs_table.png used on input line 1662.
 
 (pdftex.def)             Requested size: 452.9679pt x 111.69476pt.
- [77 <./img/Case123/PF_Zs_table.png>]
+ [75 <./img/Case123/PF_Zs_table.png>]
 Missing character: There is no ‚ in font cmr12!
 Missing character: There is no Ä in font cmr12!
 Missing character: There is no ì in font cmr12!
 
-<img/Case1/Case1_Bode.png, id=408, 637.63219pt x 433.62pt>
+<img/Case1/Case1_Bode.png, id=403, 637.63219pt x 433.62pt>
 File: img/Case1/Case1_Bode.png Graphic file (type png)
 
 <use img/Case1/Case1_Bode.png>
-Package pdftex.def Info: img/Case1/Case1_Bode.png used on input line 1673.
+Package pdftex.def Info: img/Case1/Case1_Bode.png used on input line 1678.
 (pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [78 <./img/Case123/HRMA_Zs_table.png>]
-<img/Case1/Case1_Bode_zoom.png, id=413, 637.63219pt x 433.62pt>
+ [76 <./img/Case123/HRMA_Zs_table.png>]
+<img/Case1/Case1_Bode_zoom.png, id=408, 637.63219pt x 433.62pt>
 File: img/Case1/Case1_Bode_zoom.png Graphic file (type png)
 
 <use img/Case1/Case1_Bode_zoom.png>
-Package pdftex.def Info: img/Case1/Case1_Bode_zoom.png used on input line 1683.
+Package pdftex.def Info: img/Case1/Case1_Bode_zoom.png used on input line 1688.
 
 (pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [79 <./img/Case1/Case1_Bode.png>]
-<img/Case1/stability_fi.png, id=417, 229.60782pt x 258.9675pt>
+ [77 <./img/Case1/Case1_Bode.png>]
+<img/Case1/stability_fi.png, id=412, 231.11343pt x 260.47313pt>
 File: img/Case1/stability_fi.png Graphic file (type png)
 
 <use img/Case1/stability_fi.png>
-Package pdftex.def Info: img/Case1/stability_fi.png used on input line 1694.
-(pdftex.def)             Requested size: 181.18439pt x 204.36078pt.
- [80 <./img/Case1/Case1_Bode_zoom.png>]
-<img/Case2/Case2_Bode.png, id=422, 637.63219pt x 433.62pt>
+Package pdftex.def Info: img/Case1/stability_fi.png used on input line 1699.
+(pdftex.def)             Requested size: 181.18439pt x 204.20158pt.
+ [78 <./img/Case1/Case1_Bode_zoom.png>]
+<img/Case2/Case2_Bode.png, id=416, 637.63219pt x 433.62pt>
 File: img/Case2/Case2_Bode.png Graphic file (type png)
 
 <use img/Case2/Case2_Bode.png>
-Package pdftex.def Info: img/Case2/Case2_Bode.png used on input line 1703.
+Package pdftex.def Info: img/Case2/Case2_Bode.png used on input line 1710.
 (pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [81 <./img/Case1/stability_fi.png>]
-<img/Case2/Case2_Bode_zoom.png, id=427, 637.63219pt x 433.62pt>
+ [79 <./img/Case1/stability_fi.png>]
+<img/Case2/Case2_Bode_zoom.png, id=421, 637.63219pt x 433.62pt>
 File: img/Case2/Case2_Bode_zoom.png Graphic file (type png)
 
 <use img/Case2/Case2_Bode_zoom.png>
-Package pdftex.def Info: img/Case2/Case2_Bode_zoom.png used on input line 1711.
+Package pdftex.def Info: img/Case2/Case2_Bode_zoom.png used on input line 1718.
 
 (pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [82 <./img/Case2/Case2_Bode.png> <./img/Case2/Case2_Bode_zoom.png>]
-<img/Case2/stability_fi.png, id=431, 230.36063pt x 260.47313pt>
+ [80 <./img/Case2/Case2_Bode.png> <./img/Case2/Case2_Bode_zoom.png>]
+<img/Case2/stability_fi.png, id=426, 229.60782pt x 261.22594pt>
 File: img/Case2/stability_fi.png Graphic file (type png)
 
 <use img/Case2/stability_fi.png>
-Package pdftex.def Info: img/Case2/stability_fi.png used on input line 1720.
-(pdftex.def)             Requested size: 181.18439pt x 204.86533pt.
+Package pdftex.def Info: img/Case2/stability_fi.png used on input line 1727.
+(pdftex.def)             Requested size: 181.18439pt x 206.14299pt.
 
-<img/Case3/Case3_Bode.png, id=432, 637.63219pt x 433.62pt>
+<img/Case3/Case3_Bode.png, id=427, 637.63219pt x 433.62pt>
 File: img/Case3/Case3_Bode.png Graphic file (type png)
 
 <use img/Case3/Case3_Bode.png>
-Package pdftex.def Info: img/Case3/Case3_Bode.png used on input line 1729.
+Package pdftex.def Info: img/Case3/Case3_Bode.png used on input line 1736.
 (pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [83
+ [81
 
  <./img/Case2/stability_fi.png>]
-<img/Case3/Case3_Bode_zoom.png, id=437, 637.63219pt x 433.62pt>
+<img/Case3/Case3_Bode_zoom.png, id=432, 637.63219pt x 433.62pt>
 File: img/Case3/Case3_Bode_zoom.png Graphic file (type png)
 
 <use img/Case3/Case3_Bode_zoom.png>
-Package pdftex.def Info: img/Case3/Case3_Bode_zoom.png used on input line 1737.
+Package pdftex.def Info: img/Case3/Case3_Bode_zoom.png used on input line 1744.
 
 (pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [84 <./img/Case3/Case3_Bode.png> <./img/Case3/Case3_Bode_zoom.png>]
-<img/Case3/stability_fi.png, id=441, 228.855pt x 258.9675pt>
+ [82 <./img/Case3/Case3_Bode.png> <./img/Case3/Case3_Bode_zoom.png>]
+<img/Case3/stability_fi.png, id=436, 228.855pt x 258.9675pt>
 File: img/Case3/stability_fi.png Graphic file (type png)
 
 <use img/Case3/stability_fi.png>
-Package pdftex.def Info: img/Case3/stability_fi.png used on input line 1746.
+Package pdftex.def Info: img/Case3/stability_fi.png used on input line 1753.
 (pdftex.def)             Requested size: 181.18439pt x 205.03253pt.
 
-<img/Case123/stability_comparison_table_fs.png, id=442, 437.38406pt x 72.27pt>
+<img/Case123/stability_comparison_table_fs.png, id=437, 437.38406pt x 72.27pt>
 File: img/Case123/stability_comparison_table_fs.png Graphic file (type png)
 
 <use img/Case123/stability_comparison_table_fs.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_fs.png used on 
-input line 1756.
+input line 1763.
 (pdftex.def)             Requested size: 452.9679pt x 74.84583pt.
 
-<img/Case123/stability_comparison_table_hrma.png, id=443, 437.38406pt x 103.135
+<img/Case123/stability_comparison_table_hrma.png, id=438, 437.38406pt x 103.135
 31pt>
 File: img/Case123/stability_comparison_table_hrma.png Graphic file (type png)
  <use img/Case123/stability_comparison_table_hrma.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_hrma.png used o
-n input line 1764.
+n input line 1771.
 (pdftex.def)             Requested size: 452.9679pt x 106.81123pt.
 
-<img/Case123/stability_comparison_table_bode1.png, id=444, 354.57469pt x 195.73
+<img/Case123/stability_comparison_table_bode1.png, id=439, 354.57469pt x 195.73
 125pt>
 File: img/Case123/stability_comparison_table_bode1.png Graphic file (type png)
  <use img/Case123/stability_comparison_table_bode1.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_bode1.png used 
-on input line 1772.
+on input line 1779.
 (pdftex.def)             Requested size: 362.37569pt x 200.04343pt.
- [85
+ [83
 
  <./img/Case3/stability_fi.png> <./img/Case123/stability_comparison_table_fs.pn
 g> <./img/Case123/stability_comparison_table_hrma.png>]
-<img/Case123/stability_comparison_table_bode2.png, id=451, 355.3275pt x 106.899
+<img/Case123/stability_comparison_table_bode2.png, id=446, 355.3275pt x 106.899
 37pt>
 File: img/Case123/stability_comparison_table_bode2.png Graphic file (type png)
  <use img/Case123/stability_comparison_table_bode2.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_bode2.png used 
-on input line 1780.
+on input line 1787.
 (pdftex.def)             Requested size: 362.37569pt x 109.02284pt.
  (mthesis.bbl
-[86 <./img/Case123/stability_comparison_table_bode1.png> <./img/Case123/stabili
+[84 <./img/Case123/stability_comparison_table_bode1.png> <./img/Case123/stabili
 ty_comparison_table_bode2.png>]
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ï in font cmr12!
+Missing character: There is no ï in font cmti12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ó in font cmr12!
-Missing character: There is no ï in font cmti12!
 Missing character: There is no ó in font cmti12!
 Missing character: There is no ñ in font cmr12!
- [87
+Missing character: There is no ñ in font cmr12!
+ [85
 
 ]
 Missing character: There is no ï in font cmr12!
@@ -1794,46 +1748,39 @@ Missing character: There is no ï in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ï in font cmr12!
 Missing character: There is no ï in font cmr12!
-) [88] (mthesis.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+) [86] (mthesis.aux) ) 
 Here is how much of TeX's memory you used:
- 15997 strings out of 493634
- 315599 string characters out of 3141324
- 327249 words of memory out of 3000000
- 19148 multiletter control sequences out of 15000+200000
+ 15998 strings out of 493634
+ 315659 string characters out of 3141324
+ 325249 words of memory out of 3000000
+ 19149 multiletter control sequences out of 15000+200000
  26348 words of font info for 92 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  44i,12n,43p,10381b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\IS\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcr
-m1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbs
-y10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/
-cmbsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
-8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.
-pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:
-/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fi
-les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files 
-(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x
-86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on mthesis.pdf (93 pages, 2515246 bytes).
+ <C:\Users\IS\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
+nappen\ec\dpi600\tcrm1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
+ic/amsfonts/cmextra/cmbsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
+lic/amsfonts/cm/cmbx8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmmib10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cmextra/cmmib8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
+6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on mthesis.pdf (91 pages, 2495883 bytes).
 PDF statistics:
- 534 PDF objects out of 1000 (max. 8388607)
+ 529 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  481 words of extra memory for PDF output out of 10000 (max. 10000000)
 

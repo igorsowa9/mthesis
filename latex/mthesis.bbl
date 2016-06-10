@@ -12,9 +12,18 @@
 {\em Power System Harmonics}.
 \newblock •, 2003.
 
+\bibitem{bradt2012}
+M.~B. B. B. E. C. D. M. J. S. T. S. T. S. M. S. R. W. I. P. W. P. C. S. D.~W.
+  Group, ``Harmonics and resonance issues in wind power plants,'' {\em •},
+  2012.
+
 \bibitem{harmonicseffects}
 IEEE, ``The effects of power system harmonics on power system equipment and
   loads,'' {\em IEEE Transactions}, 1985.
+
+\bibitem{park1929}
+R.~H. Park, ``Two-reaction theory of synchronous machines: Generalized method
+  of analysis - part i,'' {\em Transactions of the AIEE 48}, 1929.
 
 \bibitem{xu2005}
 W.~X. Z. H. Y. C.~H. Wang, ``Harmonic resonance mode analysis,'' {\em IEEE
@@ -23,11 +32,6 @@ W.~X. Z. H. Y. C.~H. Wang, ``Harmonic resonance mode analysis,'' {\em IEEE
 \bibitem{modal1982}
 •, ``Selective modal analysis with applications to electric power systems—ii.
   the dynamic stability problem,'' {\em IEEE Trans. Power App. Syst.}, 1982.
-
-\bibitem{bradt2012}
-M.~B. B. B. E. C. D. M. J. S. T. S. T. S. M. S. R. W. I. P. W. P. C. S. D.~W.
-  Group, ``Harmonics and resonance issues in wind power plants,'' {\em •},
-  2012.
 
 \bibitem{bellman1970}
 {\em Introduction to Matrix Analysis, 2nd ed.}
@@ -65,6 +69,10 @@ J.~Sun, ``Impedance-based stability criterion for grid-connected inverters,''
 H.~Liu and J.~Sun, ``A study of offshore wind hvdc system stability and
   control,'' {\em Department of Electrical, Computer and Systems Engineering,
   Rensselaer Polytechnic Institute, Troy, NY, USA}, 2013.
+
+\bibitem{sun2009linearization}
+J.~Sun, ``Small-signal methods for ac distributed power systems–a review,''
+  {\em IEEE TRANSACTIONS ON POWER ELECTRONICS}, 2009.
 
 \bibitem{bing2009}
 Z.~B. K.~J. Karimi; and J.~Sun, ``Input impedance modeling and analysis of

@@ -16,7 +16,7 @@
 \geometry{a4paper} % or letterpaper (US) or a5paper or....
 \geometry{margin=1in} % for example, change the margins to 2 inches all round
 % \geometry{landscape} % set up the page for landscape
-%   read geometry.pdf for detailed page layout information
+% read geometry.pdf for detailed page layout information
 
 \usepackage{graphicx} % support the \includegraphics command and options
 
@@ -62,6 +62,7 @@
 \usepackage[table]{xcolor}
 \usepackage{floatrow}
 \usepackage{placeins}
+
 
 \title{Impedance analysis of electrical resonance and harmonics in HVDC connected Wind Power Plants}
 \author{Igor Sowa}
@@ -380,6 +381,7 @@ Some of the harmonic deleterious effects on electrical equipment are gathered in
 	\item Flickers.
 \end{itemize}
 
+\begin{comment}
 \subsection{Nabe and Akagi instantaneous power theory}
 Nabe-Akagi instantaneous reactive power $pq$ theory \cite{nabeakagi} is based on Clark’s transformations in three phase systems. 
 
@@ -442,6 +444,8 @@ On the basis of this theory, with further conversions of the equation we obtain 
 \end{equation}
 
 The powers $P_{\alpha p}$ and $P_{\beta q}$ cancels each other. Therefore, one can conclude that in the system of converter connected to source and load on both sides, there is no relationship between the instantaneous reactive power on the source side (between source and converter) and instantaneous reactive power on the load side (between converter and load). Thus, the instantaneous imaginary power on the input side is not equal to the instantaneous imaginary power on the output side. However, the instantaneous real power on the input side is equal to the real output power.
+\end{comment}
+
 
 \subsection{Park Transformation} \label{sec:park}
 Park transformation is necessary to obtain the positive and negative impedances for converters equations presented in Section~\ref{sec:powerconverters-zs}.
@@ -800,13 +804,13 @@ For the stability study, the wind turbines are lumped into one device (one imped
 
 \begin{equation} \label{eq:impedance_wt}
 \begin{aligned}
-	Z_p (s)=\frac{H_i (s-j\omega_1)V_0 +(s-j\omega_1)L}{1-T_pll (s-j\omega_1)[1+H_1 (s-j\omega_1)I_1 V_0 /V_1 ]} \\
-	Z_n (s)=\frac{H_i (s-j\omega_1)V_0 +(s-j\omega_1)L}{1-T_pll (s-j\omega_1)[1+H_1 (s-j\omega_1)I_1 V_0 /V_1 ]}
+	Z_p (s)=\frac{H_i (s-j\omega_1)V_0 +(s-j\omega_1)L_1 }{1-T_{pll} (s-j\omega_1)[1+H_i (s-j\omega_1)I_1 V_0 /V_1 ]} \\
+	Z_n (s)=\frac{H_i (s-j\omega_1)V_0 +(s-j\omega_1)L}{1-T_pll (s-j\omega_1)[1+H_i (s-j\omega_1)I_1 V_0 /V_1 ]}
 \end{aligned}
 \end{equation}
 where $\omega_1$ is fundamental angular frequency, $T_pll (s)$ is the loop gain of $dq$-frame PLL defined by:
 \begin{equation}
-	T_pll (s)=\dfrac{V_1 H_p (s)}{2[1+V_1 H_p (s)]}
+	T_{pll} (s)=\dfrac{V_1 H_p (s)}{2[1+V_1 H_p (s)]}
 \end{equation}
 
 and $H_i$ and $H_p$ are the current an PLL compensator transfer functions, as defined before.
@@ -840,20 +844,22 @@ Again, the assumption of constant DC-link voltage ($V_dc$) is made. The resultin
 
 \begin{equation} \label{eq:impedance_hvdc}
 \begin{aligned}
-	Z_p (s)=\frac{H_i (s-j\omega_1)V_dc +sL}{1+Y(s)[H_i (s-j\omega_1 )V_dc +sL]+T_p (s)} \\
-	Z_p (s)=\frac{H_i (s+j\omega_1)V_dc +sL}{1+Y(s)[H_i (s+j\omega_1 )V_dc +sL]+T_n (s)}
+	Z_p (s)=\frac{H_i (s-j\omega_1)V_{dc} +sL_{ph}}{1+Y(s)[H_i (s-j\omega_1 )V_dc +sL]+T_p (s)} \\
+	Z_p (s)=\frac{H_i (s+j\omega_1)V_{dc} +sL_{ph}}{1+Y(s)[H_i (s+j\omega_1 )V_dc +sL]+T_n (s)}
 \end{aligned}
 \end{equation}
-where $\omega_1$ is fundamental angular frequency, $Y(s)$ is admittance of the ac filter, $T_p (s)$ and $T_n (s)$ are defined as:
+
+where $\omega_1$ is fundamental angular frequency, $Y(s)$ is admittance of the ac filter, in our case equals $Y(s)=sC$. $T_p (s)$ and $T_n (s)$ are defined as:
+
 \begin{equation}
 \begin{aligned}
-	T_p (s)=[H_i (s-j\omega_1 )+jK_id ]H_v (s-j\omega_1 )V_dc \\
-	T_n (s)=[H_i (s+j\omega_1 )-jK_id ]H_v (s+j\omega_1 )V_dc
+	T_p (s)=[H_i (s-j\omega_1 )+jK_{id} ]H_v (s-j\omega_1 )V_{dc} \\
+	T_n (s)=[H_i (s+j\omega_1 )-jK_{id} ]H_v (s+j\omega_1 )V_{dc}
 \end{aligned}
 \end{equation}
 and $H_i (s)$ and $H_v (s)$ are the current and voltage compensator transfer functions defined before.
 
-As described in [Sun 2014],... \textcolor{red}{Why do we ignore the frequencies around fundamental...?}
+Implementation of equations above is described in Section~\ref{sec:convertersmodels}, where we present necessary data and evaluate results.
 
 \section{Harmonics and power quality regulations} \label{sec:harmonicregulations}
 In this chapter the harmonic distortion limitations according to some standards are described. It is worth of mentioning that harmonics are not the only problem of power quality in power system. Power quality includes more electromagnetic phenomena which are categorized on the basis of duration (from nanoseconds, like lightning strokes) to steady state disturbances (e.g. harmonics and interharmonics) \cite{das}. The other than harmonic frequency power quality issues are not of concern in this study. 
@@ -991,7 +997,7 @@ In the study, we approach comparison between different topologies. There are thr
 \subsection{Power converters models} \label{sec:convertersmodels}
 All of the elements excluding converters are modelled as the RLC elements. The principles of modelling of the elements are described in Section~\ref{sec:modellingofelements}. This section explains also the three different approaches to model converters (Section~\ref{sec:powerconverters}). In whole Chapter II of the thesis containing results of simulation, for simplicity, we refer to the different models of converters as follows: $VS$ – the model where both WT and HVDC converters are modelled as voltage sources (Section~\ref{sec:powerconverters-vscs}), $CS-WT$ or $CS$ – where WT converter is modelled as a current source and HVDC converter is still represented by voltage source (Section~\ref{sec:powerconverters-vscs}), $Z(s)$ – where both converters are represented by non-linear impedance models (Section~\ref{sec:powerconverters-zs}). 
 
-Following tables (Table~\ref{tab:wttable} and Table~\ref{tab:hvdctable}) present the values of parameters which are implemented to the models described by equations (\ref{eq:impedance_wt}) and (\ref{eq:impedance_hvdc}). The values of these parameters are obtained from \cite{liusun2014} and \cite{liusun2013}, however we rescale voltage and current values into the 150kV equivalent circuit level. These changes are done in order to align the values of obtained impedance to further analysis where we combine the converter models with the other elements of the network. The values of other network elements are also recalculated to the equivalent 150kV model (Table~\ref{tab:systemdata}).
+Following tables (Table~\ref{tab:wttable} and Table~\ref{tab:hvdctable}) present the values of parameters which are implemented to the models described by equations (\ref{eq:impedance_wt}) and (\ref{eq:impedance_hvdc}). The values of these parameters are obtained from \cite{liusun2014}, however we rescale the resulting impedance into the 150kV equivalent circuit level. These changes are vital in order to align the impedance to further analysis where we combine the converter models with the other elements of the network. The values of other network elements are also at the equivalent 150kV voltage level (Table~\ref{tab:systemdata}).
 
 \begin{table}[htb]
 	\centering
@@ -1031,7 +1037,7 @@ For both converters, we note sharp changes in the values of positive-sequence im
 
 Having in mind the different voltage level, thus different values of impedance, the outcome obtained correspond to the results from \cite{liusun2014}.
 
-\section{Comparison of resonance frequencies between different topology cases and converter models}
+\section{Comparison of resonance frequencies between different topology cases and converter models} \label{sec:comparison1}
 The first objective of this section is to compare results of resonance frequencies for three topology cases (Section~\ref{sec:topologycases}) in utilizing different converter models: VS, CS and Z(s). The description of modelling converter as VS, CS and Z(s) can be found in Section~\ref{sec:powerconverters}. The comparison is performed based on two methods: Frequency Sweep (Section~\ref{sec:theoryfs}) and Harmonic Resonance Modal Analysis (Section~\ref{sec:theoryhrma}). Secondly, on the basis of HRMA we spot the buses that have the most significant influence on the particular resonance frequencies. This identification is very useful for further study of implementation of filters, however filters are not investigated deeply in this study.
 
 \subsection{Case 1}
@@ -1066,7 +1072,7 @@ We can clearly see that the resonance frequencies alter for different models of 
 \end{table}
 \FloatBarrier
 
-We discover some peaking values of impedance for very low frequency orders (around fundamental frequency) in Z(s) model. These values are at much lower impedance level than the other peaks and are excluded from the results.
+First of all, discover some peaking values of impedance for very low frequency orders (around fundamental frequency) in Z(s) model. These peaks are at much lower impedance level than the other values for higher orders. We exclude these peaks from our further analysis, reasoning that such a phenomenon needs more detailed research focused mainly on that problem and it won't be an issue in this study.
 
 For VS model (within the examined frequency range) we observe three resonance frequencies. Similarly, in case of CS model – there are three resonance frequencies. For the Z(s) model of converters only two resonance frequencies are noted (as aforementioned, the low peaks around fundamental frequency are ignored).
 
@@ -1191,14 +1197,15 @@ As aforementioned, the observation of network impedance (frequency sweep) is per
 The examination of the curves above demonstrates that the peaking impedances for both models occur at the same frequencies, regardless the bus of observation. On the other hand, the dips of impedance undoubtedly depend on the bus where the observation is performed from. Coupling with the principles of parallel and series resonance, we can draw the two conclusions. Firstly, the series resonance frequency depends on the bus in the network i.e. series resonance frequency is different at the different points in the network. Secondly, since the peaks of the impedance, so the parallel resonance frequencies, are the same regardless the bus of observation, we conclude that the parallel resonance frequencies do not depend on the point of observation. The confirmation of the latter statement we recognize in the HRMA method. As described in Section~\ref{sec:theoryhrma}, the method is utilized in order to investigate the parallel resonance and is not performed for particular bus, but for entire network. The frequencies collected from that method are exactly the frequencies obtained for every different case of observation bus in the frequency sweep method.
 
 \paragraph{FS and HRMA results comparison}
-In the three previous paragraphs the results of frequency sweep analysis, harmonic resonance modal analysis, both performed in MALAB were presented. Moreover, these results we couple with frequency sweep tool in Power Factory software. The values of resonance frequencies obtained ambiguously confirms the correspondence of these three approaches to the problem. The values of parallel resonant frequencies are the same for the considered accuracy.
+In the three previous paragraphs the results of frequency sweep analysis, harmonic resonance modal analysis, both performed in MATLAB were presented. Moreover, these results we couple with frequency sweep tool in Power Factory software. The values of resonance frequencies obtained ambiguously confirms the correspondence of these three approaches to each other. The values of parallel resonant frequencies are the same for the considered accuracy.
 
-The difference of the impedance peak values are not considered very deeply in this study. However, as aforementioned, these values very often depends on the step size of the calculation. Moreover, the threshold impedance values above which the impedance level is defined as dangerous should be assigned individually for each case. Furthermore, the values of modal impedance from HRMA method does not exactly correspond to the real impedance value and should not be compared directly to the values of impedances obtained from frequency sweep or Power Factory tool.
+The difference of the impedance peak values are not considered very deeply in this study. However, as aforementioned, these values very often depends on the step size of the calculation. Moreover, the threshold impedance values above which the impedance level is defined as dangerous should be assigned individually for each particular case of a network. Furthermore, the values of modal impedance from HRMA method does not exactly correspond to the real impedance value and should not be compared directly to the values of impedances obtained from frequency sweep or Power Factory tool.
 
 \subsection{Case 2}
 The topology Case 2 was presented in Section~\ref{sec:topologycases}. In this case, the Wind Power Plant consists of two branches. There is one aggregated Wind Turbine in each branch. The total power of connected Wind Turbines is 200 MW.
+
 \paragraph{Frequency Sweep}
-In the Figures~\ref{fig:case2fslin} and \ref{fig:case2fslog} the results of frequency sweep method are presented with linear and logarithmic impedance scale, respectively. Again, all three models of converters are included. The impedance of the grid is seen again from the bus number 7 i.e. middle bus of LCL filter in the first branch. Since the branch 1 is equal to the branch 2, we can obtain the same curves for impedance observed from bus 11.
+In the Figures~\ref{fig:case2fslin} and \ref{fig:case2fslog} the results of frequency sweep method are presented with linear and logarithmic impedance scale, respectively. Again, all three models of converters are included. The impedance of the grid is seen again from the bus number 7 i.e. middle bus of LCL filter in the first branch. Since the branch 1 is the same the branch 2, we could collect the same curves for impedance observed from bus 11.
 
 \begin{figure}[htb]
 	\centering
@@ -1216,7 +1223,7 @@ In the Figures~\ref{fig:case2fslin} and \ref{fig:case2fslog} the results of freq
 \end{figure}
 \FloatBarrier
 
-Table~\ref{tab:case2tablefs} presents approximate resonance frequencies values. The values of frequencies are identified when impedance reaches local extreme values.
+Table~\ref{tab:case2tablefs} presents resonance frequencies values from the graphs above. The values of frequencies are identified when impedance reaches local extreme values (parallel resonance). This time again, the results of resonance frequencies around fundamental value are ignored.
 
 \begin{table}[htb]
 	\centering
@@ -1226,12 +1233,10 @@ Table~\ref{tab:case2tablefs} presents approximate resonance frequencies values. 
 \end{table}
 \FloatBarrier
 
-Again, due to the issues with the Z(s) model presented in Section~\ref{sec:powerconverters-zs}, the results of resonance around fundamental frequency are ignored.
-
-This time we can note that undoubtedly there are four resonant frequencies for Current Source model. The curve of VS model consists surely of three peaks, however the last one is very close to the one around $12^{th}$ order therefore is harder to notice it from the graph. The Z(s) model comprises two impedance rises, excluding ones around fundamental frequency. The value of impedance of Z(s) model is significantly lower than in other models, similarly to the Case 1. We carry on further conclusions and contemplations about the resonant frequencies after presentation of HRMA results for this case.
+We can note that undoubtedly this time there are four resonant frequencies for Current Source model. The curve of VS model consists surely of three peaks, however, looking at the values, the fourth one is very close to the other around $12^{th}$ order. Therefore, it is harder to notice it from the graph. The Z(s) model comprises two impedance rises, excluding ones around fundamental frequency. The value of impedance of Z(s) model is significantly lower than in other models, similarly to the Case 1. We carry on further conclusions and contemplations about the resonant frequencies after presenting HRMA results for this case.
 
 \paragraph{Harmonic Resonance Modal Analysis}
-The Figures~\ref{fig:case2hrma1}-\ref{fig:case2hrma3} illustrate the HRMA result curves. Similarly to the previous case, the following graphs shows the curves of maximum modal impedances for each harmonic order, modal impedances with respect to the each mode separately and critical modes only i.e. the modes that are assigned to the modal impedance peaks.
+The Figures~\ref{fig:case2hrma1}-\ref{fig:case2hrma3} illustrate the HRMA result curves. Similarly to the previous topology case, the following graphs shows the curves of maximum modal impedances for each harmonic order, than modal impedances with respect to the each mode separately and finally, critical modes only i.e. the modes that are assigned to the modal impedance peaks.
 
 \begin{figure}[htb]
 	\centering
@@ -1257,13 +1262,13 @@ The Figures~\ref{fig:case2hrma1}-\ref{fig:case2hrma3} illustrate the HRMA result
 \end{figure}
 \FloatBarrier
 
-Again, the participation factors point out the connotation of each mode to the real buses in the network. Table~\ref{tab:case2tablehrma2} presents the participation factors for the detected resonant frequencies i.e. frequencies at which the modal impedance rises occur. The values of critical impedances are gathered in Table~\ref{tab:case2tablehrma1}.
+Again, the participation factors point out the connotation of each mode to the real buses in the network. Table~\ref{tab:case2tablehrma2} presents the participation factors for the detected resonant frequencies i.e. frequencies at which the modal impedance rises occur. The values of critical impedances and critical modes for each of them are gathered in Table~\ref{tab:case2tablehrma1}.
 
 \begin{table}[htb]
 	\centering
 	\caption{Case 2 - HRMA method results.}
 	\label{tab:case2tablehrma1}
-	\includegraphics[width=0.5\textwidth]{img/Case2/table_HRMA1.png}
+	\includegraphics[width=0.45\textwidth]{img/Case2/table_HRMA1.png}
 \end{table}
 \FloatBarrier
 
@@ -1271,20 +1276,19 @@ Again, the participation factors point out the connotation of each mode to the r
 	\caption{Case 2 - HRMA method results - PFs.}
 	\label{tab:case2tablehrma2}
 	\centering
-	\includegraphics[width=1\textwidth]{img/Case2/table_HRMA2.png}
+	\includegraphics[width=0.9\textwidth]{img/Case2/table_HRMA2.png}
 \end{table}
 \FloatBarrier
 
-This time we observe one significant difference between the frequency sweep curves and HRMA curves. For Z(s) model, one of the frequency missing in the frequency sweep method appears in the HRMA curves. \textcolor{orange} {To investigate and interpret this we look at the value of the modal impedance for this resonant frequency or at the figures. The value of critical impedance of critical module is much smaller than the other modal critical impedances (for other resonant frequencies). Since the resonant frequencies are recognized as the extreme points of impedance curves, peak value are identified in this way. However, in order to exclude this frequency from the results, further investigation of minimum dangerous impedance is necessary.}
+This time we observe one significant difference between the frequency sweep curves and HRMA curves. For Z(s) model, one of the frequency that is missing in the frequency sweep method appears in the HRMA curves. To interpret this we look at the value of the modal impedance for this resonant frequency or at the figures. The value of critical impedance of critical module is much smaller than the other modal critical impedances (for other resonant frequencies). Since the resonant frequencies are recognized as the extreme points of impedance curves, peak value are identified in this way. However, in order to exclude this frequency from the results, further investigation of for example minimum dangerous impedance would be necessary.
 
 Besides this difference, the results of frequencies converge completely. 
 
-From the values of participation factors we derive couple of conclusions. First of all, the values of participation factors for buses of branch 1 (4-7) correspond to the buses of branch 2 (8-11) with the same values. That shows that from the modal analysis point of view the wind turbine branches are the same and the participation factor is distributed to the two analogical buses for both branches.
-Secondly, comparing the results of participation factors for Case 1 and Case 2 we can observe some similarities in apparition of the new resonant frequency. For both VS and CS-WT model, the lowest resonant frequency stays approximately at the same level, to be more precise is slightly shifted down to the lower value. The value of participation factor is divided equally into two analogical buses. The second frequency from Case 1 seems to appear in Case 2 as two resonant frequencies, one greater and the other less than the frequency from Case 1. The values of participation factors for both cases for these frequencies appear to confirm this assumption since their value is again distributed equally and the values are very similar for the new two frequencies. 
+From the values of participation factors we derive couple of conclusions. First of all, the values of participation factors for buses of branch 1 (4-7) correspond to the buses of branch 2 (8-11) with the same values. It shows that from the modal analysis point of view the wind turbine branches are the same and the participation factor is distributed symmetrically to the two analogical buses of both branches. Secondly, comparing the results of participation factors for Case 1 and Case 2 we can observe some similarities in apparition of the new resonant frequency. For both VS and CS-WT model, the lowest resonant frequency stays approximately at the same level, to be more precise is slightly shifted down to the lower value. The value of participation factor is divided equally into two analogical buses. The second frequency from Case 1 seems to appear in Case 2 as two resonant frequencies, one greater and the other less than the frequency from Case 1. The values of participation factors for both cases for these frequencies appear to confirm this assumption since their values are again distributed equally and the values are very similar for the new two frequencies.
 
-On the contrary, in the Z(s) model, the two frequencies stay at approximately the same level and the new resonance frequency appears “independently” after adding new branch.
+On the contrary, in the Z(s) model, the two frequencies stay at approximately the same level and the new resonance frequency appears \textit{independently} after adding new branch. As stated before, the value of critical impedance is very low.
 
-\textcolor{orange} {Analysing the third model – Z(s) – we have to have in mind the new resonant frequency which appears in this analysis. As stated before, the value of critical impedance is very low. From the curves of modal impedances with regards to each single node, we observe that the values of two modes are at the similar level of modal impedance for this value of resonance – mode 7 and mode 11. This condition disturbs the assumption settled in Section~\ref{sec:theoryhrma} that one within the modal impedances is much greater than the others. As the result, we obtain inaccurate participation factors. The easiest way to check if the that assumption is fulfilled is to sum all the participation factors for particular frequency. If the results is around 1 the assumption is achieved. For the new frequency, the sum of participation factors reaches 1.533 therefore all participation factors are is considered as inaccurate. }
+From the curves of modal impedances with regards to each single node (Figure~\ref{fig:case2hrma2}), we observe that for resonance around $12^{th}$ order, the values of two modes are at the similar level of modal impedance for this value of resonance – mode 7 and mode 11. This condition disturbs the assumption settled in Section~\ref{sec:theoryhrma} and \cite{xu2005} that only one within the modal impedances is much greater than the others. As the result, we obtain inaccurate participation factors which do not sum to value around 1. For the new frequency, the sum of participation factors reaches 1.533 therefore all participation factors are is considered as inaccurate.
 
 \paragraph{DIgSILENT Power Factory model}
 Furthermore, the results of FS and HRMA are compared with the curves acquired from Power Factory software. Figure~\ref{fig:c2pfmodel} presents the diagram of the network used for calculation.
@@ -1297,7 +1301,7 @@ Furthermore, the results of FS and HRMA are compared with the curves acquired fr
 \end{figure}
 \FloatBarrier
 
-Again, the models of VS and CS-WT are simulated for Impedance Frequency Characteristic calculations. Figures~\ref{fig:c2pfvs1} and \ref{fig:c2pfcs1} present the results of frequency sweep for VS and CS-WT model, seen from the middle LCL filter bus i.e. the same bus as for MATLAB model – bus 7.
+Again, the models of VS and CS-WT are simulated for \textit{Impedance Frequency Characteristic} calculations. Figures~\ref{fig:c2pfvs1} and \ref{fig:c2pfcs1} present the results of frequency sweep for VS and CS-WT models, seen from the middle LCL filter bus i.e. the same bus as for MATLAB model – bus 7.
 
 \begin{figure}[htb]
 	\centering
@@ -1315,7 +1319,7 @@ Again, the models of VS and CS-WT are simulated for Impedance Frequency Characte
 \end{figure}
 \FloatBarrier
 
-The resonant frequencies for peak impedances are measured in the software tool and presented in the Table~\ref{tab:c2pftable}.
+The resonant frequencies for peak impedances are measured by the software tool and presented in the Table~\ref{tab:c2pftable}.
 
 \begin{table}[htb]
 	\centering
@@ -1325,7 +1329,7 @@ The resonant frequencies for peak impedances are measured in the software tool a
 \end{table}
 \FloatBarrier
 
-The values of resonant frequencies are consistent with the values obtained both in FS and HRMA in MATLAB. Again, we present the impedance curves seen from other buses. The buses where the impedance is observed are buses 1-7. Since the two branches with wind turbines are the same, we know that the impedance curves seen from buses 4-7 are the same as seen from respective buses 8-11. Therefore the presentation of impedance curves for one branch is sufficient. The Figure~\ref{fig:c2pfvs2} shows the curves for buses 1-7 for the VS model, while the Figure~\ref{fig:c2pfcs2} illustrate the same curves but for model CS-WT.
+The values of resonant frequencies are consistent with the values obtained both in FS and HRMA in MATLAB. Again, we present the impedance curves seen from other buses. The buses where the impedance is observed are buses 1-7. Since the two branches with wind turbines are the same, we know that the impedance curves seen from buses 4-7 are the same as seen from respective buses 8-11. Therefore the impedance curves for only one branch are sufficient. The Figure~\ref{fig:c2pfvs2} shows the curves for buses 1-7 for the VS model, while the Figure~\ref{fig:c2pfcs2} illustrate the same curves but for model CS-WT.
 
 \begin{figure}[htb]
 	\centering
@@ -1345,10 +1349,10 @@ The values of resonant frequencies are consistent with the values obtained both 
 \end{figure}
 \FloatBarrier
 
-The shapes of the curves indicate the same conclusions like for Case 1 i.e. the series and parallel resonance does and does not depend on the point in the network, respectively. The previous section presenting results of Case 1 describes these principles in details.
+The shapes of the curves indicate the same conclusions like for Case 1 i.e. the series and parallel resonance does depend on and does not depend on the point in the network, respectively. The previous section presenting results of Case 1 describes these principles in details.
 
 \paragraph{Results comparison}
-Similarly to the first case, the results of FS, HRMA and from Power Factory are very similar. For the considered accuracy, the values of corresponding frequencies are the same. The important fact to highlight is that we obtain one resonance frequency more for HRMA comparing to FS in the Z(s) model. Even though the value of modal impedance is quite low comparing to the other resonance points, the level of impedance dangerous for the network is not identified and could apparently be already dangerous in this range of frequency. The situation suggests the conclusion that we should always consider both methods together and compare their outputs. Since the amount of data necessary for both methods is very similar, this does not pose a problem.
+Similarly to the first case, the results of FS, HRMA and from Power Factory are very similar. For the considered accuracy, the values of corresponding frequencies are exactly the same. The important fact to highlight is that we obtain one resonance frequency more for HRMA comparing to FS in the Z(s) model. Even though the value of modal impedance is quite low comparing to the other resonance points, the level of impedance dangerous for the network is not identified and could apparently be already dangerous for the network. The situation suggests the conclusion that we should always consider both methods together and compare their outputs. Since the amount of data necessary for both methods is very similar, this does not pose a problem during analysis.
 
 \subsection{Case 3}
 The last topology case is described in Section~\ref{sec:topologycases}. All installed power (400 MW) and all elements of Wind Power Plant are considered.
@@ -1372,7 +1376,7 @@ Figures~\ref{fig:case3fslin} and \ref{fig:case3fslog} present the frequency swee
 \end{figure}
 \FloatBarrier
 
-Table~\ref{tab:case3tablefs} presents approximate resonance frequency values and the peak values of corresponding peaking impedance. The values around the fundamental frequency for Z(s) model are ignored.
+Table~\ref{tab:case3tablefs} presents resonance frequency values and the peak values of corresponding impedances. The values around the fundamental frequency for Z(s) model are ignored.
 
 \begin{table}[htb]
 	\centering
@@ -1382,14 +1386,14 @@ Table~\ref{tab:case3tablefs} presents approximate resonance frequency values and
 \end{table}
 \FloatBarrier
 
-We can observe one additional resonance frequency for each of the VS and CS-WT models. However, pair of frequencies for each model have very similar values therefore can be considered as the one resonant frequency. Further examination and comparison of the frequency sweep results for all considered topology cases is presented in Section~\ref{sec:comparisoncases}.
+We can observe one additional resonance frequency for each of the VS and CS-WT models comparing to Case 2. However, pair of frequencies for each model have very similar values therefore, from the figure, could be considered as the one resonant frequency. Further examination and comparison of the frequency sweep results for all considered topology cases is presented in Section~\ref{sec:comparisoncases}.
 
 \paragraph{Harmonic Resonance Modal Analysis}
 Following Figures~\ref{fig:case3hrma1}, \ref{fig:case3hrma2} and \ref{fig:case3hrma3} shows the HRMA results. Again, the graphs present maximum modal impedances, modal impedances curves for all modes separately and critical modes curves alone.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{img/Case3/Case3_HMA_max.png}
+	\includegraphics[width=0.9\textwidth]{img/Case3/Case3_HMA_max.png}
   	\caption{Case 3 - HRMA method. Maximum modal impedance curves.}
   	\label{fig:case3hrma1}
 \end{figure}
@@ -1397,7 +1401,7 @@ Following Figures~\ref{fig:case3hrma1}, \ref{fig:case3hrma2} and \ref{fig:case3h
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{img/Case3/Case3_HMA_all.png}
+	\includegraphics[width=0.9\textwidth]{img/Case3/Case3_HMA_all.png}
   	\caption{Case 3 - HRMA method. Impedance curves of all modes.}
   	\label{fig:case3hrma2}
 \end{figure}
@@ -1431,7 +1435,7 @@ With these results in mind, the values of critical impedances and values of part
 
 Similarly to the Case 2, for Z(s) model we obtain one more resonance frequency from HRMA comparing to frequency sweep. Besides this frequency, the values of equivalent ones are the same or very similar. Again, the modal impedance value of critical mode for new frequency is very low. 
 
-Furthermore, the participation factors for new frequency are probably inaccurate since the sum of them for the new frequency exceeds unity. Finally, we note that the participation factors are not completely symmetrical in some cases. The symmetry remains between the pair of branches 1 and 2 or 3 and 4 (the pairs connected to the same three-winding transformer) but symmetry of participation factors between pair branches connected to different three-winding transformers fades away.
+Furthermore, the participation factors for new frequency are probably inaccurate since the sum of them for the new frequency exceeds unity. Finally, we note that the participation factors are not completely symmetrical in some cases. The symmetry remains between the pair of branches 1 and 2 or 3 and 4 (the pairs connected to the same three-winding transformer) but symmetry of participation factors between pair branches connected to different three-winding transformers fades away for some cases.
 
 \paragraph{DIgSILENT Power Factory model}
 Analogically, we compare the results of FS and HRMA with the curves from Power Factory model. The model used in this case is presented in the Figure~\ref{fig:c3pfmodel}.
@@ -1495,19 +1499,19 @@ One more time, the values obtained from Power Factory converge with those we col
 The shapes of the curves indicate the similar conclusions like for Case 1 and Case 2.
 
 \paragraph{Results comparison}
-Similarly to the first and second case, the values of received frequencies from all three approaches are similar. Once again, we obtain one more resonant frequency from HRMA comparing to frequency sweep. Again we observe similar behavior of resonances with regard to the bus of observation.
+Similarly to the first and second topology case, the values of received frequencies from all three approaches are very similar. Once again, we obtain one more resonant frequency from HRMA comparing to frequency sweep. Also, we observe similar behaviour of resonances with regard to the bus of observation.
 
 \subsection{Comparison between topology cases} \label{sec:comparisoncases}
 
 \subsubsection{VS model}
-In this section we compare the results obtained in three previous sections jointly. The following figures and tables demonstrate the behaviour of frequency sweep curves for VS model, CS-WT model and Z(s) model. Each model is considered separately but for all three topology cases jointly. In tables the results of resonance frequencies for all topology cases (parallel resonance) are gathered. The aim of this section is to identify patterns and any similarities between the topology cases and the models. 
+In this section we compare the results obtained in three previous sections jointly. The following figures and tables demonstrate the behaviour of frequency sweep curves for VS model, CS-WT model and Z(s) model. Each model is considered separately but for all three topology cases. In tables the results of resonance frequencies for all topology cases are gathered. The aim of this section is to identify patterns and any similarities between the topology cases within the three models. 
 
 \paragraph{Frequency sweep}
 The following figure presents the frequency sweep curves for all three topology cases. We had a try to group the frequencies in the three groups like indicated in the figure.
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=1\textwidth]{img/Case123/FS_VS_log.png}
+	\includegraphics[width=0.9\textwidth]{img/Case123/FS_VS_log_colored.png}
 	\caption{Caption FS}
   	\label{fig:comparison_fsvs}
 \end{figure}
@@ -1516,12 +1520,13 @@ The following figure presents the frequency sweep curves for all three topology 
 \begin{table}[htb]
 	\centering
 	\caption{Caption FS table}
-	\includegraphics[width=0.8\textwidth]{img/Case123/FS_VS_table.png}
+	\includegraphics[width=0.65\textwidth]{img/Case123/FS_VS_table.png}
   	\label{table:comparison_fsvs}
 \end{table}
 \FloatBarrier
 
-We observe clearly that that in each next case, the frequencies of first and third group are shifted downward. The second group (around 12th harmonic order) is becoming more numerous for the cases with multiple branches, whereas the values stay at the similar level. 
+We observe clearly that in each next case, the frequencies of first and third group are shifted downward. This shifting occurs due to the increasing amount of capacitive power in the network. In Case 2, 33kV cable with significant amount of capacitance is connected to the grid. In Case 3, three additional cables are connected i.e. one 150kV  and two 33kV collection cables. Thus, we can mark more significant shift between Case 2 and Case 3 than between first two.
+The second group (around 12th harmonic order) is becoming more numerous for the cases with multiple branches, whereas the values stay at the similar level. 
 
 \paragraph{Harmonic Resonance Modal Analysis}
 \begin{figure}[htb]
@@ -1532,7 +1537,7 @@ We observe clearly that that in each next case, the frequencies of first and thi
 \end{figure}
 \FloatBarrier
 
-Since the frequencies calculated in HRMA are the same to those obtained from frequency sweep, we do not draw more observations. However, we also have at our disposal the values of participation factors indicating the excitability and observability of the buses in the network. The values of PF’s for  three topology cases for VS mode are gathered in the Table~\ref{table:comparison_pfvs}.
+Since the frequencies calculated in HRMA are the same to those obtained from frequency sweep, we do not draw more observations. However, we also have at our disposal the values of participation factors indicating the excitability and observability of the buses in the network. The values of PF’s for three topology cases for VS mode are gathered in the Table~\ref{table:comparison_pfvs}.
 
 \begin{table}[htb]
 	\centering
@@ -1542,7 +1547,10 @@ Since the frequencies calculated in HRMA are the same to those obtained from fre
 \end{table}
 \FloatBarrier
 
-From the values of PF’s we can see the pattern that confirms our assumption created with respect to resonant frequencies from frequency sweep only. The first group of harmonics seems to mark the bus 7 (and symmetrical buses of other branches) as the source of this group of resonances. It touches all topology cases. We have to notice that the values of the PF’s could be also considered as spread quite evenly between the buses. In case of the second group of resonant frequency (around 12th harmonic order), the bus that is surely indicated by the PF’s is the bus 7 (and symmetrical ones). For the third group of resonances, we identify two buses (bus 4 and bus 5) indicated by PF’s as the two participating the most in the excitation of the resonance. Bus 4 and bus 5 are the terminals of 33 kV collection cable. The observations described above are encapsulated in the Table~\ref{table:comparison_hrmavs}.
+From the values of PF’s we can see the pattern that confirms our assumption created with respect to resonant frequencies from frequency sweep only.
+The first group of harmonics seems to mark the bus 7 (and symmetrical buses within other branches) as the source of this group of resonances. It touches all topology cases. We have to notice that the values of the PF’s could be also considered as spread quite evenly between the buses.
+In case of the second group of resonant frequency (around 12th harmonic order), the bus that is surely indicated by the PF’s is the bus 7 (and symmetrical ones). Moreover, the more symmetrical branches in the network, the more numerous the number of resonant frequencies in this group. Further connection of analogical branches apparently gives more resonant frequencies around $12^{th}$ frequency order.
+For the third group of resonances, we identify two buses (bus 4 and bus 5) indicated by PF’s as the two buses participating the most in the excitation of the resonance. Bus 4 and bus 5 are the terminals of 33 kV collection cable. The observations described above are encapsulated in the Table~\ref{table:comparison_hrmavs}.
 
 \begin{table}[htb]
 	\centering
@@ -1571,7 +1579,7 @@ From the values of PF’s we can see the pattern that confirms our assumption cr
 \end{table}
 \FloatBarrier
 
-Similarly to the observations drawn for the Voltage Source model we can conclude for the model with aggregated WT converters modelled as Current Sources. On the basis of FS only, we divide the values of resonance frequencies into three groups. Again, we detect that the values of each group are shifted downwards when the number of branches is increased. All of the values of the frequencies are lower comparing o the first topology case. For each group, these changes differ.
+Similarly to the observations drawn for the Voltage Source model we can conclude for the model with aggregated WT converters modelled as Current Sources. On the basis of FS results only, we divide the values of resonance frequencies into three groups. Again, we detect that the values of each group are shifted downwards when the number of branches is increased, it happens more significantly for between second and third case. Second group of frequencies becomes more numerous, same as for VS model. All the values of the second group are around $10^{th}$ order. Generally for CS-WT model, all of the values of the frequencies are lower comparing o the first topology case. For each group, these changes differ.
 
 \paragraph{Harmonic Resonance Modal Analysis}
 
@@ -1583,7 +1591,7 @@ Similarly to the observations drawn for the Voltage Source model we can conclude
 \end{figure}
 \FloatBarrier
 
-The values of frequency orders are the same for FS and HRMA. Again, we include participation factors to our conclusions and try to identify some patterns. The values of PF’s for all cases are presented first in Tables~\ref{table:comparison_pfcs}.
+The values of frequency orders are the same for FS and HRMA. Again, we include participation factors to our conclusions and try to identify some patterns. The values of PF’s for all cases are presented first in Table~\ref{table:comparison_pfcs}.
 
 \begin{table}[htb]
 	\centering
@@ -1593,7 +1601,7 @@ The values of frequency orders are the same for FS and HRMA. Again, we include p
 \end{table}
 \FloatBarrier
 
-On the basis of PF’s, we draw the similar observations for CS-WT model than from VS model. The PF’s for the first two groups of harmonic orders indicates bus 7 (and symmetrical buses at other branches) as the bus with highest participation to the harmonic excitation. In the same manner as for VS model, the PF’s of harmonic orders of third group mark the buses 4 and 5 as the buses exciting the resonance. These observations are gathered in the Table~\ref{table:comparison_hrmacs}.
+On the basis of PF's, we gather similar conclusions for CS-WT model than for VS model. The PF's for the first two groups of harmonic orders indicates bus 7 (and symmetrical buses at other branches) as the bus with highest participation to the harmonic excitation. This time, PF's of first group of the lowest frequencies are not distributed evenly and mark bus 7 as dominant bus, similarly to second group of frequencies. In the same manner as for VS model, the PF's of harmonic orders of third group mark the buses 4 and 5 as the buses exciting the resonance. These observations are gathered in the Table~\ref{table:comparison_hrmacs}.
 
 \begin{table}[htb]
 	\centering
@@ -1623,7 +1631,7 @@ Figure~\ref{fig:comparison_fszs} shows the FS curves for all topology cases deri
 \end{table}
 \FloatBarrier
 
-This time, FS method does not detect resonance frequencies analogical to the lowest orders group for VS and CS-WT model. The number of peaking impedance points around 12th order also does not increase for multiple branches cases. However, we observe the equivalent resonances for two groups with values very close to the VS model. Also, we mark the downward shift for multiple branches what was the same for the other models.
+This time, FS method does not detect resonance frequencies analogical to the lowest orders group for VS and CS-WT model, therefore whole that group does not exist in the Table~\ref{table:comparison_fszs}. The number of peaking impedance points around 12th order also does not increase for multiple branches cases. However, we observe the equivalent resonances for two groups with values very close to the VS model. Similarly to both VS and CS-WT models, we mark the downward shift of frequencies for analogical group of highest frequencies for each next topology case.
 
 \paragraph{Harmonic Resonance Modal Analysis}
 \begin{figure}[htb]
@@ -1634,7 +1642,7 @@ This time, FS method does not detect resonance frequencies analogical to the low
 \end{figure}
 \FloatBarrier
 
-As pointed out in previous section, for Z(s) model HRMA detects additional resonant frequency comparing to FS, but at the low level (relatively to the other critical impedances). These new frequencies corresponds accurately to the first group of frequencies detected in VS and CS-WT model.
+As pointed out in Section~\ref{sec:comparison1}, for Z(s) model HRMA detects additional resonant frequency comparing to FS, but at the low level (relatively to the other critical impedances). These new frequencies corresponds accurately to the first group of frequencies detected in VS and CS-WT model.
 
 Again, we include PF’s in the analysis and we identify the buses with the highest values of PF’s. The Table~\ref{table:comparison_pfzs} presents PF’s values for all topology cases.
 
@@ -1646,7 +1654,7 @@ Again, we include PF’s in the analysis and we identify the buses with the high
 \end{table}
 \FloatBarrier
 
-With respect to PF’s, we observe the very similar results to the models VS and CS-WT. The PF’s of harmonic orders of the first group and the medium one indicates bus 7 as the one participating the most in the resonances. For the highest order group, similarly, the buses 4 and 5 are identified.
+With respect to PF's, we notice the very similar observation to the models VS and CS-WT. The PF's of the first and second group of frequencies indicate bus 7 as the one participating the most in the resonances. For the highest order group, similarly, the buses 4 and 5 are identified.
 
 \begin{table}[htb]
 	\centering
@@ -1660,12 +1668,10 @@ With respect to PF’s, we observe the very similar results to the models VS and
 On an axis...?
 
 \section{Stability study with respect to topology cases}
-This section presents the results of stability analysis for the three different already described topology cases. The principles of stability analysis are described in Section~\ref{sec:stabilitymodel} in the theoretical part of the thesis. In this part, only the last model of the network is used i.e. the model containing the nonlinear impedances of the converters – Z(s) model. This model is considered as the most polished within all presented in this thesis. In short, the stability is evaluated on the basis of Nyquist stability criterion plotted in the Bode diagrams. The method is considered as still under development \cite{borwin1}. The question that has not been struck in the literature is the use of both WT converter nonlinear model and HVDC-link converter nonlinear model at the same time for stability study.
-
-The sections below present the results separately for each topology case, also comparing the values obtained to the previous results from FS and HRMA methods.
+This section presents the results of stability analysis for the three different already described topology cases. The principles of stability analysis are described in Section~\ref{sec:stabilitymodel} in the theoretical part of the thesis. Only the last model of the network is used i.e. the model containing the nonlinear impedances of the converters – Z(s) model - described in Section~\ref{sec:powerconverters-zs}. This model is considered as the more accurate than two others (VS and CS-WT) presented in the thesis. In short, the stability is evaluated on the basis of Nyquist stability criterion plotted in the Bode diagrams. This stability analysis method is considered as still under development \cite{borwin1}. The sections below present the results separately for each topology case, also comparing the values obtained to the previous results from FS and HRMA methods.
 
 \subsection{Case 1 stability}
-The Figure~\ref{fig:bode_case1} present the Bode diagram of the considered model used for stability study. As described in detail in theoretical part, the network is divided into two elements: the source and the grid. The point of division is behind the HV transformer, looking from the grid side. The positive and negative sequences of grid and source segments are presented in domain of frequency. 
+The Figure~\ref{fig:bode_case1} presents the Bode diagram of the considered model used for stability study. As described in detail in theoretical part, the network is divided into two elements: the source and the grid. The point of division is behind the HV transformer, looking from the grid side. The positive and negative sequences of \textit{grid} and \textit{source} segments are plotted in domain of frequency.
 
 \begin{figure}[htb]
 	\centering
@@ -1685,7 +1691,7 @@ The points of attention where the instabilities may occur are the crossings of t
 \end{figure}
 \FloatBarrier
 
-For each intersection, the values of angle depending on the difference between appropriate curves is calculated in MATLAB. Table~\ref{tab:stability_fi_case1} presents the values of frequencies for which the crossings occur, also the values of angles indicating stability are included.
+For each intersection, the values of angle depending on the difference between appropriate curves is calculated in MATLAB. The description of stability assessment could be find in Section~\ref{sec:stabilityassessment}. Table~\ref{tab:stability_fi_case1} presents the values of frequency orders for which the crossings occur, also the values of angles indicating stability are included.
 
 \begin{table}[htb]
 	\centering
@@ -1694,6 +1700,8 @@ For each intersection, the values of angle depending on the difference between a
   	\label{tab:stability_fi_case1}
 \end{table}
 \FloatBarrier
+
+One can see from the values included in the Table~\ref{tab:stability_fi_case1} that the stability margin $\Phi_m$ of the highest frequency order is marginally low and could source instabilities in the network. Thus, we conclude that, most probably, unstable operation of this network can occur if frequency of that order is present in waveforms. For other resonant frequencies the stability margin is higher, therefore resonance at those frequencies is less exposed to unstable operation.
 
 \subsection{Case 2 stability}
 

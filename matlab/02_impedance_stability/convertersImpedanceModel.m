@@ -73,6 +73,12 @@ clear s
 Vdc = 300e3; % HVDC DC link voltage - this V/I levels correspond to 150 kV - no conversion
 L = 19.3e-3; % our ph. inductance (PHR at 150kV)
 Cf = 5.658e-6; % our Tuned filter capacitance
+
+% values from liu sun 2014
+% Lf = 0.43e-6;
+% Cf = 17.7e-6;
+% Rf = 10;
+
 % Hi(s) current control compensator
 Kp_i = 0.075e-3;
 Ki_i = 0.094;
@@ -85,7 +91,8 @@ Hi = @(s) Kp_i+Ki_i/s;
 Hv = @(s) Kp_v+Ki_v/s;
 Tp = @(s) (Hi(s-1i*w1) + 1i*Kid)*Hv(s-1i*w1)*Vdc;
 Tn = @(s) (Hi(s+1i*w1) - 1i*Kid)*Hv(s+1i*w1)*Vdc;
-Yf = @(s) s*Cf;
+Yf = @(s) s*Cf; % aalto tuned C filter
+% Yf = @(s) imp_parallel(s*Cf,(1/(s*Lf)+(1/Rf))); % other tuned RLC filter
 
 ZpM = zeros(1,length(H));
 ZnM = zeros(1,length(H));

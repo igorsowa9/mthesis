@@ -31,7 +31,7 @@ w = 2*pi*f;
 res = 0.01;
 H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode
-calculate = [   true    false   true     false];
+calculate = [   true    true   true     true];
 
 colormodels = [56  18  77;
             196 141 227;
