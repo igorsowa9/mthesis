@@ -1,0 +1,38 @@
+\chapter{Conclusions} \label{Conc1}
+The thesis has covered an important issue related to power system dynamics arising from the rapid increase of wind power into the power generation share. This issue has relied on how wind power plants are able to contribute to keep power system stability from the electromechanical point of view; since transmission system operators (TSOs) will require, in a near future, to wind power plants to provide damping to the power system oscillations.
+
+The influence of each wind turbine technology on power system small signal stability has been investigated. The oscillation damping capability of wind power plants using local signals has been demonstrated by means of the implementation of different power system stabilizers. From the comparison of such controllers and the analysis of how different aspects related to the grid such as cable length and wind power plant location in the power system have been studied. From such analysis, some critical factors influencing in their controller response have been highlighted.
+
+Although previous conclusions are correct, it is clear that these conclusions are fully dependent on either the power system considered, the power system stabilizer designed, the signals used as input and outputs of such controller, among others. For that reason, the study of tools which are independent from the controller to analyze power oscillation damping have been developed.
+
+First, the selection of the best local input-output signals for the controller design has been analyzed assuming that all the signals required are available by measuring. Different analysis techniques considering both controllability and observability measures and input-output interactions have been compared. From this comparison and after a critical analysis, recommendations have been given in order to select the best signal pairs to damp power system oscillations considering different approaches, such as single-input single-output (SISO) and multivariable control (MIMO). These recommendations include geometric measures and RHPZs for SISO case, and for MIMO case, geometric measures and MSF.
+
+Further, a new criterion to select the most adequate input-output pair for the design of PSS for WPP has been proposed. Unlike previous results, the proposed criterion have considered explicitly local and remote signals in the analysis, since the use of WPP local signals to damp remote oscillations (occurring in synchronous generators) has been treated. Using fundamental design limitations and controllability and observability concepts, the criterion is able to identify the most adequate pair of input-output local signals without designing the controller. The study of the controllability and observability characteristics have allowed to determine the input-output pair that will require less control effort to achieve the oscillation damping; whilst, the analysis of the fundamental limitations have permitted to identify frequencies at which is not possible to reduce the magnitude of the frequency response of the closed loop system. It is worth to remark that if such frequencies are close to the oscillation modes to be damped, it will be difficult, no matter the controller choice, to achieve a noticeable increase of damping.
+
+Finally, the analysis and design of an offshore AC network (The SuperNode), as an alternative to the use of MT-HVDC systems, in order to make possible the implementation of an European ``Supergrid'' with current technologies has been analyzed studying the frequency dependence of wind power component costs. Higher operating frequencies than 50~Hz have demonstrated a substantial reduction in size of the major electrical elements and supporting platforms required for the offshore AC network implementation; however, there is a penalty such as the reduction of the power transfer capacity per cable, implying both the requirement of a greater number of cables and a reduction on transmission distances. Since the distances between wind farms has been assumed not longer than 20~km, such length restriction has not arisen as a critical factor. Conversely, the increase in the required number of cables affect substantially the overall cost of the wind power plant. Thus, a minimum of the overall cost has been found in a frequency over 50~Hz. It is worth to remark that the such results have been based on component rating analysis and capital costs associated to these components, but have not considered the operational challenges that may arise in such systems.
+
+
+\section{Further work}
+From this thesis, future research lines have arisen, which appear listed in the following:
+    \begin{itemize}
+    \item Within this thesis, the selection of the most adequate input-output signals to damp power system oscillations from wind power plants for both SISO and MIMO controls, considering system limitations is analyzed. However, other aspects could be of interest, for instance:
+        \begin{itemize}
+            \item[-] The design of controllers with other advanced control methods for example gain-scheduling. Moreover, there is the need of including uncertainty in the system to make the controller more robust.
+            \item[-] To include in the system definition, the use of wide area measurement systems (WAMS) considering their time delays.
+            \item[-] To consider in the control design, the physical limitations of the electric components.
+        \end{itemize}
+    \item Throughout this thesis, wind power plants mainly considering converter-based wind turbines technologies (DFIG and FRCWT) have been assumed as a single aggregate wind turbine. It is a well-established assumption to analyze rotor-angle stability issues in power system; nonetheless, could be interesting to study:
+        \begin{itemize}
+            \item[-] The small signal interaction of various wind turbines in a wind power plant.
+            \item[-] How to distribute the active or reactive power extra response to support power systems.
+            \item[-] The use of more detailed aggregated wind turbines (including mechanics) models to ensure that any converter-based wind turbine technologies do not interact with power system electro-mechanical oscillations.
+            \item[-] The effect of larger penetration of wind power into weak grids stability.
+        \end{itemize}
+        \item From the offshore AC network design analysis, several improvements could be included:
+            \begin{itemize}
+            \item[-] To consider power losses cost in the analysis of the more interesting operational frequency.
+            \item[-] To include in the study, the efficiency of the electric components and to analyze the effect of higher frequency on power converters switching.
+            \item[-] To analyze of the effect of low frequencies for transmission proposes.
+            \item[-] To study the opportunity of creating an offshore DC grid.
+            \end{itemize}
+    \end{itemize}

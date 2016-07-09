@@ -1,77 +1,66 @@
-\contentsline {chapter}{\numberline {1}Introduction}{1}
-\contentsline {section}{\numberline {1.1}Background and introduction to the study}{1}
-\contentsline {section}{\numberline {1.2}Theoretical introduction}{1}
-\contentsline {subsection}{\numberline {1.2.1}Basic information about harmonics}{1}
-\contentsline {subsection}{\numberline {1.2.2}Harmonic indices}{2}
-\contentsline {subsection}{\numberline {1.2.3}Sources of harmonics}{3}
-\contentsline {subsubsection}{\numberline {1.2.3.1}Harmonics from power electronics elements}{3}
-\contentsline {subsection}{\numberline {1.2.4}Harmonic Resonance}{4}
-\contentsline {subsubsection}{\numberline {1.2.4.1}Series AC resonance}{5}
-\contentsline {subsubsection}{\numberline {1.2.4.2}Parallel AC resonance}{7}
-\contentsline {subsubsection}{\numberline {1.2.4.3}Tank circuit parallel AC resonance}{8}
-\contentsline {subsubsection}{\numberline {1.2.4.4}Factors affecting resonance}{10}
-\contentsline {subsection}{\numberline {1.2.5}Effects of harmonics}{10}
-\contentsline {subsection}{\numberline {1.2.6}Park Transformation}{11}
-\contentsline {section}{\numberline {1.3}Analysis methods of harmonics propagation}{11}
-\contentsline {subsection}{\numberline {1.3.1}Frequency Sweep}{12}
-\contentsline {subsection}{\numberline {1.3.2}Harmonic Resonance Modal Analysis}{12}
-\contentsline {paragraph}{Critical Modes and Resonance Condition – comparison between FS and HRMA}{14}
-\contentsline {section}{\numberline {1.4}Harmonics in Wind Power Plant}{14}
-\contentsline {subsection}{\numberline {1.4.1}Converter topology in WPP}{15}
-\contentsline {subsection}{\numberline {1.4.2}Control of harmonics and harmonic resonance}{15}
-\contentsline {subsection}{\numberline {1.4.3}Short circuit current at PCC}{16}
-\contentsline {subsection}{\numberline {1.4.4}Internal WPP resonance}{16}
-\contentsline {section}{\numberline {1.5}Stability of WPP}{16}
-\contentsline {subsection}{\numberline {1.5.1}Harmonic Stability}{17}
-\contentsline {subsection}{\numberline {1.5.2}Stability evaluation model}{17}
-\contentsline {subsection}{\numberline {1.5.3}Stability assessment}{19}
-\contentsline {section}{\numberline {1.6}Modelling of elements}{19}
-\contentsline {subsection}{\numberline {1.6.1}Transformers}{19}
-\contentsline {subsection}{\numberline {1.6.2}Cables}{20}
-\contentsline {subsection}{\numberline {1.6.3}Filter reactors}{20}
-\contentsline {subsection}{\numberline {1.6.4}Power converters}{20}
-\contentsline {subsubsection}{\numberline {1.6.4.1}Voltage Source (VS) and Current Source (CS) models}{21}
-\contentsline {subsubsection}{\numberline {1.6.4.2}Frequency dependent impedance model “Z(s)”}{21}
-\contentsline {paragraph}{Wind turbine converter (inverter)}{22}
-\contentsline {paragraph}{HVDC link converter (rectifier)}{23}
-\contentsline {section}{\numberline {1.7}Harmonics and power quality regulations}{24}
-\contentsline {section}{\numberline {1.8}Environmental impact}{25}
-\contentsline {section}{\numberline {1.9}Temporary planning and cost of the thesis development}{25}
-\contentsline {chapter}{\numberline {2}Simulations}{26}
-\contentsline {section}{\numberline {2.1}System description}{26}
-\contentsline {subsection}{\numberline {2.1.1}Network impedance model}{28}
-\contentsline {subsection}{\numberline {2.1.2}Topology cases}{30}
-\contentsline {subsection}{\numberline {2.1.3}Power converters models}{31}
-\contentsline {section}{\numberline {2.2}Comparison of resonance frequencies between different topology cases and converter models}{33}
-\contentsline {subsection}{\numberline {2.2.1}Case 1}{34}
-\contentsline {paragraph}{Frequency Sweep}{34}
-\contentsline {paragraph}{Harmonic Resonance Modal Analysis}{36}
-\contentsline {paragraph}{DIgSILENT Power Factory model}{40}
-\contentsline {paragraph}{FS and HRMA results comparison}{43}
-\contentsline {subsection}{\numberline {2.2.2}Case 2}{43}
-\contentsline {paragraph}{Frequency Sweep}{43}
-\contentsline {paragraph}{Harmonic Resonance Modal Analysis}{45}
-\contentsline {paragraph}{DIgSILENT Power Factory model}{50}
-\contentsline {paragraph}{Results comparison}{53}
-\contentsline {subsection}{\numberline {2.2.3}Case 3}{53}
-\contentsline {paragraph}{Frequency Sweep}{53}
-\contentsline {paragraph}{Harmonic Resonance Modal Analysis}{55}
-\contentsline {paragraph}{DIgSILENT Power Factory model}{61}
-\contentsline {paragraph}{Results comparison}{64}
-\contentsline {subsection}{\numberline {2.2.4}Comparison between topology cases}{64}
-\contentsline {subsubsection}{\numberline {2.2.4.1}VS model}{64}
-\contentsline {paragraph}{Frequency sweep}{64}
-\contentsline {paragraph}{Harmonic Resonance Modal Analysis}{65}
-\contentsline {subsubsection}{\numberline {2.2.4.2}CS-WT model}{68}
-\contentsline {paragraph}{Frequency sweep}{68}
-\contentsline {paragraph}{Harmonic Resonance Modal Analysis}{69}
-\contentsline {subsubsection}{\numberline {2.2.4.3}Z(s) model}{72}
-\contentsline {paragraph}{Frequency sweep}{72}
-\contentsline {paragraph}{Harmonic Resonance Modal Analysis}{73}
-\contentsline {subsubsection}{\numberline {2.2.4.4}Comparison between topology cases and conclusions}{76}
-\contentsline {section}{\numberline {2.3}Stability study with respect to topology cases}{76}
-\contentsline {subsection}{\numberline {2.3.1}Case 1 stability}{76}
-\contentsline {subsection}{\numberline {2.3.2}Case 2 stability}{79}
-\contentsline {subsection}{\numberline {2.3.3}Case 3 stability}{81}
-\contentsline {subsection}{\numberline {2.3.4}Comparison to FS and HRMA and conclusions}{83}
-\contentsline {chapter}{Bibliography}{85}
+\contentsline {chapter}{\numberline {I}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {I.1}Background of the study}{1}{section.1.1}
+\contentsline {section}{\numberline {I.2}Motivation}{3}{section.1.2}
+\contentsline {section}{\numberline {I.3}Theoretical introduction}{4}{section.1.3}
+\contentsline {subsection}{\numberline {I.3.1}Basic information about harmonics}{4}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {I.3.2}Harmonic indices}{5}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {I.3.3}Sources of harmonics}{5}{subsection.1.3.3}
+\contentsline {subsubsection}{\numberline {I.3.3.1}Harmonics from power electronics elements}{6}{subsubsection.1.3.3.1}
+\contentsline {subsection}{\numberline {I.3.4}Harmonic Resonance}{6}{subsection.1.3.4}
+\contentsline {subsubsection}{\numberline {I.3.4.1}Series AC resonance}{7}{subsubsection.1.3.4.1}
+\contentsline {subsubsection}{\numberline {I.3.4.2}Parallel AC resonance}{8}{subsubsection.1.3.4.2}
+\contentsline {subsubsection}{\numberline {I.3.4.3}Tank circuit parallel AC resonance}{10}{subsubsection.1.3.4.3}
+\contentsline {subsubsection}{\numberline {I.3.4.4}Factors affecting resonance frequency in power system}{11}{subsubsection.1.3.4.4}
+\contentsline {subsection}{\numberline {I.3.5}Effects of harmonics}{11}{subsection.1.3.5}
+\contentsline {subsection}{\numberline {I.3.6}Park Transformation}{12}{subsection.1.3.6}
+\contentsline {section}{\numberline {I.4}Methods of analysis}{13}{section.1.4}
+\contentsline {subsection}{\numberline {I.4.1}Frequency Sweep}{13}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {I.4.2}Harmonic Resonance Modal Analysis}{13}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {I.4.3}Critical Modes and Resonance Condition – comparison between FS and HRMA}{15}{subsection.1.4.3}
+\contentsline {chapter}{\numberline {II}Harmonics and Stabilty in WPP}{16}{chapter.2}
+\contentsline {section}{\numberline {II.1}Harmonics in WPP}{16}{section.2.1}
+\contentsline {subsection}{\numberline {II.1.1}Converter topology in WPP}{16}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {II.1.2}Mitigation of harmonics and harmonic resonance}{17}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {II.1.3}Short circuit current at PCC}{17}{subsection.2.1.3}
+\contentsline {subsection}{\numberline {II.1.4}Internal WPP harmonic impedance resonance}{17}{subsection.2.1.4}
+\contentsline {section}{\numberline {II.2}Stability of WPP}{18}{section.2.2}
+\contentsline {subsection}{\numberline {II.2.1}Harmonic Stability}{18}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {II.2.2}Impedance-based stability evaluation model}{18}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {II.2.3}Stability assessment}{20}{subsection.2.2.3}
+\contentsline {chapter}{\numberline {III}Modelling of elements}{22}{chapter.3}
+\contentsline {section}{\numberline {III.1}Transformers}{22}{section.3.1}
+\contentsline {section}{\numberline {III.2}Cables}{22}{section.3.2}
+\contentsline {section}{\numberline {III.3}Filter reactors}{23}{section.3.3}
+\contentsline {section}{\numberline {III.4}Power converters}{23}{section.3.4}
+\contentsline {subsection}{\numberline {III.4.1}Voltage Source (VS) and Current Source (CS) models}{23}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {III.4.2}Frequency dependent impedance model “Z(s)”}{24}{subsection.3.4.2}
+\contentsline {subsubsection}{\numberline {III.4.2.1}Wind turbine converter (inverter)}{24}{subsubsection.3.4.2.1}
+\contentsline {subsubsection}{\numberline {III.4.2.2}HVDC link converter (rectifier)}{25}{subsubsection.3.4.2.2}
+\contentsline {chapter}{\numberline {IV}Harmonics and power quality regulations}{27}{chapter.4}
+\contentsline {chapter}{\numberline {V}Simulations}{28}{chapter.5}
+\contentsline {section}{\numberline {V.1}System description}{28}{section.5.1}
+\contentsline {subsection}{\numberline {V.1.1}Network impedance model}{30}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {V.1.2}Topology cases}{32}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {V.1.3}Power converters models}{33}{subsection.5.1.3}
+\contentsline {section}{\numberline {V.2}Comparison of resonance frequencies between different topology cases and converter models}{35}{section.5.2}
+\contentsline {subsection}{\numberline {V.2.1}Case 1}{36}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {V.2.2}Case 2}{45}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {V.2.3}Case 3}{55}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {V.2.4}Comparison between models}{65}{subsection.5.2.4}
+\contentsline {subsubsection}{\numberline {V.2.4.1}VS model}{65}{subsubsection.5.2.4.1}
+\contentsline {subsubsection}{\numberline {V.2.4.2}CS-WT model}{69}{subsubsection.5.2.4.2}
+\contentsline {subsubsection}{\numberline {V.2.4.3}Z(s) model}{72}{subsubsection.5.2.4.3}
+\contentsline {section}{\numberline {V.3}Stability study with respect to topology cases}{74}{section.5.3}
+\contentsline {subsection}{\numberline {V.3.1}Case 1 stability}{75}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {V.3.2}Case 2 stability}{77}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {V.3.3}Case 3 stability}{79}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {V.3.4}Comparison to FS and HRMA}{81}{subsection.5.3.4}
+\contentsline {chapter}{\numberline {VI}Approaches to resonance mitigation}{83}{chapter.6}
+\contentsline {section}{\numberline {VI.1}Passive elements}{83}{section.6.1}
+\contentsline {section}{\numberline {VI.2}Active filters, active damping}{84}{section.6.2}
+\contentsline {section}{\numberline {VI.3}Tuning of converter control}{85}{section.6.3}
+\contentsline {chapter}{\numberline {VII}Conclusions}{86}{chapter.7}
+\contentsline {chapter}{\numberline {VIII}Related environmental impact and costs of the thesis development}{89}{chapter.8}
+\contentsline {section}{\numberline {VIII.1}Environmental impact of offshore WPP}{89}{section.8.1}
+\contentsline {section}{\numberline {VIII.2}Temporary planning and costs of thesis development}{90}{section.8.2}
+\contentsline {chapter}{Reference}{92}{chapter*.116}

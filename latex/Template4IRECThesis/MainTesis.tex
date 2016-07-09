@@ -1,0 +1,120 @@
+%\documentclass[times,twosided,11pt,a4paper,openright]{book}
+%\documentclass[times,twosided,11pt,b5paper,openright]{book}%--> WEB
+\documentclass{Class/PhDIREC}
+%Packages no incluidos en la class PhDIREC
+\usepackage{multirow}
+\usepackage{slashbox}
+\usepackage{colortbl}
+\usepackage{rotating}
+\usepackage{supertabular}
+\usepackage{epstopdf}
+\usepackage{xspace}
+\usepackage{psfrag}
+\usepackage{eurosym}
+\usepackage{url}
+
+%Modificar Formato Capitulo
+\usepackage[Bjornstrup]{fncychap}
+\ChNumVar{\fontsize{76}{80}\usefont{OT1}{pzc}{m}{n}\selectfont}
+\ChTitleVar{\raggedleft\Huge\sffamily\bfseries}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\renewcommand*{\chaptermark}[1]{\markboth{\thechapter.\ #1}{}}
+\renewcommand*{\sectionmark}[1]{\markright{\thesection. \ #1}}
+\fancyhead[RO,LE]{\thepage}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RE]{\rightmark}
+\fancyfoot[CO,CE]{}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+% This must be always the last package to be included
+\usepackage[pdftex,
+			plainpages = false,
+			pdfpagelabels,
+            pdfpagelayout = SinglePage,
+            bookmarks,
+            bookmarksopen = true,
+            bookmarksnumbered = true,
+            breaklinks = true,
+            linktocpage,
+            pagebackref,
+            colorlinks = true,
+            linkcolor = black,
+            urlcolor  = black,
+            citecolor = black,
+            anchorcolor = black,
+            hyperindex = true,
+            hyperfigures
+            ]{hyperref}
+
+
+% Definición de la pagina del título
+\university{Universitat Polit\`ecnica de Catalunya}
+%\department{Departament d'Enginyeria El\`ectrica}
+\department{Electrical Engineering Department}
+%\vspace{1cm}
+%\logouniversity{\includegraphics[width=80mm]{Logo/logo_oficial_en.pdf}}
+\logouniversity{\includegraphics[width=17mm]{Logo/Logo_upc.pdf}}
+\logodepartment{\includegraphics[width=40mm]{Logo/irec_logo.pdf}}
+\subject{PhD Thesis}
+\title{Title}
+%\partone{} %
+%\parttwo{}
+\author{Author}
+\advisorone{Advisor 1}
+\advisortwo{Advisor 2} % Comenta la linea si solo hay un director
+\place{Barcelona}
+\date{Month Year}
+% Pàgina de darrere el títol
+\uppertitleback{
+Catalonia Institute for Energy Research (IREC) \par
+Electrical Engineering Research Area \par
+Jardins de les Dones de Negre 1 2nd floor, \par
+08930 Sant Adri\`a de Bes\`os, Barcelona, Spain \par
+\vspace{3mm}
+Copyright \textcopyright \hspace{1mm} Author name, Year \par
+\vspace{3mm}
+Printed in Barcelona by CPET, S.L. \par
+First Print, Month Year  \par
+%\vspace{3mm}
+%ISBN:
+}
+
+\begin{document}
+\maketitle
+\include{./ActaQualificacio/ActaQualificacio}
+\cleardoubleemptypage
+\include{./Dedication/Dedication}
+\cleardoubleemptypage
+\pagenumbering{Roman}
+\phantomsection
+\addcontentsline{toc}{chapter}{Abstract}
+\include{./Abstract/Abstract}
+\phantomsection
+\addcontentsline{toc}{chapter}{Resum}
+\include{./Abstract/Resum}
+\cleardoubleemptypage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acknowledgement}
+\include{./Acknowledgement/Acknowledgement}
+\cleardoubleemptypage
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\listoftables
+\listoffigures
+\cleardoubleemptypage
+\phantomsection
+\addcontentsline{toc}{chapter}{Glossary} % If only Acronyms change it!!
+\include{./Glossary/Glossary}
+\cleardoubleemptypage
+\pagenumbering{arabic}
+\include{./Introduction/Introduction}
+\include{./Chapter2/Chapter}
+\include{./Conclusions/Conclusions}
+\include{./References/Biblio}
+\appendix
+\include{./Publications/List}
+\include{./Appendices/Appendix}
+\end{document}
+

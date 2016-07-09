@@ -1,0 +1,58 @@
+//YOKOGAWA ASCII FILE FORMAT
+
+$PublicInfo
+FormatVersion       1.11            
+Model               DL750           
+Endian              Big             
+DataFormat          Trace           
+GroupNumber         2               
+TraceTotalNumber    8               
+DataOffset          119436          
+
+$Group1             
+TraceNumber         4               
+BlockNumber         1               
+TraceName           VL1             IL1             VL2             IL2             
+BlockSize           10010           10010           10010           10010           
+VResolution         4.1666667E-02   2.0833333E-03   4.1666667E-02   2.0833333E-03   
+VOffset             0.0000000E+00   0.0000000E+00   0.0000000E+00   0.0000000E+00   
+VDataType           IS2             IS2             IS2             IS2             
+VUnit               V               A               V               A               
+VPlusOverData       ?               ?               ?               ?               
+VMinusOverData      ?               ?               ?               ?               
+VIllegalData        -32768          -32768          -32768          -32768          
+VMaxData            32767           32767           32767           32767           
+VMinData            -32767          -32767          -32767          -32767          
+HResolution         5.0000000E-05   5.0000000E-05   5.0000000E-05   5.0000000E-05   
+HOffset             -2.5000000E-01  -2.5000000E-01  -2.5000000E-01  -2.5000000E-01  
+HUnit               s               s               s               s               
+Date                2016/04/21      2016/04/21      2016/04/21      2016/04/21      
+Time                16:29:37.68     16:29:37.68     16:29:37.68     16:29:37.68     
+
+$Group2             
+TraceNumber         4               
+BlockNumber         1               
+TraceName           VL3             IL3             VDC             IDC             
+BlockSize           10010           10010           10010           10010           
+VResolution         2.0833333E-02   2.0833333E-03   4.1666667E-02   2.0833333E-03   
+VOffset             0.0000000E+00   0.0000000E+00   0.0000000E+00   0.0000000E+00   
+VDataType           IS2             IS2             IS2             IS2             
+VUnit               V               A               V               A               
+VPlusOverData       ?               ?               ?               ?               
+VMinusOverData      ?               ?               ?               ?               
+VIllegalData        -32768          -32768          -32768          -32768          
+VMaxData            32767           32767           32767           32767           
+VMinData            -32767          -32767          -32767          -32767          
+HResolution         5.0000000E-05   5.0000000E-05   5.0000000E-05   5.0000000E-05   
+HOffset             -2.5000000E-01  -2.5000000E-01  -2.5000000E-01  -2.5000000E-01  
+HUnit               s               s               s               s               
+Date                2016/04/21      2016/04/21      2016/04/21      2016/04/21      
+Time                16:29:37.68     16:29:37.68     16:29:37.68     16:29:37.68     
+
+$PrivateInfo
+DisplayPointNo.     1               1               1               1               1               1               1               1               
+ModelVersion        6.31            
+PTraceName          VL1             IL1             VL2             IL2             VL3             IL3             VDC             IDC             
+PUpperScaleData     500.0V          25.00A          500.0V          25.00A          250.0V          25.00A          500.0V          25.00A          
+PLowerScaleData     -500.0V         -25.00A         -500.0V         -25.00A         -250.0V         -25.00A         -500.0V         -25.00A         
+POffsetName         0.00000V        0.00000A        0.00000V        0.00000A        0.00000V        0.00000A        0.00000V        0.00000A        

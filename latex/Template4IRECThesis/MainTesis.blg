@@ -1,0 +1,18 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: MainTesis.aux
+A level-1 auxiliary file: ./ActaQualificacio/ActaQualificacio.aux
+A level-1 auxiliary file: ./Dedication/Dedication.aux
+A level-1 auxiliary file: ./Abstract/Abstract.aux
+A level-1 auxiliary file: ./Abstract/Resum.aux
+A level-1 auxiliary file: ./Acknowledgement/Acknowledgement.aux
+A level-1 auxiliary file: ./Glossary/Glossary.aux
+A level-1 auxiliary file: ./Introduction/Introduction.aux
+A level-1 auxiliary file: ./Chapter2/Chapter.aux
+A level-1 auxiliary file: ./Conclusions/Conclusions.aux
+A level-1 auxiliary file: ./References/Biblio.aux
+The style file: unsrt.bst
+A level-1 auxiliary file: ./Publications/List.aux
+A level-1 auxiliary file: ./Appendices/Appendix.aux
+Database file #1: ./References/Tesis.bib
+Name 1 in "Wilkes, J., and Moccia, J." has a comma at the end for entry EWEA2013
+while executing---line 944 of file unsrt.bst
+(There was 1 error message)

@@ -1,0 +1,6 @@
+\thispagestyle{empty}
+\begin{flushright}
+\begin{minipage}[r]{2cm}\vspace*{9cm}
+\dedication{\LARGE{\textbf{To someone}}}
+\end{minipage}
+\end{flushright}

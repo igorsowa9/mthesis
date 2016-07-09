@@ -1,7 +1,6 @@
 clearvars; close all; clc
 
 %% data
-
 % system data:
 LCL_L1o = 1.2; % H
 LCL_R1o = 0.0; % ohm 
@@ -461,6 +460,7 @@ if calculate(4)==true
         Z3pB = imp_parallel(Z3p,Z3p); % incl. second branch
         Z4p = imp_parallel(Z3pB,1/(s*Cable150_C1))+Cable150_R+s*Cable150_L;
         Z5p = imp_parallel(Z4p,1/(s*Cable150_C2));
+        
         Zsp = imp_parallel(Z5p,Z5p);
         ZspM(hh) = Zsp;
         

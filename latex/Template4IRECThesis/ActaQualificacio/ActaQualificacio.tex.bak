@@ -1,0 +1,6 @@
+\thispagestyle{empty}
+\chapter*{}
+\begin{figure}\vspace*{-1.5cm}\hspace*{-0.75cm}
+        \includegraphics[width=1.00\paperwidth]{./ActaQualificacio/Acta.pdf}
+        %\includegraphics[width=1.00\paperwidth]{./ActaQualificacio/Acta2.pdf}
+\end{figure}

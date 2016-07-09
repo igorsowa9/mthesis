@@ -1,13 +1,13 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.2.9)  10 JUN 2016 15:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9) (preloaded format=pdflatex 2016.6.26)  7 JUL 2016 00:22
 entering extended mode
 **./mthesis.tex
 (mthesis.tex
-LaTeX2e <2015/10/01> patch level 2
-Babel <3.9n> and hyphenation patterns for 69 languages loaded.
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
-File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -30,11 +30,10 @@ Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
@@ -58,24 +57,24 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2014/10/28 v1.0p Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 94.
+Package graphics Info: Driver file: pdftex.def on input line 96.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count91
 ))
@@ -83,14 +82,14 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen112
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\color.sty"
-Package: color 2014/10/28 v1.1a Standard LaTeX Color (DPC)
+Package: color 2016/05/09 v1.1c Standard LaTeX Color (DPC)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 142.
+Package color Info: Driver file: pdftex.def on input line 144.
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\booktabs\booktabs.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\booktabs\booktabs.sty"
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen113
 \lightrulewidth=\dimen114
@@ -118,7 +117,7 @@ Package: array 2014/10/28 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip43
 \backup@length=\skip44
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\paralist\paralist.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\paralist\paralist.sty"
 Package: paralist 2015/12/30 v2.5 Extended list environments
 \pltopsep=\skip45
 \plpartopsep=\skip46
@@ -132,15 +131,15 @@ Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
 \verbatim@line=\toks19
 \verbatim@in@stream=\read1
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\subfig\subfig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\subfig\subfig.sty"
 Package: subfig 2005/06/28 ver: 1.3 subfig package
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
-Package: caption 2016/02/02 v3.3-136 Customizing captions (AR)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
-Package: caption3 2016/02/02 v1.7-136 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen128
 \captionmargin@=\dimen129
 \captionwidth=\dimen130
@@ -165,7 +164,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \sf@top=\skip52
 \sf@bottom=\skip53
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\fancyhdr\fancyhdr.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
 \fancy@headwidth=\skip54
 \f@ncyO@elh=\skip55
 \f@ncyO@erh=\skip56
@@ -176,18 +175,34 @@ Package caption3 Info: TeX engine: e-TeX on input line 57.
 \f@ncyO@olf=\skip61
 \f@ncyO@orf=\skip62
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\sectsty\sectsty.sty
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 38.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 39.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 43.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\emptypage\emptypage.sty"
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
+pages
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\sectsty\sectsty.sty"
 Package: sectsty 2002/02/25 v2.0.2 Commands to change all sectional heading sty
 les
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\tocbibind\tocbibind.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocbibind\tocbibind.sty"
 Package: tocbibind 2010/10/13 v1.5k extra ToC listings
 Package tocbibind Info: The document has chapter divisions on input line 50.
 
 
 Package tocbibind Note: Using chapter style headings, unless overridden.
 
-) (C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\tocloft\tocloft.sty
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
 Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
 Package tocloft Info: The document has chapter divisions on input line 44.
 \cftparskip=\skip63
@@ -232,40 +247,40 @@ Package tocloft Info: The document has chapter divisions on input line 44.
 \cftsubtabnumwidth=\skip102
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
-Package: amsmath 2013/01/14 v2.14 AMS math features
+Package: amsmath 2016/03/10 v2.15b AMS math features
 \@mathmargin=\skip103
 
 For additional information on amsmath, use the `?' option.
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
-Package: amstext 2000/06/29 v2.01
+Package: amstext 2000/06/29 v2.01 AMS text
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
-File: amsgen.sty 1999/11/30 v2.0
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen136
 ))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
-Package: amsbsy 1999/11/29 v1.2d
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen137
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
-Package: amsopn 1999/12/14 v2.01 operator names
+Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count104
-LaTeX Info: Redefining \frac on input line 210.
+LaTeX Info: Redefining \frac on input line 199.
 \uproot@=\count105
 \leftroot@=\count106
-LaTeX Info: Redefining \overline on input line 306.
+LaTeX Info: Redefining \overline on input line 297.
 \classnum@=\count107
 \DOTSCASE@=\count108
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
 \Mathstrutbox@=\box26
 \strutbox@=\box27
 \big@size=\dimen138
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
 \macc@depth=\count109
 \c@MaxMatrixCols=\count110
 \dotsspace@=\muskip10
@@ -286,14 +301,14 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip104
 \multlinetaggap=\skip105
 \mathdisplay@stack=\toks24
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx.sty
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
 Package: expl3 2016/05/18 v6512 L3 programming layer (loader) 
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\expl3-code.tex
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
 Package: expl3 2016/05/18 v6512 L3 programming layer (code)
 L3 Module: l3bootstrap 2016/02/12 v6412 L3 Bootstrap code
 L3 Module: l3names 2016/03/11 v6433 L3 Namespace for primitives
@@ -400,12 +415,12 @@ L3 Module: l3candidates 2016/05/13 v6484 L3 Experimental additions to l3kernel
 \l__coffin_scaled_width_dim=\dimen175
 L3 Module: l3luatex 2016/03/26 v6465 L3 Experimental LuaTeX-specific functions
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\l3kernel\l3pdfmode.def
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\l3pdfmode.def"
 File: l3pdfmode.def 2016/03/26 v6465 L3 Experimental driver: PDF mode
 \l__driver_color_stack_int=\count138
 \l__driver_tmp_box=\box43
 ))
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\xparse\xparse.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
 Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count139
 \l__xparse_m_args_int=\count140
@@ -415,8 +430,7 @@ Package: xparse 2016/05/18 v6512 L3 Experimental document command parser
 )
 Package: siunitx 2016/03/01 v2.6q A comprehensive (SI) units package
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\l3packages\l3keys2e\l3keys2e.
-sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
 Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
 )
 \l__siunitx_tmp_box=\box44
@@ -578,12 +592,12 @@ Package: l3keys2e 2016/05/18 v6512 LaTeX2e option processing using LaTeX3 keys
 .................................................
 \g__file_internal_ior=\read2
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\transl
-ator.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\translator\translator
+.sty"
 Package: translator 2010/06/12 ver 1.10
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\transl
-ator-language-mappings.tex)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\translator\translator
+-language-mappings.tex")))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\textcomp.sty"
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -666,31 +680,31 @@ Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\cite\cite.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\cite\cite.sty"
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 332.
 Package: cite 2015/02/27  v 5.5
 )
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\bm.sty"
-Package: bm 2014/10/28 v1.1c Bold Symbol Support (DPC/FMi)
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
 \symboldsymbols=\mathgroup6
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
-LaTeX Info: Redefining \bm on input line 207.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\was\gensymb.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\was\gensymb.sty"
 Package: gensymb 2003/07/02 v1.0 (WaS)
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\xcolor\xcolor.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\colortbl\colortbl.sty"
 Package: colortbl 2012/02/13 v1.0a Color table columns (DPC)
 \everycr=\toks25
 \minrowclearance=\skip116
@@ -707,7 +721,7 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\floatrow\floatrow.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\floatrow\floatrow.sty"
 Package: floatrow 2008/08/02 v0.3b floatrow: float package extension
 \c@float@type=\count162
 \float@exts=\toks26
@@ -745,30 +759,186 @@ Package floatrow Info: Modified rotfloat package code loaded on input line 473.
 \LTright=\skip130
 \flrow@types=\toks28
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\placeins\placeins.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\placeins\placeins.sty"
 Package: placeins 2005/04/18  v 2.2
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2016/05/21 v6.83p Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen192
+\Hy@linkcounter=\count169
+\Hy@pagecounter=\count170
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2016/05/21 v6.83p Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count171
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count172
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen193
+\Fld@menulength=\count173
+\Field@Width=\dimen194
+\Fld@charsize=\dimen195
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count174
+\c@Item=\count175
+\c@Hfootnote=\count176
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2016/05/21 v6.83p Hyperref driver for pdfTeX
+\Fld@listcount=\count177
+\c@bookmark@seq@number=\count178
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip131
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\appendix\appendix.sty"
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count179
+\c@@ppsavesec=\count180
+\c@@ppsaveapp=\count181
+)
+(mcode.sty
+-- Package: `mcode' 2.7 <2015/11/11> --
+Package: mcode 2015/11/11 2.7
+ - settings optimized for display (colour formating)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count182
+\lst@gtempboxa=\box54
+\lst@token=\toks29
+\lst@length=\count183
+\lst@currlwidth=\dimen196
+\lst@column=\count184
+\lst@pos=\count185
+\lst@lostspace=\dimen197
+\lst@width=\dimen198
+\lst@newlines=\count186
+\lst@lineno=\count187
+\lst@maxwidth=\dimen256
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count188
+\lst@skipnumbers=\count189
+\lst@framebox=\box55
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\abstract\abstract.sty"
+Package: abstract 2009/06/08 v1.2a configurable abstracts
+\abstitleskip=\skip132
+\absleftindent=\skip133
+\absrightindent=\skip134
+\absparindent=\skip135
+\absparsep=\skip136
 )
 (mthesis.aux)
 \openout1 = `mthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 94.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 119.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 119.
+
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    ... okay on input line 119.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 119.
+LaTeX Font Info:    ... okay on input line 119.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -778,23 +948,23 @@ LaTeX Font Info:    ... okay on input line 94.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(72.26999pt, 452.9679pt, 72.26999pt)
-* v-part:(T,H,B)=(72.26999pt, 700.50687pt, 72.26999pt)
+* h-part:(L,W,R)=(85.35826pt, 455.24411pt, 56.9055pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=452.9679pt
-* \textheight=700.50687pt
-* \oddsidemargin=0.0pt
-* \evensidemargin=0.0pt
-* \topmargin=-37.0pt
+* \textwidth=455.24411pt
+* \textheight=702.78308pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=12.0pt
+* \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=44.0pt
+* \marginparwidth=50.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -804,983 +974,1642 @@ LaTeX Font Info:    ... okay on input line 94.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
+("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count169
-\scratchdimen=\dimen192
-\scratchbox=\box54
-\nofMPsegments=\count170
-\nofMParguments=\count171
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count172
-\MPscratchDim=\dimen193
-\MPnumerator=\count173
-\makeMPintoPDFobject=\count174
-\everyMPtoPDFconversion=\toks30
+\scratchcounter=\count190
+\scratchdimen=\dimen257
+\scratchbox=\box56
+\nofMPsegments=\count191
+\nofMParguments=\count192
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count193
+\MPscratchDim=\dimen258
+\MPnumerator=\count194
+\makeMPintoPDFobject=\count195
+\everyMPtoPDFconversion=\toks31
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: floatrow package is loaded.
 Package caption Info: float package is loaded.
 Package caption Info: floatrow package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\dicts\
-translator-basic-dictionary\translator-basic-dictionary-English.dict
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\beamer\base\translator\dicts\tran
+slator-basic-dictionary\translator-basic-dictionary-English.dict"
 Dictionary: translator-basic-dictionary, Language: English 
 )
-(C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\siunitx\siunitx-abbreviations
-.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\siunitx\siunitx-abbreviations.cfg
+"
 File: siunitx-abbreviations.cfg 2016/03/01 v2.6q siunitx: Abbreviated units
 )
 \symgns@font=\mathgroup7
 LaTeX Font Info:    Overwriting symbol font `gns@font' in version `bold'
-(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 94.
-Package gensymb Info: Math companion symbols declared on input line 94.
-LaTeX Info: Redefining \degree on input line 94.
-LaTeX Info: Redefining \celsius on input line 94.
+(Font)                  TS1/cmr/m/n --> TS1/cmr/bx/n on input line 119.
+Package gensymb Info: Math companion symbols declared on input line 119.
+LaTeX Info: Redefining \degree on input line 119.
+LaTeX Info: Redefining \celsius on input line 119.
 Package gensymb Info: Using text companion symbols for \degree, \celsius and \p
-erthousand on input line 94.
-LaTeX Info: Redefining \ohm on input line 94.
-Package gensymb Info: Using \textohm for \ohm on input line 94.
-LaTeX Info: Redefining \micro on input line 94.
-Package gensymb Info: Using \textmu for \micro on input line 94.
- (C:\Users\IS\AppData\Roaming\MiKTeX\2.9\tex\latex\floatrow\fr-subfig.sty
+erthousand on input line 119.
+LaTeX Info: Redefining \ohm on input line 119.
+Package gensymb Info: Using \textohm for \ohm on input line 119.
+LaTeX Info: Redefining \micro on input line 119.
+Package gensymb Info: Using \textmu for \micro on input line 119.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\floatrow\fr-subfig.sty"
 Package: fr-subfig 2007/12/24 v0.1g (beta) floatrow: additions for subfig
-\FBsc@max=\skip131
-\FBso@max=\skip132
+\FBsc@max=\skip137
+\FBso@max=\skip138
 )
-\c__siunitx_mathsf_int=\count175
-\c__siunitx_mathtt_int=\count176
+\AtBeginShipoutBox=\box57
+Package hyperref Info: Link coloring OFF on input line 119.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count196
+)
+LaTeX Info: Redefining \ref on input line 119.
+LaTeX Info: Redefining \pageref on input line 119.
+LaTeX Info: Redefining \nameref on input line 119.
+
+(mthesis.out) (mthesis.out)
+\@outlinefile=\write3
+\openout3 = `mthesis.out'.
+
+\c@lstlisting=\count197
+\c__siunitx_mathsf_int=\count198
+\c__siunitx_mathtt_int=\count266
+ (titlepage.tex
+<img/Logo_etseib.png, id=267, 96.36pt x 110.66344pt>
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 25.
+(pdftex.def)             Requested size: 68.28383pt x 78.4196pt.
+
+<img/Logo_upc.png, id=268, 150.5625pt x 150.5625pt>
+File: img/Logo_upc.png Graphic file (type png)
+ <use img/Logo_upc.png>
+Package pdftex.def Info: img/Logo_upc.png used on input line 34.
+(pdftex.def)             Requested size: 45.52718pt x 45.52748pt.
+
 [1
 
-{C:/Users/IS/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [1]
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <./img/Logo_etseib.png (PN
+G copy)> <./img/Logo_upc.png>]) [1]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
- Make it at least 14.49998pt.
+ Make it at least 18.0pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[1] (mthesis.toc [1
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 149.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.149 \tableofcontents
+                       [1] (mthesis.toc
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 29.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 29.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 29.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 29.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.29 ...tability assessment}{20}{subsection.2.2.3}
+                                                   [2
 
 ]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-)
-\tf@toc=\write3
-\openout3 = `mthesis.toc'.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+File: img/Logo_etseib.png Graphic file (type png)
 
- [2]
-Chapter 1.
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 63.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.63 ... of the thesis development}{89}{chapter.8}
+                                                   [3])
+\tf@toc=\write4
+\openout4 = `mthesis.toc'.
+
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 151.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.151 \chapter
+              {Introduction} [4]
+Chapter I.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 152.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 152.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 152.
+
+<img/windtrend.PNG, id=371, 866.23625pt x 429.605pt>
+File: img/windtrend.PNG Graphic file (type png)
+ <use img/windtrend.PNG>
+Package pdftex.def Info: img/windtrend.PNG used on input line 159.
+(pdftex.def)             Requested size: 364.19667pt x 180.62297pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 169.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 169.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 169.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 169.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.169 O
+       nce the total installed capacity of offshore wind power increases ove...
 [1
 
-] [2]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [3]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
- [4] <img/theory/series_circ.PNG, id=41, 250.68657pt x 167.87718pt>
+ <./img/windtrend.PNG (PNG copy)>]
+<img/depthdistance.PNG, id=389, 655.44875pt x 495.8525pt>
+File: img/depthdistance.PNG Graphic file (type png)
+
+<use img/depthdistance.PNG>
+Package pdftex.def Info: img/depthdistance.PNG used on input line 173.
+(pdftex.def)             Requested size: 364.19667pt x 275.51917pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 188.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [2 <./img/depthdistance.PNG (PNG copy)>] <img/hvachvdc.PNG, id=405, 599.99156p
+t x 478.78876pt>
+File: img/hvachvdc.PNG Graphic file (type png)
+
+<use img/hvachvdc.PNG>
+Package pdftex.def Info: img/hvachvdc.PNG used on input line 195.
+(pdftex.def)             Requested size: 273.14923pt x 217.97342pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 207.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [3 <./img/hvachvdc.PNG>]
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 234.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [4]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 264.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [5]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 285.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [6]
+<img/theory/series_circ.PNG, id=469, 484.81125pt x 317.68687pt>
 File: img/theory/series_circ.PNG Graphic file (type png)
 
 <use img/theory/series_circ.PNG>
-Package pdftex.def Info: img/theory/series_circ.PNG used on input line 215.
-(pdftex.def)             Requested size: 135.89174pt x 91.00583pt.
- [5]
-<img/theory/series_resonance_f876.png, id=47, 421.575pt x 316.18124pt>
+Package pdftex.def Info: img/theory/series_circ.PNG used on input line 305.
+(pdftex.def)             Requested size: 136.57462pt x 89.49463pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 315.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [7 <./img/theory/series_circ.PNG>]
+<img/theory/series_resonance_f876.png, id=481, 421.575pt x 316.18124pt>
 File: img/theory/series_resonance_f876.png Graphic file (type png)
 
 <use img/theory/series_resonance_f876.png>
 Package pdftex.def Info: img/theory/series_resonance_f876.png used on input lin
-e 241.
-(pdftex.def)             Requested size: 317.07614pt x 237.81078pt.
- [6 <./img/theory/series_circ.PNG> <./img/theory/series_resonance_f876.png (PNG
- copy)>]
-<img/theory/parallel_circ.png, id=54, 258.21469pt x 135.50626pt>
+e 331.
+(pdftex.def)             Requested size: 318.66948pt x 239.00726pt.
+
+<img/theory/parallel_circ.png, id=483, 481.8pt x 262.73157pt>
 File: img/theory/parallel_circ.png Graphic file (type png)
 
 <use img/theory/parallel_circ.png>
-Package pdftex.def Info: img/theory/parallel_circ.png used on input line 260.
-(pdftex.def)             Requested size: 135.89174pt x 71.31552pt.
-
-<img/theory/parallel_resonance_f356.png, id=55, 421.575pt x 316.18124pt>
+Package pdftex.def Info: img/theory/parallel_circ.png used on input line 350.
+(pdftex.def)             Requested size: 136.57462pt x 74.47437pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 354.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [8 <./img/theory/series_resonance_f876.png (PNG copy)>]
+<img/theory/parallel_resonance_f356.png, id=497, 421.575pt x 316.18124pt>
 File: img/theory/parallel_resonance_f356.png Graphic file (type png)
 
 <use img/theory/parallel_resonance_f356.png>
 Package pdftex.def Info: img/theory/parallel_resonance_f356.png used on input l
-ine 286.
-(pdftex.def)             Requested size: 317.07614pt x 237.81078pt.
- [7 <./img/theory/parallel_circ.png>] <img/theory/tank_circ.PNG, id=60, 169.382
-81pt x 219.82124pt>
+ine 376.
+(pdftex.def)             Requested size: 318.66948pt x 239.00726pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 386.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [9 <./img/theory/parallel_circ.png> <./img/theory/parallel_resonance_f356.png>
+]
+<img/theory/tank_circ.PNG, id=510, 308.65312pt x 399.74344pt>
 File: img/theory/tank_circ.PNG Graphic file (type png)
 
 <use img/theory/tank_circ.PNG>
-Package pdftex.def Info: img/theory/tank_circ.PNG used on input line 299.
-(pdftex.def)             Requested size: 90.5922pt x 117.57132pt.
- [8 <./img/theory/parallel_resonance_f356.png> <./img/theory/tank_circ.PNG>]
-<img/theory/tank_parallel_resonance_f447.png, id=66, 421.575pt x 316.18124pt>
+Package pdftex.def Info: img/theory/tank_circ.PNG used on input line 389.
+(pdftex.def)             Requested size: 91.04742pt x 117.91718pt.
+
+<img/theory/tank_parallel_resonance_f447.png, id=512, 421.575pt x 316.18124pt>
 File: img/theory/tank_parallel_resonance_f447.png Graphic file (type png)
 
 <use img/theory/tank_parallel_resonance_f447.png>
 Package pdftex.def Info: img/theory/tank_parallel_resonance_f447.png used on in
-put line 321.
-(pdftex.def)             Requested size: 317.07614pt x 237.81078pt.
- [9 <./img/theory/tank_parallel_resonance_f447.png>] [10] [11] [12]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
+put line 411.
+(pdftex.def)             Requested size: 318.66948pt x 239.00726pt.
+
+Underfull \hbox (badness 3049) in paragraph at lines 412--412
+[]\OT1/cmr/m/n/10 Figure I.9: |Par-al-lel res-o-nance in tank cir-cuit be-tween
+ LC el-e-ments at fre-quency 447 Hz
+ []
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 419.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [10 <./img/theory/tank_circ.PNG> <./img/theory/tank_parallel_resonance_f447.pn
+g>]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 457.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [11]
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 586.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [12]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 606.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
  [13]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 665.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [14]
 Missing character: There is no ‚ in font cmss12!
 Missing character: There is no Ä in font cmss12!
 Missing character: There is no ì in font cmss12!
- [14] [15] [16]
-<img/theory/stability_model1.png, id=98, 384.43625pt x 165.61874pt>
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 672.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [15]
+Chapter II.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 686.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 686.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 686.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 686.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [16
+
+]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 710.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [17]
+<img/theory/stability_model1.png, id=625, 749.80125pt x 301.125pt>
 File: img/theory/stability_model1.png Graphic file (type png)
 
 <use img/theory/stability_model1.png>
-Package pdftex.def Info: img/theory/stability_model1.png used on input line 635
+Package pdftex.def Info: img/theory/stability_model1.png used on input line 723
 .
-(pdftex.def)             Requested size: 226.48395pt x 97.57268pt.
-
-<img/theory/stability_loop.png, id=99, 506.89375pt x 155.58125pt>
+(pdftex.def)             Requested size: 227.62206pt x 91.41336pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 727.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [18]
+<img/theory/stability_loop.png, id=636, 596.2275pt x 179.92218pt>
 File: img/theory/stability_loop.png Graphic file (type png)
 
 <use img/theory/stability_loop.png>
-Package pdftex.def Info: img/theory/stability_loop.png used on input line 651.
-(pdftex.def)             Requested size: 226.48395pt x 69.51474pt.
- [17 <./img/theory/stability_model1.png (PNG copy)>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ú in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ù in font cmr12!
- <img/theory/stability_model2.png, id=103, 302.12875pt x 125.46875pt>
+Package pdftex.def Info: img/theory/stability_loop.png used on input line 739.
+(pdftex.def)             Requested size: 227.62206pt x 68.68959pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+<img/theory/stability_model2.png, id=648, 755.82375pt x 295.85532pt>
 File: img/theory/stability_model2.png Graphic file (type png)
 
 <use img/theory/stability_model2.png>
-Package pdftex.def Info: img/theory/stability_model2.png used on input line 668
+Package pdftex.def Info: img/theory/stability_model2.png used on input line 757
 .
-(pdftex.def)             Requested size: 226.48395pt x 94.05537pt.
- [18 <./img/theory/stability_loop.png (PNG copy)> <./img/theory/stability_model
-2.png (PNG copy)>]
-<img/theory/stability_model3.png, id=107, 382.42876pt x 130.4875pt>
+(pdftex.def)             Requested size: 227.62206pt x 89.09586pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 761.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [19 <./img/theory/stability_model1.png> <./img/theory/stability_loop.png>]
+<img/theory/stability_model3.png, id=665, 545.78906pt x 269.50688pt>
 File: img/theory/stability_model3.png Graphic file (type png)
 
 <use img/theory/stability_model3.png>
-Package pdftex.def Info: img/theory/stability_model3.png used on input line 686
+Package pdftex.def Info: img/theory/stability_model3.png used on input line 775
 .
-(pdftex.def)             Requested size: 226.48395pt x 77.27763pt.
- [19 <./img/theory/stability_model3.png (PNG copy)>] <img/theory/pi_model.png, 
-id=111, 202.7575pt x 128.48pt>
+(pdftex.def)             Requested size: 227.62206pt x 112.39842pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 792.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [20 <./img/theory/stability_model2.png> <./img/theory/stability_model3.png>]
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 807.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [21]
+Chapter III.
+<img/theory/pi_model.png, id=685, 493.0922pt x 304.13625pt>
 File: img/theory/pi_model.png Graphic file (type png)
 
 <use img/theory/pi_model.png>
-Package pdftex.def Info: img/theory/pi_model.png used on input line 735.
-(pdftex.def)             Requested size: 135.89174pt x 86.1125pt.
- [20 <./img/theory/pi_model.png (PNG copy)>]
-<img/theory/vscsmodels.png, id=117, 368.37625pt x 137.51375pt>
+Package pdftex.def Info: img/theory/pi_model.png used on input line 831.
+(pdftex.def)             Requested size: 136.57462pt x 84.2387pt.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 840.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 840.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 840.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 840.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [22
+
+ <./img/theory/pi_model.png>]
+<img/theory/vscsmodels.png, id=696, 701.62125pt x 257.46187pt>
 File: img/theory/vscsmodels.png Graphic file (type png)
 
 <use img/theory/vscsmodels.png>
-Package pdftex.def Info: img/theory/vscsmodels.png used on input line 758.
-(pdftex.def)             Requested size: 226.48395pt x 84.54422pt.
+Package pdftex.def Info: img/theory/vscsmodels.png used on input line 854.
+(pdftex.def)             Requested size: 227.62206pt x 83.52483pt.
 Missing character: There is no ‚ in font cmss12!
 Missing character: There is no Ä in font cmss12!
 Missing character: There is no ú in font cmss12!
 Missing character: There is no ‚ in font cmss12!
 Missing character: There is no Ä in font cmss12!
 Missing character: There is no ù in font cmss12!
- [21 <./img/theory/vscsmodels.png (PNG copy)>]
-<img/theory/WT_scheme.png, id=121, 809.27344pt x 541.27219pt>
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 869.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [23 <./img/theory/vscsmodels.png>] <img/theory/WT_scheme.png, id=716, 809.2734
+4pt x 541.27219pt>
 File: img/theory/WT_scheme.png Graphic file (type png)
 
 <use img/theory/WT_scheme.png>
-Package pdftex.def Info: img/theory/WT_scheme.png used on input line 783.
-(pdftex.def)             Requested size: 271.7835pt x 181.78362pt.
- [22 <./img/theory/WT_scheme.png>]
-<img/theory/HVDC_scheme.png, id=125, 711.4078pt x 469.755pt>
+Package pdftex.def Info: img/theory/WT_scheme.png used on input line 879.
+(pdftex.def)             Requested size: 273.14923pt x 182.69212pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 899.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [24 <./img/theory/WT_scheme.png>] <img/theory/HVDC_scheme.png, id=733, 711.407
+8pt x 469.755pt>
 File: img/theory/HVDC_scheme.png Graphic file (type png)
 
 <use img/theory/HVDC_scheme.png>
-Package pdftex.def Info: img/theory/HVDC_scheme.png used on input line 823.
-(pdftex.def)             Requested size: 271.7835pt x 179.46925pt.
- [23 <./img/theory/HVDC_scheme.png>] [24]
-[25]
-Chapter 2.
-<img/system_full.png, id=135, 682.04813pt x 1146.53343pt>
+Package pdftex.def Info: img/theory/HVDC_scheme.png used on input line 919.
+(pdftex.def)             Requested size: 273.14923pt x 180.3724pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 940.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [25 <./img/theory/HVDC_scheme.png>]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 960.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [26]
+Chapter IV.
+<img/ieee519current.png, id=764, 761.09344pt x 210.7875pt>
+File: img/ieee519current.png Graphic file (type png)
+
+<use img/ieee519current.png>
+Package pdftex.def Info: img/ieee519current.png used on input line 969.
+(pdftex.def)             Requested size: 364.19667pt x 100.86807pt.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 975.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 975.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 975.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 975.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [27
+
+ <./img/ieee519current.png>]
+Chapter V.
+<img/system_full.png, id=775, 682.04813pt x 1146.53343pt>
 File: img/system_full.png Graphic file (type png)
 
 <use img/system_full.png>
-Package pdftex.def Info: img/system_full.png used on input line 889.
-(pdftex.def)             Requested size: 407.66833pt x 685.30118pt.
+Package pdftex.def Info: img/system_full.png used on input line 981.
+(pdftex.def)             Requested size: 409.71692pt x 688.74762pt.
 
 
-LaTeX Warning: Float too large for page by 8.3943pt on input line 892.
+LaTeX Warning: Float too large for page by 7.96454pt on input line 984.
 
-[26
 
-] [27 <./img/system_full.png>]
-<img/Case3/system_case3.png, id=143, 698.61pt x 1156.32pt>
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 985.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 985.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 985.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 985.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [28
+
+]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 985.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [29 <./img/system_full.png>] <img/Case3/system_case3.png, id=789, 698.61pt x 1
+156.32pt>
 File: img/Case3/system_case3.png Graphic file (type png)
 
 <use img/Case3/system_case3.png>
-Package pdftex.def Info: img/Case3/system_case3.png used on input line 902.
-(pdftex.def)             Requested size: 407.66833pt x 674.75949pt.
- [28
+Package pdftex.def Info: img/Case3/system_case3.png used on input line 994.
+(pdftex.def)             Requested size: 409.71692pt x 678.16478pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 998.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [30
 
-] [29 <./img/Case3/system_case3.png>]
-<img/table_systemdata.png, id=150, 301.125pt x 280.04625pt>
+]
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 998.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [31 <./img/Case3/system_case3.png>]
+<img/table_systemdata.png, id=800, 301.125pt x 280.04625pt>
 File: img/table_systemdata.png Graphic file (type png)
 
 <use img/table_systemdata.png>
-Package pdftex.def Info: img/table_systemdata.png used on input line 911.
-(pdftex.def)             Requested size: 226.48395pt x 210.63667pt.
+Package pdftex.def Info: img/table_systemdata.png used on input line 1003.
+(pdftex.def)             Requested size: 227.62206pt x 211.69641pt.
 
-<img/Case1/system_case1.png, id=151, 1327.20844pt x 276.28218pt>
+<img/Case1/system_case1.png, id=802, 1327.20844pt x 276.28218pt>
 File: img/Case1/system_case1.png Graphic file (type png)
 
 <use img/Case1/system_case1.png>
-Package pdftex.def Info: img/Case1/system_case1.png used on input line 978.
-(pdftex.def)             Requested size: 452.9679pt x 94.29303pt.
+Package pdftex.def Info: img/Case1/system_case1.png used on input line 1070.
+(pdftex.def)             Requested size: 455.24411pt x 94.76518pt.
 
-<img/Case2/system_case2.png, id=152, 1324.95pt x 412.54124pt>
+<img/Case2/system_case2.png, id=804, 1324.95pt x 412.54124pt>
 File: img/Case2/system_case2.png Graphic file (type png)
 
 <use img/Case2/system_case2.png>
-Package pdftex.def Info: img/Case2/system_case2.png used on input line 988.
-(pdftex.def)             Requested size: 452.9679pt x 141.03644pt.
- [30
+Package pdftex.def Info: img/Case2/system_case2.png used on input line 1080.
+(pdftex.def)             Requested size: 455.24411pt x 141.74146pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1084.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [32
 
  <./img/table_systemdata.png> <./img/Case1/system_case1.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
- <img/tableWT.png, id=157, 281.55188pt x 172.39406pt>
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+<img/tableWT.png, id=825, 281.55188pt x 172.39406pt>
 File: img/tableWT.png Graphic file (type png)
+ <use img/tableWT.png>
+Package pdftex.def Info: img/tableWT.png used on input line 1096.
+(pdftex.def)             Requested size: 227.62206pt x 139.37273pt.
 
-<use img/tableWT.png>
-Package pdftex.def Info: img/tableWT.png used on input line 1004.
-(pdftex.def)             Requested size: 226.48395pt x 138.67564pt.
- <img/tableHVDC.png, id=158, 288.3272pt x 154.32657pt>
+<img/tableHVDC.png, id=826, 288.3272pt x 154.32657pt>
 File: img/tableHVDC.png Graphic file (type png)
+ <use img/tableHVDC.png>
+Package pdftex.def Info: img/tableHVDC.png used on input line 1104.
+(pdftex.def)             Requested size: 227.62206pt x 121.83893pt.
+File: img/Logo_etseib.png Graphic file (type png)
 
-<use img/tableHVDC.png>
-Package pdftex.def Info: img/tableHVDC.png used on input line 1012.
-(pdftex.def)             Requested size: 226.48395pt x 121.22902pt.
- [31 <./img/Case2/system_case2.png> <./img/tableWT.png>] <img/modelWT.png, id=1
-63, 421.575pt x 316.18124pt>
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1108.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [33 <./img/Case2/system_case2.png> <./img/tableWT.png>] <img/modelWT.png, id=8
+36, 421.575pt x 316.18124pt>
 File: img/modelWT.png Graphic file (type png)
  <use img/modelWT.png>
-Package pdftex.def Info: img/modelWT.png used on input line 1022.
-(pdftex.def)             Requested size: 362.37569pt x 271.78513pt.
+Package pdftex.def Info: img/modelWT.png used on input line 1114.
+(pdftex.def)             Requested size: 364.19667pt x 273.15047pt.
 
-<img/modelHVDC.png, id=164, 421.575pt x 316.18124pt>
+<img/modelHVDC.png, id=837, 421.575pt x 316.18124pt>
 File: img/modelHVDC.png Graphic file (type png)
  <use img/modelHVDC.png>
-Package pdftex.def Info: img/modelHVDC.png used on input line 1030.
-(pdftex.def)             Requested size: 362.37569pt x 271.78513pt.
+Package pdftex.def Info: img/modelHVDC.png used on input line 1122.
+(pdftex.def)             Requested size: 364.19667pt x 273.15047pt.
+File: img/Logo_etseib.png Graphic file (type png)
 
-[32 <./img/tableHVDC.png> <./img/modelWT.png>] [33 <./img/modelHVDC.png>]
-<img/Case1/Case1_FS_lin.png, id=173, 571.38469pt x 368.1253pt>
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1126.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [34 <./img/tableHVDC.png> <./img/modelWT.png (PNG copy)>]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1138.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [35 <./img/modelHVDC.png (PNG copy)>]
+<img/Case1/Case1_FS_lin.png, id=856, 571.38469pt x 368.1253pt>
 File: img/Case1/Case1_FS_lin.png Graphic file (type png)
 
 <use img/Case1/Case1_FS_lin.png>
-Package pdftex.def Info: img/Case1/Case1_FS_lin.png used on input line 1049.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
+Package pdftex.def Info: img/Case1/Case1_FS_lin.png used on input line 1141.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
 
-<img/Case1/Case1_FS_log.png, id=174, 571.38469pt x 368.1253pt>
+<img/Case1/Case1_FS_log.png, id=858, 571.38469pt x 368.1253pt>
 File: img/Case1/Case1_FS_log.png Graphic file (type png)
 
 <use img/Case1/Case1_FS_log.png>
-Package pdftex.def Info: img/Case1/Case1_FS_log.png used on input line 1059.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [34 <./img/Case1/Case1_FS_lin.png>]
-<img/Case1/table_FS.png, id=178, 251.43938pt x 137.7647pt>
+Package pdftex.def Info: img/Case1/Case1_FS_log.png used on input line 1151.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1155.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [36 <./img/Case1/Case1_FS_lin.png>] <img/Case1/table_FS.png, id=867, 251.43938
+pt x 137.7647pt>
 File: img/Case1/table_FS.png Graphic file (type png)
 
 <use img/Case1/table_FS.png>
-Package pdftex.def Info: img/Case1/table_FS.png used on input line 1070.
-(pdftex.def)             Requested size: 226.48395pt x 124.09006pt.
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
- [35 <./img/Case1/Case1_FS_log.png> <./img/Case1/table_FS.png>] <img/Case1/Case
-1_HMA_max.png, id=183, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case1/table_FS.png used on input line 1162.
+(pdftex.def)             Requested size: 227.62206pt x 124.71439pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1172.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [37 <./img/Case1/Case1_FS_log.png> <./img/Case1/table_FS.png>]
+<img/Case1/Case1_HMA_max.png, id=883, 551.05875pt x 485.56406pt>
 File: img/Case1/Case1_HMA_max.png Graphic file (type png)
 
 <use img/Case1/Case1_HMA_max.png>
-Package pdftex.def Info: img/Case1/Case1_HMA_max.png used on input line 1088.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
+Package pdftex.def Info: img/Case1/Case1_HMA_max.png used on input line 1180.
+(pdftex.def)             Requested size: 364.19667pt x 320.92522pt.
 
-<img/Case1/Case1_HMA_all.png, id=184, 637.63219pt x 526.96875pt>
+<img/Case1/Case1_HMA_all.png, id=885, 544.28343pt x 483.30562pt>
 File: img/Case1/Case1_HMA_all.png Graphic file (type png)
 
 <use img/Case1/Case1_HMA_all.png>
-Package pdftex.def Info: img/Case1/Case1_HMA_all.png used on input line 1098.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [36 <./img/Case1/Case1_HMA_max.png>]
-<img/Case1/Case1_HMA_crit.png, id=188, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case1/Case1_HMA_all.png used on input line 1190.
+(pdftex.def)             Requested size: 364.19667pt x 323.39273pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1194.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [38 <./img/Case1/Case1_HMA_max.png (PNG copy)>]
+<img/Case1/Case1_HMA_crit.png, id=895, 545.03625pt x 483.30562pt>
 File: img/Case1/Case1_HMA_crit.png Graphic file (type png)
 
 <use img/Case1/Case1_HMA_crit.png>
-Package pdftex.def Info: img/Case1/Case1_HMA_crit.png used on input line 1108.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [37 <./img/Case1/Case1_HMA_all.png>]
-<img/Case1/table_HRMA1.png, id=192, 227.34938pt x 207.02344pt>
+Package pdftex.def Info: img/Case1/Case1_HMA_crit.png used on input line 1200.
+(pdftex.def)             Requested size: 364.19667pt x 322.94287pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1204.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [39 <./img/Case1/Case1_HMA_all.png (PNG copy)>]
+<img/Case1/table_HRMA1.png, id=903, 227.34938pt x 207.02344pt>
 File: img/Case1/table_HRMA1.png Graphic file (type png)
 
 <use img/Case1/table_HRMA1.png>
-Package pdftex.def Info: img/Case1/table_HRMA1.png used on input line 1120.
-(pdftex.def)             Requested size: 226.48395pt x 206.2395pt.
- [38 <./img/Case1/Case1_HMA_crit.png>]
-<img/Case1/table_HRMA2.png, id=197, 437.38406pt x 186.6975pt>
+Package pdftex.def Info: img/Case1/table_HRMA1.png used on input line 1212.
+(pdftex.def)             Requested size: 227.62206pt x 207.27562pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1214.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [40 <./img/Case1/Case1_HMA_crit.png (PNG copy)>]
+<img/Case1/table_HRMA2.png, id=910, 400.49625pt x 192.72pt>
 File: img/Case1/table_HRMA2.png Graphic file (type png)
 
 <use img/Case1/table_HRMA2.png>
-Package pdftex.def Info: img/Case1/table_HRMA2.png used on input line 1128.
-(pdftex.def)             Requested size: 452.9679pt x 193.35176pt.
- [39 <./img/Case1/table_HRMA1.png> <./img/Case1/table_HRMA2.png>] <img/Case1/PF
-_model.png, id=203, 895.09406pt x 191.9672pt>
+Package pdftex.def Info: img/Case1/table_HRMA2.png used on input line 1220.
+(pdftex.def)             Requested size: 386.96027pt x 186.2177pt.
+
+<img/Case1/PF_model.png, id=914, 895.09406pt x 191.9672pt>
 File: img/Case1/PF_model.png Graphic file (type png)
 
 <use img/Case1/PF_model.png>
-Package pdftex.def Info: img/Case1/PF_model.png used on input line 1141.
-(pdftex.def)             Requested size: 452.9679pt x 97.14917pt.
-
-<img/Case1/PF_imp7_VS.PNG, id=204, 555.57562pt x 391.4625pt>
+Package pdftex.def Info: img/Case1/PF_model.png used on input line 1233.
+(pdftex.def)             Requested size: 455.24411pt x 97.6354pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1236.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [41 <./img/Case1/table_HRMA1.png> <./img/Case1/table_HRMA2.png>]
+<img/Case1/PF_imp7_VS.PNG, id=923, 555.57562pt x 391.4625pt>
 File: img/Case1/PF_imp7_VS.PNG Graphic file (type png)
 
 <use img/Case1/PF_imp7_VS.PNG>
-Package pdftex.def Info: img/Case1/PF_imp7_VS.PNG used on input line 1151.
-(pdftex.def)             Requested size: 362.37569pt x 255.33762pt.
+Package pdftex.def Info: img/Case1/PF_imp7_VS.PNG used on input line 1243.
+(pdftex.def)             Requested size: 364.19667pt x 256.61588pt.
 
-<img/Case1/PF_imp7_CS.PNG, id=205, 557.83406pt x 392.21532pt>
+<img/Case1/PF_imp7_CS.PNG, id=924, 557.83406pt x 392.21532pt>
 File: img/Case1/PF_imp7_CS.PNG Graphic file (type png)
 
 <use img/Case1/PF_imp7_CS.PNG>
-Package pdftex.def Info: img/Case1/PF_imp7_CS.PNG used on input line 1159.
-(pdftex.def)             Requested size: 362.37569pt x 254.79329pt.
- [40 <./img/Case1/PF_model.png (PNG copy)> <./img/Case1/PF_imp7_VS.PNG>]
-<img/Case1/table_powerfactory.PNG, id=210, 295.1025pt x 46.67438pt>
+Package pdftex.def Info: img/Case1/PF_imp7_CS.PNG used on input line 1251.
+(pdftex.def)             Requested size: 364.19667pt x 256.07402pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1255.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [42 <./img/Case1/PF_model.png (PNG copy)> <./img/Case1/PF_imp7_VS.PNG>]
+<img/Case1/table_powerfactory.PNG, id=934, 295.1025pt x 46.67438pt>
 File: img/Case1/table_powerfactory.PNG Graphic file (type png)
 
 <use img/Case1/table_powerfactory.PNG>
-Package pdftex.def Info: img/Case1/table_powerfactory.PNG used on input line 11
-72.
-(pdftex.def)             Requested size: 271.7835pt x 42.98721pt.
+Package pdftex.def Info: img/Case1/table_powerfactory.PNG used on input line 12
+64.
+(pdftex.def)             Requested size: 273.14923pt x 43.203pt.
 
-<img/Case1/PF_impAll_VS.PNG, id=211, 557.08125pt x 393.72093pt>
+<img/Case1/PF_impAll_VS.PNG, id=937, 557.08125pt x 393.72093pt>
 File: img/Case1/PF_impAll_VS.PNG Graphic file (type png)
 
 <use img/Case1/PF_impAll_VS.PNG>
-Package pdftex.def Info: img/Case1/PF_impAll_VS.PNG used on input line 1181.
-(pdftex.def)             Requested size: 362.37569pt x 256.11383pt.
+Package pdftex.def Info: img/Case1/PF_impAll_VS.PNG used on input line 1273.
+(pdftex.def)             Requested size: 364.19667pt x 257.40547pt.
 
-<img/Case1/PF_impAllLegend.PNG, id=212, 301.125pt x 140.02313pt>
+<img/Case1/PF_impAllLegend.PNG, id=938, 301.125pt x 140.02313pt>
 File: img/Case1/PF_impAllLegend.PNG Graphic file (type png)
 
 <use img/Case1/PF_impAllLegend.PNG>
-Package pdftex.def Info: img/Case1/PF_impAllLegend.PNG used on input line 1182.
+Package pdftex.def Info: img/Case1/PF_impAllLegend.PNG used on input line 1274.
 
-(pdftex.def)             Requested size: 181.18439pt x 84.25381pt.
- [41 <./img/Case1/PF_imp7_CS.PNG> <./img/Case1/table_powerfactory.PNG>]
-<img/Case1/PF_impAll_CS.PNG, id=218, 555.57562pt x 392.21532pt>
+(pdftex.def)             Requested size: 182.09486pt x 84.67685pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1278.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [43 <./img/Case1/PF_imp7_CS.PNG> <./img/Case1/table_powerfactory.PNG>]
+<img/Case1/PF_impAll_CS.PNG, id=949, 555.57562pt x 392.21532pt>
 File: img/Case1/PF_impAll_CS.PNG Graphic file (type png)
 
 <use img/Case1/PF_impAll_CS.PNG>
-Package pdftex.def Info: img/Case1/PF_impAll_CS.PNG used on input line 1190.
-(pdftex.def)             Requested size: 362.37569pt x 255.82866pt.
- [42 <./img/Case1/PF_impAll_VS.PNG> <./img/Case1/PF_impAllLegend.PNG> <./img/Ca
-se1/PF_impAll_CS.PNG>]
-<img/Case2/Case2_FS_lin.png, id=225, 571.38469pt x 368.1253pt>
+Package pdftex.def Info: img/Case1/PF_impAll_CS.PNG used on input line 1282.
+(pdftex.def)             Requested size: 364.19667pt x 257.10938pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1287.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [44 <./img/Case1/PF_impAll_VS.PNG> <./img/Case1/PF_impAllLegend.PNG> <./img/Ca
+se1/PF_impAll_CS.PNG>] <img/Case2/Case2_FS_lin.png, id=961, 571.38469pt x 368.1
+253pt>
 File: img/Case2/Case2_FS_lin.png Graphic file (type png)
 
 <use img/Case2/Case2_FS_lin.png>
-Package pdftex.def Info: img/Case2/Case2_FS_lin.png used on input line 1212.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [43
+Package pdftex.def Info: img/Case2/Case2_FS_lin.png used on input line 1304.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1308.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [45
 
 ]
-<img/Case2/Case2_FS_log.png, id=229, 571.38469pt x 368.1253pt>
+<img/Case2/Case2_FS_log.png, id=970, 571.38469pt x 368.1253pt>
 File: img/Case2/Case2_FS_log.png Graphic file (type png)
 
 <use img/Case2/Case2_FS_log.png>
-Package pdftex.def Info: img/Case2/Case2_FS_log.png used on input line 1220.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [44 <./img/Case2/Case2_FS_lin.png> <./img/Case2/Case2_FS_log.png>]
-<img/Case2/table_FS.png, id=234, 249.18094pt x 161.10187pt>
+Package pdftex.def Info: img/Case2/Case2_FS_log.png used on input line 1312.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1316.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [46 <./img/Case2/Case2_FS_lin.png> <./img/Case2/Case2_FS_log.png>]
+<img/Case2/table_FS.png, id=976, 249.18094pt x 161.10187pt>
 File: img/Case2/table_FS.png Graphic file (type png)
 
 <use img/Case2/table_FS.png>
-Package pdftex.def Info: img/Case2/table_FS.png used on input line 1232.
-(pdftex.def)             Requested size: 226.48395pt x 146.43085pt.
+Package pdftex.def Info: img/Case2/table_FS.png used on input line 1324.
+(pdftex.def)             Requested size: 227.62206pt x 147.1683pt.
 
-<img/Case2/Case2_HMA_max.png, id=235, 637.63219pt x 526.96875pt>
+<img/Case2/Case2_HMA_max.png, id=979, 540.51938pt x 482.55281pt>
 File: img/Case2/Case2_HMA_max.png Graphic file (type png)
 
 <use img/Case2/Case2_HMA_max.png>
-Package pdftex.def Info: img/Case2/Case2_HMA_max.png used on input line 1243.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [45
+Package pdftex.def Info: img/Case2/Case2_HMA_max.png used on input line 1335.
+(pdftex.def)             Requested size: 364.19667pt x 325.14949pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1339.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [47
 
- <./img/Case2/table_FS.png>]
-<img/Case2/Case2_HMA_all.png, id=240, 637.63219pt x 526.96875pt>
+ <./img/Case2/table_FS.png>] <img/Case2/Case2_HMA_all.png, id=989, 587.19376pt 
+x 481.8pt>
 File: img/Case2/Case2_HMA_all.png Graphic file (type png)
 
 <use img/Case2/Case2_HMA_all.png>
-Package pdftex.def Info: img/Case2/Case2_HMA_all.png used on input line 1251.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [46 <./img/Case2/Case2_HMA_max.png>] [47 <./img/Case2/Case2_HMA_all.png>]
-<img/Case2/Case2_HMA_crit.png, id=247, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case2/Case2_HMA_all.png used on input line 1343.
+(pdftex.def)             Requested size: 386.96027pt x 317.50377pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1347.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [48 <./img/Case2/Case2_HMA_max.png (PNG copy)> <./img/Case2/Case2_HMA_all.png 
+(PNG copy)>]
+<img/Case2/Case2_HMA_crit.png, id=995, 548.80031pt x 482.55281pt>
 File: img/Case2/Case2_HMA_crit.png Graphic file (type png)
 
 <use img/Case2/Case2_HMA_crit.png>
-Package pdftex.def Info: img/Case2/Case2_HMA_crit.png used on input line 1259.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
+Package pdftex.def Info: img/Case2/Case2_HMA_crit.png used on input line 1351.
+(pdftex.def)             Requested size: 364.19667pt x 320.23827pt.
 
-<img/Case2/table_HRMA1.png, id=248, 225.84375pt x 240.9pt>
+<img/Case2/table_HRMA1.png, id=998, 225.84375pt x 240.9pt>
 File: img/Case2/table_HRMA1.png Graphic file (type png)
 
 <use img/Case2/table_HRMA1.png>
-Package pdftex.def Info: img/Case2/table_HRMA1.png used on input line 1271.
-(pdftex.def)             Requested size: 203.83417pt x 217.43655pt.
- [48
+Package pdftex.def Info: img/Case2/table_HRMA1.png used on input line 1363.
+(pdftex.def)             Requested size: 204.85846pt x 218.52827pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1365.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [49
 
- <./img/Case2/Case2_HMA_crit.png>]
-<img/Case2/table_HRMA2.png, id=252, 437.38406pt x 225.84375pt>
+ <./img/Case2/Case2_HMA_crit.png (PNG copy)>]
+<img/Case2/table_HRMA2.png, id=1006, 404.26031pt x 255.95625pt>
 File: img/Case2/table_HRMA2.png Graphic file (type png)
 
 <use img/Case2/table_HRMA2.png>
-Package pdftex.def Info: img/Case2/table_HRMA2.png used on input line 1279.
-(pdftex.def)             Requested size: 407.66833pt x 210.50117pt.
- [49 <./img/Case2/table_HRMA1.png> <./img/Case2/table_HRMA2.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
- <img/Case2/PF_model.png, id=258, 903.375pt x 313.17pt>
+Package pdftex.def Info: img/Case2/table_HRMA2.png used on input line 1371.
+(pdftex.def)             Requested size: 409.71692pt x 259.41594pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1373.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [50 <./img/Case2/table_HRMA1.png> <./img/Case2/table_HRMA2.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+<img/Case2/PF_model.png, id=1017, 903.375pt x 313.17pt>
 File: img/Case2/PF_model.png Graphic file (type png)
 
 <use img/Case2/PF_model.png>
-Package pdftex.def Info: img/Case2/PF_model.png used on input line 1298.
-(pdftex.def)             Requested size: 452.9679pt x 157.03378pt.
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
+Package pdftex.def Info: img/Case2/PF_model.png used on input line 1390.
+(pdftex.def)             Requested size: 455.24411pt x 157.82225pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1397.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [51
 
-<img/Case2/PF_imp7_VS.PNG, id=259, 553.31718pt x 389.20406pt>
+ <./img/Case2/PF_model.png (PNG copy)>]
+<img/Case2/PF_imp7_VS.PNG, id=1026, 553.31718pt x 389.20406pt>
 File: img/Case2/PF_imp7_VS.PNG Graphic file (type png)
 
 <use img/Case2/PF_imp7_VS.PNG>
-Package pdftex.def Info: img/Case2/PF_imp7_VS.PNG used on input line 1308.
-(pdftex.def)             Requested size: 362.37569pt x 254.89192pt.
- [50 <./img/Case2/PF_model.png (PNG copy)>]
-<img/Case2/PF_imp7_CS.PNG, id=264, 554.82281pt x 389.95688pt>
+Package pdftex.def Info: img/Case2/PF_imp7_VS.PNG used on input line 1400.
+(pdftex.def)             Requested size: 364.19667pt x 256.1747pt.
+
+<img/Case2/PF_imp7_CS.PNG, id=1027, 554.82281pt x 389.95688pt>
 File: img/Case2/PF_imp7_CS.PNG Graphic file (type png)
 
 <use img/Case2/PF_imp7_CS.PNG>
-Package pdftex.def Info: img/Case2/PF_imp7_CS.PNG used on input line 1316.
-(pdftex.def)             Requested size: 362.37569pt x 254.69472pt.
- [51 <./img/Case2/PF_imp7_VS.PNG> <./img/Case2/PF_imp7_CS.PNG>]
-<img/Case2/table_powerfactory.PNG, id=270, 364.36125pt x 44.41594pt>
+Package pdftex.def Info: img/Case2/PF_imp7_CS.PNG used on input line 1408.
+(pdftex.def)             Requested size: 364.19667pt x 255.97401pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1412.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [52 <./img/Case2/PF_imp7_VS.PNG>]
+<img/Case2/table_powerfactory.PNG, id=1036, 364.36125pt x 44.41594pt>
 File: img/Case2/table_powerfactory.PNG Graphic file (type png)
 
 <use img/Case2/table_powerfactory.PNG>
-Package pdftex.def Info: img/Case2/table_powerfactory.PNG used on input line 13
-27.
-(pdftex.def)             Requested size: 271.7835pt x 33.13158pt.
+Package pdftex.def Info: img/Case2/table_powerfactory.PNG used on input line 14
+19.
+(pdftex.def)             Requested size: 273.14923pt x 33.2983pt.
 
-<img/Case2/PF_impAll_VS.PNG, id=271, 555.57562pt x 391.4625pt>
+<img/Case2/PF_impAll_VS.PNG, id=1039, 555.57562pt x 391.4625pt>
 File: img/Case2/PF_impAll_VS.PNG Graphic file (type png)
 
 <use img/Case2/PF_impAll_VS.PNG>
-Package pdftex.def Info: img/Case2/PF_impAll_VS.PNG used on input line 1336.
-(pdftex.def)             Requested size: 362.37569pt x 255.33762pt.
+Package pdftex.def Info: img/Case2/PF_impAll_VS.PNG used on input line 1428.
+(pdftex.def)             Requested size: 364.19667pt x 256.61588pt.
 
-<img/Case2/PF_impAllLegend.PNG, id=272, 301.125pt x 140.02313pt>
+<img/Case2/PF_impAllLegend.PNG, id=1040, 301.125pt x 140.02313pt>
 File: img/Case2/PF_impAllLegend.PNG Graphic file (type png)
 
 <use img/Case2/PF_impAllLegend.PNG>
-Package pdftex.def Info: img/Case2/PF_impAllLegend.PNG used on input line 1337.
+Package pdftex.def Info: img/Case2/PF_impAllLegend.PNG used on input line 1429.
 
-(pdftex.def)             Requested size: 181.18439pt x 84.25381pt.
-
-<img/Case2/PF_impAll_CS.PNG, id=273, 557.83406pt x 392.96812pt>
+(pdftex.def)             Requested size: 182.09486pt x 84.67685pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1433.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [53 <./img/Case2/PF_imp7_CS.PNG> <./img/Case2/table_powerfactory.PNG>]
+<img/Case2/PF_impAll_CS.PNG, id=1050, 557.83406pt x 392.96812pt>
 File: img/Case2/PF_impAll_CS.PNG Graphic file (type png)
 
 <use img/Case2/PF_impAll_CS.PNG>
-Package pdftex.def Info: img/Case2/PF_impAll_CS.PNG used on input line 1345.
-(pdftex.def)             Requested size: 362.37569pt x 255.28233pt.
- [52
-
- <./img/Case2/table_powerfactory.PNG> <./img/Case2/PF_impAll_VS.PNG> <./img/Cas
-e2/PF_impAllLegend.PNG>] [53 <./img/Case2/PF_impAll_CS.PNG>]
-<img/Case3/Case3_FS_lin.png, id=284, 571.38469pt x 368.1253pt>
+Package pdftex.def Info: img/Case2/PF_impAll_CS.PNG used on input line 1437.
+(pdftex.def)             Requested size: 364.19667pt x 256.56552pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1442.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [54 <./img/Case2/PF_impAll_VS.PNG> <./img/Case2/PF_impAllLegend.PNG> <./img/Ca
+se2/PF_impAll_CS.PNG>] <img/Case3/Case3_FS_lin.png, id=1061, 571.38469pt x 368.
+1253pt>
 File: img/Case3/Case3_FS_lin.png Graphic file (type png)
 
 <use img/Case3/Case3_FS_lin.png>
-Package pdftex.def Info: img/Case3/Case3_FS_lin.png used on input line 1365.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
+Package pdftex.def Info: img/Case3/Case3_FS_lin.png used on input line 1457.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1461.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [55
 
-<img/Case3/Case3_FS_log.png, id=285, 571.38469pt x 368.1253pt>
+]
+<img/Case3/Case3_FS_log.png, id=1071, 571.38469pt x 368.1253pt>
 File: img/Case3/Case3_FS_log.png Graphic file (type png)
 
 <use img/Case3/Case3_FS_log.png>
-Package pdftex.def Info: img/Case3/Case3_FS_log.png used on input line 1373.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [54 <./img/Case3/Case3_FS_lin.png>]
-<img/Case3/table_FS.png, id=289, 249.93375pt x 185.19188pt>
+Package pdftex.def Info: img/Case3/Case3_FS_log.png used on input line 1465.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1469.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [56 <./img/Case3/Case3_FS_lin.png> <./img/Case3/Case3_FS_log.png>]
+Overfull \hbox (0.67184pt too wide) in paragraph at lines 1471--1472
+[]\OT1/cmr/m/n/10.95 Table []V.12[] presents res-o-nance fre-quency val-ues and
+ the peak val-ues of cor-re-spond-ing impedances.
+ []
+
+<img/Case3/table_FS.png, id=1077, 249.93375pt x 185.19188pt>
 File: img/Case3/table_FS.png Graphic file (type png)
 
 <use img/Case3/table_FS.png>
-Package pdftex.def Info: img/Case3/table_FS.png used on input line 1385.
-(pdftex.def)             Requested size: 226.48395pt x 167.82123pt.
+Package pdftex.def Info: img/Case3/table_FS.png used on input line 1477.
+(pdftex.def)             Requested size: 227.62206pt x 168.66614pt.
 
-Overfull \hbox (6.22559pt too wide) in paragraph at lines 1392--1393
-\OT1/cmr/m/n/12 HRMA re-sults. Again, the graphs present max-i-mum modal impeda
-nces, modal impedances
- []
-
-<img/Case3/Case3_HMA_max.png, id=290, 637.63219pt x 526.96875pt>
+<img/Case3/Case3_HMA_max.png, id=1082, 544.28343pt x 482.55281pt>
 File: img/Case3/Case3_HMA_max.png Graphic file (type png)
 
 <use img/Case3/Case3_HMA_max.png>
-Package pdftex.def Info: img/Case3/Case3_HMA_max.png used on input line 1396.
-(pdftex.def)             Requested size: 407.66833pt x 336.91309pt.
- [55 <./img/Case3/Case3_FS_log.png> <./img/Case3/table_FS.png>]
-<img/Case3/Case3_HMA_all.png, id=295, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case3/Case3_HMA_max.png used on input line 1488.
+(pdftex.def)             Requested size: 364.19667pt x 322.88899pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1492.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [57
+
+ <./img/Case3/table_FS.png>] <img/Case3/Case3_HMA_all.png, id=1093, 584.93532pt
+ x 481.8pt>
 File: img/Case3/Case3_HMA_all.png Graphic file (type png)
 
 <use img/Case3/Case3_HMA_all.png>
-Package pdftex.def Info: img/Case3/Case3_HMA_all.png used on input line 1404.
-(pdftex.def)             Requested size: 407.66833pt x 336.91309pt.
- [56 <./img/Case3/Case3_HMA_max.png>]
-<img/Case3/Case3_HMA_crit.png, id=300, 637.63219pt x 526.96875pt>
+Package pdftex.def Info: img/Case3/Case3_HMA_all.png used on input line 1496.
+(pdftex.def)             Requested size: 386.96027pt x 318.7462pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1500.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [58 <./img/Case3/Case3_HMA_max.png (PNG copy)> <./img/Case3/Case3_HMA_all.png 
+(PNG copy)>]
+<img/Case3/Case3_HMA_crit.png, id=1098, 548.0475pt x 481.04718pt>
 File: img/Case3/Case3_HMA_crit.png Graphic file (type png)
 
 <use img/Case3/Case3_HMA_crit.png>
-Package pdftex.def Info: img/Case3/Case3_HMA_crit.png used on input line 1412.
-(pdftex.def)             Requested size: 452.9679pt x 374.35144pt.
- [57 <./img/Case3/Case3_HMA_all.png>]
-[58 <./img/Case3/Case3_HMA_crit.png>]
-<img/Case3/table_HRMA1.png, id=307, 225.09094pt x 264.99pt>
+Package pdftex.def Info: img/Case3/Case3_HMA_crit.png used on input line 1504.
+(pdftex.def)             Requested size: 364.19667pt x 319.67949pt.
+
+<img/Case3/table_HRMA1.png, id=1101, 225.09094pt x 264.99pt>
 File: img/Case3/table_HRMA1.png Graphic file (type png)
 
 <use img/Case3/table_HRMA1.png>
-Package pdftex.def Info: img/Case3/table_HRMA1.png used on input line 1424.
-(pdftex.def)             Requested size: 226.48395pt x 266.6431pt.
+Package pdftex.def Info: img/Case3/table_HRMA1.png used on input line 1516.
+(pdftex.def)             Requested size: 204.85846pt x 241.1817pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1518.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [59
 
-<img/Case3/table_HRMA2.png, id=308, 444.91219pt x 478.78876pt>
+ <./img/Case3/Case3_HMA_crit.png (PNG copy)>]
+<img/Case3/table_HRMA2.png, id=1108, 405.01312pt x 556.32843pt>
 File: img/Case3/table_HRMA2.png Graphic file (type png)
 
 <use img/Case3/table_HRMA2.png>
-Package pdftex.def Info: img/Case3/table_HRMA2.png used on input line 1432.
-(pdftex.def)             Requested size: 452.9679pt x 487.45946pt.
- [59
-
- <./img/Case3/table_HRMA1.png>] [60 <./img/Case3/table_HRMA2.png>]
-<img/Case3/PF_model.png, id=317, 615.0478pt x 392.21532pt>
+Package pdftex.def Info: img/Case3/table_HRMA2.png used on input line 1524.
+(pdftex.def)             Requested size: 386.96027pt x 531.53954pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1526.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [60 <./img/Case3/table_HRMA1.png>]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1526.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [61 <./img/Case3/table_HRMA2.png>]
+<img/Case3/PF_model.png, id=1121, 615.0478pt x 392.21532pt>
 File: img/Case3/PF_model.png Graphic file (type png)
 
 <use img/Case3/PF_model.png>
-Package pdftex.def Info: img/Case3/PF_model.png used on input line 1445.
-(pdftex.def)             Requested size: 452.9679pt x 288.8583pt.
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
+Package pdftex.def Info: img/Case3/PF_model.png used on input line 1537.
+(pdftex.def)             Requested size: 455.24411pt x 290.31259pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
 
-<img/Case3/PF_imp7_VS.PNG, id=318, 557.83406pt x 391.4625pt>
+<img/Case3/PF_imp7_VS.PNG, id=1124, 557.83406pt x 391.4625pt>
 File: img/Case3/PF_imp7_VS.PNG Graphic file (type png)
 
 <use img/Case3/PF_imp7_VS.PNG>
-Package pdftex.def Info: img/Case3/PF_imp7_VS.PNG used on input line 1455.
-(pdftex.def)             Requested size: 362.37569pt x 254.30424pt.
- [61
+Package pdftex.def Info: img/Case3/PF_imp7_VS.PNG used on input line 1547.
+(pdftex.def)             Requested size: 364.19667pt x 255.58252pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1551.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [62
 
- <./img/Case3/PF_model.png>]
-<img/Case3/PF_imp7_CS.PNG, id=323, 557.08125pt x 391.4625pt>
+ <./img/Case3/PF_model.png>] <img/Case3/PF_imp7_CS.PNG, id=1134, 557.08125pt x 
+391.4625pt>
 File: img/Case3/PF_imp7_CS.PNG Graphic file (type png)
 
 <use img/Case3/PF_imp7_CS.PNG>
-Package pdftex.def Info: img/Case3/PF_imp7_CS.PNG used on input line 1463.
-(pdftex.def)             Requested size: 362.37569pt x 254.64471pt.
- [62 <./img/Case3/PF_imp7_VS.PNG> <./img/Case3/PF_imp7_CS.PNG>]
-<img/Case3/table_powerfactory.PNG, id=330, 438.8897pt x 45.92157pt>
+Package pdftex.def Info: img/Case3/PF_imp7_CS.PNG used on input line 1555.
+(pdftex.def)             Requested size: 364.19667pt x 255.92896pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1559.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [63 <./img/Case3/PF_imp7_VS.PNG> <./img/Case3/PF_imp7_CS.PNG>]
+<img/Case3/table_powerfactory.PNG, id=1142, 438.8897pt x 45.92157pt>
 File: img/Case3/table_powerfactory.PNG Graphic file (type png)
 
 <use img/Case3/table_powerfactory.PNG>
-Package pdftex.def Info: img/Case3/table_powerfactory.PNG used on input line 14
-74.
-(pdftex.def)             Requested size: 362.37569pt x 37.91658pt.
+Package pdftex.def Info: img/Case3/table_powerfactory.PNG used on input line 15
+66.
+(pdftex.def)             Requested size: 364.19667pt x 38.10718pt.
 
-<img/Case3/PF_impAll_VS.PNG, id=331, 558.58687pt x 391.4625pt>
+<img/Case3/PF_impAll_VS.PNG, id=1145, 558.58687pt x 391.4625pt>
 File: img/Case3/PF_impAll_VS.PNG Graphic file (type png)
 
 <use img/Case3/PF_impAll_VS.PNG>
-Package pdftex.def Info: img/Case3/PF_impAll_VS.PNG used on input line 1483.
-(pdftex.def)             Requested size: 362.37569pt x 253.96376pt.
+Package pdftex.def Info: img/Case3/PF_impAll_VS.PNG used on input line 1575.
+(pdftex.def)             Requested size: 364.19667pt x 255.24203pt.
 
-<img/Case3/PF_impAllLegend.PNG, id=332, 301.125pt x 140.02313pt>
+<img/Case3/PF_impAllLegend.PNG, id=1146, 301.125pt x 140.02313pt>
 File: img/Case3/PF_impAllLegend.PNG Graphic file (type png)
 
 <use img/Case3/PF_impAllLegend.PNG>
-Package pdftex.def Info: img/Case3/PF_impAllLegend.PNG used on input line 1484.
+Package pdftex.def Info: img/Case3/PF_impAllLegend.PNG used on input line 1576.
 
-(pdftex.def)             Requested size: 181.18439pt x 84.25381pt.
+(pdftex.def)             Requested size: 182.09486pt x 84.67685pt.
 
-<img/Case3/PF_impAll_CS.PNG, id=333, 557.08125pt x 393.72093pt>
+<img/Case3/PF_impAll_CS.PNG, id=1147, 557.08125pt x 393.72093pt>
 File: img/Case3/PF_impAll_CS.PNG Graphic file (type png)
 
 <use img/Case3/PF_impAll_CS.PNG>
-Package pdftex.def Info: img/Case3/PF_impAll_CS.PNG used on input line 1492.
-(pdftex.def)             Requested size: 362.37569pt x 256.11383pt.
- [63
+Package pdftex.def Info: img/Case3/PF_impAll_CS.PNG used on input line 1584.
+(pdftex.def)             Requested size: 364.19667pt x 257.40547pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1589.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [64
 
  <./img/Case3/table_powerfactory.PNG> <./img/Case3/PF_impAll_VS.PNG> <./img/Cas
-e3/PF_impAllLegend.PNG>]
-<img/Case123/FS_VS_log_colored.png, id=340, 552.56438pt x 385.44pt>
+e3/PF_impAllLegend.PNG>] <img/Case123/FS_VS_log_colored.png, id=1158, 552.56438
+pt x 385.44pt>
 File: img/Case123/FS_VS_log_colored.png Graphic file (type png)
 
 <use img/Case123/FS_VS_log_colored.png>
 Package pdftex.def Info: img/Case123/FS_VS_log_colored.png used on input line 1
-514.
-(pdftex.def)             Requested size: 407.66833pt x 284.36833pt.
- [64 <./img/Case3/PF_impAll_CS.PNG>]
-<img/Case123/FS_VS_table.png, id=345, 351.56343pt x 106.14656pt>
+606.
+(pdftex.def)             Requested size: 409.71692pt x 285.79163pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1610.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [65 <./img/Case3/PF_impAll_CS.PNG>]
+<img/Case123/FS_VS_table.png, id=1166, 351.56343pt x 106.14656pt>
 File: img/Case123/FS_VS_table.png Graphic file (type png)
 
 <use img/Case123/FS_VS_table.png>
-Package pdftex.def Info: img/Case123/FS_VS_table.png used on input line 1523.
-(pdftex.def)             Requested size: 294.42636pt x 88.89525pt.
-
-<img/Case123/HRMA_VS.png, id=346, 571.38469pt x 368.1253pt>
+Package pdftex.def Info: img/Case123/FS_VS_table.png used on input line 1615.
+(pdftex.def)             Requested size: 295.90588pt x 89.34065pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1623.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [66 <./img/Case123/FS_VS_log_colored.png> <./img/Case123/FS_VS_table.png>]
+<img/Case123/HRMA_VS.png, id=1175, 571.38469pt x 368.1253pt>
 File: img/Case123/HRMA_VS.png Graphic file (type png)
 
 <use img/Case123/HRMA_VS.png>
-Package pdftex.def Info: img/Case123/HRMA_VS.png used on input line 1534.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [65 <./img/Case123/FS_VS_log_colored.png> <./img/Case123/FS_VS_table.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
+Package pdftex.def Info: img/Case123/HRMA_VS.png used on input line 1627.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
-<img/Case123/PF_VS_table.png, id=352, 437.38406pt x 480.29437pt>
+<img/Case123/PF_VS_table.png, id=1177, 403.5075pt x 392.21532pt>
 File: img/Case123/PF_VS_table.png Graphic file (type png)
 
 <use img/Case123/PF_VS_table.png>
-Package pdftex.def Info: img/Case123/PF_VS_table.png used on input line 1545.
-(pdftex.def)             Requested size: 452.9679pt x 497.413pt.
- [66 <./img/Case123/HRMA_VS.png>] [67 <./img/Case123/PF_VS_table.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
+Package pdftex.def Info: img/Case123/PF_VS_table.png used on input line 1638.
+(pdftex.def)             Requested size: 386.96027pt x 376.13342pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1641.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [67 <./img/Case123/HRMA_VS.png>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
-<img/Case123/HRMA_VS_table.png, id=360, 444.15938pt x 150.5625pt>
+<img/Case123/HRMA_VS_table.png, id=1187, 444.15938pt x 150.5625pt>
 File: img/Case123/HRMA_VS_table.png Graphic file (type png)
 
 <use img/Case123/HRMA_VS_table.png>
-Package pdftex.def Info: img/Case123/HRMA_VS_table.png used on input line 1558.
+Package pdftex.def Info: img/Case123/HRMA_VS_table.png used on input line 1651.
 
-(pdftex.def)             Requested size: 452.9679pt x 153.54872pt.
-
-<img/Case123/FS_CS_log.png, id=361, 571.38469pt x 368.1253pt>
+(pdftex.def)             Requested size: 386.96027pt x 131.17209pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1654.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [68 <./img/Case123/PF_VS_table.png>]
+<img/Case123/FS_CS_log.png, id=1194, 571.38469pt x 368.1253pt>
 File: img/Case123/FS_CS_log.png Graphic file (type png)
 
 <use img/Case123/FS_CS_log.png>
-Package pdftex.def Info: img/Case123/FS_CS_log.png used on input line 1568.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [68
+Package pdftex.def Info: img/Case123/FS_CS_log.png used on input line 1661.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
 
- <./img/Case123/HRMA_VS_table.png>]
-<img/Case123/FS_CS_table.png, id=367, 351.56343pt x 108.405pt>
+<img/Case123/FS_CS_table.png, id=1195, 351.56343pt x 108.405pt>
 File: img/Case123/FS_CS_table.png Graphic file (type png)
 
 <use img/Case123/FS_CS_table.png>
-Package pdftex.def Info: img/Case123/FS_CS_table.png used on input line 1577.
-(pdftex.def)             Requested size: 362.37569pt x 111.73778pt.
-
-<img/Case123/HRMA_CS.png, id=368, 571.38469pt x 368.1253pt>
+Package pdftex.def Info: img/Case123/FS_CS_table.png used on input line 1670.
+(pdftex.def)             Requested size: 364.19667pt x 112.30019pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1673.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [69 <./img/Case123/HRMA_VS_table.png> <./img/Case123/FS_CS_log.png>]
+<img/Case123/HRMA_CS.png, id=1203, 571.38469pt x 368.1253pt>
 File: img/Case123/HRMA_CS.png Graphic file (type png)
 
 <use img/Case123/HRMA_CS.png>
-Package pdftex.def Info: img/Case123/HRMA_CS.png used on input line 1588.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [69 <./img/Case123/FS_CS_log.png> <./img/Case123/FS_CS_table.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
+Package pdftex.def Info: img/Case123/HRMA_CS.png used on input line 1681.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
-<img/Case123/PF_CS_table.png, id=373, 437.38406pt x 480.29437pt>
+<img/Case123/PF_CS_table.png, id=1205, 404.26031pt x 390.70969pt>
 File: img/Case123/PF_CS_table.png Graphic file (type png)
 
 <use img/Case123/PF_CS_table.png>
-Package pdftex.def Info: img/Case123/PF_CS_table.png used on input line 1599.
-(pdftex.def)             Requested size: 452.9679pt x 497.413pt.
- [70 <./img/Case123/HRMA_CS.png>] [71 <./img/Case123/PF_CS_table.png>]
-<img/Case123/HRMA_CS_table.png, id=381, 443.40656pt x 131.74219pt>
+Package pdftex.def Info: img/Case123/PF_CS_table.png used on input line 1692.
+(pdftex.def)             Requested size: 386.96027pt x 373.99796pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1695.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [70 <./img/Case123/FS_CS_table.png> <./img/Case123/HRMA_CS.png>]
+<img/Case123/HRMA_CS_table.png, id=1216, 443.40656pt x 131.74219pt>
 File: img/Case123/HRMA_CS_table.png Graphic file (type png)
 
 <use img/Case123/HRMA_CS_table.png>
-Package pdftex.def Info: img/Case123/HRMA_CS_table.png used on input line 1609.
+Package pdftex.def Info: img/Case123/HRMA_CS_table.png used on input line 1702.
 
-(pdftex.def)             Requested size: 452.9679pt x 134.59033pt.
-
-<img/Case123/FS_Zs_log.png, id=382, 571.38469pt x 368.1253pt>
+(pdftex.def)             Requested size: 386.96027pt x 114.9786pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1705.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [71 <./img/Case123/PF_CS_table.png>]
+<img/Case123/FS_Zs_log.png, id=1224, 571.38469pt x 368.1253pt>
 File: img/Case123/FS_Zs_log.png Graphic file (type png)
 
 <use img/Case123/FS_Zs_log.png>
-Package pdftex.def Info: img/Case123/FS_Zs_log.png used on input line 1620.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [72
+Package pdftex.def Info: img/Case123/FS_Zs_log.png used on input line 1713.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
 
- <./img/Case123/HRMA_CS_table.png>]
-<img/Case123/FS_Zs_table.png, id=387, 352.31625pt x 72.27pt>
+<img/Case123/FS_Zs_table.png, id=1225, 352.31625pt x 72.27pt>
 File: img/Case123/FS_Zs_table.png Graphic file (type png)
 
 <use img/Case123/FS_Zs_table.png>
-Package pdftex.def Info: img/Case123/FS_Zs_table.png used on input line 1629.
-(pdftex.def)             Requested size: 362.37569pt x 74.33304pt.
-
-<img/Case123/HRMA_Zs.png, id=388, 571.38469pt x 368.1253pt>
+Package pdftex.def Info: img/Case123/FS_Zs_table.png used on input line 1722.
+(pdftex.def)             Requested size: 364.19667pt x 74.70688pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1725.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [72 <./img/Case123/HRMA_CS_table.png> <./img/Case123/FS_Zs_log.png>]
+<img/Case123/HRMA_Zs.png, id=1234, 571.38469pt x 368.1253pt>
 File: img/Case123/HRMA_Zs.png Graphic file (type png)
 
 <use img/Case123/HRMA_Zs.png>
-Package pdftex.def Info: img/Case123/HRMA_Zs.png used on input line 1639.
-(pdftex.def)             Requested size: 452.9679pt x 291.8325pt.
- [73 <./img/Case123/FS_Zs_log.png> <./img/Case123/FS_Zs_table.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ô in font cmr12!
+Package pdftex.def Info: img/Case123/HRMA_Zs.png used on input line 1732.
+(pdftex.def)             Requested size: 455.24411pt x 293.29857pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
 
-<img/Case123/PF_Zs_table.png, id=393, 438.8897pt x 407.27156pt>
+<img/Case123/PF_Zs_table.png, id=1237, 405.01312pt x 317.68687pt>
 File: img/Case123/PF_Zs_table.png Graphic file (type png)
 
 <use img/Case123/PF_Zs_table.png>
-Package pdftex.def Info: img/Case123/PF_Zs_table.png used on input line 1652.
-(pdftex.def)             Requested size: 452.9679pt x 420.34576pt.
- [74 <./img/Case123/HRMA_Zs.png>]
-<img/Case123/HRMA_Zs_table.png, id=398, 439.6425pt x 108.405pt>
+Package pdftex.def Info: img/Case123/PF_Zs_table.png used on input line 1745.
+(pdftex.def)             Requested size: 386.96027pt x 303.53136pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1748.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [73 <./img/Case123/FS_Zs_table.png> <./img/Case123/HRMA_Zs.png>]
+<img/Case123/HRMA_Zs_table.png, id=1249, 439.6425pt x 108.405pt>
 File: img/Case123/HRMA_Zs_table.png Graphic file (type png)
 
 <use img/Case123/HRMA_Zs_table.png>
-Package pdftex.def Info: img/Case123/HRMA_Zs_table.png used on input line 1662.
+Package pdftex.def Info: img/Case123/HRMA_Zs_table.png used on input line 1755.
 
-(pdftex.def)             Requested size: 452.9679pt x 111.69476pt.
- [75 <./img/Case123/PF_Zs_table.png>]
-Missing character: There is no ‚ in font cmr12!
-Missing character: There is no Ä in font cmr12!
-Missing character: There is no ì in font cmr12!
-
-<img/Case1/Case1_Bode.png, id=403, 637.63219pt x 433.62pt>
+(pdftex.def)             Requested size: 386.96027pt x 95.41818pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1765.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [74 <./img/Case123/PF_Zs_table.png> <./img/Case123/HRMA_Zs_table.png>]
+<img/Case1/Case1_Bode.png, id=1262, 637.63219pt x 433.62pt>
 File: img/Case1/Case1_Bode.png Graphic file (type png)
 
 <use img/Case1/Case1_Bode.png>
-Package pdftex.def Info: img/Case1/Case1_Bode.png used on input line 1678.
-(pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [76 <./img/Case123/HRMA_Zs_table.png>]
-<img/Case1/Case1_Bode_zoom.png, id=408, 637.63219pt x 433.62pt>
+Package pdftex.def Info: img/Case1/Case1_Bode.png used on input line 1771.
+(pdftex.def)             Requested size: 455.24411pt x 309.58603pt.
+
+<img/Case1/Case1_Bode_zoom.png, id=1265, 637.63219pt x 433.62pt>
 File: img/Case1/Case1_Bode_zoom.png Graphic file (type png)
 
 <use img/Case1/Case1_Bode_zoom.png>
-Package pdftex.def Info: img/Case1/Case1_Bode_zoom.png used on input line 1688.
+Package pdftex.def Info: img/Case1/Case1_Bode_zoom.png used on input line 1781.
 
-(pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [77 <./img/Case1/Case1_Bode.png>]
-<img/Case1/stability_fi.png, id=412, 231.11343pt x 260.47313pt>
+(pdftex.def)             Requested size: 455.24411pt x 309.58603pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1785.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [75 <./img/Case1/Case1_Bode.png>]
+<img/Case1/stability_fi.png, id=1274, 228.855pt x 258.21469pt>
 File: img/Case1/stability_fi.png Graphic file (type png)
 
 <use img/Case1/stability_fi.png>
-Package pdftex.def Info: img/Case1/stability_fi.png used on input line 1699.
-(pdftex.def)             Requested size: 181.18439pt x 204.20158pt.
- [78 <./img/Case1/Case1_Bode_zoom.png>]
-<img/Case2/Case2_Bode.png, id=416, 637.63219pt x 433.62pt>
+Package pdftex.def Info: img/Case1/stability_fi.png used on input line 1792.
+(pdftex.def)             Requested size: 182.09486pt x 205.46487pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1795.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [76 <./img/Case1/Case1_Bode_zoom.png>] <img/Case2/Case2_Bode.png, id=1283, 637
+.63219pt x 433.62pt>
 File: img/Case2/Case2_Bode.png Graphic file (type png)
 
 <use img/Case2/Case2_Bode.png>
-Package pdftex.def Info: img/Case2/Case2_Bode.png used on input line 1710.
-(pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [79 <./img/Case1/stability_fi.png>]
-<img/Case2/Case2_Bode_zoom.png, id=421, 637.63219pt x 433.62pt>
+Package pdftex.def Info: img/Case2/Case2_Bode.png used on input line 1803.
+(pdftex.def)             Requested size: 455.24411pt x 309.58603pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1807.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [77 <./img/Case1/stability_fi.png>] <img/Case2/Case2_Bode_zoom.png, id=1291, 6
+37.63219pt x 433.62pt>
 File: img/Case2/Case2_Bode_zoom.png Graphic file (type png)
 
 <use img/Case2/Case2_Bode_zoom.png>
-Package pdftex.def Info: img/Case2/Case2_Bode_zoom.png used on input line 1718.
+Package pdftex.def Info: img/Case2/Case2_Bode_zoom.png used on input line 1811.
 
-(pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [80 <./img/Case2/Case2_Bode.png> <./img/Case2/Case2_Bode_zoom.png>]
-<img/Case2/stability_fi.png, id=426, 229.60782pt x 261.22594pt>
+(pdftex.def)             Requested size: 455.24411pt x 309.58603pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1815.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [78 <./img/Case2/Case2_Bode.png> <./img/Case2/Case2_Bode_zoom.png>]
+<img/Case2/stability_fi.png, id=1297, 228.10219pt x 258.21469pt>
 File: img/Case2/stability_fi.png Graphic file (type png)
 
 <use img/Case2/stability_fi.png>
-Package pdftex.def Info: img/Case2/stability_fi.png used on input line 1727.
-(pdftex.def)             Requested size: 181.18439pt x 206.14299pt.
+Package pdftex.def Info: img/Case2/stability_fi.png used on input line 1822.
+(pdftex.def)             Requested size: 182.09486pt x 206.13861pt.
 
-<img/Case3/Case3_Bode.png, id=427, 637.63219pt x 433.62pt>
+<img/Case3/Case3_Bode.png, id=1300, 637.63219pt x 433.62pt>
 File: img/Case3/Case3_Bode.png Graphic file (type png)
 
 <use img/Case3/Case3_Bode.png>
-Package pdftex.def Info: img/Case3/Case3_Bode.png used on input line 1736.
-(pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [81
+Package pdftex.def Info: img/Case3/Case3_Bode.png used on input line 1834.
+(pdftex.def)             Requested size: 455.24411pt x 309.58603pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1838.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [79
 
- <./img/Case2/stability_fi.png>]
-<img/Case3/Case3_Bode_zoom.png, id=432, 637.63219pt x 433.62pt>
+ <./img/Case2/stability_fi.png>] <img/Case3/Case3_Bode_zoom.png, id=1310, 637.6
+3219pt x 433.62pt>
 File: img/Case3/Case3_Bode_zoom.png Graphic file (type png)
 
 <use img/Case3/Case3_Bode_zoom.png>
-Package pdftex.def Info: img/Case3/Case3_Bode_zoom.png used on input line 1744.
+Package pdftex.def Info: img/Case3/Case3_Bode_zoom.png used on input line 1842.
 
-(pdftex.def)             Requested size: 452.9679pt x 308.03777pt.
- [82 <./img/Case3/Case3_Bode.png> <./img/Case3/Case3_Bode_zoom.png>]
-<img/Case3/stability_fi.png, id=436, 228.855pt x 258.9675pt>
+(pdftex.def)             Requested size: 455.24411pt x 309.58603pt.
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1846.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [80 <./img/Case3/Case3_Bode.png> <./img/Case3/Case3_Bode_zoom.png>]
+<img/Case3/stability_fi.png, id=1316, 228.855pt x 259.7203pt>
 File: img/Case3/stability_fi.png Graphic file (type png)
 
 <use img/Case3/stability_fi.png>
-Package pdftex.def Info: img/Case3/stability_fi.png used on input line 1753.
-(pdftex.def)             Requested size: 181.18439pt x 205.03253pt.
+Package pdftex.def Info: img/Case3/stability_fi.png used on input line 1853.
+(pdftex.def)             Requested size: 182.09486pt x 206.66292pt.
 
-<img/Case123/stability_comparison_table_fs.png, id=437, 437.38406pt x 72.27pt>
+<img/Case123/stability_comparison_table_fs.png, id=1320, 437.38406pt x 72.27pt>
 File: img/Case123/stability_comparison_table_fs.png Graphic file (type png)
-
 <use img/Case123/stability_comparison_table_fs.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_fs.png used on 
-input line 1763.
-(pdftex.def)             Requested size: 452.9679pt x 74.84583pt.
+input line 1866.
+(pdftex.def)             Requested size: 364.19667pt x 60.17815pt.
 
-<img/Case123/stability_comparison_table_hrma.png, id=438, 437.38406pt x 103.135
-31pt>
+<img/Case123/stability_comparison_table_hrma.png, id=1321, 437.38406pt x 103.13
+531pt>
 File: img/Case123/stability_comparison_table_hrma.png Graphic file (type png)
  <use img/Case123/stability_comparison_table_hrma.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_hrma.png used o
-n input line 1771.
-(pdftex.def)             Requested size: 452.9679pt x 106.81123pt.
+n input line 1874.
+(pdftex.def)             Requested size: 364.19667pt x 85.87924pt.
+File: img/Logo_etseib.png Graphic file (type png)
 
-<img/Case123/stability_comparison_table_bode1.png, id=439, 354.57469pt x 195.73
-125pt>
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1877.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [81
+
+ <./img/Case3/stability_fi.png> <./img/Case123/stability_comparison_table_fs.pn
+g>]
+<img/Case123/stability_comparison_table_bode1.png, id=1331, 353.06906pt x 194.9
+7844pt>
 File: img/Case123/stability_comparison_table_bode1.png Graphic file (type png)
  <use img/Case123/stability_comparison_table_bode1.png>
 Package pdftex.def Info: img/Case123/stability_comparison_table_bode1.png used 
-on input line 1779.
-(pdftex.def)             Requested size: 362.37569pt x 200.04343pt.
+on input line 1882.
+(pdftex.def)             Requested size: 273.14923pt x 150.84491pt.
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1889.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [82 <./img/Case123/stability_comparison_table_hrma.png> <./img/Case123/stabili
+ty_comparison_table_bode1.png>]
+Chapter VI.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 1906.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 1906.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1906.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1906.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
  [83
 
- <./img/Case3/stability_fi.png> <./img/Case123/stability_comparison_table_fs.pn
-g> <./img/Case123/stability_comparison_table_hrma.png>]
-<img/Case123/stability_comparison_table_bode2.png, id=446, 355.3275pt x 106.899
-37pt>
-File: img/Case123/stability_comparison_table_bode2.png Graphic file (type png)
- <use img/Case123/stability_comparison_table_bode2.png>
-Package pdftex.def Info: img/Case123/stability_comparison_table_bode2.png used 
-on input line 1787.
-(pdftex.def)             Requested size: 362.37569pt x 109.02284pt.
- (mthesis.bbl
-[84 <./img/Case123/stability_comparison_table_bode1.png> <./img/Case123/stabili
-ty_comparison_table_bode2.png>]
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmti12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ó in font cmr12!
-Missing character: There is no ó in font cmti12!
-Missing character: There is no ñ in font cmr12!
-Missing character: There is no ñ in font cmr12!
- [85
+]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1921.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [84]
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1925.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [85]
+Chapter VII.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 1936.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 1936.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1936.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1936.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [86
 
 ]
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-Missing character: There is no ï in font cmr12!
-) [86] (mthesis.aux) ) 
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1946.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [87]
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1947.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [88]
+Chapter VIII.
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 1963.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 1963.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 1963.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1963.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [89
+
+]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 2002.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [90] (mthesis.bbl
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 1.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [91]
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 82.
+
+
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+less on input line 82.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is use
+less on input line 82.
+
+File: img/Logo_etseib.png Graphic file (type png)
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 82.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [92
+
+]
+File: img/Logo_etseib.png Graphic file (type png)
+ <use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 160.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [93])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2010.
+File: img/Logo_etseib.png Graphic file (type png)
+
+<use img/Logo_etseib.png>
+Package pdftex.def Info: img/Logo_etseib.png used on input line 2010.
+(pdftex.def)             Requested size: 37.16266pt x 42.67912pt.
+ [94]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2010.
+ (mthesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2010.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2010.
+
+Package rerunfilecheck Info: File `mthesis.out' has not changed.
+(rerunfilecheck)             Checksum: C187FAF274C2DD31AF51AB84FE0F2270;5147.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2010.
+ ) 
 Here is how much of TeX's memory you used:
- 15998 strings out of 493634
- 315659 string characters out of 3141324
- 325249 words of memory out of 3000000
- 19149 multiletter control sequences out of 15000+200000
- 26348 words of font info for 92 fonts, out of 3000000 for 9000
- 1025 hyphenation exceptions out of 8191
- 44i,12n,43p,10381b,621s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\IS\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jk
-nappen\ec\dpi600\tcrm1200.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cmextra/cmbsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmmi10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmmi12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmmi8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmib10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cmextra/cmmib8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmr10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/
-cm/cmr12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pf
-b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb>
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Pro
-gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on mthesis.pdf (91 pages, 2495883 bytes).
+ 21612 strings out of 493335
+ 400826 string characters out of 3136683
+ 445905 words of memory out of 3000000
+ 24463 multiletter control sequences out of 15000+200000
+ 27290 words of font info for 95 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 44i,16n,48p,10381b,849s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\Igor\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\t
+crm1095.pk><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextr
+a/cmbsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx
+8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
+C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/
+Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Pro
+gram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cmextra/cmmib8.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program
+ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x86)/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmss17.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on mthesis.pdf (100 pages, 2924850 bytes).
 PDF statistics:
- 529 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 481 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1574 PDF objects out of 1728 (max. 8388607)
+ 358 named destinations out of 1000 (max. 500000)
+ 1034 words of extra memory for PDF output out of 10000 (max. 10000000)
 

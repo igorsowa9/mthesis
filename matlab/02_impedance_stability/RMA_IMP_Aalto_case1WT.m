@@ -31,7 +31,7 @@ w = 2*pi*f;
 res = 0.01;
 H = res:res:30;
 %               Zmodels f.sweep HMA     Stability-bode   nyquist others
-calculate = [   true    true    true true false      false];
+calculate = [   true    false    false false false      false];
 
 colormodels = [56  18  77;
             196 141 227;
@@ -112,8 +112,8 @@ if calculate(1)==true
     
     figure(1); hold on;
     subplot(2,1,2)
-    pos = semilogx(Hf,angle(rad2deg(Zwt_p)), 'LineWidth', 1); hold on
-    neg = semilogx(Hf,angle(rad2deg(Zwt_n)), 'r', 'LineWidth', 1); hold off
+    pos = semilogx(Hf,rad2deg(angle(Zwt_p)), 'LineWidth', 1); hold on
+    neg = semilogx(Hf,rad2deg(angle(Zwt_n)), 'r', 'LineWidth', 1); hold off
 %     legend([pos,neg], 'positive', 'negative')
 %     title('Impedance of aggregated WT converter (100MW)');
     xlabel('Frequency [Hz]');
@@ -125,8 +125,8 @@ if calculate(1)==true
     
     figure(2); hold on;
     subplot(2,1,2)
-    pos = semilogx(Hf,angle(rad2deg(Zhvdc_p)), 'LineWidth', 1); hold on
-    neg = semilogx(Hf,angle(rad2deg(Zhvdc_n)), 'r', 'LineWidth', 1); hold off
+    pos = semilogx(Hf,rad2deg(angle(Zhvdc_p)), 'LineWidth', 1); hold on
+    neg = semilogx(Hf,rad2deg(angle(Zhvdc_n)), 'r', 'LineWidth', 1); hold off
 %     legend([pos,neg], 'positive', 'negative')
 %     title('Impedance of HVDC converter');
     xlabel('Frequency [Hz]');

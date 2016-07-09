@@ -1,0 +1,57 @@
+\chapter*{Acronyms}
+
+\begin{supertabular}{l p{10cm}}
+AVR & Automatic Voltage Regulator \\
+BR & Breaking Resistor \\
+CCP & Common Coupling Point\\
+CRHP & Closed Right Hand Plane \\
+CSC & Current Source Converter \\
+DDSG & Direct Drive Synchronous Generator \\
+DDR & Dynamic Rotor Resistance \\
+DFIG & Doubly Fed Induction Generator \\
+EMF & ElectroMagnetic Field \\
+EPSO & Evolutionary Particle Swarm Optimization \\
+FACTS & Flexible AC Transmission System \\
+FMAC & Flux Magnitude and Angle Controller \\
+FRCIG & Full Rate Converter Induction Generator \\
+FRCWT & Full Rate Converter Wind Turbine \\
+FSWT & Fixed Speed Wind Turbine \\
+FSWT-PMSG & Fixed Speed Wind Turbine - Permanent Magnet Synchronous Generator \\
+FSWT-SCIG & Fixed Speed Wind Turbine - Squirrel Cage Induction Generator \\
+HSV & Hankel Singular Value \\
+HV & High Voltage \\
+HVDC & High Voltage Direct Current \\
+ICAD & Individual Channel Analysis and Design \\
+LFO & Low Frequency Oscillation \\
+MIMO & Multiple-Input Multiple-Output \\
+MPPT & Maximal Power Point Tracking \\
+MSF & Multivariable Structure Function \\
+MT-HVDC & Multi-terminal HVDC \\
+MV & Medium Voltage \\
+NMP & Nom-Minimum Phase \\
+PBH & Popov-Belevitch-Hautus \\
+PLL & Phase Locked Loop \\
+PMSG & Permanent Magnet Synchronous Generator \\
+PSO & Particle Swarm Optimization \\
+PSS & Power System Stabilizer \\
+RGA & Relative Gain Array \\
+RHPP & Right-Hand Plane Pole \\
+RHPZ & Right-Hand Plane Zero \\
+SCIG & Squirrel Cage Induction Generator \\
+SCIG-WT & Squirrel Cage Induction Generator - Wind Turbine \\
+SISO & Single-Input Single-Output \\
+SMES & Super-conducting Magnetic Energy Storage \\
+STATCOM & Static Synchronous Compensation \\
+SVC & Static Var Compensator \\
+TSO & Transmission System Operator \\
+VSC-HVDC & Voltage Source Converter - High Voltage Direct Current \\
+VSWT & Variable Speed Wind Turbine \\
+VSWT-DDSG & Variable Speed Wind Turbine - Direct Drive Synchronous Generator \\
+VSWT-DFIG & Variable Speed Wind Turbine - Doubly Fed Induction Generator \\
+VSWT-FRCIG & Variable Speed Wind Turbine - Full Rate Converter Induction Generator \\
+WPP & Wind Power Plant \\
+WRIG & Wound Rotor Induction Generator \\
+WT & Wind Turbine \\
+XLPE & Cross-Linked Polyethylene \\
+\end{supertabular}
+

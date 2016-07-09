@@ -1,0 +1,18 @@
+\select@language {english}
+\contentsline {chapter}{Abstract}{I}{section*.1}
+\contentsline {chapter}{Resum}{II}{section*.2}
+\contentsline {chapter}{Acknowledgement}{V}{section*.3}
+\contentsline {chapter}{Table of Contents}{VII}{section*.4}
+\contentsline {chapter}{\nonumberline List of Tables}{IX}{section*.4}
+\contentsline {chapter}{\nonumberline List of Figures}{XI}{section*.4}
+\contentsline {chapter}{Glossary}{XIII}{section*.5}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {chapter}{\numberline {2}New Chapter}{3}{chapter.2}
+\contentsline {chapter}{\numberline {3}Conclusions}{5}{chapter.3}
+\contentsline {section}{\numberline {3.1}Further work}{5}{section.3.1}
+\contentsline {chapter}{\nonumberline Bibliography}{7}{chapter*.6}
+\contentsline {chapter}{\numberline {A}List of Publications}{9}{appendix.A}
+\contentsline {section}{\numberline {A.1}Journal articles}{9}{section.A.1}
+\contentsline {section}{\numberline {A.2}Conference articles}{9}{section.A.2}
+\contentsline {section}{\numberline {A.3}Other publications}{9}{section.A.3}
+\contentsline {chapter}{\numberline {B}Example}{11}{appendix.B}
