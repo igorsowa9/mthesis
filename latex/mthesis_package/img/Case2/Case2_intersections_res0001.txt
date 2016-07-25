@@ -1,0 +1,194 @@
+--------------- CASE 2 (2 WT); resolution: 0.010000 --------------- 
+Converters models: WTs and HVDC loaded! 
+
+
+-------- Frequency Sweep --------
+
+
+VS model:
+- for h.order: 8.460000, peak impedance: 269142.762369
+- for h.order: 12.120000, peak impedance: 1289229.283695
+- for h.order: 12.230000, peak impedance: 1007141.319854
+- for h.order: 23.000000, peak impedance: 64076.596021
+CS model:
+- for h.order: 7.770000, peak impedance: 4217172.893375
+- for h.order: 9.510000, peak impedance: 1455407.601001
+- for h.order: 10.250000, peak impedance: 1475176.136066
+- for h.order: 22.980000, peak impedance: 44528.940777
+Z(s) model:
+- for h.order: 0.260000, peak impedance: 56.378625
+- for h.order: 1.100000, peak impedance: 174.572993
+- for h.order: 12.330000, peak impedance: 81787.036621
+- for h.order: 23.180000, peak impedance: 1788.807821
+
+-------- HMA - all three models --------
+
+
+ ---- HMA: 	VS model ----
+harmonic order - critical mode - modal impedance(abs) - angle
+
+ZmodalHcrit =
+
+         8.46            6   2.1401e+06      -86.742
+        12.12           11   2.7533e+06       82.359
+        12.23            7   1.9653e+06        82.98
+           23            6   6.5168e+06        20.28
+
+harmonic order - participation factors for all buses
+
+PFmodalHcrit =
+
+  Columns 1 through 7
+
+     0.052512     0.079324     0.080273     0.087421      0.08958      0.09202      0.12492
+   9.3724e-34   1.7272e-34   1.4972e-34    0.0015021    0.0031803     0.010819       0.4845
+    0.0028811   0.00043106   0.00035723   0.00039599    0.0014315    0.0075803      0.48876
+    0.0064521     0.088834     0.095806       0.1361      0.14202      0.11657    0.0097629
+
+  Columns 8 through 11
+
+     0.087421      0.08958      0.09202      0.12492
+    0.0015021    0.0031803     0.010819       0.4845
+   0.00039599    0.0014315    0.0075803      0.48876
+       0.1361      0.14202      0.11657    0.0097629
+
+--> Eigenvalues of critical frequencies
+greates participation factors:
+For harmonic: 8.460000, bus: 7 has greatest PF=0.124924.
+	(also same PF at buses: 11)
+For harmonic: 12.120000, bus: 7 has greatest PF=0.484498.
+	(also same PF at buses: 11)
+For harmonic: 12.230000, bus: 11 has greatest PF=0.488758.
+	(also same PF at buses: 7)
+For harmonic: 23.000000, bus: 9 has greatest PF=0.142016.
+	(also same PF at buses: 5)
+
+ ---- HMA: 	CS model ----
+harmonic order - critical mode - modal impedance(abs) - angle
+
+ZmodalHcrit =
+
+         7.77            7   1.3592e+07       10.566
+         9.51           11   3.0084e+06       76.807
+        10.25            7   3.0981e+06       74.205
+        22.98            6   6.0623e+06      -28.543
+
+harmonic order - participation factors for all buses
+
+PFmodalHcrit =
+
+  Columns 1 through 7
+
+     0.017435     0.031777     0.032435     0.041961     0.046315     0.058001       0.3129
+   2.4419e-33   2.2495e-33   2.2295e-33    0.0014167    0.0030233     0.010556        0.485
+     0.015217      0.01145     0.011148    0.0044982    0.0023274   4.3897e-05      0.47422
+    0.0064807     0.088753     0.095734      0.13655      0.14272      0.11782    0.0074319
+
+  Columns 8 through 11
+
+     0.041961     0.046315     0.058001       0.3129
+    0.0014167    0.0030233     0.010556        0.485
+    0.0044982    0.0023274   4.3897e-05      0.47422
+      0.13655      0.14272      0.11782    0.0074319
+
+--> Eigenvalues of critical frequencies
+greates participation factors:
+For harmonic: 7.770000, bus: 7 has greatest PF=0.312900.
+	(also same PF at buses: 11)
+For harmonic: 9.510000, bus: 7 has greatest PF=0.485004.
+	(also same PF at buses: 11)
+For harmonic: 10.250000, bus: 11 has greatest PF=0.474223.
+	(also same PF at buses: 7)
+For harmonic: 22.980000, bus: 9 has greatest PF=0.142721.
+	(also same PF at buses: 5)
+
+ ---- HMA: 	Z(s) model ----
+harmonic order - critical mode - modal impedance(abs) - angle
+
+ZmodalHcrit =
+
+         0.37            6       278.57       39.853
+          1.1            7       193.08      -143.67
+         2.19            6       536.07      -42.113
+         9.51            7       3814.7      -52.284
+        12.34           11   1.3835e+05        3.296
+        23.11            6        91005      -1.4904
+
+harmonic order - participation factors for all buses
+
+PFmodalHcrit =
+
+  Columns 1 through 7
+
+      0.15549      0.13181      0.13084      0.11174      0.10439     0.087394     0.012409
+   0.00061662    0.0046451    0.0049482     0.012272     0.016377     0.029037      0.47514
+     0.081834     0.097493     0.098412      0.11174      0.11577      0.11674     0.031255
+      0.02814     0.053845     0.055101     0.071455      0.07842     0.092772      0.45525
+   4.8561e-33    3.151e-33   3.0523e-33    0.0015105    0.0031957     0.010845      0.48445
+    0.0071369     0.088215     0.095227      0.13611      0.14221      0.11679    0.0096477
+
+  Columns 8 through 11
+
+      0.11174      0.10439     0.087394     0.012409
+     0.012272     0.016377     0.029037      0.47514
+      0.11174      0.11577      0.11674     0.031255
+     0.071455      0.07842     0.092772      0.45525
+    0.0015105    0.0031957     0.010845      0.48445
+      0.13611      0.14221      0.11679    0.0096477
+
+--> Eigenvalues of critical frequencies
+greates participation factors:
+For harmonic: 0.370000, bus: 1 has greatest PF=0.155485.
+For harmonic: 1.100000, bus: 7 has greatest PF=0.475138.
+	(also same PF at buses: 11)
+For harmonic: 2.190000, bus: 6 has greatest PF=0.116737.
+	(also same PF at buses: 10)
+For harmonic: 9.510000, bus: 11 has greatest PF=0.455253.
+	(also same PF at buses: 7)
+For harmonic: 12.340000, bus: 11 has greatest PF=0.484449.
+	(also same PF at buses: 7)
+For harmonic: 23.110000, bus: 5 has greatest PF=0.142213.
+	(also same PF at buses: 9)
+
+
+--------------- CASE 2 (2 WT); resolution: 0.000100 --------------- 
+Converters models: WTs and HVDC loaded! 
+
+
+-------- Stability of the system --------
+
+ --- Intersections of grid positive with source pos and neg ---
+MarginsP =
+
+       10.797       539.86       66.032    0.0010133
+
+       12.512       625.61       102.31     0.029178
+
+       23.112       1155.6      0.77973   0.00016522
+
+MarginsN =
+
+       10.459       522.93       56.372    0.0010537
+
+       12.178        608.9       96.941    0.0075319
+
+        23.11       1155.5      0.77964   0.00042391
+
+
+ --- Intersections of grid negative with source pos and neg ---
+MarginsP =
+
+       10.009       500.46       43.116    0.0016486
+
+       12.522       626.08       74.848     0.021276
+
+        23.12         1156      0.23551   0.00013282
+
+MarginsN =
+
+
+       9.8619        493.1       39.719    0.0048981
+
+       12.201       610.02       69.599     0.028183
+
+       23.118       1155.9      0.23518   0.00051412

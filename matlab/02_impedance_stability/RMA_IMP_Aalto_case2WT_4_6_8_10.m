@@ -433,7 +433,7 @@ if calculate(4)==true
         ZspM(3,hh) = imp_parallel(imp_parallel(Zsp,Zsp),Zsp); % 6 branches
         ZspM(4,hh) = imp_parallel(imp_parallel(imp_parallel(Zsp,Zsp),Zsp),Zsp); % 8 branches
         ZspM(5,hh) = imp_parallel(imp_parallel(imp_parallel(imp_parallel(Zsp,Zsp),Zsp),Zsp),Zsp); % 10 branches
-        ZspM(6,hh) = imp_parallel(ZspM(5,hh),ZspM(5,hh)); % 20 branches
+        ZspM(6,hh) = imp_parallel(ZspM(5,hh),Z3pB); % other branches
         
         Z1n = imp_parallel(Zwt_n(hh),1/(s*LCL_C)) + ...
             LCL_R2 + s*(LCL_L2+Tr1_L);
@@ -448,7 +448,7 @@ if calculate(4)==true
         ZsnM(3,hh) = imp_parallel(imp_parallel(Zsn,Zsn),Zsn); % 6 branches
         ZsnM(4,hh) = imp_parallel(imp_parallel(imp_parallel(Zsn,Zsn),Zsn),Zsn); % 8 branches
         ZsnM(5,hh) = imp_parallel(imp_parallel(imp_parallel(imp_parallel(Zsn,Zsn),Zsn),Zsn),Zsn); % 10 branches
-        ZsnM(6,hh) = imp_parallel(ZsnM(5,hh),ZsnM(5,hh)); % 20 branches
+        ZsnM(6,hh) = imp_parallel(ZsnM(5,hh),Z3nB); % 20 branches
     
         Ztr3M(hh) = s*Tr3_L;
     end
@@ -460,8 +460,10 @@ if calculate(4)==true
     fig7 = figure(7);
     fig7.Position = [244 115 847 576];
     subplot(2,1,1)
-    pos = semilogx(Hfstab,mag2db(abs(ZspM)), 'b','LineWidth', 1); hold on
-    neg = semilogx(Hfstab,mag2db(abs(ZsnM)), 'b--', 'LineWidth', 1); 
+    pos = semilogx(Hfstab,mag2db(abs(ZspM(1:5,:))), 'b','LineWidth', 1); hold on
+    semilogx(Hfstab,mag2db(abs(ZspM(6,:))), 'g', 'LineWidth', 1);
+    neg = semilogx(Hfstab,mag2db(abs(ZsnM(1:5,:))), 'b--', 'LineWidth', 1); 
+    semilogx(Hfstab,mag2db(abs(ZsnM(6,:))), 'g--', 'LineWidth', 1)
     grdpos = semilogx(Hfstab,mag2db(abs(Zlp)), 'r', 'LineWidth', 1);
     grdneg = semilogx(Hfstab,mag2db(abs(Zln)), 'r--', 'LineWidth', 1); hold off
     grid on
@@ -475,8 +477,10 @@ if calculate(4)==true
     clear pos neg grdpos grdneg V
     
     subplot(2,1,2)
-    pos = semilogx(Hfstab,rad2deg(angle(ZspM)), 'b','LineWidth', 1); hold on
-    neg = semilogx(Hfstab,rad2deg(angle(ZsnM)), 'b--', 'LineWidth', 1); 
+    pos = semilogx(Hfstab,rad2deg(angle(ZspM(1:5,:))), 'b','LineWidth', 1); hold on
+    semilogx(Hfstab,rad2deg(angle(ZspM(6,:))), 'g','LineWidth', 1);
+    neg = semilogx(Hfstab,rad2deg(angle(ZsnM(1:5,:))), 'b--', 'LineWidth', 1); 
+    semilogx(Hfstab,rad2deg(angle(ZsnM(6,:))), 'g--', 'LineWidth', 1);
     grdpos = semilogx(Hfstab,rad2deg(angle(Zlp)), 'r', 'LineWidth', 1);
     grdneg = semilogx(Hfstab,rad2deg(angle(Zln)), 'r--', 'LineWidth', 1); hold off
     grid on

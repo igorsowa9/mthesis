@@ -1,0 +1,140 @@
+%% 
+%% Copyright 2007, 2008, 2009 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%% SP 2008/03/01
+
+%%\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+\documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% For including figures, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+%% \usepackage{lineno}
+
+\journal{Nuclear Physics B}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for theassociated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for theassociated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for theassociated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+\title{}
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{}
+%% \address[label1]{}
+%% \address[label2]{}
+
+\author{}
+
+\address{}
+
+\begin{abstract}
+During the last years the development of HVDC connected offshore wind power plants increased. As the first wind farms of this type were commissioned, an unexpected phenomenon occurred. Electrical harmonic resonance in offshore AC grid led to outages of the HVDC transmission system. The thesis introduces the phenomenon and compare different methods of its analysis.
+
+The study focuses on harmonic frequencies identification excited through the resonance phenomena between the elements within WPP's inner AC network. The analysis includes observations from three tested topology cases by different methods: frequency sweep and harmonic resonance modal analysis. The comparison is performed for diverse converter models: voltage source based, current source based and nonlinear impedance model obtained by harmonic linearization method. The results of the analysis are verified by the outcome attained in DIgSILENT Power Factory software. The study also includes the stability analysis based on Nyquist criterion and interpreted in Bode diagrams.
+
+Furthermore, the result of investigation exposes the clues for possible subsequent implementation of harmonic filters as well as for beneficial control of converters. Feasible measures for resonance mitigation from literature are described and proposed.
+\end{abstract}
+
+\begin{keyword}
+%% keywords here, in the form: keyword \sep keyword
+
+%% PACS codes here, in the form: \PACS code \sep code
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%% \linenumbers
+
+%% main text
+\section{Introduction} \label{sec:intro}
+At the end of 2015 total wind power was estimated as 3.7\% of Global Electricity Production. It gives the wind power sector the second position within RES production, behind hydro power. What is more important, in 2015 total renewable power generating capacity saw its largest annual increase ever, with en estimated 147 GW of renewable capacity added \cite{renewables2016}. That gave an estimated 1849 GW of RES at 2015 year's end. 63.7 GW out of all installed RES capacity in 2015 comes from wind power. This number is wind installations record during one year ever. This power gives a global growth rate of 17.2\% comparing to installed capacity at the end of 2014 \cite{wwea2016}. Figure \ref{fig:windtrend} from \cite{renewables2016} clearly shows increasing global capacity as well as increasing yearly amount of installed capacity from 2005.
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%%  \bibliographystyle{elsarticle-num} 
+%%  \bibliography{<your bibdatabase>}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+\begin{thebibliography}{00}
+
+%% \bibitem{label}
+%% Text of bibliographic item
+
+\bibitem{}
+
+\end{thebibliography}
+\end{document}
+\endinput
+%%
+%% End of file `elsarticle-template-num.tex'.
